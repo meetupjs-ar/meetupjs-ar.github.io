@@ -1,0 +1,15 @@
+{
+  "name": "meetupjs",
+  "version": "1.0.0",
+  "description": "Sitio oficial de Meetup.js Argentina",
+  "scripts": {
+    "deploy": "gh-pages -b master -d ./public",
+    "start-dev": "browser-sync start --port 6590 --server './public' --files './public' --no-open --no-ui"
+  },
+  "author": "durancristhian@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gh-pages": "^0.12.0"
+  }
+}
