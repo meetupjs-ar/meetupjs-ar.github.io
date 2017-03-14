@@ -1,0 +1,92 @@
+@import 'tachyons';
+@import './animations.css';
+
+.bg-black-alternative {
+    background-color: #2e282a;
+}
+
+.bg-yellow-alternative {
+    background-color: #ffe45e;
+}
+
+.black-alternative {
+    color: #2e282a;
+}
+
+.dot {
+    animation: right-to-left 0.4s infinite;
+    background: #2e282a;
+    border-radius: 50%;
+    box-shadow: 30px 0 0 #2e282a, 60px 0 0 #2e282a, 90px 0 0 #2e282a;
+    height: 10px;
+    left: 50%;
+    margin-left: 30px;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    z-index: -1;
+}
+
+.droid {
+    font-family: "Droid Sans", sans-serif;
+}
+
+.fadeIn {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+
+.fadeInDown {
+    animation-duration: 0.5s;
+    animation-name: fadeInDown;
+}
+
+.mw-175 {
+    max-width: 175px;
+}
+
+.pacman::before,
+.pacman::after {
+    animation: up 0.4s infinite;
+    background: #ffe45e;
+    border-radius: 50px 50px 0 0;
+    content: '';
+    height: 50px;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: absolute;
+    top: 50%;
+    width: 100px;
+}
+
+.pacman::after {
+    animation: down 0.4s infinite;
+    border-radius: 0 0 50px 50px;
+    margin-top: -1px;
+}
+
+.vh-80 {
+    height: 80vh;
+}
+
+.w-50 {
+    width: 50px;
+}
+
+.yellow-alternative {
+    color: #ffe45e;
+}
+
+@media screen and (min-width: 30em) {
+    .w-60-ns {
+        width: 60px;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .w-one-seventh-l {
+        width: calc(100% / 7);
+    }
+}
