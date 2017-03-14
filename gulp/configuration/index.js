@@ -14,7 +14,7 @@ module.exports = {
     },
     dest: {
         assets: 'dist/assets',
-        cname: 'dist/CNAME',
+        cname: 'dist/',
         css: 'dist/css',
         html: 'dist/',
         js: 'dist/js'
