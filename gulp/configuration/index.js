@@ -7,12 +7,14 @@ module.exports = {
     },
     clean: {
         assets: 'dist/assets/*',
+        cname: 'dist/CNAME',
         css: 'dist/css/*',
         html: 'dist/*.html',
         js: 'dist/js/*'
     },
     dest: {
         assets: 'dist/assets',
+        cname: 'dist/CNAME',
         css: 'dist/css',
         html: 'dist/',
         js: 'dist/js'
@@ -23,6 +25,7 @@ module.exports = {
     isProduction: util.env.production,
     src: {
         assets: 'src/assets/**/*.*',
+        cname: 'src/CNAME',
         css: 'src/css/main.css',
         js: 'src/js/calendario.js',
         html: 'src/*.html'
