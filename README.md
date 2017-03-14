@@ -7,10 +7,18 @@
 ## Desarrollo
 
 ```bash
+# checkout al branch `dev`
 git checkout -b dev
-#npm install
+
+# instalar dependencias con `npm`o `yarn`
+# npm install
 yarn install
+
+# ambiente de desarrollo
 npm run start-dev
+
+# publicar a github pages (master)
+npm run deploy
 ```
 
 ## Colaboración
