@@ -1,19 +1,18 @@
 # meetupjs-ar.github.io
 
-Sitio oficial de Meetup.js Argentina
+:earth_americas: Sitio oficial de Meetup.js Argentina
 
-## Live
-
-[meetupjs-ar.github.io](https://meetupjs-ar.github.io/)
+[meetupjs.com.ar](https://meetupjs.com.ar/)
 
 ## Desarrollo
 
 ```bash
+git checkout -b dev
 #npm install
 yarn install
 npm run start-dev
 ```
 
-## License
+## Licencia
 
 MIT
