@@ -130,7 +130,8 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 }
 
                 calendar.events.forEach(event => {
-                    const eventDay = moment(event.date)
+                    // hack al timezone! :D
+                    const eventDay = moment(event.date).add(3, 'hours')
                     const list = gridElement.querySelector(`#cell-${eventDay.format('DDMMYY')}`)
                     const counter = list.nextElementSibling
 
