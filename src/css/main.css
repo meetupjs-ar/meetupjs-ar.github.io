@@ -13,7 +13,7 @@
     color: #2e282a;
 }
 
-.dot {
+.dots {
     animation: right-to-left 0.4s infinite;
     background: #2e282a;
     border-radius: 50%;

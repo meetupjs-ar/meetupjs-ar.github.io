@@ -6,7 +6,7 @@ module.exports = function (config) {
     return function () {
         server.init({
             open: false,
-            port: 3456,
+            port: 4321,
             reloadOnRestart: true,
             server: config.staticServer.dir,
             ui: false
