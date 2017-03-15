@@ -2,7 +2,8 @@
   "name": "meetupjs-ar.github.io",
   "version": "1.0.0",
   "scripts": {
-    "deploy": "gulp build --production && gh-pages -b master -d dist",
+    "build-prod": "gulp build --production",
+    "deploy": "npm run build-prod && gh-pages -b master -d dist",
     "start-dev": "gulp",
     "task": "gulp --"
   },
