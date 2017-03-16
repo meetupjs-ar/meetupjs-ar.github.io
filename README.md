@@ -21,10 +21,6 @@ npm run start-dev
 npm run deploy
 ```
 
-## Colaboración
-
-[ToDo list](https://github.com/meetupjs-ar/meetupjs-ar.github.io/projects/1)
-
 ## Licencia
 
 MIT
