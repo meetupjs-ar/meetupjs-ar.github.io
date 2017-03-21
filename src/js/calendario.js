@@ -100,6 +100,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                                     </div>
                                     <div class="tc tr-l w-20 w-100-l">
                                         <span class="f3
+                                            ${currentDay.isBefore(today, 'day') ? 'strike' : ''}
                                             ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
                                                 ${currentDay.format('DD')}
                                         </span>
