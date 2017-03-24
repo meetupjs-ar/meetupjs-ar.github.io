@@ -34,7 +34,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                 calendarElement.insertAdjacentHTML(
                     'beforeend',
-                    `<div class="fadeIn mv5">
+                    `<div class="fadeIn mb5">
                         <h2 class="black-alternative f2 mb4 mt0 normal tc ttc">
                             ${calendar.when.month} ${calendar.when.year}
                         </h2>
@@ -240,7 +240,9 @@ function renderMonthlyCalendars (monthlyCalendar) {
     })
 }
 
-fetch(process.env.CALENDAR_API)
-    .then(response => response.json())
-    .then(renderMonthlyCalendars)
-    .catch(handleError)
+module.exports = function initCalendar () {
+    fetch(process.env.CALENDAR_API)
+        .then(response => response.json())
+        .then(renderMonthlyCalendars)
+        .catch(handleError)
+}
