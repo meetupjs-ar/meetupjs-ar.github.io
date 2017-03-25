@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calendario de eventos - Meetup.js Argentina</title>
-    <meta property="og:url" content="http://meetupjs.com.ar/calendario-de-meetups/">
+    <title>Calendario de Eventos - Meetup.js Argentina</title>
+    <meta property="og:url" content="http://meetupjs.com.ar/calendario.html/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Calendario de meetups - Meetup.js Argentina">
+    <meta property="og:title" content="Calendario de Eventos - Meetup.js Argentina">
     <meta property="og:description" content="Enterate de los próximos eventos de tecnología en Buenos Aires.">
     <meta property="og:image" content="http://meetupjs.com.ar/assets/images/social/meetupjs-ar.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@meetupjs_ar">
     <meta name="twitter:creator" content="@meetupjs_ar">
-    <meta name="twitter:title" content="Calendario de meetups - Meetup.js Argentina">
+    <meta name="twitter:title" content="Calendario de Eventos - Meetup.js Argentina">
     <meta name="twitter:description" content="Enterate de los próximos eventos de tecnología en Buenos Aires.">
     <meta name="twitter:image" content="http://meetupjs.com.ar/assets/images/social/meetupjs-ar.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
@@ -21,44 +21,86 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body class="droid ma0">
-    <header class="b--black-30 bb bg-black-alternative ph3 ph4-l pv3">
+    <header class="b--black-10 bb bg-washed-yellow bw1 ph3-ns pv2">
         <div class="center mw9">
             <div class="flex items-center justify-between">
-                <a href="/">
-                    <img src="assets/images/isotipo.svg" class="grow v-btm" style="height: 40px;">
+                <a href="/"
+                    class="ml3 ml0-ns">
+                        <img src="assets/images/isotipo.svg"
+                            class="grow v-btm"
+                            style="height: 50px;">
                 </a>
-                <a href="https://goo.gl/forms/Ss5X2SHWSq0Hj1Km1"
-                    target="_blank"
-                    class="link ttu white">🔗 Agregar un evento</a>
-            </div>
-        </div>
-    </header>
-    <div id="calendar" class="center mw9 ph3 ph4-l">
-        <h1 class="b black-alternative f2 f1-m f1-l mb5 mt4 tc">Calendario de eventos</h1>
-        <div id="loading">
-            <div class="relative" style="height: 100px;">
-                <div class="pacman"></div>
-                <div class="dots"></div>
-            </div>
-        </div>
-        <p id="error-message" class="dn f4 mb0 silver tc">Ups! Ocurrió un error. Inténtalo de nuevo recargando la página (:</p>
-    </div>
-    <div id="modal" class="dn">
-        <div id="modal-outside" class="bg-black-70 fixed flex items-center justify-center left-0 top-0 vh-100 w-100 z-1">
-            <div id="modal-wrapper" class="center mw6 w-100">
-                <div class="bg-white ma3">
-                    <div class="b--black-10 bb bg-black-alternative flex items-center justify-between pa3">
-                        <span id="modal-title"
-                            class="b dib f3 ttc yellow-alternative"></span>
-                        <a href="#!"
-                            id="modal-close"
-                            class="black-30 dib f3 link white-50">X</a>
-                    </div>
-                    <div style="max-height: 75vh; overflow-y: auto;">
-                        <div id="modal-content"></div>
-                    </div>
+                <div class="flex items-center">
+                    <a href="https://goo.gl/forms/Ss5X2SHWSq0Hj1Km1"
+                        target="_blank"
+                        class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mr3-ns ph3 pv2 ttu">
+                            Agregar un evento
+                    </a>
+                    <button id="toggle-menu"
+                        type="button"
+                        class="bg-transparent black-alternative bn f4 grow outline-0 ph3 pointer pv2"
+                        style="width: 50px;">
+                            ☰
+                    </button>
                 </div>
             </div>
+            <ul id="menu"
+                class="dn list mh3 mv4 pl0 tr">
+                    <li class="mv3">
+                        <a href="/"
+                            class="b black-50 inline-flex items-center hover-black link">
+                                <span>Página Principal</span>
+                                <span class="black-alternative f3 ml3">🏡</span>
+                        </a>
+                    </li>
+                    <li class="mv3">
+                        <a href="/calendario.html"
+                            class="b black-50 inline-flex items-center hover-black link">
+                                <span>Calendario de Eventos</span>
+                                <span class="black-alternative f3 ml3">📅</span>
+                        </a>
+                    </li>
+                    <li class="mv3">
+                        <a href="/faq-calendario.html"
+                            class="b black-50 inline-flex items-center hover-black link">
+                                <span>FAQ del Calendario de Eventos</span>
+                                <span class="black-alternative f3 ml3">❓</span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </header>
+    <div id="calendar" class="center mw9 ph3">
+        <p id="loading"
+            class="f4 f3-ns ma0 pv4 silver tc">
+                Buscando eventos...
+        </p>
+        <p id="error-message"
+            class="dn f4 f3-ns mv0 pv4 silver tc">
+                Ups! Ocurrió un error. Inténtalo de nuevo recargando la página (:
+        </p>
+    </div>
+    <div id="modal" class="dn">
+        <div id="modal-outside"
+            class="bg-black-70 fixed flex items-center justify-center left-0 top-0 vh-100 w-100 z-1">
+                <div id="modal-wrapper"
+                    class="center mw6 w-100">
+                        <div class="bg-white br2 ma3">
+                            <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
+                                <span id="modal-title"
+                                    class="b black-alternative dib f4 f3-ns ttc">
+                                </span>
+                                <a href="#!"
+                                    id="modal-close"
+                                    class="black-alternative dib f4 f3-ns link">
+                                        ✕
+                                </a>
+                            </div>
+                            <div style="max-height: 75vh; overflow-y: auto;">
+                                <div id="modal-content"></div>
+                            </div>
+                        </div>
+                </div>
         </div>
     </div>
     <script defer src="js/app.js"></script>

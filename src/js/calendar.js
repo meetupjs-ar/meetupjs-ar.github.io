@@ -1,5 +1,6 @@
-require('isomorphic-fetch')
 const moment = require('moment')
+
+require('isomorphic-fetch')
 require('moment/locale/es')
 
 const body = document.querySelector('body')
@@ -10,12 +11,6 @@ const modalContent = document.querySelector('#modal-content')
 const modalOutside = document.querySelector('#modal-outside')
 const modalTitle = document.querySelector('#modal-title')
 const modalWrapper = document.querySelector('#modal-wrapper')
-
-function toggleModal () {
-    body.classList.toggle('overflow-hidden')
-    modal.classList.toggle('dn')
-    modalWrapper.classList.toggle('fadeInDown')
-}
 
 function handleError (error) {
     // eslint-disable-next-line no-console
@@ -28,6 +23,11 @@ function handleError (error) {
 function renderMonthlyCalendars (monthlyCalendar) {
     return new Promise((resolve, reject) => {
         try {
+            calendarElement.insertAdjacentHTML(
+                'beforeend',
+                '<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt5 tc">Calendario de eventos</h1>'
+            )
+
             monthlyCalendar.forEach(calendar => {
                 const gridId = `grid-${calendar.when.month}-${calendar.when.year}`
                 const weekdaysId = `weekdays-${calendar.when.month}-${calendar.when.year}`
@@ -35,14 +35,14 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 calendarElement.insertAdjacentHTML(
                     'beforeend',
                     `<div class="fadeIn mb5">
-                        <h2 class="black-alternative f2 mb4 mt0 normal tc ttc">
+                        <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
                             ${calendar.when.month} ${calendar.when.year}
                         </h2>
                         <div id="${weekdaysId}"
-                            class="b--black-30 bl bt dn flex-l">
+                            class="b--black-10 bl bt bw1 dn flex-l">
                         </div>
                         <div id="${gridId}"
-                            class="b--black-30 br bt flex flex-wrap">
+                            class="b--black-10 br bt bw1 flex flex-wrap">
                         </div>
                     </div>`
                 )
@@ -52,7 +52,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 moment.weekdays().forEach(weekday => {
                     weekdaysElement.insertAdjacentHTML(
                         'beforeend',
-                        `<div class="b--black-30 bg-white black-50 br pv3 tc ttc w-one-seventh-l">
+                        `<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
                             ${weekday}
                         </div>`
                     )
@@ -70,7 +70,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                     for (let i = currentMonth.isoWeekday(); i > 0; i--) {
                         gridElement.insertAdjacentHTML(
                             'beforeend',
-                            `<div class="b--black-30 bb bg-near-white bl dn db-l w-one-seventh-l">
+                            `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
                             </div>`
                         )
                     }
@@ -87,7 +87,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                     gridElement.insertAdjacentHTML(
                         'beforeend',
-                        `<div class="b--black-30 bb bl h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
+                        `<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
                             ${currentDay.isBefore(today, 'day') ? 'bg-near-white dn db-l' : ''}
                             ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}">
                                 <div class="flex flex-column-l h-100 items-center items-end-l">
@@ -123,7 +123,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 while (lastDayOfMonth.isoWeekday() != 6) {
                     gridElement.insertAdjacentHTML(
                         'beforeend',
-                        `<div class="b--black-30 bb bg-near-white bl dn db-l w-one-seventh-l">
+                        `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
                         </div>`
                     )
 
@@ -140,7 +140,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                     list.insertAdjacentHTML(
                         'beforeend',
-                        `<li class="b--black-50 ba br1 f6 mv2 pa1 text-shadow-1 truncate white
+                        `<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white
                             ${list.childNodes.length > 2 ? 'dn-l' : ''}"
                             data-day="${eventDay.format('dddd DD')}"
                             data-hour="${eventDay.format('HH:mm')}"
@@ -149,7 +149,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                             data-place-address="${event.placeAddress}"
                             data-event-link="${event.eventLink}"
                             data-color="${event.color}"
-                            style="background-color: ${event.color}; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);">
+                            style="background-color: ${event.color};">
                                 ${event.eventName}
                         </li>`
                     )
@@ -178,14 +178,14 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                         modalContent.insertAdjacentHTML(
                             'beforeend',
-                            `<div class="flex mh3 mv4">
+                            `<div class="flex mh3 mv3 pv3">
                                 <div class="w-30 w-20-ns">
-                                    <p class="black-30 f3 mv0">
+                                    <p class="black-30 f4 f3-ns mv0">
                                         ${eventData.hour}
                                     </p>
                                 </div>
                                 <div class="w-70 w-80-ns">
-                                    <h3 class="f3 ma0"
+                                    <h3 class="f4 f3-ns ma0"
                                         style="color: ${eventData.color};">
                                             ${eventData.eventName}
                                     </h3>
@@ -193,13 +193,13 @@ function renderMonthlyCalendars (monthlyCalendar) {
                                     <div class="flex">
                                         <a href="http://maps.google.com/?q=${eventData.placeAddress}"
                                             target="_blank"
-                                            class="b b--black-10 ba bg-black-10 black-50 br1 dib f6 link ph3 pv2">
-                                                Lugar
+                                            class="b b--black-30 ba br1 bw1 dib f6 grow link ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
+                                                Mapa
                                         </a>
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
-                                            class="b b--black-10 ba bg-black-10 black-50 br1 dib f6 link ml3 ph3 pv2">
-                                                Evento
+                                            class="b b--black-30 ba br1 bw1 dib f6 grow link ml3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
+                                                Link
                                         </a>
                                     </div>
                                 </div>
@@ -240,9 +240,17 @@ function renderMonthlyCalendars (monthlyCalendar) {
     })
 }
 
+function toggleModal () {
+    body.classList.toggle('overflow-hidden')
+    modal.classList.toggle('dn')
+    modalWrapper.classList.toggle('fadeInDown')
+}
+
 module.exports = function initCalendar () {
-    fetch(process.env.CALENDAR_API)
-        .then(response => response.json())
-        .then(renderMonthlyCalendars)
-        .catch(handleError)
+    if (calendarElement) {
+        fetch(process.env.CALENDAR_API)
+            .then(response => response.json())
+            .then(renderMonthlyCalendars)
+            .catch(handleError)
+    }
 }
