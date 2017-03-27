@@ -59,12 +59,12 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 })
 
                 const gridElement = calendarElement.querySelector(`#${gridId}`)
-                const monthNumber = parseInt(moment().month(calendar.when.month).format('MM')) - 1
+                const monthNumber = parseInt(moment().utc().month(calendar.when.month).format('MM')) - 1
                 const currentMonth = moment({
                     day: 1,
                     month: monthNumber,
                     year: calendar.year
-                })
+                }).utc()
 
                 if (currentMonth.isoWeekday() !== 7) {
                     for (let i = currentMonth.isoWeekday(); i > 0; i--) {
@@ -76,14 +76,14 @@ function renderMonthlyCalendars (monthlyCalendar) {
                     }
                 }
 
-                const today = moment()
+                const today = moment().utc()
 
                 for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
                     const currentDay = moment({
                         day: i,
                         month: monthNumber,
                         year: calendar.year
-                    })
+                    }).utc()
 
                     gridElement.insertAdjacentHTML(
                         'beforeend',
@@ -118,7 +118,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                     day: currentMonth.daysInMonth(),
                     month: monthNumber,
                     year: calendar.year
-                })
+                }).utc()
 
                 while (lastDayOfMonth.isoWeekday() != 6) {
                     gridElement.insertAdjacentHTML(
@@ -131,7 +131,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                 }
 
                 calendar.events.forEach(event => {
-                    const eventDay = moment(event.date)
+                    const eventDay = moment(event.date).utc()
                     const list = gridElement.querySelector(`#cell-${eventDay.format('DDMMYY')}`)
                     const counter = list.nextElementSibling
 
@@ -175,6 +175,20 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                     for (let index = 0; index < eventList.length; index++) {
                         const eventData = eventList[index].dataset
+                        let mapButtonHTML = ''
+                        let placeHTML = ''
+
+                        if (eventData.placeAddress) {
+                            mapButtonHTML = `<a href="${eventData.placeAddress}"
+                                                target="_blank"
+                                                class="b b--black-30 ba br1 bw1 dib f6 grow link mr3 mt3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
+                                                    Mapa
+                                            </a>`
+                        }
+
+                        if (eventData.place) {
+                            placeHTML = `<p class="black-50 mb0 mt2">${eventData.place}</p>`
+                        }
 
                         modalContent.insertAdjacentHTML(
                             'beforeend',
@@ -185,20 +199,16 @@ function renderMonthlyCalendars (monthlyCalendar) {
                                     </p>
                                 </div>
                                 <div class="w-70 w-80-ns">
-                                    <h3 class="f4 f3-ns ma0"
+                                    <h3 class="f4 f3-ns mv0"
                                         style="color: ${eventData.color};">
                                             ${eventData.eventName}
                                     </h3>
-                                    <p class="black-50 mb3 mt2">${eventData.place}</p>
+                                    ${placeHTML}
                                     <div class="flex">
-                                        <a href="http://maps.google.com/?q=${eventData.placeAddress}"
-                                            target="_blank"
-                                            class="b b--black-30 ba br1 bw1 dib f6 grow link ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
-                                                Mapa
-                                        </a>
+                                        ${mapButtonHTML}
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
-                                            class="b b--black-30 ba br1 bw1 dib f6 grow link ml3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
+                                            class="b b--black-30 ba br1 bw1 dib f6 grow link mt3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
                                                 Link
                                         </a>
                                     </div>
