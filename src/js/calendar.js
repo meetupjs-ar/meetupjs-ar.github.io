@@ -181,8 +181,9 @@ function renderMonthlyCalendars (monthlyCalendar) {
                         if (eventData.placeAddress) {
                             mapButtonHTML = `<a href="${eventData.placeAddress}"
                                                 target="_blank"
-                                                class="b b--black-30 ba br1 bw1 dib f6 grow link mr3 mt3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
-                                                    Mapa
+                                                class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mr3 mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
+                                                    <i class="b black-20 f5 material-icons mr1">place</i>
+                                                    <span class="text-shadow-1">Mapa</span>
                                             </a>`
                         }
 
@@ -194,9 +195,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                             'beforeend',
                             `<div class="flex mh3 mv3 pv3">
                                 <div class="w-30 w-20-ns">
-                                    <p class="black-30 f4 f3-ns mv0">
-                                        ${eventData.hour}
-                                    </p>
+                                    <p class="black-30 f4 f3-ns mv0">${eventData.hour}</p>
                                 </div>
                                 <div class="w-70 w-80-ns">
                                     <h3 class="f4 f3-ns mv0"
@@ -208,8 +207,9 @@ function renderMonthlyCalendars (monthlyCalendar) {
                                         ${mapButtonHTML}
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
-                                            class="b b--black-30 ba br1 bw1 dib f6 grow link mt3 ph3 pv2 text-shadow-1 ttu white" style="background-color: ${eventData.color};">
-                                                Link
+                                            class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
+                                                <i class="b black-20 f5 material-icons mr1">link</i>
+                                                <span class="text-shadow-1">Link</span>
                                         </a>
                                     </div>
                                 </div>

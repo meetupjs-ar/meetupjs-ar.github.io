@@ -17,6 +17,7 @@
     <meta name="twitter:description" content="Enterate de los próximos eventos de tecnología en Buenos Aires.">
     <meta name="twitter:image" content="http://meetupjs.com.ar/assets/images/social/meetupjs-ar.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
@@ -33,8 +34,9 @@
                 <div class="flex items-center">
                     <a href="https://goo.gl/forms/Z8j05sgytEU0tLrX2"
                         target="_blank"
-                        class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mr3-ns ph3 pv2 ttu">
-                            Agregar un evento
+                        class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 flex grow items-center link mr3-ns ph3 pv2 ttu">
+                            <i class="b black-20 f5 material-icons mr1">add</i>
+                            <span>Agregar un evento</span>
                     </a>
                     <button id="toggle-menu"
                         type="button"
@@ -45,26 +47,26 @@
                 </div>
             </div>
             <ul id="menu"
-                class="dn list mh3 mv4 pl0 tr">
+                class="dn list mr3 mv4 pl0">
                     <li class="mv3">
                         <a href="/"
-                            class="b black-50 inline-flex items-center hover-black link">
+                            class="b black-50 flex items-center justify-end hover-black link">
                                 <span>Página Principal</span>
-                                <span class="black-alternative f3 ml3">🏡</span>
+                                <i class="black-20 material-icons tr w2">home</i>
                         </a>
                     </li>
                     <li class="mv3">
                         <a href="/calendario.html"
-                            class="b black-50 inline-flex items-center hover-black link">
+                            class="b black-50 flex items-center justify-end hover-black link">
                                 <span>Calendario de Eventos</span>
-                                <span class="black-alternative f3 ml3">📅</span>
+                                <i class="black-20 material-icons tr w2">date_range</i>
                         </a>
                     </li>
                     <li class="mv3">
                         <a href="/faq-calendario.html"
-                            class="b black-50 inline-flex items-center hover-black link">
+                            class="b black-50 flex items-center justify-end hover-black link">
                                 <span>FAQ del Calendario de Eventos</span>
-                                <span class="black-alternative f3 ml3">❓</span>
+                                <i class="black-20 material-icons tr w2">help</i>
                         </a>
                     </li>
             </ul>
@@ -87,12 +89,15 @@
                     class="center mw6 w-100">
                         <div class="bg-white br2 ma3">
                             <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
-                                <span id="modal-title"
-                                    class="b black-alternative dib f4 f3-ns ttc">
+                                <div class="flex items-center">
+                                    <i class="black-20 material-icons mr2">event</i>
+                                    <span id="modal-title"
+                                        class="b black-alternative dib f4 f3-ns ttc">
+                                </div>
                                 </span>
                                 <a href="#!"
                                     id="modal-close"
-                                    class="black-alternative dib f4 f3-ns link">
+                                    class="black-alternative dib f4 f3-ns grow link">
                                         ✕
                                 </a>
                             </div>
