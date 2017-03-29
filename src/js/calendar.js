@@ -146,7 +146,6 @@ function renderMonthlyCalendars (monthlyCalendar) {
                             data-hour="${eventDay.format('HH:mm')}"
                             data-event-name="${event.eventName}"
                             data-place="${event.place}"
-                            data-place-address="${event.placeAddress}"
                             data-event-link="${event.eventLink}"
                             data-color="${event.color}"
                             style="background-color: ${event.color};">
@@ -175,17 +174,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
 
                     for (let index = 0; index < eventList.length; index++) {
                         const eventData = eventList[index].dataset
-                        let mapButtonHTML = ''
                         let placeHTML = ''
-
-                        if (eventData.placeAddress) {
-                            mapButtonHTML = `<a href="${eventData.placeAddress}"
-                                                target="_blank"
-                                                class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mr3 mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
-                                                    <i class="b black-20 f5 material-icons mr1">place</i>
-                                                    <span class="text-shadow-1">Mapa</span>
-                                            </a>`
-                        }
 
                         if (eventData.place) {
                             placeHTML = `<p class="black-50 mb0 mt2">${eventData.place}</p>`
@@ -204,7 +193,6 @@ function renderMonthlyCalendars (monthlyCalendar) {
                                     </h3>
                                     ${placeHTML}
                                     <div class="flex">
-                                        ${mapButtonHTML}
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
                                             class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
