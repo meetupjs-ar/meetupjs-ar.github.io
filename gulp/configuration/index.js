@@ -2,7 +2,6 @@ const util = require('gulp-util')
 
 module.exports = {
     browserify: {
-        bundleName: 'app.js',
         isDebug: !util.env.production === false
     },
     clean: {
@@ -19,6 +18,9 @@ module.exports = {
         html: 'dist/',
         js: 'dist/js'
     },
+    envify: {
+        CALENDAR_API: util.env.production ? 'https://calendar-api.now.sh/' : 'http://localhost:4000/'
+    },
     eslint: {
         files: 'src/js/**/*.js'
     },
@@ -27,7 +29,7 @@ module.exports = {
         assets: 'src/assets/**/*.*',
         cname: 'src/CNAME',
         css: 'src/css/main.css',
-        js: 'src/js/app.js',
+        js: 'src/js/*.js',
         html: 'src/*.html'
     },
     staticServer: {

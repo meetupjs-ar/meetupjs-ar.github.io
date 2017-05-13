@@ -27,8 +27,20 @@
     animation-name: fadeInDown;
 }
 
+.h-50 {
+    height: 50px;
+}
+
+.mh-75 {
+    max-height: 75vh;
+}
+
 .mw-175 {
     max-width: 175px;
+}
+
+.pt68 {
+    padding-top: 68px;
 }
 
 .text-shadow-1 {
@@ -41,6 +53,10 @@
 
 .w-40 {
     width: 40px;
+}
+
+.w-50 {
+    width: 50px;
 }
 
 .yellow-alternative {

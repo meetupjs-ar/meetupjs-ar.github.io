@@ -22,64 +22,48 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body class="droid ma0">
-    <header class="b--black-10 bb bg-washed-yellow bw1 ph3-ns pv2">
+    <header class="b--black-10 bb bg-washed-yellow bw1 fixed left-0 ph3-ns pv2 right-0 top-0">
         <div class="center mw9">
             <div class="flex items-center justify-between">
-                <a href="/"
-                    class="ml3 ml0-ns">
-                        <img src="assets/images/isotipo.svg"
-                            class="grow v-btm"
-                            style="height: 50px;">
+                <a href="/" class="ml3 ml0-ns">
+                    <img src="assets/images/isotipo.svg"
+                        class="grow h-50 v-btm">
                 </a>
                 <div class="flex items-center">
-                    <a href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
-                        target="_blank"
-                        class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 flex grow items-center link mr3-ns ph3 pv2 ttu">
-                            <i class="b black-20 f5 material-icons mr1">add</i>
-                            <span>Agregar un evento</span>
-                    </a>
-                    <button id="toggle-menu"
-                        type="button"
-                        class="bg-transparent black-alternative bn f4 grow outline-0 ph3 pointer pv2"
-                        style="width: 50px;">
-                            ☰
+                    <button id="toggle-menu" type="button" class="bg-transparent black-alternative bn f4 grow outline-0 ph3 pointer pv2 w-50">
+                        ☰
                     </button>
                 </div>
             </div>
-            <ul id="menu"
-                class="dn list mr3 mv4 pl0">
-                    <li class="mv3">
-                        <a href="/"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Página Principal</span>
-                                <i class="black-20 material-icons tr w2">home</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/calendario.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Calendario de Eventos</span>
-                                <i class="black-20 material-icons tr w2">date_range</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/faq-calendario.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>FAQ del Calendario de Eventos</span>
-                                <i class="black-20 material-icons tr w2">help</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/coc.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Código de Conducta</span>
-                                <i class="black-20 material-icons tr w2">help</i>
-                        </a>
-                    </li>
+            <ul id="menu" class="dn list mv4 pl0">
+                <li class="mv3">
+                    <a href="/" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Página Principal</span>
+                        <i class="black-20 material-icons tr w2">home</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/calendario.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Calendario de Eventos</span>
+                        <i class="black-20 material-icons tr w2">date_range</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/faq-calendario.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>¿Qué es el Calendario de Eventos?</span>
+                        <i class="black-20 material-icons tr w2">help</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/coc.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Código de Conducta</span>
+                        <i class="black-20 material-icons tr w2">people_outline</i>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
-    <div id="calendar" class="center mw9 ph3">
+    <div id="calendar" class="center mw9 ph3 pt68">
         <p id="loading"
             class="f4 f3-ns ma0 pv4 silver tc">
                 Buscando eventos...
@@ -108,7 +92,7 @@
                                         ✕
                                 </a>
                             </div>
-                            <div style="max-height: 75vh; overflow-y: auto;">
+                            <div class="mh-75 overflow-y-auto">
                                 <div id="modal-content"></div>
                             </div>
                         </div>

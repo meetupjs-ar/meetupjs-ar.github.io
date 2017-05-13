@@ -1,5 +1,5 @@
-const initCalendar = require('./calendar')
-const initMenu = require('./menu')
+const initCalendar = require('./modules/calendar')
+const initMenu = require('./modules/menu')
 
 initCalendar()
 initMenu()

@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FAQ - Meetup.js Argentina</title>
-    <meta property="og:url" content="http://meetupjs.com.ar/faq-calendario.html/">
+    <title>Código de Conducta - Meetup.js Argentina</title>
+    <meta property="og:url" content="http://meetupjs.com.ar/coc.html/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="FAQ - Meetup.js Argentina">
-    <meta property="og:description" content="Preguntas frecuentes sobre el funcionamiento del Calendario de Eventos.">
+    <meta property="og:title" content="Código de Conducta - Meetup.js Argentina">
+    <meta property="og:description" content="Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad">
     <meta property="og:image" content="http://meetupjs.com.ar/assets/images/social/meetupjs-ar.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@meetupjs_ar">
     <meta name="twitter:creator" content="@meetupjs_ar">
-    <meta name="twitter:title" content="FAQ - Meetup.js Argentina">
-    <meta name="twitter:description" content="Preguntas frecuentes sobre el funcionamiento del Calendario de Eventos.">
+    <meta name="twitter:title" content="Código de Conducta - Meetup.js Argentina">
+    <meta name="twitter:description" content="Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad">
     <meta name="twitter:image" content="http://meetupjs.com.ar/assets/images/social/meetupjs-ar.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -22,117 +22,114 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body class="droid ma0">
-    <header class="b--black-10 bb bg-washed-yellow bw1 ph3-ns pv2">
+    <header class="b--black-10 bb bg-washed-yellow bw1 fixed left-0 ph3-ns pv2 right-0 top-0">
         <div class="center mw9">
             <div class="flex items-center justify-between">
-                <a href="/"
-                    class="ml3 ml0-ns">
-                        <img src="assets/images/isotipo.svg"
-                            class="grow v-btm"
-                            style="height: 50px;">
+                <a href="/" class="ml3 ml0-ns">
+                    <img src="assets/images/isotipo.svg"
+                        class="grow h-50 v-btm">
                 </a>
                 <div class="flex items-center">
-                    <button id="toggle-menu"
-                        type="button"
-                        class="bg-transparent black-alternative bn f4 grow outline-0 ph3 pointer pv2"
-                        style="width: 50px;">
-                            ☰
+                    <button id="toggle-menu" type="button" class="bg-transparent black-alternative bn f4 grow outline-0 ph3 pointer pv2 w-50">
+                        ☰
                     </button>
                 </div>
             </div>
-            <ul id="menu"
-                class="dn list mr3 mv4 pl0">
-                    <li class="mv3">
-                        <a href="/"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Página Principal</span>
-                                <i class="black-20 material-icons tr w2">home</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/calendario.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Calendario de Eventos</span>
-                                <i class="black-20 material-icons tr w2">date_range</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/faq-calendario.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>FAQ</span>
-                                <i class="black-20 material-icons tr w2">help</i>
-                        </a>
-                    </li>
-                    <li class="mv3">
-                        <a href="/coc.html"
-                            class="b black-50 flex items-center justify-end hover-black link">
-                                <span>Código de Conducta</span>
-                                <i class="black-20 material-icons tr w2">help</i>
-                        </a>
-                    </li>
+            <ul id="menu" class="dn list mv4 pl0">
+                <li class="mv3">
+                    <a href="/" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Página Principal</span>
+                        <i class="black-20 material-icons tr w2">home</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/calendario.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Calendario de Eventos</span>
+                        <i class="black-20 material-icons tr w2">date_range</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/faq-calendario.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>¿Qué es el Calendario de Eventos?</span>
+                        <i class="black-20 material-icons tr w2">help</i>
+                    </a>
+                </li>
+                <li class="mv3">
+                    <a href="/coc.html" class="black-50 flex items-center justify-end hover-black link pr3">
+                        <span>Código de Conducta</span>
+                        <i class="black-20 material-icons tr w2">people_outline</i>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
-    <div class="center mw7">
+    <div class="center mw7 pt68">
         <div class="ph3 pv5">
             <h1 class="black-alternative f3 f2-ns mv0 normal pb4 tc">Código de Conducta</h1>
-                <h2 class="f4 f3-ns mv4 normal silver">Propósito</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Un objetivo principal de todas las conferencias y grupos de usuarios que se refieran a este Código de Conducta es ser inclusivos para la mayor cantidad de personas, con la mayor variedad de orígenes y conocimientos posibles. Como tal, nos comprometemos a ofrecer un ambiente amigable, seguro y acogedor para todos, sin importar género, orientación sexual, capacidad, etnia, estado socio-económico, religión o creencia.</p>
-                    <p>Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad, así como también las consecuencias de comportamientos inaceptables.</p>
-                    <p>Invitamos a todos los que participan de nuestros eventos a ayudarnos a crear experiencias seguras y positivas para todos.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Ciudadanía de Código / Cultura / Tecnología abierta</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Un objetivo suplementario de este Código de Conducta es incrementar la ciudadanía de código/cultura/tecnología abierta, incentivando a sus participantes a reconocer y fortalecer las relaciones entre nuestras acciones y sus efectos en nuestra comunidad.</p>
-                    <p>Las comunidades son espejo de las sociedades en las cuales existen y las acciones positivas son esenciales para contrarrestar las diversas formas de desigualdad y abuso de poder que existen en una sociedad.</p>
-                    <p>Si Ud. ve a alguien haciendo un esfuerzo extra por asegurarse que nuestra comunidad es acogedora, amistosa e incentiva a todos los que participan en ella a contribuir de manera completa, nos gustaría saberlo.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Comportamiento esperado</h2>
-                <div class="black-alternative lh-copy">
-                    <ul>
-                        <li>Participe de un modo auténtico y activo. Al hacerlo contribuye a la salud y longevidad de esta comunidad.</li>
-                        <li>Ejercite la consideración y el respeto en su discurso y en sus acciones.</li>
-                        <li>Intente colaborar para evitar conflictos.</li>
-                        <li>Absténgase de discursos o comportamientos despectivos, discriminatorios o abusivos.</li>
-                        <li>Sea consciente de su entorno y de los/as otros/as participantes. Alerte a los líderes de la comunidad si nota alguna situación peligrosa, alguien sufriendo una situación comprometedora o violaciones de este Código de Conducta, incluso si parecieran poco importantes.</li>
-                    </ul>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Comportamiento inaceptable</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Comportamientos inaceptables incluyen: discursos o acciones intimidantes, acosadores, abusivos, discriminatorios, despectivos o degradantes. El alcance incluye a todos/as los/as participantes de nuestra comunidad online en todos los eventos y comunicaciones personales llevadas a cabo en el contexto de las actividades de nuestra comunidad. Los lugares en donde se lleven a cabo eventos de la comunidad pueden ser compartidos con gente ajena a la misma, por favor sea respetuoso hacia las autoridades de dichos lugares.</p>
-                    <p>Acoso incluye: daño o perjurio verbal o escrito relacionado con género, orientación sexual, raza, religión, incapacidad; uso inapropiado de imágenes de desnudez en espacios públicos (incluyendo presentaciones digitales); intimidación deliberada, acecho o persecución; fotografías o grabaciones abusivas; interrupción sostenida de presentaciones u de otros eventos; contacto físico inapropiado y atención sexual no deseada.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Consecuencias del comportamiento inaceptable</h2>
-                <div class="black-alternative lh-copy">
-                    <p>No serán tolerados los comportamientos inaceptables de parte de cualquier miembro de la comunidad, incluidos patrocinadores y aquellos/as con autoridad para tomar decisiones. Se espera de todos/as los/as miembros el inmediato cumplimiento al solicitársele suspender comportamientos inaceptables.</p>
-                    <p>Si un miembro incurre en comportamientos inaceptables los organizadores de la comunidad pueden sancionarlo de cualquier forma que se considere apropiada, incluyendo la suspensión temporal o permanente de su participación en la comunidad, sin previo aviso (y sin reintegro del dinero, en caso de ser un evento pago).</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Si es testigo o víctima de comportamiento inaceptable</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Si Ud. es víctima o testigo de comportamiento inaceptable, o tiene cualquier otra preocupación o problema, por favor notifíquelo a un organizador de la comunidad tan pronto como sea posible. Puede encontrar una lista de los organizadores a contactar para cada una de las comunidades que apoyen este código de conducta al final de esta página.</p>
-                    <p>Además, los organizadores de la comunidad se encuentran disponibles para ayudar a los miembros a contactar a las fuerzas policiales locales o, de lo contrario, para ayudar a sentirse seguros a aquellos que hayan sido víctimas de comportamiento inaceptable. En el contexto de eventos presenciales, los organizadores también proveerán escolta a las personas que hayan sufrido dichas experiencias.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Desagravios</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Si Ud. siente que ha sido falsa o injustamente acusado/a de violar este Código de Conducta, se le sugiere notificar a uno de los organizadores del evento con una descripción concisa del agravio. El mismo será contemplado y resuelto de acuerdo a las políticas existentes.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Alcance</h2>
-                <div class="black-alternative lh-copy">
-                    <p>Se espera que todos los participantes de la comunidad (colaboradores/as —pagos o no—, patrocinadores y otros/as invitados/as) se atengan a este Código de Conducta en todos los lugares de encuentro de la comunidad –online o en persona– así como en todas las comunicaciones uno-a-uno relacionadas con actividades de la comunidad.</p>
-                </div>
-
-                <h2 class="f4 f3-ns mv4 normal silver">Licencia y atribución</h2>
-                <div class="black-alternative lh-copy">
-                    <p>El Berlin Code of Conduct se encuentra distribuido bajo una licencia Creative Commons Attribution-ShareAlike. Está basado en el <a href="http://pdxruby.org/codeofconduct">pdx.rb code of conduct</a>, que también es distribuido bajo la misma licencia.</p>
-                </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Propósito</h2>
+            <div class="black-alternative lh-copy">
+                <p>Un objetivo principal de todas las conferencias y grupos de usuarios que se refieran a este Código de Conducta es ser inclusivos para la mayor cantidad de personas, con la mayor variedad de orígenes y conocimientos posibles. Como tal, nos comprometemos a ofrecer un ambiente amigable, seguro y acogedor para todos, sin importar género, orientación sexual, capacidad, etnia, estado socio-económico, religión o creencia.</p>
+                <p>Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad, así como también las consecuencias de comportamientos inaceptables.</p>
+                <p>Invitamos a todos los que participan de nuestros eventos a ayudarnos a crear experiencias seguras y positivas para todos.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Ciudadanía de Código / Cultura / Tecnología abierta</h2>
+            <div class="black-alternative lh-copy">
+                <p>Un objetivo suplementario de este Código de Conducta es incrementar la ciudadanía de código/cultura/tecnología abierta, incentivando a sus participantes a reconocer y fortalecer las relaciones entre nuestras acciones y sus efectos en nuestra comunidad.</p>
+                <p>Las comunidades son espejo de las sociedades en las cuales existen y las acciones positivas son esenciales para contrarrestar las diversas formas de desigualdad y abuso de poder que existen en una sociedad.</p>
+                <p>Si Ud. ve a alguien haciendo un esfuerzo extra por asegurarse que nuestra comunidad sea acogedora, amistosa e incentiva a todos los que participan en ella a contribuir de manera completa, nos gustaría saberlo.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Comportamiento esperado</h2>
+            <div class="black-alternative lh-copy">
+                <ul>
+                    <li>Participe de un modo auténtico y activo. Al hacerlo contribuye a la salud y longevidad de esta comunidad.</li>
+                    <li>Ejercite la consideración y el respeto en su discurso y en sus acciones.</li>
+                    <li>Intente colaborar para evitar conflictos.</li>
+                    <li>Absténgase de discursos o comportamientos despectivos, discriminatorios o abusivos.</li>
+                    <li>Sea consciente de su entorno y de los/as otros/as participantes. Alerte a los líderes de la comunidad si nota alguna situación peligrosa, alguien sufriendo una situación comprometedora o violaciones de este Código de Conducta, incluso si parecieran poco importantes.</li>
+                </ul>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Comportamiento inaceptable</h2>
+            <div class="black-alternative lh-copy">
+                <p>Comportamientos inaceptables incluyen: discursos o acciones intimidantes, acosadores, abusivos, discriminatorios, despectivos o degradantes. El alcance incluye a todos/as los/as participantes de nuestra comunidad online en todos los eventos y comunicaciones personales llevadas a cabo en el contexto de las actividades de nuestra comunidad. Los lugares en donde se lleven a cabo eventos de la comunidad pueden ser compartidos con gente ajena a la misma, por favor sea respetuoso hacia las autoridades de dichos lugares.</p>
+                <p>Acoso incluye: daño o perjurio verbal o escrito relacionado con género, orientación sexual, raza, religión, incapacidad; uso inapropiado de imágenes de desnudez en espacios públicos (incluyendo presentaciones digitales); intimidación deliberada, acecho o persecución; fotografías o grabaciones abusivas; interrupción sostenida de presentaciones u de otros eventos; contacto físico inapropiado y atención sexual no deseada.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Consecuencias del comportamiento inaceptable</h2>
+            <div class="black-alternative lh-copy">
+                <p>No serán tolerados los comportamientos inaceptables de parte de cualquier miembro de la comunidad, incluidos patrocinadores y aquellos/as con autoridad para tomar decisiones. Se espera de todos/as los/as miembros el inmediato cumplimiento al solicitársele suspender comportamientos inaceptables.</p>
+                <p>Si un miembro incurre en comportamientos inaceptables los organizadores de la comunidad pueden sancionarlo de cualquier forma que se considere apropiada, incluyendo la suspensión temporal o permanente de su participación en la comunidad, sin previo aviso (y sin reintegro del dinero, en caso de ser un evento pago).</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Si es testigo o víctima de comportamiento inaceptable</h2>
+            <div class="black-alternative lh-copy">
+                <p>Si Ud. es víctima o testigo de comportamiento inaceptable, o tiene cualquier otra preocupación o problema, por favor notifíquelo a un organizador de la comunidad tan pronto como sea posible. Puede encontrar una lista de los organizadores a contactar para cada una de las comunidades que apoyen este código de conducta al final de esta página.</p>
+                <p>Además, los organizadores de la comunidad se encuentran disponibles para ayudar a los miembros a contactar a las fuerzas policiales locales o, de lo contrario, para ayudar a sentirse seguros a aquellos que hayan sido víctimas de comportamiento inaceptable. En el contexto de eventos presenciales, los organizadores también proveerán escolta a las personas que hayan sufrido dichas experiencias.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Desagravios</h2>
+            <div class="black-alternative lh-copy">
+                <p>Si Ud. siente que ha sido falsa o injustamente acusado/a de violar este Código de Conducta, se le sugiere notificar a uno de los organizadores del evento con una descripción concisa del agravio. El mismo será contemplado y resuelto de acuerdo a las políticas existentes.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Alcance</h2>
+            <div class="black-alternative lh-copy">
+                <p>Se espera que todos los participantes de la comunidad (colaboradores/as -pagos o no-, patrocinadores y otros/as invitados/as) se atengan a este Código de Conducta en todos los lugares de encuentro de la comunidad –online o en persona– así como en todas las comunicaciones uno-a-uno relacionadas con actividades de la comunidad.</p>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Información de contacto</h2>
+            <div class="black-alternative lh-copy">
+                <ul>
+                    <li>Alejandro Oviedo, <a href="mailto:alejandro.oviedo.g@gmail.com" class="b blue link">alejandro.oviedo.g@gmail.com</a></li>
+                    <li>Belén Curcio, <a href="mailto:curciobelen@gmail.com" class="b blue link">curciobelen@gmail.com</a></li>
+                    <li>Camila Cepeda, <a href="mailto:camicepe@gmail.com" class="b blue link">camicepe@gmail.com</a></li>
+                    <li>Cristhian Duran, <a href="mailto:durancristhian@gmail.com" class="b blue link">durancristhian@gmail.com</a></li>
+                    <li>Juan Pablo Saraceno, <a href="mailto:jp@scvsoft.com" class="b blue link">jp@scvsoft.com</a></li>
+                    <li>Karen Serfaty, <a href="mailto:keserfaty@gmail.com" class="b blue link">keserfaty@gmail.com</a></li>
+                    <li>Leonardo Andrés Garcia Crespo, <a href="mailto:leoasis@gmail.com" class="b blue link">leoasis@gmail.com</a></li>
+                    <li>Nicolás Isnardi, <a href="mailto:nicolasisnardi@gmail.com" class="b blue link">nicolasisnardi@gmail.com</a></li>
+                    <li>Pablo Chiappetti, <a href="mailto:p4bloch@scvsoft.com" class="b blue link">p4bloch@scvsoft.com</a></li>
+                    <li>Sergio Rafael Gianazza, <a href="mailto:sgianazza@gmail.com" class="b blue link">sgianazza@gmail.com</a></li>
+                </ul>
+            </div>
+            <h2 class="f4 f3-ns mv4 normal silver">Licencia y atribución</h2>
+            <div class="black-alternative lh-copy">
+                <p>El Berlin Code of Conduct se encuentra distribuido bajo una licencia Creative Commons Attribution-ShareAlike. Está basado en el <a href="http://pdxruby.org/codeofconduct" target="_blank" class="b blue link">pdx.rb code of conduct</a>, que también es distribuido bajo la misma licencia.</p>
+            </div>
         </div>
     </div>
     <script defer src="js/app.js"></script>
