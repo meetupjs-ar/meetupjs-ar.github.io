@@ -1,4 +1,5 @@
 const util = require('gulp-util')
+const CALENDAR_API = util.env.production ? 'https://calendar-api.now.sh/' : 'http://localhost:4000/';
 
 module.exports = {
     browserify: {
@@ -19,7 +20,7 @@ module.exports = {
         js: 'dist/js'
     },
     envify: {
-        CALENDAR_API: util.env.production ? 'https://calendar-api.now.sh/' : 'http://localhost:4000/'
+        CALENDAR_API
     },
     eslint: {
         files: 'src/js/**/*.js'
@@ -28,7 +29,7 @@ module.exports = {
     src: {
         assets: 'src/assets/**/*.*',
         cname: 'src/CNAME',
-        css: 'src/css/main.css',
+        css: 'src/css/*.css',
         js: 'src/js/*.js',
         html: 'src/*.html'
     },
@@ -38,6 +39,12 @@ module.exports = {
     },
     stylelint: {
         css: 'src/css/**/*.css'
+    },
+    sw: {
+      file: 'dist/service-worker.js',
+      caching: [
+        CALENDAR_API, 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'
+      ]
     },
     watch: {
         css: 'src/css/*.css',

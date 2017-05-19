@@ -12,7 +12,7 @@ function getTask (taskName) {
 
 browserSync.create(config.staticServer.name)
 
-gulp.task('build', ['cname-copy', 'assets-build', 'html-build', 'css-build', 'js-build'])
+gulp.task('build', ['cname-copy', 'assets-build', 'html-build', 'css-build', 'js-build', 'pwa-build'])
 
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
 gulp.task('assets-clean', getTask('assets/assets-clean'))
@@ -35,3 +35,5 @@ gulp.task('js-lint', getTask('js/js-lint'))
 gulp.task('watch', getTask('general/watch'))
 
 gulp.task('default', ['build', 'watch'], getTask('general/browser-sync'))
+
+gulp.task('pwa-build', getTask('pwa/pwa-build'));

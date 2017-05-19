@@ -1,0 +1,59 @@
+header.app__offline {
+    background-color: #ffcfcf;
+}
+
+i.material-icons {
+    width: 25px;
+    height: 25px;
+}
+
+.toast__container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    pointer-events: none;
+}
+
+.profile-pic {
+    width: 70%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.home-note {
+    font-style: oblique;
+    margin-top: 20px;
+    padding: 12px 15px;
+}
+
+.toast__msg {
+    width: 250px;
+    min-height: 50px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 15px;
+    padding-right: 10px;
+    word-break: break-all;
+    -webkit-transition: opacity 3s cubic-bezier(0, 0, 0.3, 1) 0;
+    -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0;
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0;
+    text-transform: initial;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.toast__msg--hide {
+    opacity: 0;
+}
