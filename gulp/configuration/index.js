@@ -10,6 +10,7 @@ module.exports = {
         cname: 'dist/CNAME',
         css: 'dist/css/*',
         html: 'dist/*.html',
+        manifest: 'dist/manifest.json',
         js: 'dist/js/*'
     },
     dest: {
@@ -17,6 +18,7 @@ module.exports = {
         cname: 'dist/',
         css: 'dist/css',
         html: 'dist/',
+        manifest: 'dist/',
         js: 'dist/js'
     },
     envify: {
@@ -31,6 +33,7 @@ module.exports = {
         cname: 'src/CNAME',
         css: 'src/css/*.css',
         js: 'src/js/*.js',
+        manifest: 'src/manifest.json',
         html: 'src/*.html'
     },
     staticServer: {

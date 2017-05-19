@@ -12,7 +12,7 @@ function getTask (taskName) {
 
 browserSync.create(config.staticServer.name)
 
-gulp.task('build', ['cname-copy', 'assets-build', 'html-build', 'css-build', 'js-build', 'pwa-build'])
+gulp.task('build', ['cname-copy', 'manifest-copy', 'assets-build', 'html-build', 'css-build', 'js-build', 'pwa-build'])
 
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
 gulp.task('assets-clean', getTask('assets/assets-clean'))
@@ -20,6 +20,9 @@ gulp.task('assets-copy', ['assets-clean'], getTask('assets/assets-copy'))
 
 gulp.task('cname-copy', ['cname-clean'], getTask('cname/cname-copy'))
 gulp.task('cname-clean', getTask('cname/cname-clean'))
+
+gulp.task('manifest-copy', ['manifest-clean'], getTask('manifest/manifest-copy'))
+gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
 
 gulp.task('css-build', ['css-clean', 'css-lint'], getTask('css/css-build'))
 gulp.task('css-clean', getTask('css/css-clean'))
