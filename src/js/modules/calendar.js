@@ -12,15 +12,13 @@ const modalOutside = document.querySelector('#modal-outside')
 const modalTitle = document.querySelector('#modal-title')
 const modalWrapper = document.querySelector('#modal-wrapper')
 
-function handleError (error) {
-    // eslint-disable-next-line no-console
-    console.error(error)
-
-    document.querySelector('#loading').classList.add('dn')
-    document.querySelector('#error-message').classList.remove('dn')
+function toggleModal () {
+    body.classList.toggle('overflow-hidden')
+    modal.classList.toggle('dn')
+    modalWrapper.classList.toggle('fadeInDown')
 }
 
-function renderMonthlyCalendars (monthlyCalendar) {
+module.exports = function (monthlyCalendar) {
     return new Promise((resolve, reject) => {
         try {
             calendarElement.insertAdjacentHTML(
@@ -236,19 +234,4 @@ function renderMonthlyCalendars (monthlyCalendar) {
             reject(error)
         }
     })
-}
-
-function toggleModal () {
-    body.classList.toggle('overflow-hidden')
-    modal.classList.toggle('dn')
-    modalWrapper.classList.toggle('fadeInDown')
-}
-
-module.exports = function initCalendar () {
-    if (calendarElement) {
-        fetch(process.env.CALENDAR_API)
-            .then(response => response.json())
-            .then(renderMonthlyCalendars)
-            .catch(handleError)
-    }
 }
