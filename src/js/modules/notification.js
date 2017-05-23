@@ -16,12 +16,22 @@ const enableNotifications = function(months) {
     const diff_millis = moment(event.date).diff(moment()).valueOf()
     const restante = moment.duration(diff_millis).humanize()
     storage.notification = setTimeout(function() {
-        var notification = new Notification(event.eventName, {
-            icon: 'assets/images/isotipo.png',
+        const message = {
             body: `En ${restante} comienza ${event.eventName} en ${event.place}`,
-        })
-        notification.onclick = function() {
-            window.open(event.eventLink)
+            icon: 'assets/images/isotipo.png'
+        }
+        try {
+            var notification = new Notification(event.eventName, message)
+            notification.onclick = function() {
+                window.open(event.eventLink)
+            }
+        } catch (e) {
+            //maybe android?
+            navigator.serviceWorker
+                .ready
+                .then(function(registration) {
+                    registration.showNotification(event.eventName, message)
+                })
         }
     }, 1000)
 }
