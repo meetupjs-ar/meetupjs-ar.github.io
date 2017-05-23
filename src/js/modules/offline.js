@@ -1,12 +1,7 @@
 const toast = require('./toast.js')
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-       .register('service-worker.js')
-       .then(function() {
-          // eslint-disable-next-line no-console
-          //  console.log('Service Worker Registered')
-       })
+    navigator.serviceWorker.register('service-worker.js')
 }
 
 function checkOffline() {

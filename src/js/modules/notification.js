@@ -17,10 +17,10 @@ const enableNotifications = function(months) {
     bellElement.classList.add('active')
     const event = months[0].events[0]
     const diff_millis = moment(event.date).diff(moment()).valueOf()
-    const restante = moment.duration(diff_millis).humanize()
+    const remaining = moment.duration(diff_millis).humanize()
     storage.notification = setTimeout(function() {
         const message = {
-            body: `En ${restante} comienza ${event.eventName} en ${event.place}`,
+            body: `En ${remaining} comienza ${event.eventName} en ${event.place}`,
             icon: 'assets/images/isotipo.png'
         }
         try {
