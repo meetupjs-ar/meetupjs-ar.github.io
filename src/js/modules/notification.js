@@ -9,9 +9,9 @@ const disableNotifications = function() {
     bellElement.classList.remove('active')
     clearTimeout(storage.notification)
 }
-const one_second = 1000;
-const one_minute = one_second*60;
-const one_hour = one_minute*60;
+const one_second = 1000
+const one_minute = one_second*60
+const one_hour = one_minute*60
 
 const enableNotifications = function(months) {
     bellElement.classList.add('active')
@@ -36,7 +36,7 @@ const enableNotifications = function(months) {
                     registration.showNotification(event.eventName, message)
                 })
         }
-    }, diff_millis - one_hour);
+    }, diff_millis - one_hour)
 }
 
 module.exports = function(months) {
