@@ -145,7 +145,7 @@ function renderMonthlyCalendars (monthlyCalendar) {
                             data-day="${eventDay.format('dddd DD')}"
                             data-hour="${eventDay.format('HH:mm')}"
                             data-event-name="${event.eventName}"
-                            data-place="${event.place}"
+                            data-place="${event.place || ''}"
                             data-event-link="${event.eventLink}"
                             data-color="${event.color}"
                             style="background-color: ${event.color};">
