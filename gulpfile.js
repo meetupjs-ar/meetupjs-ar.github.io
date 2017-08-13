@@ -5,7 +5,7 @@ const path = require('path')
 const configPath = path.join(__dirname, 'gulp', 'configuration')
 const config = require(configPath)
 
-function getTask (taskName) {
+function getTask(taskName) {
     const taskPath = path.join(__dirname, 'gulp/tasks', taskName)
     return require(taskPath)(config)
 }
