@@ -12,6 +12,12 @@ const modalOutside = document.querySelector('#modal-outside')
 const modalTitle = document.querySelector('#modal-title')
 const modalWrapper = document.querySelector('#modal-wrapper')
 
+function toggleModal () {
+    body.classList.toggle('overflow-hidden')
+    modal.classList.toggle('dn')
+    modalWrapper.classList.toggle('fadeInDown')
+}
+
 function handleError(error) {
     // eslint-disable-next-line no-console
     console.error(error)

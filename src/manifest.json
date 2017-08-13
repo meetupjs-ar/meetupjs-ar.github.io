@@ -10,33 +10,8 @@
   "icons": [
     {
       "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
+      "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
-      "sizes": "168x168"
-    },
-    {
-      "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
-      "sizes": "144x144"
-    },
-    {
-      "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
-      "sizes": "96x96"
-    },
-    {
-      "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
-      "sizes": "72x72"
-    },
-    {
-      "src": "./assets/images/isotipo.png",
-      "type": "image/svg",
-      "sizes": "48x48"
     }
   ],
   "author": {
