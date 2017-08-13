@@ -37,6 +37,7 @@
         "isomorphic-fetch": "^2.2.1",
         "moment": "^2.18.1",
         "postcss-import": "^9.1.0",
+        "sw-precache": "^5.1.1",
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",
         "vinyl-source-stream": "^1.1.0",
