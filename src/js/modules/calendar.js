@@ -18,7 +18,15 @@ function toggleModal () {
     modalWrapper.classList.toggle('fadeInDown')
 }
 
-module.exports = function (monthlyCalendar) {
+function handleError(error) {
+    // eslint-disable-next-line no-console
+    console.error(error)
+
+    document.querySelector('#loading').classList.add('dn')
+    document.querySelector('#error-message').classList.remove('dn')
+}
+
+function renderMonthlyCalendars(monthlyCalendar) {
     return new Promise((resolve, reject) => {
         try {
             calendarElement.insertAdjacentHTML(
@@ -57,12 +65,12 @@ module.exports = function (monthlyCalendar) {
                 })
 
                 const gridElement = calendarElement.querySelector(`#${gridId}`)
-                const monthNumber = parseInt(moment().utc().month(calendar.when.month).format('MM')) - 1
+                const monthNumber = parseInt(moment().month(calendar.when.month).format('MM')) - 1
                 const currentMonth = moment({
                     day: 1,
                     month: monthNumber,
                     year: calendar.year
-                }).utc()
+                })
 
                 if (currentMonth.isoWeekday() !== 7) {
                     for (let i = currentMonth.isoWeekday(); i > 0; i--) {
@@ -74,14 +82,14 @@ module.exports = function (monthlyCalendar) {
                     }
                 }
 
-                const today = moment().utc()
+                const today = moment()
 
                 for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
                     const currentDay = moment({
                         day: i,
                         month: monthNumber,
                         year: calendar.year
-                    }).utc()
+                    })
 
                     gridElement.insertAdjacentHTML(
                         'beforeend',
@@ -99,11 +107,15 @@ module.exports = function (monthlyCalendar) {
                                     <div class="tc tr-l w-20 w-100-l">
                                         <span class="f3
                                             ${currentDay.isBefore(today, 'day') ? 'strike' : ''}
-                                            ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
+                                            ${currentDay.isSame(today, 'day')
+                                                ? 'green'
+                                                : 'black-30'}">
                                                 ${currentDay.format('DD')}
                                         </span>
                                         <span class="db dn-l f6 ttc
-                                            ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
+                                            ${currentDay.isSame(today, 'day')
+                                                ? 'green'
+                                                : 'black-30'}">
                                                 ${currentDay.format('dddd')}
                                         </span>
                                     </div>
@@ -116,7 +128,7 @@ module.exports = function (monthlyCalendar) {
                     day: currentMonth.daysInMonth(),
                     month: monthNumber,
                     year: calendar.year
-                }).utc()
+                })
 
                 while (lastDayOfMonth.isoWeekday() != 6) {
                     gridElement.insertAdjacentHTML(
@@ -161,7 +173,7 @@ module.exports = function (monthlyCalendar) {
             const events = document.querySelectorAll('.js-show-event-modal')
 
             for (let i = 0; i < events.length; i++) {
-                events[i].addEventListener('click', function (event) {
+                events[i].addEventListener('click', function(event) {
                     event.preventDefault()
 
                     const currentCell = event.currentTarget
@@ -234,4 +246,19 @@ module.exports = function (monthlyCalendar) {
             reject(error)
         }
     })
+}
+
+function toggleModal() {
+    body.classList.toggle('overflow-hidden')
+    modal.classList.toggle('dn')
+    modalWrapper.classList.toggle('fadeInDown')
+}
+
+module.exports = function initCalendar() {
+    if (calendarElement) {
+        fetch(process.env.CALENDAR_API)
+            .then(response => response.json())
+            .then(renderMonthlyCalendars)
+            .catch(handleError)
+    }
 }
