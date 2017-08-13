@@ -5,22 +5,25 @@ const gulp = require('gulp')
 const postcss = require('gulp-postcss')
 const postcssImport = require('postcss-import')
 
-module.exports = function (config) {
+module.exports = function(config) {
     const server = browserSync.get(config.staticServer.name)
 
-    return function () {
-        return gulp.src(config.src.css)
-            .pipe(postcss([
-                postcssImport,
-                autoprefixer({
-                    browsers: ['last 2 versions']
-                }),
-                cssnano({
-                    discardComments: {
-                        removeAll: true
-                    }
-                })
-            ]))
+    return function() {
+        return gulp
+            .src(config.src.css)
+            .pipe(
+                postcss([
+                    postcssImport,
+                    autoprefixer({
+                        browsers: ['last 2 versions']
+                    }),
+                    cssnano({
+                        discardComments: {
+                            removeAll: true
+                        }
+                    })
+                ])
+            )
             .pipe(gulp.dest(config.dest.css))
             .pipe(server.stream())
     }

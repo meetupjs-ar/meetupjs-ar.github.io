@@ -1,9 +1,9 @@
 const browserSync = require('browser-sync')
 
-module.exports = function (config) {
+module.exports = function(config) {
     const server = browserSync.get(config.staticServer.name)
 
-    return function () {
+    return function() {
         server.init({
             open: false,
             port: 4321,

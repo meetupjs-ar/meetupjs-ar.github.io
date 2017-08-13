@@ -15,7 +15,7 @@ git checkout -b dev
 yarn install
 
 # ambiente de desarrollo
-npm run start-dev
+npm run dev
 
 # publicar a github pages (master)
 npm run deploy

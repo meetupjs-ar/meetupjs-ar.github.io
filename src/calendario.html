@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="./manifest.json">
 </head>
+
 <body class="droid ma0">
     <header class="b--black-10 bb bg-washed-yellow bw1 fixed left-0 ph3-ns pv2 right-0 top-0">
         <div class="center mw9">
@@ -32,9 +34,7 @@
                         class="grow h-50 v-btm">
                 </a>
                 <div class="flex items-center">
-                    <a href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
-                        target="_blank"
-                        class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 flex grow items-center link mr3-ns ph3 pv2 ttu">
+                    <a href="https://goo.gl/forms/vzPGDccvtYcOsdEi1" target="_blank" class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 flex grow items-center link mr3-ns ph3 pv2 ttu">
                             <i class="b black-20 f5 material-icons mr1">add</i>
                             <span>Agregar un evento</span>
                     </a>
@@ -72,53 +72,50 @@
         </div>
     </header>
     <div id="calendar" class="center mw9 ph3 pt68">
-        <p id="loading"
-            class="f4 f3-ns ma0 pv4 silver tc">
-                Buscando eventos...
+        <p id="loading" class="f4 f3-ns ma0 pv4 silver tc">
+            Buscando eventos...
         </p>
-        <p id="error-message"
-            class="dn f4 f3-ns mv0 pv4 silver tc">
-                Ups! Ocurrió un error. Inténtalo de nuevo recargando la página (:
+        <p id="error-message" class="dn f4 f3-ns mv0 pv4 silver tc">
+            Ups! Ocurrió un error. Inténtalo de nuevo recargando la página (:
         </p>
     </div>
     <div id="modal" class="dn">
-        <div id="modal-outside"
-            class="bg-black-70 fixed flex items-center justify-center left-0 top-0 vh-100 w-100 z-1">
-                <div id="modal-wrapper"
-                    class="center mw6 w-100">
-                        <div class="bg-white br2 ma3">
-                            <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
-                                <div class="flex items-center">
-                                    <i class="black-20 material-icons mr2">event</i>
-                                    <span id="modal-title"
-                                        class="b black-alternative dib f4 f3-ns ttc">
+        <div id="modal-outside" class="bg-black-70 fixed flex items-center justify-center left-0 top-0 vh-100 w-100 z-1">
+            <div id="modal-wrapper" class="center mw6 w-100">
+                <div class="bg-white br2 ma3">
+                    <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
+                        <div class="flex items-center">
+                            <i class="black-20 material-icons mr2">event</i>
+                            <span id="modal-title" class="b black-alternative dib f4 f3-ns ttc">
                                 </div>
                                 </span>
-                                <a href="#!"
-                                    id="modal-close"
-                                    class="black-alternative dib f4 f3-ns grow link">
+                            <a href="#!" id="modal-close" class="black-alternative dib f4 f3-ns grow link">
                                         ✕
                                 </a>
-                            </div>
-                            <div class="mh-75 overflow-y-auto">
-                                <div id="modal-content"></div>
-                            </div>
                         </div>
+                        <div class="mh-75 overflow-y-auto">
+                            <div id="modal-content"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
     <div class="toast__container"></div>
     <script defer src="js/toast.js"></script>
     <script defer src="js/offline.js"></script>
-    <script defer src="js/app.js"></script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        <script defer src="js/app.js"></script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-93848949-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+            ga('create', 'UA-93848949-1', 'auto');
+            ga('send', 'pageview');
+        </script>
 </body>
+
 </html>
