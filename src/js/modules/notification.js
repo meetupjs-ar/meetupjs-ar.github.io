@@ -10,8 +10,8 @@ const disableNotifications = function() {
     clearTimeout(storage.notification)
 }
 const one_second = 1000
-const one_minute = one_second*60
-const one_hour = one_minute*60
+const one_minute = one_second * 60
+const one_hour = one_minute * 60
 
 const enableNotifications = function(months) {
     bellElement.classList.add('active')
@@ -30,11 +30,9 @@ const enableNotifications = function(months) {
             }
         } catch (e) {
             //maybe android?
-            navigator.serviceWorker
-                .ready
-                .then(function(registration) {
-                    registration.showNotification(event.eventName, message)
-                })
+            navigator.serviceWorker.ready.then(function(registration) {
+                registration.showNotification(event.eventName, message)
+            })
         }
     }, diff_millis - one_hour)
 }
@@ -43,19 +41,19 @@ module.exports = function(months) {
     bellElement.addEventListener('click', function() {
         if ('Notification' in window) {
             Promise.resolve(Notification.permission)
-                .then(function(perm){
+                .then(function(perm) {
                     return perm !== 'granted' ? Notification.requestPermission() : perm
                 })
-                .then(function(perm){
+                .then(function(perm) {
                     if (perm !== 'granted') throw Error(perm)
                     return perm
                 })
-                .then(function(){
-                    bellElement.classList.contains('active') ?
-                        disableNotifications() :
-                        enableNotifications(months)
+                .then(function() {
+                    bellElement.classList.contains('active')
+                        ? disableNotifications()
+                        : enableNotifications(months)
                 })
-                .catch(function(err){
+                .catch(function(err) {
                     // eslint-disable-next-line no-console
                     console.log('err', err)
                 })

@@ -3,22 +3,8 @@ header.app__offline {
 }
 
 i.material-icons {
-    width: 25px;
     height: 25px;
-}
-
-.toast__container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    pointer-events: none;
-}
-
-.profile-pic {
-    width: 70%;
-    max-width: 300px;
-    display: block;
-    margin: 0 auto;
+    width: 25px;
 }
 
 .home-note {
@@ -27,31 +13,37 @@ i.material-icons {
     padding: 12px 15px;
 }
 
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 70%;
+}
+
+.toast__container {
+    bottom: 20px;
+    left: 20px;
+    pointer-events: none;
+    position: fixed;
+}
+
 .toast__msg {
-    width: 250px;
-    min-height: 50px;
-    background: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 2px;
+    color: #fff;
+    display: flex;
     font-size: 14px;
     font-weight: 500;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    min-height: 50px;
     padding-left: 15px;
     padding-right: 10px;
-    word-break: break-all;
-    -webkit-transition: opacity 3s cubic-bezier(0, 0, 0.3, 1) 0;
-    -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0;
-    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0;
     text-transform: initial;
-    margin-bottom: 10px;
-    border-radius: 2px;
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0;
+    width: 250px;
+    word-break: break-all;
 }
 
 .toast__msg--hide {
