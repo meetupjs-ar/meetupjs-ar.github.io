@@ -35,7 +35,7 @@
         "gulp-uglify": "^2.1.0",
         "gulp-util": "^3.0.8",
         "isomorphic-fetch": "^2.2.1",
-        "moment": "^2.18.1",
+        "moment-timezone": "^0.5.13",
         "postcss-import": "^9.1.0",
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",

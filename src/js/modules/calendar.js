@@ -1,4 +1,4 @@
-const moment = require('moment')
+const moment = require('moment-timezone')
 
 require('isomorphic-fetch')
 require('moment/locale/es')
@@ -11,6 +11,8 @@ const modalContent = document.querySelector('#modal-content')
 const modalOutside = document.querySelector('#modal-outside')
 const modalTitle = document.querySelector('#modal-title')
 const modalWrapper = document.querySelector('#modal-wrapper')
+
+const ZONE = 'America/Buenos_Aires'
 
 function handleError(error) {
     // eslint-disable-next-line no-console
@@ -60,12 +62,14 @@ function renderMonthlyCalendars(monthlyCalendar) {
 
                 const gridElement = calendarElement.querySelector(`#${gridId}`)
                 const monthNumber =
-                    parseInt(moment().utc().month(calendar.when.month).format('MM')) - 1
+                    parseInt(moment().utc().tz(ZONE).month(calendar.when.month).format('MM')) - 1
                 const currentMonth = moment({
                     day: 1,
                     month: monthNumber,
                     year: calendar.year
-                }).utc()
+                })
+                    .utc()
+                    .tz(ZONE)
 
                 if (currentMonth.isoWeekday() !== 7) {
                     for (let i = currentMonth.isoWeekday(); i > 0; i--) {
@@ -77,14 +81,16 @@ function renderMonthlyCalendars(monthlyCalendar) {
                     }
                 }
 
-                const today = moment().utc()
+                const today = moment().utc().tz(ZONE)
 
                 for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
                     const currentDay = moment({
                         day: i,
                         month: monthNumber,
                         year: calendar.year
-                    }).utc()
+                    })
+                        .utc()
+                        .tz(ZONE)
 
                     gridElement.insertAdjacentHTML(
                         'beforeend',
@@ -123,7 +129,9 @@ function renderMonthlyCalendars(monthlyCalendar) {
                     day: currentMonth.daysInMonth(),
                     month: monthNumber,
                     year: calendar.year
-                }).utc()
+                })
+                    .utc()
+                    .tz(ZONE)
 
                 while (lastDayOfMonth.isoWeekday() != 6) {
                     gridElement.insertAdjacentHTML(
@@ -136,7 +144,7 @@ function renderMonthlyCalendars(monthlyCalendar) {
                 }
 
                 calendar.events.forEach(event => {
-                    const eventDay = moment(event.date).utc()
+                    const eventDay = moment(event.date).utc().tz(ZONE)
                     const list = gridElement.querySelector(`#cell-${eventDay.format('DDMMYY')}`)
                     const counter = list.nextElementSibling
 
