@@ -1,23 +1,17 @@
 {
-    "name": "Meetup.js-Buenos-Aires",
+    "name": "Meetup.js Buenos Aires",
     "short_name": "Meetup.js",
-    "description": "Meetup.js Buenos Aires",
-    "start_url": "./index.html",
+    "description": "Meetup.js Buenos Aires PWA",
+    "start_url": "./",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#ffe45e",
-    "theme_color": "#ffe45e",
+    "background_color": "#fffceb",
+    "theme_color": "#2e282a",
     "icons": [
         {
             "src": "./assets/images/isotipo.png",
-            "type": "image/png",
-            "sizes": "192x192"
+            "sizes": "48x48 72x72 96x96 144x144 192x192 256x256",
+            "type": "image/png"
         }
-    ],
-    "author": {
-        "name": "meetupjs.com.ar",
-        "website": "https://twitter.com/Meetupjs_ar",
-        "github": "https://github.com/meetupjs-ar",
-        "source-repo": "https://github.com/meetupjs-ar/meetupjs-ar.github.io"
-    }
+    ]
 }

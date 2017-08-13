@@ -2,11 +2,6 @@ header.app__offline {
     background-color: #ffcfcf;
 }
 
-i.material-icons {
-    height: 25px;
-    width: 25px;
-}
-
 .home-note {
     font-style: oblique;
     margin-top: 20px;
