@@ -1,24 +1,16 @@
-const toastContainer = document.querySelector('.toast__container')
+const toastContainer = document.querySelector('#js-toast')
 
-module.exports = function(msg, options) {
-    if (!msg) return
-    options = options || {}
-
-    var toastMsg = document.createElement('div')
-
-    toastMsg.className = 'toast__msg'
-    toastMsg.textContent = msg
-    ;(options.childs || []).forEach(function(x) {
-        toastMsg.appendChild(x)
-    })
-
-    toastContainer.appendChild(toastMsg)
-
-    setTimeout(function() {
-        toastMsg.classList.add('toast__msg--hide')
-    }, options.timeout || 2000)
-
-    toastMsg.addEventListener('transitionend', function(event) {
+module.exports = function toast(message) {
+    const toastMsgEl = document.createElement('div')
+    toastMsgEl.addEventListener('transitionend', function(event) {
         event.target.parentNode.removeChild(event.target)
     })
+    toastMsgEl.className = 'toast__msg'
+    toastMsgEl.textContent = message
+
+    toastContainer.appendChild(toastMsgEl)
+
+    setTimeout(function() {
+        toastMsgEl.classList.add('toast__msg--hide')
+    }, 3000)
 }

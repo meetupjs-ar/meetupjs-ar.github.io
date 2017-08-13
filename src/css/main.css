@@ -1,5 +1,6 @@
 @import 'tachyons';
 @import './animations.css';
+@import './offline.css';
 
 .bg-black-alternative {
     background-color: #2e282a;
