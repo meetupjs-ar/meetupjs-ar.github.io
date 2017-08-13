@@ -19,7 +19,9 @@ module.exports = {
         js: 'dist/js'
     },
     envify: {
-        CALENDAR_API: util.env.production ? 'https://calendar-api.now.sh/' : 'http://localhost:4000/'
+        CALENDAR_API: util.env.production
+            ? 'https://calendar-api.now.sh/'
+            : 'http://localhost:4000/'
     },
     eslint: {
         files: 'src/js/**/*.js'

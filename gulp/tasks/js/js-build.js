@@ -13,10 +13,10 @@ const source = require('vinyl-source-stream')
 const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 
-module.exports = function (config) {
+module.exports = function(config) {
     const server = browserSync.get(config.staticServer.name)
 
-    return function (done) {
+    return function(done) {
         glob(config.src.js, (err, files) => {
             if (err) done(err)
 
@@ -34,7 +34,8 @@ module.exports = function (config) {
                 })
                 const bundleName = entry.substring(entry.lastIndexOf('/') + 1)
 
-                return bundler.bundle()
+                return bundler
+                    .bundle()
                     .pipe(source(bundleName))
                     .pipe(buffer())
                     .pipe(gulpif(!config.isProduction, sourcemaps.init({ loadMaps: true })))

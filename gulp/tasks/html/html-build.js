@@ -5,11 +5,12 @@ const htmlminOptions = {
     collapseWhitespace: true
 }
 
-module.exports = function (config) {
+module.exports = function(config) {
     const server = browserSync.get(config.staticServer.name)
 
-    return function () {
-        return gulp.src(config.src.html)
+    return function() {
+        return gulp
+            .src(config.src.html)
             .pipe(htmlmin(htmlminOptions))
             .pipe(gulp.dest(config.dest.html))
             .pipe(server.stream())
