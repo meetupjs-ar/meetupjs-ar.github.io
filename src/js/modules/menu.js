@@ -8,6 +8,6 @@ function toggleMenuHandler() {
     toggleMenu.textContent = menu.classList.contains('dn') ? '☰' : '✕'
 }
 
-module.exports = function initMenu() {
+module.exports = function menu() {
     toggleMenu.addEventListener('click', toggleMenuHandler)
 }

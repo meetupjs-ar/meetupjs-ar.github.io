@@ -59,7 +59,12 @@ function renderMonthlyCalendars(monthlyCalendar) {
                 })
 
                 const gridElement = calendarElement.querySelector(`#${gridId}`)
-                const monthNumber = parseInt(moment().month(calendar.when.month).format('MM')) - 1
+                const monthNumber =
+                    parseInt(
+                        moment()
+                            .month(calendar.when.month)
+                            .format('MM')
+                    ) - 1
                 const currentMonth = moment({
                     day: 1,
                     month: monthNumber,
@@ -248,7 +253,7 @@ function toggleModal() {
     modalWrapper.classList.toggle('fadeInDown')
 }
 
-module.exports = function initCalendar() {
+module.exports = function calendar() {
     if (calendarElement) {
         fetch(process.env.CALENDAR_API)
             .then(response => response.json())

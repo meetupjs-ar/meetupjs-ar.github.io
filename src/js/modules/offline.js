@@ -7,7 +7,7 @@ function updateConnectionStatus() {
     toast(navigator.onLine ? 'Estás conectado' : 'Estás desconectado')
 }
 
-module.exports = function enableOffline() {
+module.exports = function offline() {
     if (!navigator.onLine) {
         updateConnectionStatus()
     }

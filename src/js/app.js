@@ -1,12 +1,7 @@
-const enableOffline = require('./modules/offline')
-const initMenu = require('./modules/menu')
-// const notification = require('./modules/notification')
-const renderMonthlyCalendars = require('./modules/calendar')
+const calendar = require('./modules/calendar')
+const offline = require('./modules/offline')
+const menu = require('./modules/menu')
 
-enableOffline()
-initMenu()
-renderMonthlyCalendars()
-
-// if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.register('service-worker.js')
-// }
+calendar()
+offline()
+menu()

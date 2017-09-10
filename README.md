@@ -2,7 +2,7 @@
 
 :earth_americas: Sitio oficial de Meetup.js Argentina
 
-[meetupjs.com.ar](http://meetupjs.com.ar/)
+[meetupjs.com.ar](https://meetupjs.com.ar/)
 
 ## Desarrollo
 

@@ -19,7 +19,6 @@ gulp.task('build', [
     'html-build',
     'css-build',
     'js-build'
-    // 'pwa-build'
 ])
 
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
@@ -46,9 +45,3 @@ gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
 gulp.task('watch', getTask('general/watch'))
 
 gulp.task('default', ['build', 'watch'], getTask('general/browser-sync'))
-
-// gulp.task(
-//     'pwa-build',
-//     ['js-build', 'css-build', 'html-build', 'assets-build'],
-//     getTask('pwa/pwa-build')
-// )
