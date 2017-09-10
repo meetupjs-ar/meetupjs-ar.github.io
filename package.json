@@ -10,7 +10,6 @@
     "author": "durancristhian@gmail.com",
     "license": "MIT",
     "dependencies": {
-        "aliasify": "^2.1.0",
         "autoprefixer": "^6.7.7",
         "babel-preset-latest": "^6.24.0",
         "babelify": "^7.3.0",
@@ -37,15 +36,8 @@
         "isomorphic-fetch": "^2.2.1",
         "moment": "^2.18.1",
         "postcss-import": "^9.1.0",
-        "sw-precache": "^5.1.1",
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",
-        "vinyl-source-stream": "^1.1.0",
-        "vue": "^2.2.6"
-    },
-    "aliasify": {
-        "aliases": {
-            "vue": "vue/dist/vue.js"
-        }
+        "vinyl-source-stream": "^1.1.0"
     }
 }

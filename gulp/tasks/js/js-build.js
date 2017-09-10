@@ -1,4 +1,3 @@
-const aliasify = require('aliasify')
 const babelify = require('babelify')
 const browserify = require('browserify')
 const browserSync = require('browser-sync')
@@ -25,7 +24,6 @@ module.exports = function(config) {
                     debug: config.browserify.isDebug,
                     entries: entry,
                     transform: [
-                        aliasify,
                         babelify.configure({
                             presets: ['latest']
                         }),
