@@ -18,7 +18,8 @@ gulp.task('build', [
     'assets-build',
     'html-build',
     'css-build',
-    'js-build'
+    'js-build',
+    'pwa-build'
 ])
 
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
@@ -41,6 +42,12 @@ gulp.task('js-lint', getTask('js/js-lint'))
 
 gulp.task('manifest-copy', ['manifest-clean'], getTask('manifest/manifest-copy'))
 gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
+
+gulp.task(
+    'pwa-build',
+    ['js-build', 'css-build', 'html-build', 'assets-build'],
+    getTask('pwa/pwa-build')
+)
 
 gulp.task('watch', getTask('general/watch'))
 

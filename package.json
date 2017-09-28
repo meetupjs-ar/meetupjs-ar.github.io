@@ -2,9 +2,11 @@
     "name": "meetupjs-ar.github.io",
     "version": "1.0.0",
     "scripts": {
+        "build": "gulp build",
         "build-prod": "gulp build --production",
-        "deploy": "npm run build-prod && gh-pages -b master -d dist",
-        "dev": "gulp",
+        "deploy": "gh-pages -b master -d dist",
+        "start": "gulp",
+        "start-prod": "gulp --production",
         "task": "gulp --"
     },
     "author": "durancristhian@gmail.com",
@@ -36,6 +38,7 @@
         "isomorphic-fetch": "^2.2.1",
         "moment": "^2.18.1",
         "postcss-import": "^9.1.0",
+        "sw-precache": "^5.2.0",
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",
         "vinyl-source-stream": "^1.1.0"

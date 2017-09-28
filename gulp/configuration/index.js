@@ -43,6 +43,10 @@ module.exports = {
     stylelint: {
         css: 'src/css/**/*.css'
     },
+    sw: {
+        file: 'dist/sw.js',
+        runtimeCaching: [CALENDAR_API]
+    },
     watch: {
         css: 'src/css/*.css',
         html: 'src/*.html',
