@@ -13,6 +13,7 @@ function getTask(taskName) {
 browserSync.create(config.staticServer.name)
 
 gulp.task('build', [
+    'browser-config-copy',
     'cname-copy',
     'manifest-copy',
     'assets-build',
@@ -25,6 +26,13 @@ gulp.task('build', [
 gulp.task('assets-build', ['assets-clean', 'assets-copy'])
 gulp.task('assets-clean', getTask('assets/assets-clean'))
 gulp.task('assets-copy', ['assets-clean'], getTask('assets/assets-copy'))
+
+gulp.task(
+    'browser-config-copy',
+    ['browser-config-clean'],
+    getTask('browser-config/browser-config-copy')
+)
+gulp.task('browser-config-clean', getTask('browser-config/browser-config-clean'))
 
 gulp.task('cname-copy', ['cname-clean'], getTask('cname/cname-copy'))
 gulp.task('cname-clean', getTask('cname/cname-clean'))

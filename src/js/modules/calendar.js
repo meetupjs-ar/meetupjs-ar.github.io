@@ -204,6 +204,7 @@ function renderMonthlyCalendars(monthlyCalendar) {
                                     <div class="flex">
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
+                                            rel="noopener noreferrer"
                                             class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
                                                 <i class="f5 fs-normal mr1">🔗</i>
                                                 <span class="text-shadow-1">Link</span>

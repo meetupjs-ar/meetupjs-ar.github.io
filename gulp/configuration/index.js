@@ -7,6 +7,7 @@ module.exports = {
     },
     clean: {
         assets: 'dist/assets/*',
+        cname: 'dist/browserconfig.xml',
         cname: 'dist/CNAME',
         css: 'dist/css/*',
         html: 'dist/*.html',
@@ -15,6 +16,7 @@ module.exports = {
     },
     dest: {
         assets: 'dist/assets',
+        browserConfig: 'dist/',
         cname: 'dist/',
         css: 'dist/css',
         html: 'dist/',
@@ -30,6 +32,7 @@ module.exports = {
     isProduction: util.env.production,
     src: {
         assets: 'src/assets/**/*.*',
+        browserConfig: 'src/browserconfig.xml',
         cname: 'src/CNAME',
         css: 'src/css/*.css',
         js: 'src/js/*.js',

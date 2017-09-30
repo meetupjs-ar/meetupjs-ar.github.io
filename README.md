@@ -15,10 +15,14 @@ git checkout -b dev
 yarn install
 
 # ambiente de desarrollo
-npm run dev
+# npm start
+yarn start
 
 # publicar a github pages (master)
-npm run deploy
+# npm run build-prod
+yarn build-prod
+# npm run deploy
+yarn deploy
 ```
 
 ## Licencia
