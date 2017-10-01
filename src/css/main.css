@@ -1,5 +1,10 @@
 @import 'tachyons';
 @import './animations.css';
+@import './droid-sans.css';
+
+body {
+    font-family: 'Droid Sans';
+}
 
 .bg-black-alternative {
     background-color: #2e282a;
