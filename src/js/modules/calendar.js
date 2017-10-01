@@ -206,7 +206,7 @@ function renderMonthlyCalendars(monthlyCalendar) {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
-                                                <img src="assets/images/icons/link.svg" class="h1 mr2 pr2">
+                                                <img src="assets/images/icons/link.svg" class="h1 mr2">
                                                 <span class="text-shadow-1">Link</span>
                                         </a>
                                     </div>
