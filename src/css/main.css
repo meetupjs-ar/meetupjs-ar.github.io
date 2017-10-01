@@ -1,6 +1,5 @@
 @import 'tachyons';
 @import './animations.css';
-@import './offline.css';
 
 .bg-black-alternative {
     background-color: #2e282a;
@@ -46,6 +45,23 @@
 
 .text-shadow-1 {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.toast__msg {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 2px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    min-width: 300px;
+    padding: 15px 10px;
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+}
+
+.toast__msg--hide {
+    opacity: 0;
 }
 
 .vh-80 {
