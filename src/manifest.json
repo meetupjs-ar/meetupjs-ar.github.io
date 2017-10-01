@@ -1,7 +1,7 @@
 {
-    "name": "Meetup.js Buenos Aires",
+    "name": "Meetup.js",
     "short_name": "Meetup.js",
-    "description": "Meetup.js Buenos Aires PWA",
+    "description": "Meetup.js",
     "start_url": "./",
     "display": "standalone",
     "orientation": "portrait",
