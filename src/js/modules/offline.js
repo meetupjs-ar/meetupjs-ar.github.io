@@ -3,8 +3,11 @@ const toast = require('./toast.js')
 const body = document.querySelector('body')
 
 function updateConnectionStatus() {
-    body.classList[navigator.onLine ? 'remove' : 'add']('offline')
-    toast(navigator.onLine ? 'Estás conectado' : 'Estás desconectado')
+    const method = navigator.onLine ? 'remove' : 'add'
+    const text = navigator.onLine ? 'Estás conectado' : 'Estás desconectado'
+
+    body.classList[method]('offline')
+    toast(text, icon)
 }
 
 module.exports = function offline() {

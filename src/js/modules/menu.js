@@ -1,13 +1,15 @@
+const closeMenu = document.querySelector('#close-menu')
 const menu = document.querySelector('#menu')
-const toggleMenu = document.querySelector('#toggle-menu')
+const openMenu = document.querySelector('#open-menu')
 
 function toggleMenuHandler() {
+    closeMenu.classList.toggle('dn')
     menu.classList.toggle('dn')
     menu.classList.toggle('fadeIn')
-
-    toggleMenu.textContent = menu.classList.contains('dn') ? '☰' : '✕'
+    openMenu.classList.toggle('dn')
 }
 
 module.exports = function menu() {
-    toggleMenu.addEventListener('click', toggleMenuHandler)
+    openMenu.addEventListener('click', toggleMenuHandler)
+    closeMenu.addEventListener('click', toggleMenuHandler)
 }
