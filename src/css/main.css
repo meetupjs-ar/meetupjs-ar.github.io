@@ -18,6 +18,12 @@ body {
     color: #2e282a;
 }
 
+.current-page::after {
+    color: #98d083;
+    content: '•';
+    margin-left: 0.5rem;
+}
+
 .droid {
     font-family: 'Droid Sans', sans-serif;
 }
