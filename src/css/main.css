@@ -21,7 +21,9 @@ body {
 .current-page::after {
     color: #98d083;
     content: '•';
-    margin-left: 0.5rem;
+    right: 0.25rem;
+    position: absolute;
+    top: 0;
 }
 
 .droid {
