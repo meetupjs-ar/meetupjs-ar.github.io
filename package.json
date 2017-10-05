@@ -1,6 +1,6 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
@@ -31,6 +31,7 @@
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "^3.1.1",
         "gulp-postcss": "^6.3.0",
+        "gulp-replace": "^0.6.1",
         "gulp-sourcemaps": "^2.4.1",
         "gulp-stylelint": "^3.9.0",
         "gulp-uglify": "^2.1.0",
