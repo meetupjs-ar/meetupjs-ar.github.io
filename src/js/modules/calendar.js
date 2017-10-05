@@ -186,14 +186,14 @@ function renderMonthlyCalendars(monthlyCalendar) {
                         let placeHTML = ''
 
                         if (eventData.place) {
-                            placeHTML = `<p class="black-50 mb0 mt2">${eventData.place}</p>`
+                            placeHTML = `<p class="black-30 mb0 mt2">${eventData.place}</p>`
                         }
 
                         modalContent.insertAdjacentHTML(
                             'beforeend',
                             `<div class="flex mh3 mv3 pv3">
                                 <div class="w-30 w-20-ns">
-                                    <p class="black-30 f4 f3-ns mv0">${eventData.hour}</p>
+                                    <p class="f4 f3-ns mv0 silver">${eventData.hour}</p>
                                 </div>
                                 <div class="w-70 w-80-ns">
                                     <h3 class="f4 f3-ns mv0"
@@ -205,8 +205,8 @@ function renderMonthlyCalendars(monthlyCalendar) {
                                         <a href="${eventData.eventLink}"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv2 ttu white" style="background-color: ${eventData.color};">
-                                                <img src="assets/images/icons/link.svg" class="h1 mr2">
+                                            class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white" style="background-color: ${eventData.color};">
+                                                <span class="black-30 f-30-px ion-link mr2"></span>
                                                 <span class="text-shadow-1">Link</span>
                                         </a>
                                     </div>

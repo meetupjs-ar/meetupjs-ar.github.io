@@ -27,6 +27,10 @@ gulp.task('assets-build', ['assets-clean', 'assets-copy'])
 gulp.task('assets-clean', getTask('assets/assets-clean'))
 gulp.task('assets-copy', ['assets-clean'], getTask('assets/assets-copy'))
 
+gulp.task('bump-minor', ['bump-minor-pkg', 'bump-minor-manifest'])
+gulp.task('bump-minor-manifest', getTask('bump/bump-minor-pkg'))
+gulp.task('bump-minor-pkg', getTask('bump/bump-minor-manifest'))
+
 gulp.task(
     'browser-config-copy',
     ['browser-config-clean'],

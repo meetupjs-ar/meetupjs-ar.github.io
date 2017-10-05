@@ -1,6 +1,7 @@
 @import 'tachyons';
 @import './animations.css';
 @import './droid-sans.css';
+@import './ionicons.css';
 
 body {
     font-family: 'Droid Sans';
@@ -24,11 +25,15 @@ body {
     font-weight: bold;
     right: 0.25rem;
     position: absolute;
-    top: 15%;
+    top: 25%;
 }
 
 .droid {
     font-family: 'Droid Sans', sans-serif;
+}
+
+.f-30-px {
+    font-size: 30px;
 }
 
 .fadeIn {

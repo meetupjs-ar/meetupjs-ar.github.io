@@ -1,9 +1,10 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "2.0.0",
+    "version": "2.3.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
+        "bump-minor": "gulp bump-minor",
         "deploy": "gh-pages -b master -d dist",
         "start": "gulp",
         "start-prod": "gulp --production",
@@ -26,6 +27,7 @@
         "gh-pages": "^0.12.0",
         "glob": "^7.1.1",
         "gulp": "^3.9.1",
+        "gulp-bump": "^2.8.0",
         "gulp-eslint": "^3.0.1",
         "gulp-htmlmin": "^3.0.0",
         "gulp-if": "^2.0.2",

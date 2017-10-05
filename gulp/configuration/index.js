@@ -20,8 +20,9 @@ module.exports = {
         cname: 'dist/',
         css: 'dist/css',
         html: 'dist/',
+        js: 'dist/js',
         manifest: 'dist/',
-        js: 'dist/js'
+        pkg: './'
     },
     envify: {
         CALENDAR_API
@@ -35,9 +36,11 @@ module.exports = {
         browserConfig: 'src/browserconfig.xml',
         cname: 'src/CNAME',
         css: 'src/css/*.css',
+        html: 'src/*.html',
         js: 'src/js/*.js',
         manifest: 'src/manifest.json',
-        html: 'src/*.html'
+        pkg: 'package.json',
+        root: 'src/'
     },
     staticServer: {
         dir: './dist',

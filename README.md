@@ -19,6 +19,8 @@ yarn install
 yarn start
 
 # publicar a github pages (master)
+# npm run bump-minor
+yarn bump-minor
 # npm run build-prod
 yarn build-prod
 # npm run deploy
