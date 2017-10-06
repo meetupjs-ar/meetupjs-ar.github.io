@@ -8,10 +8,10 @@ module.exports = function serviceWorker() {
             })
             .catch(function(error) {
                 // eslint-disable-next-line
-                console.log('Service worker registration failed:', error)
+                console.error('Service worker registration failed:', error)
             })
     } else {
         // eslint-disable-next-line
-        console.log('Service workers are not supported.')
+        console.warn('Service workers are not supported.')
     }
 }
