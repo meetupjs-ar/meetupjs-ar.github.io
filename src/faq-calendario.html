@@ -47,8 +47,7 @@
         <div class="center mw9">
             <div class="flex items-center justify-between">
                 <a href="/" class="ml3 ml0-ns">
-                    <img src="assets/images/isotipo.svg"
-                        class="grow h-50-px v-btm">
+                    <img src="assets/images/isotipo.svg" class="grow h-50-px v-btm">
                 </a>
                 <div class="flex items-center">
                     <span id="open-menu" class="f-30-px grow ion-navicon ph3 pv2"></span>
@@ -57,25 +56,25 @@
             </div>
             <div id="menu" class="dn mv4">
                 <ul class="list mv4 pl0">
-                    <li class="mv2 pv2">
+                    <li class="pv2">
                         <a href="/" class="black-alternative flex items-center justify-end no-underline pr3 relative">
                             <span>Página Principal</span>
                             <span class="f-30-px ion-ios-home-outline ml3 silver"></span>
                         </a>
                     </li>
-                    <li class="mv2 pv2">
+                    <li class="pv2">
                         <a href="/calendario.html" class="black-alternative flex items-center justify-end no-underline pr3 relative">
                             <span>Calendario de Eventos</span>
                             <span class="f-30-px ion-ios-calendar-outline ml3 silver"></span>
                         </a>
                     </li>
-                    <li class="mv2 pv2">
+                    <li class="pv2">
                         <a href="/faq-calendario.html" class="black-alternative flex items-center justify-end no-underline pr3 relative">
                             <span>¿Qué es el Calendario de Eventos?</span>
                             <span class="f-30-px ion-ios-help-outline ml3 silver"></span>
                         </a>
                     </li>
-                    <li class="mv2 pv2">
+                    <li class="pv2">
                         <a href="/coc.html" class="black-alternative flex items-center justify-end no-underline pr3 relative">
                             <span>Código de Conducta</span>
                             <span class="f-30-px ion-ios-people-outline ml3 silver"></span>
@@ -90,39 +89,54 @@
         <div class="ph3 pv5">
             <h1 class="black-alternative f3 f2-ns mb4 mt0 normal pb4 tc">¿Qué es el Calendario de Eventos?</h1>
             <div class="black-alternative lh-copy">
-                <p>El <span class="b">Calendario de Eventos</span> es un intento de unificar la búsqueda de eventos relacionados
-                    con tecnología. Hay sitios como <span class="i">Meetup</span> y <span class="i">Eventbrite</span>, universidades,
-                    organizaciones e instituciones que publican eventos y probablemente nunca te enteres porque no los conocías
-                    y no podés estar anotado en todos esos lados a la vez. Por ese motivo, nos tomamos el trabajo de armar
-                    el calendario.</p>
+                <p>El
+                    <span class="b">Calendario de Eventos</span> es un intento de unificar la búsqueda de eventos relacionados con tecnología.
+                    Hay sitios como
+                    <span class="i">Meetup</span> y
+                    <span class="i">Eventbrite</span>, universidades, organizaciones e instituciones que publican eventos y probablemente
+                    nunca te enteres porque no los conocías y no podés estar anotado en todos esos lados a la vez. Por ese
+                    motivo, nos tomamos el trabajo de armar el calendario.</p>
             </div>
             <h2 class="f4 f3-ns mv4 normal silver">¿Cómo funciona?</h2>
             <div class="black-alternative lh-copy">
                 <p>Los eventos que se muestran en el calendario pueden venir de:</p>
                 <ul>
-                    <li>La API de <span class="b">Eventbrite</span></li>
-                    <li>La API de <span class="b">Meetup</span></li>
-                    <li>Una <span class="b">Google Spreadsheet</span> que se completa por medio de un <span class="i">Google Form</span>.</li>
+                    <li>La API de
+                        <span class="b">Eventbrite</span>
+                    </li>
+                    <li>La API de
+                        <span class="b">Meetup</span>
+                    </li>
+                    <li>Una
+                        <span class="b">Google Spreadsheet</span> que se completa por medio de un
+                        <span class="i">Google Form</span>.</li>
                 </ul>
-                <p>La <span class="i">Google Spreadsheet</span> nos permite agregar rápidamente eventos puntuales que no aparecen
-                    en las otras APIs, como eventos de Facebook, conferencias internacionales, talleres universitarios, etc.</p>
-                <p>Para obtener los datos de cada uno de estos orígenes, escribimos una serie de <span class="i">microservicios</span>                    usando <span class="i">Node.js</span>. En el caso de <span class="i">Eventbrite</span> y <span class="i">Meetup</span>,
-                    estamos pidiéndole los próximos eventos de tecnología a sus respectivas APIs. En el caso de la
-                    <span class="i">Google Spreadsheet</span> que se completa por medio de un <span class="i">Google Form</span>,
-                    lo que hacemos es leer los eventos directamente desde la hoja de cálculo. Cómo resultado de todo esto,
-                    tenemos 3 <span class="i">endpoints</span> desde donde obtenemos los próximos eventos de diferentes fuentes.</p>
-                <p>Existe un cuarto <span class="i">microservicio</span> que se encarga de obtener los datos de los 3 endpoints
-                    anteriores, agruparlos por mes y ordenarlos por día. Este endpoint es el que se consulta desde el cliente
-                    para armar la UI del calendario.</p>
-                <p>Por último, existe <a href="/calendario.html" target="_blank" rel="noopener noreferrer" class="b blue link">ésta página</a>                    que solo hace uso de la API de <span class="i">fetch</span> para pedir los eventos agrupados y ordenados
-                    para mostrarlos.
+                <p>La
+                    <span class="i">Google Spreadsheet</span> nos permite agregar rápidamente eventos puntuales que no aparecen en las otras
+                    APIs, como eventos de Facebook, conferencias internacionales, talleres universitarios, etc.</p>
+                <p>Para obtener los datos de cada uno de estos orígenes, escribimos una serie de
+                    <span class="i">microservicios</span> usando
+                    <span class="i">Node.js</span>. En el caso de
+                    <span class="i">Eventbrite</span> y
+                    <span class="i">Meetup</span>, estamos pidiéndole los próximos eventos de tecnología a sus respectivas APIs. En el caso
+                    de la
+                    <span class="i">Google Spreadsheet</span> que se completa por medio de un
+                    <span class="i">Google Form</span>, lo que hacemos es leer los eventos directamente desde la hoja de cálculo. Cómo resultado
+                    de todo esto, tenemos 3
+                    <span class="i">endpoints</span> desde donde obtenemos los próximos eventos de diferentes fuentes.</p>
+                <p>Existe un cuarto
+                    <span class="i">microservicio</span> que se encarga de obtener los datos de los 3 endpoints anteriores, agruparlos por
+                    mes y ordenarlos por día. Este endpoint es el que se consulta desde el cliente para armar la UI del calendario.</p>
+                <p>Por último, existe
+                    <a href="/calendario.html" target="_blank" rel="noopener noreferrer" class="b blue link">ésta página</a> que solo hace uso de la API de
+                    <span class="i">fetch</span> para pedir los eventos agrupados y ordenados para mostrarlos.
                 </p>
             </div>
             <h2 class="f4 f3-ns mv4 normal silver">¿Es Open Source?</h2>
             <div class="black-alternative lh-copy">
-                <p><span class="b">¡Por supuesto!</span>. Todos los proyectos mencionados están en <a href="https://github.com/meetupjs-ar"
-                        target="_blank" rel="noopener noreferrer" class="b blue link">nuestra organización de GitHub</a>. Los
-                    links son los siguientes:</p>
+                <p>
+                    <span class="b">¡Por supuesto!</span>. Todos los proyectos mencionados están en
+                    <a href="https://github.com/meetupjs-ar" target="_blank" rel="noopener noreferrer" class="b blue link">nuestra organización de GitHub</a>. Los links son los siguientes:</p>
                 <ul>
                     <li>
                         <a href="https://github.com/meetupjs-ar/eventbrite-api" target="_blank" rel="noopener noreferrer" class="b blue link">
@@ -155,18 +169,22 @@
             <div class="black-alternative lh-copy">
                 <p>¡De muchas maneras!, sólo por mencionar algunas:</p>
                 <ul>
-                    <li><span class="b">Difundiendo</span> el calendario en redes sociales y/o cualquier persona/grupo al que
-                        consideres que le puede servir.</li>
-                    <li><span class="b">Agregando eventos</span> desde <a href="https://goo.gl/forms/Ss5X2SHWSq0Hj1Km1" target="_blank"
-                            rel="noopener noreferrer" class="b blue link">este formulario</a>.</li>
-                    <li>Dándonos <span class="b">feedback</span>, proponiendo <span class="b">ideas</span>, enviando un
-                        <span class="b">pull-request</span> a los repositorios correspondientes o mandándonos un mensaje
-                        en las redes sociales.</li>
+                    <li>
+                        <span class="b">Difundiendo</span> el calendario en redes sociales y/o cualquier persona/grupo al que consideres
+                        que le puede servir.</li>
+                    <li>
+                        <span class="b">Agregando eventos</span> desde
+                        <a href="https://goo.gl/forms/Ss5X2SHWSq0Hj1Km1" target="_blank" rel="noopener noreferrer" class="b blue link">este formulario</a>.</li>
+                    <li>Dándonos
+                        <span class="b">feedback</span>, proponiendo
+                        <span class="b">ideas</span>, enviando un
+                        <span class="b">pull-request</span> a los repositorios correspondientes o mandándonos un mensaje en las redes sociales.</li>
                 </ul>
             </div>
             <h2 class="f4 f3-ns mv4 normal silver">¿Piensan seguir mejorándolo?</h2>
             <div class="black-alternative lh-copy">
-                <p class="mb0">Sí, y todo lo que tenemos pensado por el momento se encuentra en <span class="i">issues</span> con diferentes
+                <p class="mb0">Sí, y todo lo que tenemos pensado por el momento se encuentra en
+                    <span class="i">issues</span> con diferentes
                     <span class="i">labels</span> en cada uno de los repositorios listados más arriba.</p>
             </div>
         </div>
