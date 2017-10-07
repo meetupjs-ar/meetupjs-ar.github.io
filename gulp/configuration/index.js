@@ -1,5 +1,5 @@
 const util = require('gulp-util')
-const CALENDAR_API = util.env.production ? 'https://calendar-api.now.sh/' : 'http://localhost:4000/'
+const CALENDAR_API = 'https://calendar-api.now.sh/'
 
 module.exports = {
     browserify: {
