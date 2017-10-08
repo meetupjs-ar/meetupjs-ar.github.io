@@ -1,3 +1,5 @@
+const toast = require('./toast.js')
+
 module.exports = function serviceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
@@ -10,6 +12,16 @@ module.exports = function serviceWorker() {
                 // eslint-disable-next-line
                 console.error('Service worker registration failed:', error)
             })
+
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.onstatechange = function(event) {
+                if (event.target.state === 'redundant') {
+                    toast('Hay una versión disponible, toca aquí para actualizar', function() {
+                        window.location.reload()
+                    })
+                }
+            }
+        }
     } else {
         // eslint-disable-next-line
         console.warn('Service workers are not supported.')

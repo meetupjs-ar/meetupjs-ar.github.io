@@ -1,9 +1,10 @@
 const toastContainer = document.querySelector('#js-toast')
 
-module.exports = function toast(message) {
+module.exports = function toast(message, tapHandler = function() {}) {
     const toastMsgEl = document.createElement('div')
     toastMsgEl.className = 'toast__msg'
     toastMsgEl.textContent = message
+    toastMsgEl.onclick = tapHandler
 
     toastContainer.appendChild(toastMsgEl)
     toastMsgEl.addEventListener('transitionend', function(event) {
