@@ -1,6 +1,6 @@
 const toastContainer = document.querySelector('#js-toast')
 
-module.exports = function toast(message, tapHandler = function() {}) {
+module.exports = function toast(message, tapHandler = function() {}, time = 5000) {
     const toastMsgEl = document.createElement('div')
     toastMsgEl.className = 'toast__msg'
     toastMsgEl.textContent = message
@@ -13,5 +13,5 @@ module.exports = function toast(message, tapHandler = function() {}) {
 
     setTimeout(function() {
         toastMsgEl.classList.add('toast__msg--hide')
-    }, 3000)
+    }, time)
 }
