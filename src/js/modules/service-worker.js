@@ -3,7 +3,7 @@ const toast = require('./toast.js')
 module.exports = function serviceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('/sw.js')
+            .register('/sw.js', { scope: '/' })
             .then(function(registration) {
                 // eslint-disable-next-line no-console
                 console.log('Service worker registration succeeded:', registration)
