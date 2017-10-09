@@ -75,9 +75,11 @@ body {
     background: rgba(0, 0, 0, 0.85);
     border-radius: 2px;
     color: white;
+    cursor: pointer;
     display: flex;
+    line-height: 1.25;
     margin-top: 10px;
-    min-width: 300px;
+    max-width: 350px;
     padding: 15px 10px;
     transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
 }
