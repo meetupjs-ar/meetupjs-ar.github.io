@@ -1,7 +1,7 @@
 const swPrecache = require('sw-precache')
 
 module.exports = function(config) {
-    return function(callback) {
+    return function(done) {
         var swconfig = {
             cacheId: 'meetupjs',
             handleFetch: config.isProduction,
@@ -20,6 +20,6 @@ module.exports = function(config) {
             verbose: true
         }
 
-        swPrecache.write(config.sw.file, swconfig, callback)
+        swPrecache.write(config.sw.file, swconfig, done)
     }
 }

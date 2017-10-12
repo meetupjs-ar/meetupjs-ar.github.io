@@ -1,6 +1,5 @@
 const babelify = require('babelify')
 const browserify = require('browserify')
-const browserSync = require('browser-sync')
 const buffer = require('vinyl-buffer')
 const envify = require('envify/custom')
 const es = require('event-stream')
@@ -13,8 +12,6 @@ const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 
 module.exports = function(config) {
-    const server = browserSync.get(config.staticServer.name)
-
     return function(done) {
         glob(config.src.js, (err, files) => {
             if (err) done(err)
@@ -40,7 +37,6 @@ module.exports = function(config) {
                     .pipe(gulpif(config.isProduction, uglify()))
                     .pipe(gulpif(!config.isProduction, sourcemaps.write('./')))
                     .pipe(gulp.dest(config.dest.js))
-                    .pipe(server.stream())
                     .on('error', gutil.log)
             })
 

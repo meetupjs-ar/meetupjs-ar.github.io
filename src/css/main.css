@@ -68,9 +68,9 @@
 
 .toast__msg {
     align-items: center;
-    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 2px;
-    color: white;
+    color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
     display: flex;
     line-height: 1.25;
@@ -80,8 +80,16 @@
     transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
 }
 
+.toast__msg--info {
+    background-color: #ffeba8;
+}
+
 .toast__msg--hide {
     opacity: 0;
+}
+
+.toast__msg--success {
+    background-color: #bcf5bc;
 }
 
 .vh-80 {

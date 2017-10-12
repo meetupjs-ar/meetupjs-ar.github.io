@@ -20,10 +20,11 @@ module.exports = function serviceWorker() {
                 if (event.target.state === 'redundant') {
                     toast(
                         'Hay una nueva versión disponible, toca aquí para actualizar',
+                        'success',
+                        10000,
                         function() {
                             window.location.reload()
-                        },
-                        10000
+                        }
                     )
                 }
             }
