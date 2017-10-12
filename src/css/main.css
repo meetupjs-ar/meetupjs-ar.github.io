@@ -3,10 +3,6 @@
 @import './droid-sans.css';
 @import './ionicons.css';
 
-body {
-    font-family: 'Droid Sans';
-}
-
 .bg-black-alternative {
     background-color: #2e282a;
 }

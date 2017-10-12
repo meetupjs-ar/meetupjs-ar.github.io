@@ -35,7 +35,7 @@ module.exports = {
         assets: 'src/assets/**/*.*',
         browserConfig: 'src/browserconfig.xml',
         cname: 'src/CNAME',
-        css: 'src/css/*.css',
+        css: 'src/css/main.css',
         html: 'src/*.html',
         js: 'src/js/*.js',
         manifest: 'src/manifest.json',
