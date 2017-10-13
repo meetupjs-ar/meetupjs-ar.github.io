@@ -13,7 +13,7 @@ module.exports = function(config) {
                     handler: 'fastest',
                     options: {
                         name: pkg.name,
-                        maxAgeSeconds: 60 * 60
+                        maxAgeSeconds: 60 * 60 * 24 * 365
                     }
                 }
             }),
