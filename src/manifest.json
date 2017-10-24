@@ -3,7 +3,7 @@
     "version": "2.28.0",
     "short_name": "Meetup.js",
     "description": "Meetup.js",
-    "start_url": "./",
+    "start_url": "/?utm_source=homescreen",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#fffceb",
