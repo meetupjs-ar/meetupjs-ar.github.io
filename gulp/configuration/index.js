@@ -11,8 +11,9 @@ module.exports = {
         cname: 'dist/CNAME',
         css: 'dist/css/*',
         html: 'dist/*.html',
+        js: 'dist/js/*',
         manifest: 'dist/manifest.json',
-        js: 'dist/js/*'
+        sw: 'dist/sw.js'
     },
     dest: {
         assets: 'dist/assets',

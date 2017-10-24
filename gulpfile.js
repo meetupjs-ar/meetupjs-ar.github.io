@@ -56,10 +56,12 @@ gulp.task('manifest-copy', ['manifest-clean'], getTask('manifest/manifest-copy')
 gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
 
 gulp.task(
-    'pwa-build',
+    'pwa-clean',
     ['js-build', 'css-build', 'html-build', 'assets-build'],
-    getTask('pwa/pwa-build')
+    getTask('pwa/pwa-clean')
 )
+
+gulp.task('pwa-build', ['pwa-clean'], getTask('pwa/pwa-build'))
 
 gulp.task('watch', getTask('general/watch'))
 
