@@ -1,6 +1,6 @@
 {
     "name": "Meetup.js",
-    "version": "2.51.0",
+    "version": "2.52.0",
     "short_name": "Meetup.js",
     "description": "Meetup.js",
     "start_url": "/?utm_source=homescreen",
@@ -10,40 +10,34 @@
     "theme_color": "#2e282a",
     "icons": [
         {
-            "src": "/assets/images/android-icon-512x512.png",
-            "sizes": "512x512"
-        },
-        {
-            "src": "/assets/images/android-icon-384x384.png",
-            "sizes": "384x384"
-        },
-        {
-            "src": "/assets/images/android-icon-256x256.png",
-            "sizes": "256x256"
-        },
-        {
             "src": "/assets/images/android-icon-192x192.png",
-            "sizes": "192x192"
+            "sizes": "192x192",
+            "density": "4.0"
         },
         {
             "src": "/assets/images/android-icon-144x144.png",
-            "sizes": "144x144"
+            "sizes": "144x144",
+            "density": "3.0"
         },
         {
             "src": "/assets/images/android-icon-96x96.png",
-            "sizes": "96x96"
+            "sizes": "96x96",
+            "density": "2.0"
         },
         {
             "src": "/assets/images/android-icon-72x72.png",
-            "sizes": "72x72"
+            "sizes": "72x72",
+            "density": "1.5"
         },
         {
             "src": "/assets/images/android-icon-48x48.png",
-            "sizes": "48x48"
+            "sizes": "48x48",
+            "density": "1.0"
         },
         {
             "src": "/assets/images/android-icon-36x36.png",
-            "sizes": "36x36"
+            "sizes": "36x36",
+            "density": "0.75"
         }
     ]
 }
