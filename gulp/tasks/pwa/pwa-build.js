@@ -10,7 +10,7 @@ module.exports = function(config) {
             runtimeCaching: config.sw.runtimeCaching.map(url => {
                 return {
                     urlPattern: new RegExp(url),
-                    handler: 'fastest',
+                    handler: 'networkFirst',
                     options: {
                         name: pkg.name,
                         maxAgeSeconds: 60 * 60 * 24 * 365
