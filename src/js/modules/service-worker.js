@@ -11,7 +11,7 @@ module.exports = function serviceWorker() {
                         if (installingWorker.state === 'installed') {
                             const text = navigator.serviceWorker.controller
                                 ? 'Nueva versión disponible'
-                                : 'El contenido está disponible sin desconexión'
+                                : 'El contenido está disponible sin conexión'
                             const theme = navigator.serviceWorker.controller ? 'info' : 'success'
 
                             toast(text, theme)
