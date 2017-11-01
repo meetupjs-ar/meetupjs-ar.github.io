@@ -106,6 +106,10 @@ body {
     width: 40px;
 }
 
+.w-50-px {
+    width: 50px;
+}
+
 .yellow-alternative {
     color: #ffe45e;
 }
