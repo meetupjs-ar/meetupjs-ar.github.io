@@ -1,10 +1,10 @@
 const toastContainer = document.querySelector('#js-toast')
 
-function defaultHandler(event) {
+function tapHandler(event) {
     event.target.classList.add('toast__msg--hide')
 }
 
-module.exports = function toast(message, theme = 'info', time = 5000, tapHandler = defaultHandler) {
+module.exports = function toast(message, theme = 'info') {
     const toastMsgEl = document.createElement('div')
     toastMsgEl.className = `toast__msg toast__msg--${theme}`
     toastMsgEl.textContent = message
@@ -17,5 +17,5 @@ module.exports = function toast(message, theme = 'info', time = 5000, tapHandler
 
     setTimeout(function() {
         toastMsgEl.classList.add('toast__msg--hide')
-    }, time)
+    }, 5000)
 }
