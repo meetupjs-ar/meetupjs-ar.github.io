@@ -37,7 +37,7 @@ module.exports = function(config) {
                     .pipe(gulpif(config.isProduction, uglify()))
                     .pipe(gulpif(!config.isProduction, sourcemaps.write('./')))
                     .pipe(gulp.dest(config.dest.js))
-                    .on('error', gutil.log)
+                    .on('error', err => gutil.log(gutil.colors.red(err.message)))
             })
 
             es.merge(tasks).on('end', done)

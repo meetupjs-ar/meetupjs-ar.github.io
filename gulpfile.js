@@ -45,7 +45,7 @@ gulp.task('css-build', ['css-clean', 'css-lint'], getTask('css/css-build'))
 gulp.task('css-clean', getTask('css/css-clean'))
 gulp.task('css-lint', getTask('css/css-lint'))
 
-gulp.task('html-build', ['html-clean'], getTask('html/html-build'))
+gulp.task('html-build', ['html-clean', 'css-build'], getTask('html/html-build'))
 gulp.task('html-clean', getTask('html/html-clean'))
 
 gulp.task('js-build', ['js-clean', 'js-lint'], getTask('js/js-build'))
