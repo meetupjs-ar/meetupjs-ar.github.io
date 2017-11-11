@@ -1,6 +1,6 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "2.79.0",
+    "version": "2.90.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
@@ -12,7 +12,7 @@
     },
     "author": "durancristhian@gmail.com",
     "license": "MIT",
-    "dependencies": {
+    "devDependencies": {
         "autoprefixer": "^6.7.7",
         "babel-preset-latest": "^6.24.0",
         "babelify": "^7.3.0",
@@ -46,5 +46,20 @@
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",
         "vinyl-source-stream": "^1.1.0"
-    }
+    },
+    "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meetupjs-ar/meetupjs-ar.github.io.git"
+    },
+    "keywords": [
+        "meetup",
+        "javascript",
+        "buenos aires"
+    ],
+    "bugs": {
+        "url": "https://github.com/meetupjs-ar/meetupjs-ar.github.io/issues"
+    },
+    "homepage": "https://github.com/meetupjs-ar/meetupjs-ar.github.io#readme"
 }

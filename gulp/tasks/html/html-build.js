@@ -1,12 +1,15 @@
 const critical = require('critical').stream
 const gulp = require('gulp')
+const gulpif = require('gulp-if')
 const gutil = require('gulp-util')
 const htmlmin = require('gulp-htmlmin')
 const pkg = require('../../../package.json')
 const replace = require('gulp-replace')
 
 const htmlminOptions = {
-    collapseWhitespace: true
+    collapseWhitespace: true,
+    minifyCSS: true,
+    minifyJS: true
 }
 
 module.exports = function(config) {
@@ -14,7 +17,6 @@ module.exports = function(config) {
         return gulp
             .src(config.src.html)
             .pipe(replace('@version', pkg.version))
-            .pipe(htmlmin(htmlminOptions))
             .pipe(
                 critical({
                     base: '/dist/',
@@ -33,13 +35,11 @@ module.exports = function(config) {
                             width: 1024
                         }
                     ],
-                    extract: true,
                     ignore: ['@font-face', /url\(/],
-                    inline: true,
-                    minify: true
+                    inline: true
                 })
             )
-            .on('error', err => gutil.log(gutil.colors.red(err.message)))
+            .pipe(gulpif(config.isProduction, htmlmin(htmlminOptions)))
             .pipe(gulp.dest(config.dest.html))
     }
 }
