@@ -35,7 +35,7 @@ module.exports = function(config) {
                             width: 1024
                         }
                     ],
-                    ignore: ['@font-face', /url\(/],
+                    ignore: ['@font-face'],
                     inline: true
                 })
             )
