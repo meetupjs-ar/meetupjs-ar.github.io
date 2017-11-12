@@ -1,7 +1,7 @@
-const menu = require('./modules/menu')
-const offline = require('./modules/offline')
-const safariLinks = require('./modules/safari-links')
-const serviceWorker = require('./modules/service-worker')
+const menu = require('./common/menu')
+const offline = require('./common/offline')
+const safariLinks = require('./common/safari-links')
+const serviceWorker = require('./common/service-worker')
 
 menu()
 offline()

@@ -1,3 +1,3 @@
-const calendar = require('./modules/calendar')
+const calendarApp = require('./calendar/app')
 
-calendar()
+calendarApp()

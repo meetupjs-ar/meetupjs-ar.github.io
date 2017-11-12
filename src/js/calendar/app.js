@@ -254,7 +254,7 @@ function toggleModal() {
     modalWrapper.classList.toggle('fadeInDown')
 }
 
-module.exports = function calendar() {
+module.exports = function calendarApp() {
     if (calendarElement) {
         fetch(process.env.CALENDAR_API)
             .then(response => response.json())
