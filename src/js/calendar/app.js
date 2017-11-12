@@ -21,20 +21,18 @@ function handleError(error) {
 }
 
 function renderMonthlyCalendars(monthlyCalendar) {
-    return new Promise((resolve, reject) => {
-        try {
-            calendarElement.insertAdjacentHTML(
-                'beforeend',
-                '<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt5 tc">Calendario de eventos</h1>'
-            )
+    calendarElement.insertAdjacentHTML(
+        'beforeend',
+        '<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt5 tc">Calendario de eventos</h1>'
+    )
 
-            monthlyCalendar.forEach(calendar => {
-                const gridId = `grid-${calendar.when.month}-${calendar.when.year}`
-                const weekdaysId = `weekdays-${calendar.when.month}-${calendar.when.year}`
+    monthlyCalendar.forEach(calendar => {
+        const gridId = `grid-${calendar.when.month}-${calendar.when.year}`
+        const weekdaysId = `weekdays-${calendar.when.month}-${calendar.when.year}`
 
-                calendarElement.insertAdjacentHTML(
-                    'beforeend',
-                    `<div class="fadeIn mb5">
+        calendarElement.insertAdjacentHTML(
+            'beforeend',
+            `<div class="fadeIn mb5">
                         <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
                             ${calendar.when.month} ${calendar.when.year}
                         </h2>
@@ -45,54 +43,54 @@ function renderMonthlyCalendars(monthlyCalendar) {
                             class="b--black-10 br bt bw1 flex flex-wrap">
                         </div>
                     </div>`
-                )
+        )
 
-                const weekdaysElement = calendarElement.querySelector(`#${weekdaysId}`)
+        const weekdaysElement = calendarElement.querySelector(`#${weekdaysId}`)
 
-                moment.weekdays().forEach(weekday => {
-                    weekdaysElement.insertAdjacentHTML(
-                        'beforeend',
-                        `<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
+        moment.weekdays().forEach(weekday => {
+            weekdaysElement.insertAdjacentHTML(
+                'beforeend',
+                `<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
                             ${weekday}
                         </div>`
-                    )
-                })
+            )
+        })
 
-                const gridElement = calendarElement.querySelector(`#${gridId}`)
-                const monthNumber =
-                    parseInt(
-                        moment()
-                            .month(calendar.when.month)
-                            .format('MM')
-                    ) - 1
-                const currentMonth = moment({
-                    day: 1,
-                    month: monthNumber,
-                    year: calendar.year
-                })
+        const gridElement = calendarElement.querySelector(`#${gridId}`)
+        const monthNumber =
+            parseInt(
+                moment()
+                    .month(calendar.when.month)
+                    .format('MM')
+            ) - 1
+        const currentMonth = moment({
+            day: 1,
+            month: monthNumber,
+            year: calendar.year
+        })
 
-                if (currentMonth.isoWeekday() !== 7) {
-                    for (let i = currentMonth.isoWeekday(); i > 0; i--) {
-                        gridElement.insertAdjacentHTML(
-                            'beforeend',
-                            `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
+        if (currentMonth.isoWeekday() !== 7) {
+            for (let i = currentMonth.isoWeekday(); i > 0; i--) {
+                gridElement.insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
                             </div>`
-                        )
-                    }
-                }
+                )
+            }
+        }
 
-                const today = moment()
+        const today = moment()
 
-                for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
-                    const currentDay = moment({
-                        day: i,
-                        month: monthNumber,
-                        year: calendar.year
-                    })
+        for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
+            const currentDay = moment({
+                day: i,
+                month: monthNumber,
+                year: calendar.year
+            })
 
-                    gridElement.insertAdjacentHTML(
-                        'beforeend',
-                        `<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
+            gridElement.insertAdjacentHTML(
+                'beforeend',
+                `<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
                             ${currentDay.isBefore(today, 'day') ? 'bg-near-white dn db-l' : ''}
                             ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}">
                                 <div class="flex flex-column-l h-100 items-center items-end-l">
@@ -120,36 +118,36 @@ function renderMonthlyCalendars(monthlyCalendar) {
                                     </div>
                                 </div>
                         </div>`
-                    )
-                }
+            )
+        }
 
-                let lastDayOfMonth = moment({
-                    day: currentMonth.daysInMonth(),
-                    month: monthNumber,
-                    year: calendar.year
-                })
+        let lastDayOfMonth = moment({
+            day: currentMonth.daysInMonth(),
+            month: monthNumber,
+            year: calendar.year
+        })
 
-                while (lastDayOfMonth.isoWeekday() != 6) {
-                    gridElement.insertAdjacentHTML(
-                        'beforeend',
-                        `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
+        while (lastDayOfMonth.isoWeekday() != 6) {
+            gridElement.insertAdjacentHTML(
+                'beforeend',
+                `<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
                         </div>`
-                    )
+            )
 
-                    lastDayOfMonth = lastDayOfMonth.add(1, 'day')
-                }
+            lastDayOfMonth = lastDayOfMonth.add(1, 'day')
+        }
 
-                calendar.events.forEach(event => {
-                    const eventDay = moment(event.date).utc()
-                    const list = gridElement.querySelector(`#cell-${eventDay.format('DDMMYY')}`)
-                    const counter = list.nextElementSibling
+        calendar.events.forEach(event => {
+            const eventDay = moment(event.date).utc()
+            const list = gridElement.querySelector(`#cell-${eventDay.format('DDMMYY')}`)
+            const counter = list.nextElementSibling
 
-                    list.parentNode.parentNode.parentNode.classList.add('pointer')
-                    list.parentNode.parentNode.parentNode.classList.add('js-show-event-modal')
+            list.parentNode.parentNode.parentNode.classList.add('pointer')
+            list.parentNode.parentNode.parentNode.classList.add('js-show-event-modal')
 
-                    list.insertAdjacentHTML(
-                        'beforeend',
-                        `<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white
+            list.insertAdjacentHTML(
+                'beforeend',
+                `<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white
                             ${list.childNodes.length > 2 ? 'dn-l' : ''}"
                             data-day="${eventDay.format('dddd DD')}"
                             data-hour="${eventDay.format('HH:mm')}"
@@ -160,38 +158,38 @@ function renderMonthlyCalendars(monthlyCalendar) {
                             style="background-color: ${event.color};">
                                 ${event.eventName}
                         </li>`
-                    )
+            )
 
-                    if (list.children.length > 2) {
-                        counter.classList.add('db-l')
-                        counter.textContent = `y ${list.children.length - 2} más`
-                    }
-                })
-            })
+            if (list.children.length > 2) {
+                counter.classList.add('db-l')
+                counter.textContent = `y ${list.children.length - 2} más`
+            }
+        })
+    })
 
-            const events = document.querySelectorAll('.js-show-event-modal')
+    const events = document.querySelectorAll('.js-show-event-modal')
 
-            for (let i = 0; i < events.length; i++) {
-                events[i].addEventListener('click', function(event) {
-                    event.preventDefault()
+    for (let i = 0; i < events.length; i++) {
+        events[i].addEventListener('click', function(event) {
+            event.preventDefault()
 
-                    const currentCell = event.currentTarget
-                    const eventList = currentCell.querySelectorAll('li')
+            const currentCell = event.currentTarget
+            const eventList = currentCell.querySelectorAll('li')
 
-                    modalContent.innerHTML = ''
-                    modalTitle.innerHTML = eventList[0].dataset.day
+            modalContent.innerHTML = ''
+            modalTitle.innerHTML = eventList[0].dataset.day
 
-                    for (let index = 0; index < eventList.length; index++) {
-                        const eventData = eventList[index].dataset
-                        let placeHTML = ''
+            for (let index = 0; index < eventList.length; index++) {
+                const eventData = eventList[index].dataset
+                let placeHTML = ''
 
-                        if (eventData.place) {
-                            placeHTML = `<p class="black-30 mb0 mt2">${eventData.place}</p>`
-                        }
+                if (eventData.place) {
+                    placeHTML = `<p class="black-30 mb0 mt2">${eventData.place}</p>`
+                }
 
-                        modalContent.insertAdjacentHTML(
-                            'beforeend',
-                            `<div class="flex mh3 mv3 pv3">
+                modalContent.insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="flex mh3 mv3 pv3">
                                 <div class="w-30 w-20-ns">
                                     <p class="f4 f3-ns mv0 silver">${eventData.hour}</p>
                                 </div>
@@ -212,40 +210,34 @@ function renderMonthlyCalendars(monthlyCalendar) {
                                     </div>
                                 </div>
                             </div>`
-                        )
-                    }
-
-                    toggleModal()
-                })
+                )
             }
 
-            modalClose.addEventListener('click', event => {
-                event.preventDefault()
+            toggleModal()
+        })
+    }
 
-                toggleModal()
-            })
+    modalClose.addEventListener('click', event => {
+        event.preventDefault()
 
-            modalOutside.addEventListener('click', event => {
-                if (event.target.id === 'modal-outside') {
-                    event.preventDefault()
+        toggleModal()
+    })
 
-                    toggleModal()
-                }
-            })
+    modalOutside.addEventListener('click', event => {
+        if (event.target.id === 'modal-outside') {
+            event.preventDefault()
 
-            window.addEventListener('keydown', event => {
-                if (event.keyCode === 27 && !modal.classList.contains('dn')) {
-                    toggleModal()
-                }
-            })
-
-            document.querySelector('#loading').classList.add('dn')
-
-            resolve()
-        } catch (error) {
-            reject(error)
+            toggleModal()
         }
     })
+
+    window.addEventListener('keydown', event => {
+        if (event.keyCode === 27 && !modal.classList.contains('dn')) {
+            toggleModal()
+        }
+    })
+
+    document.querySelector('#loading').classList.add('dn')
 }
 
 function toggleModal() {
