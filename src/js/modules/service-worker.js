@@ -1,24 +1,24 @@
 const toast = require('./toast.js')
 
 module.exports = function serviceWorker() {
-    if (navigator.serviceWorker) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
-                reg.onupdatefound = function() {
-                    const installingWorker = reg.installing
+    if (!navigator.serviceWorker) return
 
-                    installingWorker.onstatechange = function() {
-                        if (installingWorker.state === 'installed') {
-                            const text = navigator.serviceWorker.controller
-                                ? 'Nueva versión disponible'
-                                : 'El contenido está disponible sin conexión'
-                            const theme = navigator.serviceWorker.controller ? 'info' : 'success'
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
+            reg.onupdatefound = function() {
+                const installingWorker = reg.installing
 
-                            toast(text, theme)
-                        }
+                installingWorker.onstatechange = function() {
+                    if (installingWorker.state === 'installed') {
+                        const text = navigator.serviceWorker.controller
+                            ? 'Nueva versión disponible'
+                            : 'El contenido está disponible sin conexión'
+                        const theme = navigator.serviceWorker.controller ? 'info' : 'success'
+
+                        toast(text, theme)
                     }
                 }
-            })
+            }
         })
-    }
+    })
 }
