@@ -1,3 +1,5 @@
 const calendarApp = require('./calendar/app')
 
-calendarApp()
+window.addEventListener('load', () => {
+    calendarApp()
+})
