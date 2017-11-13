@@ -1,8 +1,10 @@
 const bel = require('bel')
 const calendarReducer = require('./calendar-reducer')
 const createStore = require('./create-store')
+const moment = require('moment')
 
 require('isomorphic-fetch')
+require('moment/locale/es')
 
 let calendarEl
 let errorEl
@@ -39,10 +41,49 @@ function render() {
 function renderCalendars(calendars) {
     clearNode(calendarEl)
 
-    calendars.length &&
+    if (!calendars.length) return
+
+    calendarEl.appendChild(
+        bel`<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>`
+    )
+
+    calendars.forEach(calendar => {
+        const monthNumber =
+            parseInt(
+                moment()
+                    .month(calendar.when.month)
+                    .format('MM')
+            ) - 1
+        const currentMonth = moment({
+            day: 1,
+            month: monthNumber,
+            year: calendar.year
+        })
+
         calendarEl.appendChild(
-            bel`<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>`
+            bel`<div class="fadeIn mb5">
+                <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
+                    ${calendar.when.month} ${calendar.when.year}
+                </h2>
+                ${renderWeekdays()}
+                ${renderDays(currentMonth)}
+            </div>`
         )
+    })
+}
+
+function renderDays(currentMonth) {
+    let lastMonthDays = []
+
+    if (currentMonth.isoWeekday() !== 7) {
+        for (let i = currentMonth.isoWeekday(); i > 0; i--) {
+            lastMonthDays.push(i)
+        }
+    }
+
+    return bel`<div class="b--black-10 br bt bw1 flex flex-wrap">
+        ${lastMonthDays.map(renderLastMonthDay)}
+    </div>`
 }
 
 function renderError(error) {
@@ -68,6 +109,10 @@ function renderFilters(hasEvents) {
         )
 }
 
+function renderLastMonthDay() {
+    return bel`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l"></div>`
+}
+
 function renderLoading(show) {
     clearNode(loadingEl)
 
@@ -77,6 +122,18 @@ function renderLoading(show) {
                 Buscando eventos...
             </p>`
         )
+}
+
+function renderWeekday(weekday) {
+    return bel`<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
+        ${weekday}
+    </div>`
+}
+
+function renderWeekdays() {
+    return bel`<div class="b--black-10 bl bt bw1 dn flex-l">
+        ${moment.weekdays().map(renderWeekday)}
+    </div>`
 }
 
 module.exports = function calendarApp() {
