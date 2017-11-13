@@ -16,6 +16,7 @@
         "autoprefixer": "^6.7.7",
         "babel-preset-latest": "^6.24.0",
         "babelify": "^7.3.0",
+        "bel": "^5.1.5",
         "browser-sync": "^2.18.8",
         "browserify": "^14.1.0",
         "critical": "^1.0.0",
