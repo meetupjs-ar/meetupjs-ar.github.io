@@ -4,7 +4,6 @@ const createStore = require('./create-store')
 const moment = require('moment')
 
 require('isomorphic-fetch')
-require('moment/locale/es')
 
 let calendarEl
 let errorEl
@@ -12,10 +11,60 @@ let filtersEl
 let loadingEl
 let store
 
+moment.locale('es')
+
 function clearNode(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
     }
+}
+
+function getCurrentMonthDays(currentMonth, events) {
+    const currentMonthDays = []
+
+    for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
+        const currentDay = moment({
+            day: i,
+            month: currentMonth.month(),
+            year: currentMonth.year()
+        })
+
+        currentMonthDays.push({
+            currentDay,
+            events: events.filter(event => event.date.isSame(currentDay, 'day'))
+        })
+    }
+
+    return currentMonthDays
+}
+
+function getLastMonthDays(currentMonth) {
+    const lastMonthDays = []
+
+    if (currentMonth.isoWeekday() !== 7) {
+        for (let i = currentMonth.isoWeekday(); i > 0; i--) {
+            lastMonthDays.push(i)
+        }
+    }
+
+    return lastMonthDays
+}
+
+function getNextMonthDays(currentMonth) {
+    let lastDayOfMonth = moment({
+        day: currentMonth.daysInMonth(),
+        month: currentMonth.month(),
+        year: currentMonth.year()
+    })
+    const nextMonthDays = []
+
+    while (lastDayOfMonth.isoWeekday() != 6) {
+        nextMonthDays.push(Math.random())
+
+        lastDayOfMonth = lastDayOfMonth.add(1, 'day')
+    }
+
+    return nextMonthDays
 }
 
 function init() {
@@ -66,23 +115,22 @@ function renderCalendars(calendars) {
                     ${calendar.when.month} ${calendar.when.year}
                 </h2>
                 ${renderWeekdays()}
-                ${renderDays(currentMonth)}
+                ${renderDays(calendar.events, currentMonth)}
             </div>`
         )
     })
 }
 
-function renderDays(currentMonth) {
-    let lastMonthDays = []
-
-    if (currentMonth.isoWeekday() !== 7) {
-        for (let i = currentMonth.isoWeekday(); i > 0; i--) {
-            lastMonthDays.push(i)
-        }
-    }
+function renderDays(events, currentMonth) {
+    const currentMonthDays = getCurrentMonthDays(currentMonth, events)
+    const lastMonthDays = getLastMonthDays(currentMonth)
+    const nextMonthDays = getNextMonthDays(currentMonth)
+    const today = moment()
 
     return bel`<div class="b--black-10 br bt bw1 flex flex-wrap">
         ${lastMonthDays.map(renderLastMonthDay)}
+        ${currentMonthDays.map(currentDay => renderMonthDays(today, currentDay))}
+        ${nextMonthDays.map(renderNextMonthDay)}
     </div>`
 }
 
@@ -122,6 +170,51 @@ function renderLoading(show) {
                 Buscando eventos...
             </p>`
         )
+}
+
+function renderMonthDays(today, currentDayInfo) {
+    const { currentDay, events } = currentDayInfo
+
+    return bel`<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
+        ${currentDay.isBefore(today, 'day') ? 'bg-near-white dn db-l' : ''}
+        ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
+        ${events.length ? 'pointer' : ''}">
+        <div class="flex flex-column-l h-100 items-center items-end-l">
+            <div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
+                <ul class="list ma0 pl0">
+                    ${events.map(
+                        (
+                            event,
+                            index
+                        ) => bel`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
+                        1
+                            ? 'dn-l'
+                            : ''}"
+                            style="background-color: ${event.color};">${event.eventName}</li>`
+                    )}
+                </ul>
+                <span class="black-30 dn f6 mt2 truncate ${events.length > 1 ? 'db-l' : ''}">
+                    y ${events.length - 2} más
+                </span>
+            </div>
+            <div class="tc tr-l w-20 w-100-l">
+                <span class="f3
+                    ${currentDay.isBefore(today, 'day') ? 'strike' : ''}
+                    ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
+                        ${currentDay.format('DD')}
+                </span>
+                <span class="db dn-l f6 ttc
+                    ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
+                        ${currentDay.format('dddd')}
+                </span>
+            </div>
+        </div>
+    </div>`
+}
+
+function renderNextMonthDay() {
+    return bel`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
+    </div>`
 }
 
 function renderWeekday(weekday) {
