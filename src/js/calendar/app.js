@@ -169,8 +169,8 @@ function renderFilters(hasEvents) {
 
     hasEvents &&
         filtersEl.appendChild(
-            bel`<div class="center mw9 ph3 pv5">
-                <input id="filter" type="text" class="b--black-10 ba black-alternative br2 bw1 db flex-auto input-reset outline-0 ph3 pv2 w-100"
+            bel`<div class="center mw9 pv5">
+                <input id="filter" type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
                     placeholder="Buscar por nombre de evento..."></input>
             </div>`
         )
