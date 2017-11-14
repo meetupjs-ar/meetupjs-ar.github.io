@@ -144,6 +144,26 @@ function renderError(error) {
         )
 }
 
+function renderEventsDay(events) {
+    return bel`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
+        <ul class="list ma0 pl0">
+            ${events.map(
+                (
+                    event,
+                    index
+                ) => bel`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
+                1
+                    ? 'dn-l'
+                    : ''}"
+                    style="background-color: ${event.color};">${event.eventName}</li>`
+            )}
+        </ul>
+        <span class="black-30 dn f6 mt2 truncate ${events.length > 2 ? 'db-l' : ''}">
+            y ${events.length - 2} más
+        </span>
+    </div>`
+}
+
 function renderFilters(hasEvents) {
     clearNode(filtersEl)
 
@@ -154,6 +174,22 @@ function renderFilters(hasEvents) {
                     placeholder="Buscar por nombre de evento..."></input>
             </div>`
         )
+}
+
+function renderFooterDay(currentDay, today) {
+    return bel`<div class="tc tr-l w-20 w-100-l">
+        <span class="f3 ${currentDay.isBefore(today, 'day') ? 'strike' : ''} ${currentDay.isSame(
+        today,
+        'day'
+    )
+        ? 'green'
+        : 'black-30'}">
+            ${currentDay.format('DD')}
+        </span>
+        <span class="db dn-l f6 ttc ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
+            ${currentDay.format('dddd')}
+        </span>
+    </div>`
 }
 
 function renderLastMonthDay() {
@@ -179,34 +215,8 @@ function renderMonthDays(today, currentDayInfo) {
         ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
         ${events.length ? 'pointer' : ''}">
         <div class="flex flex-column-l h-100 items-center items-end-l">
-            <div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
-                <ul class="list ma0 pl0">
-                    ${events.map(
-                        (
-                            event,
-                            index
-                        ) => bel`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
-                        1
-                            ? 'dn-l'
-                            : ''}"
-                            style="background-color: ${event.color};">${event.eventName}</li>`
-                    )}
-                </ul>
-                <span class="black-30 dn f6 mt2 truncate ${events.length > 1 ? 'db-l' : ''}">
-                    y ${events.length - 2} más
-                </span>
-            </div>
-            <div class="tc tr-l w-20 w-100-l">
-                <span class="f3
-                    ${currentDay.isBefore(today, 'day') ? 'strike' : ''}
-                    ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
-                        ${currentDay.format('DD')}
-                </span>
-                <span class="db dn-l f6 ttc
-                    ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
-                        ${currentDay.format('dddd')}
-                </span>
-            </div>
+            ${renderEventsDay(events)}
+            ${renderFooterDay(currentDay, today)}
         </div>
     </div>`
 }
