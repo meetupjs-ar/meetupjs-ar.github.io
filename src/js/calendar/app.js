@@ -4,14 +4,13 @@ const createStore = require('./create-store')
 const moment = require('moment')
 
 require('isomorphic-fetch')
+require('moment/locale/es')
 
 let calendarEl
 let errorEl
 let filtersEl
 let loadingEl
 let store
-
-moment.locale('es')
 
 function clearNode(node) {
     while (node.firstChild) {
@@ -106,7 +105,7 @@ function renderCalendars(calendars) {
         const currentMonth = moment({
             day: 1,
             month: monthNumber,
-            year: calendar.year
+            year: calendar.when.year
         })
 
         calendarEl.appendChild(
