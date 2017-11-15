@@ -13,8 +13,10 @@ function eventParser(rawEvent) {
 }
 
 function getEventsByName(monthlyCalendar, eventName) {
-    return monthlyCalendar.events.filter(event =>
-        event.eventName.toLowerCase().includes(eventName.toLowerCase())
+    return monthlyCalendar.events.filter(
+        event =>
+            event.eventName.toLowerCase().includes(eventName.toLowerCase()) ||
+            (event.place ? event.place.toLowerCase().includes(eventName.toLowerCase()) : false)
     )
 }
 

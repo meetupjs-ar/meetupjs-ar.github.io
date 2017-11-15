@@ -167,7 +167,7 @@ function renderEventsDay(events) {
 function renderFilters(show, currentFilter) {
     return html`<div class="center mw9 pv5 ${show ? 'db' : 'dn'}">
         <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
-            placeholder="Buscar por nombre de evento..." value="${currentFilter ||
+            placeholder="Buscar por nombre o lugar..." value="${currentFilter ||
                 ''}" onkeyup=${debounce(search, 250)}>
     </div>`
 }
