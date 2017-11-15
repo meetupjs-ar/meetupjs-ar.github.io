@@ -24,7 +24,7 @@ body {
     color: #98d083;
     content: '•';
     font-weight: bold;
-    right: 0.25rem;
+    right: -0.75rem;
     position: absolute;
     top: 25%;
 }
@@ -41,12 +41,12 @@ body {
     font-size: 30px;
 }
 
-.fadeIn {
+.fade-in {
     animation-duration: 1s;
     animation-name: fadeIn;
 }
 
-.fadeInDown {
+.fade-in-down {
     animation-duration: 0.5s;
     animation-name: fadeInDown;
 }

@@ -99,7 +99,7 @@ function render() {
 }
 
 function renderCalendars(calendars) {
-    return html`<div class="${calendars.length ? 'db' : 'dn'}">
+    return html`<div class="fade-in ${calendars.length ? 'db' : 'dn'}">
         <h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>
         ${calendars.map(calendar => {
             const monthNumber =
@@ -139,7 +139,7 @@ function renderDays(events, currentMonth) {
 }
 
 function renderError(show) {
-    return html`<p class="f4 f3-ns mv0 pv5 silver tc ${show ? 'db' : 'dn'}"">
+    return html`<p class="fade-in f4 f3-ns mv0 pv5 silver tc ${show ? 'db' : 'dn'}"">
         Ups! Ocurrió un error (:
     </p>`
 }
@@ -165,7 +165,7 @@ function renderEventsDay(events) {
 }
 
 function renderFilters(show, currentFilter) {
-    return html`<div class="center mw9 pv5 ${show ? 'db' : 'dn'}">
+    return html`<div class="center fade-in mw9 pv5 ${show ? 'db' : 'dn'}">
         <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
             placeholder="Buscar por nombre o lugar..." value="${currentFilter ||
                 ''}" onkeyup=${debounce(search, 250)}>
@@ -193,7 +193,7 @@ function renderLastMonthDay() {
 }
 
 function renderLoading(show) {
-    return html`<p class="f4 f3-ns ma0 pv5 silver tc ${show ? 'db' : 'dn'}">
+    return html`<p class="f4 f3-ns fade-in ma0 pv5 silver tc ${show ? 'db' : 'dn'}">
         Buscando eventos...
     </p>`
 }
@@ -209,14 +209,14 @@ function renderModal(events) {
         window.removeEventListener('keydown', closeModalOnEscapeKey)
     }
 
-    return html`<div class="bg-black-70 fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${shouldRenderModal
+    return html`<div class="bg-black-70 fade-in fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${shouldRenderModal
         ? 'flex'
         : 'dn'}" onclick=${function(ev) {
             if (ev.target === ev.currentTarget) {
                 closeModal()
             }
         }}>
-        <div id="modal-wrapper" class="center cursor-default fadeInDown mw6 w-100">
+        <div id="modal-wrapper" class="center cursor-default fade-in-down mw6 w-100">
             <div class="bg-white br2 ma3">
                 <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
                     <span id="modal-title" class="b black-alternative dib f4 ttc">${shouldRenderModal

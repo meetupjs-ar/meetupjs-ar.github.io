@@ -17,7 +17,7 @@ function init() {
 function toggleMenuHandler() {
     closeMenu.classList.toggle('dn')
     menu.classList.toggle('dn')
-    menu.classList.toggle('fadeIn')
+    menu.classList.toggle('fade-in')
     openMenu.classList.toggle('dn')
 }
 
