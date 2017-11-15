@@ -1,4 +1,4 @@
-const bel = require('bel')
+const html = require('yo-yo')
 const calendarReducer = require('./calendar-reducer')
 const createStore = require('./create-store')
 const debounce = require('lodash.debounce')
@@ -15,19 +15,13 @@ let loadingEl
 let modalContainerEl
 let store
 
-function clearNode(node) {
-    while (node.firstChild) {
-        node.removeChild(node.firstChild)
-    }
-}
-
 function closeModal() {
     store.dispatch({
         type: 'CLOSE_MODAL'
     })
 }
 
-function closeModalOnEscapeKeyHandler(ev) {
+function closeModalOnEscapeKey(ev) {
     if (ev.keyCode === 27) {
         closeModal()
     }
@@ -83,11 +77,11 @@ function getNextMonthDays(currentMonth) {
 
 function init() {
     bodyEl = document.querySelector('body')
-    calendarEl = document.querySelector('#calendar')
-    errorEl = document.querySelector('#error')
-    filtersEl = document.querySelector('#filters')
-    loadingEl = document.querySelector('#loading')
-    modalContainerEl = document.querySelector('#modal-container')
+    calendarEl = document.querySelector('#calendar').appendChild(renderCalendars([]))
+    errorEl = document.querySelector('#error').appendChild(renderError(false))
+    filtersEl = document.querySelector('#filters').appendChild(renderFilters(false, ''))
+    loadingEl = document.querySelector('#loading').appendChild(renderLoading(true))
+    modalContainerEl = document.querySelector('#modal-container').appendChild(renderModal([]))
 
     store = createStore(calendarReducer)
 }
@@ -96,47 +90,39 @@ function render() {
     const state = store.getState()
     const calendars =
         !!state.monthlyCalendars && state.monthlyCalendars.length ? state.monthlyCalendars : []
-    const events = state.events
 
-    renderLoading(!!state.searching)
-    renderError(!!state.error)
-    renderFilters(calendars.length, state.currentFilter)
-    renderCalendars(calendars)
-    renderModal(events)
+    html.update(calendarEl, renderCalendars(calendars))
+    html.update(errorEl, renderError(!!state.error))
+    html.update(filtersEl, renderFilters(calendars.length, state.currentFilter))
+    html.update(loadingEl, renderLoading(state.searching))
+    html.update(modalContainerEl, renderModal(state.events))
 }
 
 function renderCalendars(calendars) {
-    clearNode(calendarEl)
+    return html`<div class="${calendars.length ? 'db' : 'dn'}">
+        <h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>
+        ${calendars.map(calendar => {
+            const monthNumber =
+                parseInt(
+                    moment()
+                        .month(calendar.when.month)
+                        .format('MM')
+                ) - 1
+            const currentMonth = moment({
+                day: 1,
+                month: monthNumber,
+                year: calendar.when.year
+            })
 
-    if (!calendars.length) return
-
-    calendarEl.appendChild(
-        bel`<h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>`
-    )
-
-    calendars.forEach(calendar => {
-        const monthNumber =
-            parseInt(
-                moment()
-                    .month(calendar.when.month)
-                    .format('MM')
-            ) - 1
-        const currentMonth = moment({
-            day: 1,
-            month: monthNumber,
-            year: calendar.when.year
-        })
-
-        calendarEl.appendChild(
-            bel`<div class="mb5">
+            return html`<div class="mb5">
                 <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
                     ${calendar.when.month} ${calendar.when.year}
                 </h2>
                 ${renderWeekdays()}
                 ${renderDays(calendar.events, currentMonth)}
             </div>`
-        )
-    })
+        })}
+    </div>`
 }
 
 function renderDays(events, currentMonth) {
@@ -145,32 +131,27 @@ function renderDays(events, currentMonth) {
     const nextMonthDays = getNextMonthDays(currentMonth)
     const today = moment()
 
-    return bel`<div class="b--black-10 br bt bw1 flex flex-wrap">
+    return html`<div class="b--black-10 br bt bw1 flex flex-wrap">
         ${lastMonthDays.map(renderLastMonthDay)}
         ${currentMonthDays.map(currentDay => renderMonthDays(today, currentDay))}
         ${nextMonthDays.map(renderNextMonthDay)}
     </div>`
 }
 
-function renderError(error) {
-    clearNode(errorEl)
-
-    error &&
-        errorEl.appendChild(
-            bel`<p class="f4 f3-ns mv0 pv5 silver tc">
-                Ups! Ocurrió un error (:
-            </p>`
-        )
+function renderError(show) {
+    return html`<p class="f4 f3-ns mv0 pv5 silver tc ${show ? 'db' : 'dn'}"">
+        Ups! Ocurrió un error (:
+    </p>`
 }
 
 function renderEventsDay(events) {
-    return bel`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
+    return html`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
         <ul class="list ma0 pl0">
             ${events.map(
                 (
                     event,
                     index
-                ) => bel`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
+                ) => html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
                 1
                     ? 'dn-l'
                     : ''}"
@@ -183,21 +164,16 @@ function renderEventsDay(events) {
     </div>`
 }
 
-function renderFilters(isCalendarVisible, currentFilter) {
-    clearNode(filtersEl)
-
-    isCalendarVisible &&
-        filtersEl.appendChild(
-            bel`<div class="center mw9 pv5">
-            <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
+function renderFilters(show, currentFilter) {
+    return html`<div class="center mw9 pv5 ${show ? 'db' : 'dn'}">
+        <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
             placeholder="Buscar por nombre de evento..." value="${currentFilter ||
                 ''}" onkeyup=${debounce(search, 250)}>
-        </div>`
-        )
+    </div>`
 }
 
 function renderFooterDay(currentDay, today) {
-    return bel`<div class="tc tr-l w-20 w-100-l">
+    return html`<div class="tc tr-l w-20 w-100-l">
         <span class="f3 ${currentDay.isBefore(today, 'day') ? 'strike' : ''} ${currentDay.isSame(
         today,
         'day'
@@ -213,64 +189,55 @@ function renderFooterDay(currentDay, today) {
 }
 
 function renderLastMonthDay() {
-    return bel`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l"></div>`
+    return html`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l"></div>`
 }
 
 function renderLoading(show) {
-    clearNode(loadingEl)
-
-    show &&
-        loadingEl.appendChild(
-            bel`<p class="f4 f3-ns ma0 pv5 silver tc">
-                Buscando eventos...
-            </p>`
-        )
+    return html`<p class="f4 f3-ns ma0 pv5 silver tc ${show ? 'db' : 'dn'}">
+        Buscando eventos...
+    </p>`
 }
 
 function renderModal(events) {
     const shouldRenderModal = events && events.length
 
-    clearNode(modalContainerEl)
-
     if (shouldRenderModal) {
         bodyEl.classList.add('overflow-hidden')
-        window.addEventListener('keydown', closeModalOnEscapeKeyHandler)
-
-        modalContainerEl.appendChild(
-            bel`<div class="bg-black-70 fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2" onclick=${function(
-                ev
-            ) {
-                if (ev.target === ev.currentTarget) {
-                    closeModal()
-                }
-            }}>
-                <div id="modal-wrapper" class="center cursor-default fadeInDown mw6 w-100">
-                    <div class="bg-white br2 ma3">
-                        <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
-                            <span id="modal-title" class="b black-alternative dib f4 ttc">${events[0].date.format(
-                                'dddd DD'
-                            )}</span>
-                            <span id="modal-close" class="f-30-px grow ion-android-close pointer silver" onclick=${function() {
-                                closeModal()
-                            }}></span>
-                        </div>
-                        <div class="mh-75 overflow-y-auto">
-                            <div id="modal-content">
-                                ${events.map(renderModalEvent)}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`
-        )
+        window.addEventListener('keydown', closeModalOnEscapeKey)
     } else {
         bodyEl.classList.remove('overflow-hidden')
-        window.removeEventListener('keydown', closeModalOnEscapeKeyHandler)
+        window.removeEventListener('keydown', closeModalOnEscapeKey)
     }
+
+    return html`<div class="bg-black-70 fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${shouldRenderModal
+        ? 'flex'
+        : 'dn'}" onclick=${function(ev) {
+            if (ev.target === ev.currentTarget) {
+                closeModal()
+            }
+        }}>
+        <div id="modal-wrapper" class="center cursor-default fadeInDown mw6 w-100">
+            <div class="bg-white br2 ma3">
+                <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
+                    <span id="modal-title" class="b black-alternative dib f4 ttc">${shouldRenderModal
+                        ? events[0].date.format('dddd DD')
+                        : ''}</span>
+                    <span id="modal-close" class="f-30-px grow ion-android-close pointer silver" onclick=${function() {
+                        closeModal()
+                    }}></span>
+                </div>
+                <div class="mh-75 overflow-y-auto">
+                    <div id="modal-content">
+                        ${shouldRenderModal ? events.map(renderModalEvent) : ''}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`
 }
 
 function renderModalEvent(event) {
-    return bel`<div class="flex mh3 mv3 pv3">
+    return html`<div class="flex mh3 mv3 pv3">
         <div class="w-30 w-20-ns">
             <p class="f4 f3-ns mv0 silver">${event.date.format('HH:mm')}</p>
         </div>
@@ -279,7 +246,7 @@ function renderModalEvent(event) {
                 style="color: ${event.color};">
                     ${event.eventName}
             </h3>
-            ${event.place ? bel`<p class="black-30 mb0 mt2">${event.place}</p>` : ''}
+            ${event.place ? html`<p class="black-30 mb0 mt2">${event.place}</p>` : ''}
             <div class="flex">
                 <a href="${event.eventLink}"
                     target="_blank"
@@ -296,7 +263,7 @@ function renderModalEvent(event) {
 function renderMonthDays(today, currentDayInfo) {
     const { currentDay, events } = currentDayInfo
 
-    return bel`<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
+    return html`<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
         ${currentDay.isBefore(today, 'day') ? 'bg-near-white dn db-l' : ''}
         ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
         ${events.length ? 'pointer' : ''}"
@@ -316,18 +283,18 @@ function renderMonthDays(today, currentDayInfo) {
 }
 
 function renderNextMonthDay() {
-    return bel`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
+    return html`<div class="b--black-10 bb bg-near-white bl bw1 dn db-l w-one-seventh-l">
     </div>`
 }
 
 function renderWeekday(weekday) {
-    return bel`<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
+    return html`<div class="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc w-one-seventh-l">
         ${weekday}
     </div>`
 }
 
 function renderWeekdays() {
-    return bel`<div class="b--black-10 bl bt bw1 dn flex-l">
+    return html`<div class="b--black-10 bl bt bw1 dn flex-l">
         ${moment.weekdays().map(renderWeekday)}
     </div>`
 }

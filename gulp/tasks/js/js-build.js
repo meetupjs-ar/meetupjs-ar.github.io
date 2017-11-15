@@ -9,6 +9,7 @@ const gulpif = require('gulp-if')
 const source = require('vinyl-source-stream')
 const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
+const yoYoify = require('yo-yoify')
 
 module.exports = function(config) {
     return function(done) {
@@ -23,7 +24,8 @@ module.exports = function(config) {
                         babelify.configure({
                             presets: ['latest']
                         }),
-                        envify(config.envify)
+                        envify(config.envify),
+                        yoYoify
                     ]
                 })
                 const bundleName = entry.substring(entry.lastIndexOf('/') + 1)

@@ -16,7 +16,6 @@
         "autoprefixer": "^6.7.7",
         "babel-preset-latest": "^6.24.0",
         "babelify": "^7.3.0",
-        "bel": "^5.1.5",
         "browser-sync": "^2.18.8",
         "browserify": "^14.1.0",
         "critical": "^1.0.0",
@@ -47,7 +46,9 @@
         "sw-precache": "^5.2.0",
         "tachyons": "^4.6.2",
         "vinyl-buffer": "^1.0.0",
-        "vinyl-source-stream": "^1.1.0"
+        "vinyl-source-stream": "^1.1.0",
+        "yo-yo": "^1.4.1",
+        "yo-yoify": "^4.1.0"
     },
     "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
     "dependencies": {},
