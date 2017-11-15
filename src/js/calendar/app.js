@@ -6,15 +6,29 @@ const moment = require('moment')
 require('isomorphic-fetch')
 require('moment/locale/es')
 
+let bodyEl
 let calendarEl
 let errorEl
 let filtersEl
 let loadingEl
+let modalContainerEl
 let store
 
 function clearNode(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
+    }
+}
+
+function closeModal() {
+    store.dispatch({
+        type: 'CLOSE_MODAL'
+    })
+}
+
+function closeModalOnEscapeKeyHandler(ev) {
+    if (ev.keyCode === 27) {
+        closeModal()
     }
 }
 
@@ -67,10 +81,12 @@ function getNextMonthDays(currentMonth) {
 }
 
 function init() {
+    bodyEl = document.querySelector('body')
     calendarEl = document.querySelector('#calendar')
     errorEl = document.querySelector('#error')
     filtersEl = document.querySelector('#filters')
     loadingEl = document.querySelector('#loading')
+    modalContainerEl = document.querySelector('#modal-container')
 
     store = createStore(calendarReducer)
 }
@@ -79,11 +95,13 @@ function render() {
     const state = store.getState()
     const calendars =
         !!state.monthlyCalendars && state.monthlyCalendars.length ? state.monthlyCalendars : []
+    const events = state.events
 
     renderLoading(!!state.searching)
     renderError(!!state.error)
     renderFilters(calendars.length)
     renderCalendars(calendars)
+    renderModal(events)
 }
 
 function renderCalendars(calendars) {
@@ -109,7 +127,7 @@ function renderCalendars(calendars) {
         })
 
         calendarEl.appendChild(
-            bel`<div class="fadeIn mb5">
+            bel`<div class="mb5">
                 <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
                     ${calendar.when.month} ${calendar.when.year}
                 </h2>
@@ -207,13 +225,87 @@ function renderLoading(show) {
         )
 }
 
+function renderModal(events) {
+    const shouldRenderModal = events && events.length
+
+    clearNode(modalContainerEl)
+
+    if (shouldRenderModal) {
+        bodyEl.classList.add('overflow-hidden')
+        window.addEventListener('keydown', closeModalOnEscapeKeyHandler)
+
+        modalContainerEl.appendChild(
+            bel`<div class="bg-black-70 fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2" onclick=${function(
+                ev
+            ) {
+                if (ev.target === ev.currentTarget) {
+                    closeModal()
+                }
+            }}>
+                <div id="modal-wrapper" class="center cursor-default fadeInDown mw6 w-100">
+                    <div class="bg-white br2 ma3">
+                        <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
+                            <span id="modal-title" class="b black-alternative dib f4 ttc">${events[0].date.format(
+                                'dddd DD'
+                            )}</span>
+                            <span id="modal-close" class="f-30-px grow ion-android-close pointer silver" onclick=${function() {
+                                closeModal()
+                            }}></span>
+                        </div>
+                        <div class="mh-75 overflow-y-auto">
+                            <div id="modal-content">
+                                ${events.map(renderModalEvent)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        )
+    } else {
+        bodyEl.classList.remove('overflow-hidden')
+        window.removeEventListener('keydown', closeModalOnEscapeKeyHandler)
+    }
+}
+
+function renderModalEvent(event) {
+    return bel`<div class="flex mh3 mv3 pv3">
+        <div class="w-30 w-20-ns">
+            <p class="f4 f3-ns mv0 silver">${event.date.format('HH:mm')}</p>
+        </div>
+        <div class="w-70 w-80-ns">
+            <h3 class="f4 f3-ns mv0"
+                style="color: ${event.color};">
+                    ${event.eventName}
+            </h3>
+            ${event.place ? bel`<p class="black-30 mb0 mt2">${event.place}</p>` : ''}
+            <div class="flex">
+                <a href="${event.eventLink}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 ttu white" style="background-color: ${event.color};">
+                        <span class="black-30 f-30-px ion-link mr2"></span>
+                        <span class="text-shadow-1">Link</span>
+                </a>
+            </div>
+        </div>
+    </div>`
+}
+
 function renderMonthDays(today, currentDayInfo) {
     const { currentDay, events } = currentDayInfo
 
     return bel`<div class="b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 w-one-seventh-l
         ${currentDay.isBefore(today, 'day') ? 'bg-near-white dn db-l' : ''}
         ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
-        ${events.length ? 'pointer' : ''}">
+        ${events.length ? 'pointer' : ''}"
+        onclick=${function() {
+            if (events.length) {
+                store.dispatch({
+                    type: 'SHOW_MODAL',
+                    payload: events
+                })
+            }
+        }}>
         <div class="flex flex-column-l h-100 items-center items-end-l">
             ${renderEventsDay(events)}
             ${renderFooterDay(currentDay, today)}

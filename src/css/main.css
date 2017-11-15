@@ -29,6 +29,10 @@ body {
     top: 25%;
 }
 
+.cursor-default {
+    cursor: default;
+}
+
 .droid {
     font-family: 'Droid Sans', sans-serif;
 }

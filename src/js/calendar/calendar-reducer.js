@@ -1,21 +1,32 @@
 const moment = require('moment')
 
 function calendarParser(rawCalendar) {
-    return Object.assign({}, rawCalendar, { events: rawCalendar.events.map(eventParser) })
+    return copyAndExtend(rawCalendar, { events: rawCalendar.events.map(eventParser) })
 }
 
 function eventParser(rawEvent) {
-    return Object.assign({}, rawEvent, { date: moment(rawEvent.date).utc() })
+    return copyAndExtend(rawEvent, { date: moment(rawEvent.date).utc() })
 }
 
-module.exports = function calendarReducer(state = [], action) {
+function copyAndExtend(copyFrom, extendWith) {
+    return Object.assign({}, copyFrom, extendWith)
+}
+
+module.exports = function calendarReducer(state = {}, action) {
     switch (action.type) {
+    case 'CLOSE_MODAL':
+        return copyAndExtend(state, { events: [] })
     case 'LOOKING_FOR_DATA':
-        return Object.assign({}, { searching: true })
+        return copyAndExtend(state, { searching: true })
     case 'SHOW_ERROR':
-        return Object.assign({}, { error: true })
+        return copyAndExtend(state, { error: true, searching: false })
+    case 'SHOW_MODAL':
+        return copyAndExtend(state, { events: action.payload.slice(0) })
     case 'TAKE_AS_ORIGINALS':
-        return Object.assign({}, { monthlyCalendars: action.payload.map(calendarParser) })
+        return copyAndExtend(state, {
+            monthlyCalendars: action.payload.map(calendarParser),
+            searching: false
+        })
     default:
         return state
     }
