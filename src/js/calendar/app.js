@@ -1,6 +1,7 @@
 const bel = require('bel')
 const calendarReducer = require('./calendar-reducer')
 const createStore = require('./create-store')
+const debounce = require('lodash.debounce')
 const moment = require('moment')
 
 require('isomorphic-fetch')
@@ -99,7 +100,7 @@ function render() {
 
     renderLoading(!!state.searching)
     renderError(!!state.error)
-    renderFilters(calendars.length)
+    renderFilters(calendars.length, state.currentFilter)
     renderCalendars(calendars)
     renderModal(events)
 }
@@ -182,15 +183,16 @@ function renderEventsDay(events) {
     </div>`
 }
 
-function renderFilters(hasEvents) {
+function renderFilters(isCalendarVisible, currentFilter) {
     clearNode(filtersEl)
 
-    hasEvents &&
+    isCalendarVisible &&
         filtersEl.appendChild(
             bel`<div class="center mw9 pv5">
-                <input id="filter" type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
-                    placeholder="Buscar por nombre de evento..."></input>
-            </div>`
+            <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
+            placeholder="Buscar por nombre de evento..." value="${currentFilter ||
+                ''}" onkeyup=${debounce(search, 250)}>
+        </div>`
         )
 }
 
@@ -328,6 +330,13 @@ function renderWeekdays() {
     return bel`<div class="b--black-10 bl bt bw1 dn flex-l">
         ${moment.weekdays().map(renderWeekday)}
     </div>`
+}
+
+function search() {
+    store.dispatch({
+        type: 'FILTER_BY_EVENT_NAME',
+        payload: this.value
+    })
 }
 
 module.exports = function calendarApp() {
