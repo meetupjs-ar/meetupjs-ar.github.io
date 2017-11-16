@@ -1,8 +1,10 @@
-const html = require('yo-yo')
 const calendarReducer = require('./calendar-reducer')
 const createStore = require('./create-store')
 const debounce = require('lodash.debounce')
+const flatten = require('lodash.flatten')
+const html = require('yo-yo')
 const moment = require('moment')
+const uniq = require('lodash.uniq')
 
 require('isomorphic-fetch')
 require('moment/locale/es')
@@ -93,7 +95,7 @@ function render() {
 
     html.update(calendarEl, renderCalendars(calendars))
     html.update(errorEl, renderError(!!state.error))
-    html.update(filtersEl, renderFilters(calendars.length, state.currentFilter))
+    html.update(filtersEl, renderFilters(calendars, state.currentFilter))
     html.update(loadingEl, renderLoading(state.searching))
     html.update(modalContainerEl, renderModal(state.events))
 }
@@ -164,11 +166,27 @@ function renderEventsDay(events) {
     </div>`
 }
 
-function renderFilters(show, currentFilter) {
-    return html`<div class="center fade-in mw9 pv5 ${show ? 'db' : 'dn'}">
-        <input type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset outline-0 ph3 pv2 w-100"
+function renderFilters(calendars, currentFilter) {
+    const eventNames = calendars.length
+        ? calendars.map(calendar => calendar.events.map(event => event.eventName))
+        : []
+    const eventPlaces = calendars.length
+        ? calendars.map(calendar =>
+              calendar.events.map(event => event.place).filter(eventPlace => !!eventPlace)
+          )
+        : []
+    const allSuggestionWithDuplicates = flatten(eventNames)
+        .concat(flatten(eventPlaces))
+        .sort()
+    const suggestions = uniq(allSuggestionWithDuplicates)
+
+    return html`<div class="center fade-in mw9 pv5 ${calendars.length ? 'db' : 'dn'}">
+        <input list="suggestions" type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset lh-solid outline-0 ph3 pv2 w-100"
             placeholder="Buscar por nombre o lugar..." value="${currentFilter ||
                 ''}" onkeyup=${debounce(search, 250)}>
+        <datalist id="suggestions">
+            ${suggestions.map(suggestion => html`<option value="${suggestion}">`)}
+        </datalist>
     </div>`
 }
 

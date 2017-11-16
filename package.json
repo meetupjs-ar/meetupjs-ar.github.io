@@ -1,6 +1,6 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "2.94.0",
+    "version": "2.99.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
@@ -41,6 +41,8 @@
         "gulp-util": "^3.0.8",
         "isomorphic-fetch": "^2.2.1",
         "lodash.debounce": "^4.0.8",
+        "lodash.flatten": "^4.4.0",
+        "lodash.uniq": "^4.5.0",
         "moment": "^2.18.1",
         "postcss-import": "^9.1.0",
         "sw-precache": "^5.2.0",
