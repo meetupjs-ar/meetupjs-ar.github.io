@@ -18,15 +18,11 @@ let modalContainerEl
 let store
 
 function closeModal() {
-    store.dispatch({
-        type: 'CLOSE_MODAL'
-    })
+    store.dispatch({ type: 'CLOSE_MODAL' })
 }
 
 function closeModalOnEscapeKey(ev) {
-    if (ev.keyCode === 27) {
-        closeModal()
-    }
+    if (ev.keyCode === 27) closeModal()
 }
 
 function getCurrentMonthDays(currentMonth, events) {
@@ -149,16 +145,13 @@ function renderError(show) {
 function renderEventsDay(events) {
     return html`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
         <ul class="list ma0 pl0">
-            ${events.map(
-                (
-                    event,
-                    index
-                ) => html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
+            ${events.map(function(event, index) {
+                return html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
                 1
                     ? 'dn-l'
                     : ''}"
                     style="background-color: ${event.color};">${event.eventName}</li>`
-            )}
+            })}
         </ul>
         <span class="black-30 dn f6 mt2 truncate ${events.length > 2 ? 'db-l' : ''}">
             y ${events.length - 2} más
@@ -179,6 +172,13 @@ function renderFilters(calendars, currentFilter) {
         .concat(flatten(eventPlaces))
         .sort()
     const suggestions = uniq(allSuggestionWithDuplicates)
+        .filter(
+            suggestion =>
+                suggestion &&
+                currentFilter &&
+                suggestion.toLowerCase().includes(currentFilter.toLowerCase())
+        )
+        .slice(0, 10)
 
     return html`<div class="center fade-in mw9 pv5 ${calendars.length ? 'db' : 'dn'}">
         <input list="suggestions" type="text" class="b--black-10 ba black-alternative br2 bw1 db droid flex-auto input-reset lh-solid outline-0 ph3 pv2 w-100"
@@ -230,9 +230,7 @@ function renderModal(events) {
     return html`<div class="bg-black-70 fade-in fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${shouldRenderModal
         ? 'flex'
         : 'dn'}" onclick=${function(ev) {
-            if (ev.target === ev.currentTarget) {
-                closeModal()
-            }
+            if (ev.target === ev.currentTarget) closeModal()
         }}>
         <div id="modal-wrapper" class="center cursor-default fade-in-down mw6 w-100">
             <div class="bg-white br2 ma3">
@@ -286,12 +284,12 @@ function renderMonthDays(today, currentDayInfo) {
         ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
         ${events.length ? 'pointer' : ''}"
         onclick=${function() {
-            if (events.length) {
-                store.dispatch({
-                    type: 'SHOW_MODAL',
-                    payload: events
-                })
-            }
+            if (!events.length) return
+
+            store.dispatch({
+                type: 'SHOW_MODAL',
+                payload: events
+            })
         }}>
         <div class="flex flex-column-l h-100 items-center items-end-l">
             ${renderEventsDay(events)}
@@ -318,31 +316,22 @@ function renderWeekdays() {
 }
 
 function search() {
-    store.dispatch({
-        type: 'FILTER_BY_EVENT_NAME',
-        payload: this.value
-    })
+    store.dispatch({ type: 'FILTER_BY_EVENT_NAME', payload: this.value })
 }
 
 module.exports = function calendarApp() {
     init()
 
     store.subscribe(render)
-    store.dispatch({
-        type: 'LOOKING_FOR_DATA'
-    })
+    store.dispatch({ type: 'LOOKING_FOR_DATA' })
 
     fetch(process.env.CALENDAR_API)
         .then(response => response.json())
-        .then(monthlyCalendars => {
+        .then(monthlyCalendars =>
             store.dispatch({
                 type: 'TAKE_AS_ORIGINALS',
                 payload: monthlyCalendars
             })
-        })
-        .catch(() => {
-            store.dispatch({
-                type: 'SHOW_ERROR'
-            })
-        })
+        )
+        .catch(() => store.dispatch({ type: 'SHOW_ERROR' }))
 }
