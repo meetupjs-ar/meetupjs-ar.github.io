@@ -34,7 +34,7 @@ module.exports = function calendarReducer(state = {}, action) {
                 )
         })
     case 'LOOKING_FOR_DATA':
-        return copyAndExtend(state, { searching: true })
+        return copyAndExtend(state, { error: false, searching: true })
     case 'SHOW_ERROR':
         return copyAndExtend(state, { error: true, searching: false })
     case 'SHOW_MODAL':

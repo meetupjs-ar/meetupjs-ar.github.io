@@ -84,6 +84,20 @@ function init() {
     store = createStore(calendarReducer)
 }
 
+function lookForData() {
+    store.dispatch({ type: 'LOOKING_FOR_DATA' })
+
+    fetch(process.env.CALENDAR_API)
+        .then(response => response.json())
+        .then(monthlyCalendars =>
+            store.dispatch({
+                type: 'TAKE_AS_ORIGINALS',
+                payload: monthlyCalendars
+            })
+        )
+        .catch(() => store.dispatch({ type: 'SHOW_ERROR' }))
+}
+
 function render() {
     const state = store.getState()
     const calendars =
@@ -137,19 +151,22 @@ function renderDays(events, currentMonth) {
 }
 
 function renderError(show) {
-    return html`<p class="fade-in f4 f3-ns mv0 pv5 silver tc ${show ? 'db' : 'dn'}"">
-        Ups! Ocurrió un error (:
-    </p>`
+    return html`<div class="fade-in f4 f3-ns pv5 silver tc ${show ? 'db' : 'dn'}">
+        <p class="mv0">Ups! Ocurrió un error (:</p>
+        <button class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mt4 ph3 pointer pv2 ttu"
+            onclick="${lookForData}">
+                Intentar nuevamente
+        </button>
+    </div>`
 }
 
 function renderEventsDay(events) {
     return html`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
         <ul class="list ma0 pl0">
             ${events.map(function(event, index) {
-                return html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${index >
-                1
-                    ? 'dn-l'
-                    : ''}"
+                return html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${
+                    index > 1 ? 'dn-l' : ''
+                }"
                     style="background-color: ${event.color};">${event.eventName}</li>`
             })}
         </ul>
@@ -192,12 +209,9 @@ function renderFilters(calendars, currentFilter) {
 
 function renderFooterDay(currentDay, today) {
     return html`<div class="tc tr-l w-20 w-100-l">
-        <span class="f3 ${currentDay.isBefore(today, 'day') ? 'strike' : ''} ${currentDay.isSame(
-        today,
-        'day'
-    )
-        ? 'green'
-        : 'black-30'}">
+        <span class="f3 ${currentDay.isBefore(today, 'day') ? 'strike' : ''} ${
+        currentDay.isSame(today, 'day') ? 'green' : 'black-30'
+    }">
             ${currentDay.format('DD')}
         </span>
         <span class="db dn-l f6 ttc ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
@@ -227,17 +241,17 @@ function renderModal(events) {
         window.removeEventListener('keydown', closeModalOnEscapeKey)
     }
 
-    return html`<div class="bg-black-70 fade-in fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${shouldRenderModal
-        ? 'flex'
-        : 'dn'}" onclick=${function(ev) {
-            if (ev.target === ev.currentTarget) closeModal()
-        }}>
+    return html`<div class="bg-black-70 fade-in fixed items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2 ${
+        shouldRenderModal ? 'flex' : 'dn'
+    }" onclick=${function(ev) {
+        if (ev.target === ev.currentTarget) closeModal()
+    }}>
         <div id="modal-wrapper" class="center cursor-default fade-in-down mw6 w-100">
             <div class="bg-white br2 ma3">
                 <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
-                    <span id="modal-title" class="b black-alternative dib f4 ttc">${shouldRenderModal
-                        ? events[0].date.format('dddd DD')
-                        : ''}</span>
+                    <span id="modal-title" class="b black-alternative dib f4 ttc">${
+                        shouldRenderModal ? events[0].date.format('dddd DD') : ''
+                    }</span>
                     <span id="modal-close" class="f-30-px grow ion-android-close pointer silver" onclick=${function() {
                         closeModal()
                     }}></span>
@@ -267,7 +281,9 @@ function renderModalEvent(event) {
                 <a href="${event.eventLink}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 ttu white" style="background-color: ${event.color};">
+                    class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 ttu white" style="background-color: ${
+                        event.color
+                    };">
                         <span class="black-30 f-30-px ion-link mr2"></span>
                         <span class="text-shadow-1">Link</span>
                 </a>
@@ -323,15 +339,6 @@ module.exports = function calendarApp() {
     init()
 
     store.subscribe(render)
-    store.dispatch({ type: 'LOOKING_FOR_DATA' })
 
-    fetch(process.env.CALENDAR_API)
-        .then(response => response.json())
-        .then(monthlyCalendars =>
-            store.dispatch({
-                type: 'TAKE_AS_ORIGINALS',
-                payload: monthlyCalendars
-            })
-        )
-        .catch(() => store.dispatch({ type: 'SHOW_ERROR' }))
+    lookForData()
 }
