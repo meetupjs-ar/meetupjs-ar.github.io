@@ -7,7 +7,7 @@ module.exports = {
     },
     clean: {
         assets: 'dist/assets/*',
-        cname: 'dist/browserconfig.xml',
+        browserConfig: 'dist/browserconfig.xml',
         cname: 'dist/CNAME',
         css: 'dist/css/*',
         html: 'dist/*.html',
