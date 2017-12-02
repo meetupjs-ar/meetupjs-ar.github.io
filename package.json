@@ -43,6 +43,7 @@
         "lodash.debounce": "^4.0.8",
         "lodash.flatten": "^4.4.0",
         "lodash.uniq": "^4.5.0",
+        "marked": "^0.3.7",
         "moment": "^2.18.1",
         "postcss-import": "^9.1.0",
         "sw-precache": "^5.2.0",

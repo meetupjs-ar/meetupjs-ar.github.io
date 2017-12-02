@@ -3,9 +3,8 @@ let menu
 let openMenu
 
 function hightlightCurrentMenuItem() {
-    document
-        .querySelector(`#menu [href='${window.location.pathname}']`)
-        .classList.add('current-page')
+    const el = document.querySelector(`#menu [href='${window.location.pathname}']`)
+    el && el.classList.add('current-page')
 }
 
 function init() {
