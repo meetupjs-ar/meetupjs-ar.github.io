@@ -1,7 +1,9 @@
+@import 'highlight.js/styles/vs.css';
 @import 'tachyons';
 @import './animations.css';
 @import './droid-sans.css';
 @import './ionicons.css';
+@import './markdown-body.css';
 
 body {
     -moz-osx-font-smoothing: grayscale;

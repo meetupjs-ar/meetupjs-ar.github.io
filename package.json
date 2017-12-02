@@ -39,6 +39,7 @@
         "gulp-stylelint": "^3.9.0",
         "gulp-uglify": "^2.1.0",
         "gulp-util": "^3.0.8",
+        "highlight.js": "^9.12.0",
         "isomorphic-fetch": "^2.2.1",
         "lodash.debounce": "^4.0.8",
         "lodash.flatten": "^4.4.0",
