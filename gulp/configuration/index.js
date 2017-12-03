@@ -1,5 +1,7 @@
 const util = require('gulp-util')
+
 const CALENDAR_API = 'https://calendar-api.now.sh/'
+const HOW_DO_WE_DO_A_MEETUP = 'https://api.github.com/repos/meetupjs-ar/test/contents/file-2.md'
 
 module.exports = {
     browserify: {
@@ -10,7 +12,7 @@ module.exports = {
         browserConfig: 'dist/browserconfig.xml',
         cname: 'dist/CNAME',
         css: 'dist/css/*',
-        html: 'dist/*.html',
+        html: 'dist/**/*.html',
         js: 'dist/js/*',
         manifest: 'dist/manifest.json',
         sw: 'dist/sw.js'
@@ -26,7 +28,8 @@ module.exports = {
         pkg: './'
     },
     envify: {
-        CALENDAR_API
+        CALENDAR_API,
+        HOW_DO_WE_DO_A_MEETUP
     },
     eslint: {
         files: 'src/js/**/*.js'
@@ -37,7 +40,7 @@ module.exports = {
         browserConfig: 'src/browserconfig.xml',
         cname: 'src/CNAME',
         css: 'src/css/main.css',
-        html: 'src/*.html',
+        html: 'src/**/*.html',
         js: 'src/js/*.js',
         manifest: 'src/manifest.json',
         pkg: 'package.json',
@@ -45,18 +48,18 @@ module.exports = {
     },
     staticServer: {
         dir: './dist',
-        name: 'calendario-de-meetups'
+        name: 'meetupjs-ar'
     },
     stylelint: {
         css: 'src/css/**/*.css'
     },
     sw: {
         file: 'dist/sw.js',
-        runtimeCaching: [CALENDAR_API]
+        runtimeCaching: [CALENDAR_API, HOW_DO_WE_DO_A_MEETUP]
     },
     watch: {
         css: 'src/css/*.css',
-        html: 'src/*.html',
+        html: 'src/**/*.html',
         js: 'src/js/**/*.js'
     }
 }

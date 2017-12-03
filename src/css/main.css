@@ -108,6 +108,10 @@ body {
     height: 80vh;
 }
 
+.w-30-px {
+    width: 30px;
+}
+
 .w-40-px {
     width: 40px;
 }
