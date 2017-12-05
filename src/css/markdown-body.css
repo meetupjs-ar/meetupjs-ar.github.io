@@ -4,14 +4,14 @@
     overflow-x: scroll;
 }
 
-.markdown-body :first-child {
+.markdown-body > :first-child {
     color: #2e282a !important;
     margin: 0;
     padding-bottom: 2rem;
     text-align: center;
 }
 
-.markdown-body :last-child {
+.markdown-body > :last-child {
     margin-bottom: 0;
 }
 
