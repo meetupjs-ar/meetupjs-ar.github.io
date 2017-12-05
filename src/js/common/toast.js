@@ -4,8 +4,8 @@ function init() {
     toastContainer = document.querySelector('#js-toast')
 }
 
-function tapHandler(event) {
-    event.target.classList.add('toast__msg--hide')
+function tapHandler() {
+    window.location.reload()
 }
 
 module.exports = function toast(message, theme = 'info') {

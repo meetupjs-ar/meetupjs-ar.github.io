@@ -35,6 +35,11 @@
     margin: 2rem 0;
 }
 
+.markdown-body img {
+    vertical-align: bottom;
+    width: 100%;
+}
+
 @media screen and (min-width: 60em) {
     .markdown-body h1 {
         font-size: 2.25rem;
