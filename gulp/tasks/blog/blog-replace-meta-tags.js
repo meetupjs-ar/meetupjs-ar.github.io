@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const path = require('path')
+const pkg = require('../../../package.json')
 const replaceExt = require('replace-ext')
 const tap = require('gulp-tap')
 
@@ -9,16 +10,19 @@ module.exports = function(config) {
             .src(config.blog.tempHTML)
             .pipe(
                 tap(function(file) {
-                    const jsonFileName = replaceExt(file.path, '.json')
-                    const jsonFilePath = path.join(
+                    const metaTagsFileName = replaceExt(file.path, '.json')
+                    const metaTagsFilePath = path.join(
                         process.cwd(),
                         config.blog.tempDir,
-                        path.basename(jsonFileName)
+                        path.basename(metaTagsFileName)
                     )
-                    const json = require(jsonFilePath)
+                    const metaTags = require(metaTagsFilePath)
 
                     file.contents = Buffer.from(
-                        file.contents.toString().replace(/@title/g, json.title)
+                        file.contents
+                            .toString()
+                            .replace(/@title/g, metaTags.title)
+                            .replace(/@version/g, pkg.version)
                     )
                 })
             )

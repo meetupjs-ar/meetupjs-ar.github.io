@@ -5,12 +5,6 @@ const htmlmin = require('gulp-htmlmin')
 const pkg = require('../../../package.json')
 const replace = require('gulp-replace')
 
-const htmlminOptions = {
-    collapseWhitespace: true,
-    minifyCSS: true,
-    minifyJS: true
-}
-
 module.exports = function(config) {
     return function() {
         return gulp
@@ -41,7 +35,7 @@ module.exports = function(config) {
                     })
                 )
             )
-            .pipe(gulpif(config.isProduction, htmlmin(htmlminOptions)))
+            .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
             .pipe(gulp.dest(config.dest.html))
     }
 }

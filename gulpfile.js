@@ -39,17 +39,28 @@ gulp.task(
 )
 gulp.task('browser-config-clean', getTask('browser-config/browser-config-clean'))
 
-gulp.task('blog-clone-repo', getTask('blog/blog-clone-repo'))
-gulp.task('blog-clone-tpl', ['blog-clone-repo'], getTask('blog/blog-clone-tpl'))
-gulp.task('blog-replace-md', ['blog-clone-repo', 'blog-clone-tpl'], getTask('blog/blog-replace-md'))
+gulp.task('blog-clean-repo', getTask('blog/blog-clean-repo'))
+gulp.task('blog-clone-repo', ['blog-clean-repo'], getTask('blog/blog-clone-repo'))
+gulp.task('blog-clone-tpl', ['blog-clean-repo', 'blog-clone-repo'], getTask('blog/blog-clone-tpl'))
+gulp.task(
+    'blog-replace-md',
+    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl'],
+    getTask('blog/blog-replace-md')
+)
 gulp.task(
     'blog-replace-meta-tags',
-    ['blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md'],
+    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md'],
     getTask('blog/blog-replace-meta-tags')
 )
 gulp.task(
     'blog-build',
-    ['blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md', 'blog-replace-meta-tags'],
+    [
+        'blog-clean-repo',
+        'blog-clone-repo',
+        'blog-clone-tpl',
+        'blog-replace-md',
+        'blog-replace-meta-tags'
+    ],
     getTask('blog/blog-build')
 )
 

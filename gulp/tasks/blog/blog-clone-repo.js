@@ -1,9 +1,12 @@
 const git = require('gulp-git')
 
 module.exports = function(config) {
-    return function() {
-        git.clone(config.blog.srcRepo, { args: config.blog.tempDir }, function(error) {
+    const options = { args: config.blog.tempDir }
+
+    return function(done) {
+        return git.clone(config.blog.srcRepo, options, function(error) {
             if (error) throw error
+            done()
         })
     }
 }
