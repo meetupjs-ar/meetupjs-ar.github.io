@@ -1,6 +1,7 @@
 const util = require('gulp-util')
 
 const CALENDAR_API = 'https://calendar-api.now.sh/'
+const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
 
 module.exports = {
     blog: {
@@ -68,7 +69,7 @@ module.exports = {
     },
     sw: {
         file: 'dist/sw.js',
-        runtimeCaching: [CALENDAR_API]
+        runtimeCaching: [CALENDAR_API, GITHUB_IMAGES]
     },
     watch: {
         css: 'src/css/*.css',
