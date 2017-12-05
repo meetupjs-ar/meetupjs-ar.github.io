@@ -4,6 +4,15 @@ const CALENDAR_API = 'https://calendar-api.now.sh/'
 const HOW_DO_WE_DO_A_MEETUP = 'https://api.github.com/repos/meetupjs-ar/test/contents/file-2.md'
 
 module.exports = {
+    blog: {
+        distHTMLDir: 'dist/posts',
+        srcRepo: 'git@github.com:meetupjs-ar/test.git',
+        postTemplate: 'src/posts/template.html',
+        tempDir: 'tmp/repo',
+        tempHTML: 'tmp/html/**/*.html',
+        tempHTMLDir: 'tmp/html',
+        tempMd: 'tmp/repo/**/*.md'
+    },
     browserify: {
         isDebug: !util.env.production === false
     },

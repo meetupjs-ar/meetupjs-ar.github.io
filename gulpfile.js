@@ -13,6 +13,7 @@ function getTask(taskName) {
 browserSync.create(config.staticServer.name)
 
 gulp.task('build', [
+    'blog-build',
     'browser-config-copy',
     'cname-copy',
     'manifest-copy',
@@ -38,6 +39,20 @@ gulp.task(
 )
 gulp.task('browser-config-clean', getTask('browser-config/browser-config-clean'))
 
+gulp.task('blog-clone-repo', getTask('blog/blog-clone-repo'))
+gulp.task('blog-clone-tpl', ['blog-clone-repo'], getTask('blog/blog-clone-tpl'))
+gulp.task('blog-replace-md', ['blog-clone-repo', 'blog-clone-tpl'], getTask('blog/blog-replace-md'))
+gulp.task(
+    'blog-replace-meta-tags',
+    ['blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md'],
+    getTask('blog/blog-replace-meta-tags')
+)
+gulp.task(
+    'blog-build',
+    ['blog-clone-repo', 'blog-clone-tpl', 'blog-replace-md', 'blog-replace-meta-tags'],
+    getTask('blog/blog-build')
+)
+
 gulp.task('cname-copy', ['cname-clean'], getTask('cname/cname-copy'))
 gulp.task('cname-clean', getTask('cname/cname-clean'))
 
@@ -57,7 +72,7 @@ gulp.task('manifest-clean', getTask('manifest/manifest-clean'))
 
 gulp.task(
     'pwa-clean',
-    ['js-build', 'css-build', 'html-build', 'assets-build'],
+    ['js-build', 'css-build', 'html-build', 'assets-build', 'blog-build'],
     getTask('pwa/pwa-clean')
 )
 
