@@ -5,11 +5,15 @@ const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
 
 module.exports = {
     blog: {
+        listTemplate: 'src/blog.html',
         srcRepo: 'git@github.com:meetupjs-ar/test.git',
         postTemplate: 'src/posts/template.html',
         tempDir: '.tmp/repo',
         tempHTML: '.tmp/html/**/*.html',
+        tempHTMLArticles: '.tmp/articles/**/*.html',
+        tempHTMLArticlesDir: '.tmp/articles',
         tempHTMLDir: '.tmp/html',
+        tempJSON: '.tmp/repo/**/*.json',
         tempMd: '.tmp/repo/**/*.md'
     },
     browserify: {
@@ -17,7 +21,7 @@ module.exports = {
     },
     clean: {
         assets: 'dist/assets/*',
-        blog: '.tmp/*',
+        blog: ['.tmp/*', 'dist/articulos/*', 'dist/blog.html'],
         browserConfig: 'dist/browserconfig.xml',
         cname: 'dist/CNAME',
         css: 'dist/css/*',
@@ -28,7 +32,7 @@ module.exports = {
     },
     dest: {
         assets: 'dist/assets',
-        blog: 'dist/posts',
+        blog: 'dist/articulos',
         browserConfig: 'dist/',
         cname: 'dist/',
         css: 'dist/css',

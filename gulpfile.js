@@ -53,13 +53,25 @@ gulp.task(
     getTask('blog/blog-replace-meta-tags')
 )
 gulp.task(
+    'blog-build-list-tpls',
+    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl'],
+    getTask('blog/blog-build-list-tpls')
+)
+gulp.task(
+    'blog-build-list',
+    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl', 'blog-build-list-tpls'],
+    getTask('blog/blog-build-list')
+)
+gulp.task(
     'blog-build',
     [
         'blog-clean-repo',
         'blog-clone-repo',
         'blog-clone-tpl',
         'blog-replace-md',
-        'blog-replace-meta-tags'
+        'blog-replace-meta-tags',
+        'blog-build-list-tpls',
+        'blog-build-list'
     ],
     getTask('blog/blog-build')
 )

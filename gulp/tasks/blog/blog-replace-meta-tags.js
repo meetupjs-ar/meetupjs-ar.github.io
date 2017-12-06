@@ -10,18 +10,19 @@ module.exports = function(config) {
             .src(config.blog.tempHTML)
             .pipe(
                 tap(function(file) {
-                    const metaTagsFileName = replaceExt(file.path, '.json')
-                    const metaTagsFilePath = path.join(
+                    const articleFileName = replaceExt(file.path, '.json')
+                    const articleFilePath = path.join(
                         process.cwd(),
                         config.blog.tempDir,
-                        path.basename(metaTagsFileName)
+                        path.basename(articleFileName)
                     )
-                    const metaTags = require(metaTagsFilePath)
+                    const article = require(articleFilePath)
 
                     file.contents = Buffer.from(
                         file.contents
                             .toString()
-                            .replace(/@title/g, metaTags.title)
+                            .replace(/@title/g, article.title)
+                            .replace(/@introduction/g, article.introduction)
                             .replace(/@version/g, pkg.version)
                     )
                 })

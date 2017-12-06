@@ -29,6 +29,7 @@
         "glob": "^7.1.1",
         "gulp": "^3.9.1",
         "gulp-bump": "^2.8.0",
+        "gulp-concat": "^2.6.1",
         "gulp-eslint": "^3.0.1",
         "gulp-git": "^2.4.2",
         "gulp-htmlmin": "^3.0.0",
