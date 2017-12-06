@@ -129,7 +129,7 @@ function renderCalendars(calendars) {
                 year: calendar.when.year
             })
 
-            return html`<div class="mb5">
+            return html`<div class="pb5">
                 <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
                     ${calendar.when.month} ${calendar.when.year}
                 </h2>

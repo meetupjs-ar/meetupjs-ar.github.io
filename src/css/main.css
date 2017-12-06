@@ -14,6 +14,10 @@ body {
     background-color: #2e282a;
 }
 
+.bg-gray-alternative {
+    background-color: #fbfbfb;
+}
+
 .bg-yellow-alternative {
     background-color: #ffe45e;
 }
