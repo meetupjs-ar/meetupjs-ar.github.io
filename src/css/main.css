@@ -69,6 +69,10 @@ body {
     height: 50px;
 }
 
+.home-hero {
+    height: calc(100vh - 68px);
+}
+
 .mh-75 {
     max-height: 75vh;
 }
