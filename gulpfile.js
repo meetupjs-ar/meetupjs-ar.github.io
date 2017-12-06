@@ -54,12 +54,12 @@ gulp.task(
 )
 gulp.task(
     'blog-build-list-tpls',
-    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl'],
+    ['blog-clean-repo', 'blog-clone-repo'],
     getTask('blog/blog-build-list-tpls')
 )
 gulp.task(
     'blog-build-list',
-    ['blog-clean-repo', 'blog-clone-repo', 'blog-clone-tpl', 'blog-build-list-tpls'],
+    ['blog-clean-repo', 'blog-clone-repo', 'blog-build-list-tpls'],
     getTask('blog/blog-build-list')
 )
 gulp.task(

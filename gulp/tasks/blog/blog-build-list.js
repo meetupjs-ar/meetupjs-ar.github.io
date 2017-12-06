@@ -18,7 +18,7 @@ module.exports = function(config) {
                     file.contents = Buffer.from(
                         listTemplate
                             .toString()
-                            .replace(/@articles/g, file.contents.toString())
+                            .replace(/@articles/g, file.contents)
                             .replace(/@version/g, pkg.version)
                     )
                 })

@@ -58,7 +58,7 @@ module.exports = {
         browserConfig: 'src/browserconfig.xml',
         cname: 'src/CNAME',
         css: 'src/css/main.css',
-        html: 'src/*.html',
+        html: ['src/*.html', '!src/blog.html'],
         js: 'src/js/*.js',
         manifest: 'src/manifest.json',
         pkg: 'package.json',
