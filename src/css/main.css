@@ -53,6 +53,10 @@ body {
     animation-name: fadeInDown;
 }
 
+.fill-white {
+    fill: white;
+}
+
 .h-24-px {
     height: 24px;
 }

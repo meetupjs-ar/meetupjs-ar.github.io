@@ -10,6 +10,7 @@ require('isomorphic-fetch')
 require('moment/locale/es')
 
 let bodyEl
+let calendarAppEl
 let calendarEl
 let errorEl
 let filtersEl
@@ -75,11 +76,12 @@ function getNextMonthDays(currentMonth) {
 
 function init() {
     bodyEl = document.querySelector('body')
-    calendarEl = document.querySelector('#calendar').appendChild(renderCalendars([]))
-    errorEl = document.querySelector('#error').appendChild(renderError(false))
-    filtersEl = document.querySelector('#filters').appendChild(renderFilters(false, ''))
-    loadingEl = document.querySelector('#loading').appendChild(renderLoading(true))
-    modalContainerEl = document.querySelector('#modal-container').appendChild(renderModal([]))
+    calendarAppEl = document.querySelector('#calendar-app')
+    loadingEl = calendarAppEl.appendChild(renderLoading(true))
+    errorEl = calendarAppEl.appendChild(renderError(false))
+    filtersEl = calendarAppEl.appendChild(renderFilters(false, ''))
+    calendarEl = calendarAppEl.appendChild(renderCalendars([]))
+    modalContainerEl = calendarAppEl.appendChild(renderModal([]))
 
     store = createStore(calendarReducer)
 }
@@ -104,10 +106,10 @@ function render() {
     const calendars =
         !!state.monthlyCalendars && state.monthlyCalendars.length ? state.monthlyCalendars : []
 
-    html.update(calendarEl, renderCalendars(calendars))
+    html.update(loadingEl, renderLoading(state.searching))
     html.update(errorEl, renderError(!!state.error))
     html.update(filtersEl, renderFilters(calendars, state.currentFilter))
-    html.update(loadingEl, renderLoading(state.searching))
+    html.update(calendarEl, renderCalendars(calendars))
     html.update(modalContainerEl, renderModal(state.events))
 }
 
