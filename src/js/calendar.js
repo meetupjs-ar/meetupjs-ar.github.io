@@ -92,7 +92,8 @@ function lookForData() {
         .then(monthlyCalendars =>
             store.dispatch({
                 type: 'TAKE_AS_ORIGINALS',
-                payload: monthlyCalendars
+                payload:
+                    window.location.pathname === '/' ? [monthlyCalendars.pop()] : monthlyCalendars
             })
         )
         .catch(() => store.dispatch({ type: 'SHOW_ERROR' }))

@@ -96,7 +96,8 @@
             </div>
         </div>
     </header>
-    <div class="flex flex-column pt-68-px vh-100">
+    <div class="pt-68-px"></div>
+    <div class="flex flex-column vh-100">
         <div class="flex flex-column items-center h-100 justify-center">
             <h1 class="mv0 mw-175 w-100">
                 <img src="assets/images/logo.svg" class="v-btm" alt="Meetup.js Argentina">
@@ -209,8 +210,16 @@
             </div>
         </div>
     </div>
+    <div class="center mw9 ph3">
+        <div id="loading"></div>
+        <div id="error"></div>
+        <div id="filters"></div>
+        <div id="calendar"></div>
+        <div id="modal-container"></div>
+    </div>
     <div id="js-toast" class="bottom-1 fixed left-1 right-1"></div>
     <script defer src="/js/global.js"></script>
+    <script defer src="/js/calendar.js"></script>
     <script>console.log('Versión @version')</script>
     <script>
             (function (i, s, o, g, r, a, m) {
