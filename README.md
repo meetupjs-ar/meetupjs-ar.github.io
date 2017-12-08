@@ -10,21 +10,16 @@
 # checkout al branch `dev`
 git checkout -b dev
 
-# instalar dependencias con `npm`o `yarn`
-# npm install
-yarn install
+# instalar dependencias
+npm install
 
 # ambiente de desarrollo
-# npm start
-yarn start
+npm start
 
 # publicar a github pages (master)
-# npm run bump-minor
-yarn bump-minor
-# npm run build-prod
-yarn build-prod
-# npm run deploy
-yarn deploy
+npm run bump-minor
+npm run build-prod
+npm run deploy
 ```
 
 ## Licencia
