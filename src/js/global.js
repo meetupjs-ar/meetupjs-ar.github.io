@@ -1,9 +1,13 @@
+const aload = require('aload')
+const easterEgg = require('./common/easter-egg')
 const menu = require('./common/menu')
 const offline = require('./common/offline')
 const safariLinks = require('./common/safari-links')
 const serviceWorker = require('./common/service-worker')
 
 window.addEventListener('load', () => {
+    aload()
+    easterEgg()
     menu()
     offline()
     safariLinks()

@@ -1,6 +1,6 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
@@ -13,6 +13,7 @@
     "author": "durancristhian@gmail.com",
     "license": "MIT",
     "devDependencies": {
+        "aload": "^1.2.3",
         "autoprefixer": "^6.7.7",
         "babel-preset-latest": "^6.24.0",
         "babelify": "^7.3.0",
@@ -49,6 +50,7 @@
         "lodash.uniq": "^4.5.0",
         "marked": "^0.3.7",
         "moment": "^2.18.1",
+        "mousetrap": "^1.6.1",
         "postcss-import": "^9.1.0",
         "replace-ext": "^1.0.0",
         "sw-precache": "^5.2.0",
