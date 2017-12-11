@@ -1,10 +1,12 @@
 const Mousetrap = require('mousetrap')
 
 let isna
+const audio = new Audio('/assets/sounds/isnardi.mp3')
 
 function activateEasterEgg() {
     if (!isna.classList.contains('activate')) {
         isna.classList.add('activate')
+        audio.play()
 
         setTimeout(() => {
             isna.classList.remove('activate')
