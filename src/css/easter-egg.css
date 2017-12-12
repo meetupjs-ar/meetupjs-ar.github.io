@@ -1,14 +1,14 @@
 .easter-egg {
-    bottom: -150px;
+    bottom: 0;
     opacity: 0;
     position: fixed;
     right: 0;
-    transform: translateY(0);
+    transform: translateX(150px);
     transition: opacity 0.35s ease-out, transform 0.35s ease-out;
     width: 150px;
 }
 
 .easter-egg.activate {
     opacity: 1;
-    transform: translateY(-150px);
+    transform: translateX(0);
 }
