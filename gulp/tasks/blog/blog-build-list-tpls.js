@@ -11,12 +11,10 @@ const compileTemplate = function(article, fileName) {
             <p class="f6 ma0 silver">
                 Por
                 <strong>${article.authors.join(', ')}</strong>. Publicado el
-                <strong>${article.publishedDay}</strong>
+                <strong>${article.publishedDay}</strong>.
             </p>
             <p class="lh-copy mv3">${article.introduction}</p>
-            <a href="/articulos/${
-                fileName
-            }" class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu">
+            <a href="/articulos/${fileName}" class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu">
                 Leer
             </a>
         </article>
