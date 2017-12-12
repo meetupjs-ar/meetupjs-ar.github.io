@@ -249,7 +249,7 @@ function renderModal(events) {
     }" onclick=${function(ev) {
         if (ev.target === ev.currentTarget) closeModal()
     }}>
-        <div id="modal-wrapper" class="center cursor-default fade-in-down mw6 w-100">
+        <div id="modal-wrapper" class="center cursor-default fade-in-down mw7 w-100">
             <div class="bg-white br2 ma3">
                 <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
                     <span id="modal-title" class="b black-alternative dib f4 ttc">${
