@@ -1,10 +1,7 @@
 const Mousetrap = require('mousetrap')
 
 let isna
-// Workaround para que el audio se escuche hasta que salgamos de GH Pages.
-const audio = new Audio(
-    'https://cdn.rawgit.com/meetupjs-ar/meetupjs-ar.github.io/master/assets/sounds/Isnardi.mp3'
-)
+const audio = new Audio(`${process.env.ASSETS_BASE_URL}/assets/sounds/isnardi.mp3`)
 
 function activateEasterEgg() {
     if (!isna.classList.contains('activate')) {

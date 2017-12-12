@@ -1,5 +1,8 @@
 const util = require('gulp-util')
 
+const ASSETS_BASE_URL = util.env.production
+    ? 'https://cdn.rawgit.com/meetupjs-ar/meetupjs-ar.github.io/master'
+    : ''
 const CALENDAR_API = 'https://calendar-api.now.sh/'
 const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
 
@@ -42,6 +45,7 @@ module.exports = {
         pkg: './'
     },
     envify: {
+        ASSETS_BASE_URL,
         CALENDAR_API
     },
     eslint: {
