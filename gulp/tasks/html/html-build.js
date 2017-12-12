@@ -36,6 +36,7 @@ module.exports = function(config) {
                 )
             )
             .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
+            .pipe(replace('@isnardi', config.isnardi))
             .pipe(gulp.dest(config.dest.html))
     }
 }

@@ -28,7 +28,10 @@ module.exports = function(config) {
                     const html = marked(markdown)
 
                     file.contents = Buffer.from(
-                        file.contents.toString().replace(/@markdown/g, html)
+                        file.contents
+                            .toString()
+                            .replace(/@isnardi/g, config.isnardi)
+                            .replace(/@markdown/g, html)
                     )
                 })
             )

@@ -19,6 +19,7 @@ module.exports = function(config) {
                         listTemplate
                             .toString()
                             .replace(/@articles/g, file.contents)
+                            .replace(/@isnardi/g, config.isnardi)
                             .replace(/@version/g, pkg.version)
                     )
                 })
