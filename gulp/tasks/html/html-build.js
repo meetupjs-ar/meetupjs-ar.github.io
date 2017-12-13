@@ -2,6 +2,7 @@ const critical = require('critical').stream
 const gulp = require('gulp')
 const gulpif = require('gulp-if')
 const htmlmin = require('gulp-htmlmin')
+const injectSvg = require('gulp-inject-svg')
 const pkg = require('../../../package.json')
 const replace = require('gulp-replace')
 
@@ -9,7 +10,6 @@ module.exports = function(config) {
     return function() {
         return gulp
             .src(config.src.html)
-            .pipe(replace('@version', pkg.version))
             .pipe(
                 gulpif(
                     config.isProduction,
@@ -35,8 +35,10 @@ module.exports = function(config) {
                     })
                 )
             )
-            .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
+            .pipe(replace('@version', pkg.version))
             .pipe(replace('@isnardi', config.isnardi))
+            .pipe(injectSvg({ base: 'src/' }))
+            .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
             .pipe(gulp.dest(config.dest.html))
     }
 }

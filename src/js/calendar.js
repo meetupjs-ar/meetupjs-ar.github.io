@@ -255,7 +255,7 @@ function renderModal(events) {
                     <span id="modal-title" class="b black-alternative dib f4 ttc">${
                         shouldRenderModal ? events[0].date.format('dddd DD') : ''
                     }</span>
-                    <span id="modal-close" class="f-30-px grow ion-android-close pointer silver" onclick=${function() {
+                    <span id="modal-close" class="f-30-px grow icon-close pointer silver" onclick=${function() {
                         closeModal()
                     }}></span>
                 </div>
@@ -287,7 +287,7 @@ function renderModalEvent(event) {
                     class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 ttu white" style="background-color: ${
                         event.color
                     };">
-                        <span class="black-30 f-30-px ion-link mr2"></span>
+                        <span class="black-30 f-30-px icon-link mr2"></span>
                         <span class="text-shadow-1">Link</span>
                 </a>
             </div>
