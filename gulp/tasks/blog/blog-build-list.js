@@ -3,6 +3,7 @@ const concat = require('gulp-concat')
 const gulp = require('gulp')
 const gulpif = require('gulp-if')
 const htmlmin = require('gulp-htmlmin')
+const injectSvg = require('gulp-inject-svg')
 const pkg = require('../../../package.json')
 const tap = require('gulp-tap')
 
@@ -24,6 +25,7 @@ module.exports = function(config) {
                     )
                 })
             )
+            .pipe(injectSvg({ base: 'src/' }))
             .pipe(gulpif(config.isProduction, htmlmin(config.htmlminOptions)))
             .pipe(gulp.dest(config.dest.html))
     }
