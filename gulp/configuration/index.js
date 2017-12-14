@@ -9,7 +9,7 @@ const GITHUB_IMAGES = 'https://user-images.githubusercontent.com/'
 module.exports = {
     blog: {
         listTemplate: 'src/blog.html',
-        srcRepo: 'git@github.com:meetupjs-ar/test.git',
+        srcRepo: 'git@github.com:meetupjs-ar/blog-articles.git',
         postTemplate: 'src/posts/template.html',
         tempDir: '.tmp/repo',
         tempHTML: '.tmp/html/**/*.html',
