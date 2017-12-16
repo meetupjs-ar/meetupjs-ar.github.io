@@ -17,5 +17,5 @@ function activateEasterEgg() {
 module.exports = function easterEgg() {
     isna = document.querySelector('#isna')
 
-    Mousetrap.bind('up up down down left right left right', activateEasterEgg)
+    Mousetrap.bind('up up down down left right left right a b enter', activateEasterEgg)
 }
