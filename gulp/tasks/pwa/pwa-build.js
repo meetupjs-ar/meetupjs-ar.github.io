@@ -6,7 +6,7 @@ module.exports = function(config) {
     return function(done) {
         var swconfig = {
             cacheId: pkg.name,
-            handleFetch: true,
+            handleFetch: config.isProduction,
             runtimeCaching: config.sw.runtimeCaching.map(url => {
                 return {
                     urlPattern: new RegExp(url),
