@@ -22,7 +22,7 @@ module.exports = function(config) {
                     entries: entry,
                     transform: [
                         babelify.configure({
-                            presets: ['latest']
+                            presets: ['env']
                         }),
                         envify(config.envify),
                         yoYoify
