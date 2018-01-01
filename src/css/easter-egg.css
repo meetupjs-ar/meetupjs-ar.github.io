@@ -12,3 +12,36 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.easter-egg-message {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    bottom: 130px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    right: 125px;
+    transform: translateX(15px);
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    transition-delay: 0.25s;
+}
+
+.easter-egg-message::before {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    bottom: -20px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 10px;
+    position: absolute;
+    right: -15px;
+    width: 10px;
+}
+
+.easter-egg-message.activate {
+    opacity: 1;
+    transform: translateX(0);
+}
