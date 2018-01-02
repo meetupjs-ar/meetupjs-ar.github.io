@@ -94,8 +94,7 @@ function lookForData() {
         .then(monthlyCalendars =>
             store.dispatch({
                 type: 'TAKE_AS_ORIGINALS',
-                payload:
-                    window.location.pathname === '/' ? [monthlyCalendars.pop()] : monthlyCalendars
+                payload: window.location.pathname === '/' ? [monthlyCalendars[0]] : monthlyCalendars
             })
         )
         .catch(() => store.dispatch({ type: 'SHOW_ERROR' }))
@@ -117,26 +116,26 @@ function renderCalendars(calendars) {
     return html`<div class="fade-in ${calendars.length ? 'db' : 'dn'}">
         <h1 class="black-alternative f3 f2-ns mv0 normal pb4 pt0 tc">Calendario de eventos</h1>
         ${calendars.map(calendar => {
-            const monthNumber =
+        const monthNumber =
                 parseInt(
                     moment()
                         .month(calendar.when.month)
                         .format('MM')
                 ) - 1
-            const currentMonth = moment({
-                day: 1,
-                month: monthNumber,
-                year: calendar.when.year
-            })
+        const currentMonth = moment({
+            day: 1,
+            month: monthNumber,
+            year: calendar.when.year
+        })
 
-            return html`<div class="pb5">
-                <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
-                    ${calendar.when.month} ${calendar.when.year}
-                </h2>
-                ${renderWeekdays()}
-                ${renderDays(calendar.events, currentMonth)}
-            </div>`
-        })}
+        return html`<div class="pb5">
+            <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
+                ${calendar.when.month + ' ' + calendar.when.year}
+            </h2>
+            ${renderWeekdays()}
+            ${renderDays(calendar.events, currentMonth)}
+        </div>`
+    })}
     </div>`
 }
 
@@ -167,11 +166,11 @@ function renderEventsDay(events) {
     return html`<div class="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
         <ul class="list ma0 pl0">
             ${events.map(function(event, index) {
-                return html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${
-                    index > 1 ? 'dn-l' : ''
-                }"
+        return html`<li class="b--black-30 ba br1 bw1 f6 mv2 pa1 text-shadow-1 truncate white ${
+            index > 1 ? 'dn-l' : ''
+        }"
                     style="background-color: ${event.color};">${event.eventName}</li>`
-            })}
+    })}
         </ul>
         <span class="black-30 dn f6 mt2 truncate ${events.length > 2 ? 'db-l' : ''}">
             y ${events.length - 2} más
@@ -185,8 +184,8 @@ function renderFilters(calendars, currentFilter) {
         : []
     const eventPlaces = calendars.length
         ? calendars.map(calendar =>
-              calendar.events.map(event => event.place).filter(eventPlace => !!eventPlace)
-          )
+            calendar.events.map(event => event.place).filter(eventPlace => !!eventPlace)
+        )
         : []
     const allSuggestionWithDuplicates = flatten(eventNames)
         .concat(flatten(eventPlaces))
@@ -213,8 +212,8 @@ function renderFilters(calendars, currentFilter) {
 function renderFooterDay(currentDay, today) {
     return html`<div class="tc tr-l w-20 w-100-l">
         <span class="f3 ${currentDay.isBefore(today, 'day') ? 'strike' : ''} ${
-        currentDay.isSame(today, 'day') ? 'green' : 'black-30'
-    }">
+    currentDay.isSame(today, 'day') ? 'green' : 'black-30'
+}">
             ${currentDay.format('DD')}
         </span>
         <span class="db dn-l f6 ttc ${currentDay.isSame(today, 'day') ? 'green' : 'black-30'}">
@@ -253,11 +252,11 @@ function renderModal(events) {
             <div class="bg-white br2 ma3">
                 <div class="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
                     <span id="modal-title" class="b black-alternative dib f4 ttc">${
-                        shouldRenderModal ? events[0].date.format('dddd DD') : ''
-                    }</span>
+    shouldRenderModal ? events[0].date.format('dddd DD') : ''
+}</span>
                     <span id="modal-close" class="f-30-px grow icon-close pointer silver" onclick=${function() {
-                        closeModal()
-                    }}></span>
+        closeModal()
+    }}></span>
                 </div>
                 <div class="mh-75 overflow-y-auto">
                     <div id="modal-content">
@@ -285,8 +284,8 @@ function renderModalEvent(event) {
                     target="_blank"
                     rel="noopener noreferrer"
                     class="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 ttu white" style="background-color: ${
-                        event.color
-                    };">
+    event.color
+};">
                         <span class="black-30 f-30-px icon-link mr2"></span>
                         <span class="text-shadow-1">Link</span>
                 </a>
@@ -303,13 +302,13 @@ function renderMonthDays(today, currentDayInfo) {
         ${currentDay.isSame(today, 'day') ? 'bg-washed-green' : ''}
         ${events.length ? 'pointer' : ''}"
         onclick=${function() {
-            if (!events.length) return
+        if (!events.length) return
 
-            store.dispatch({
-                type: 'SHOW_MODAL',
-                payload: events
-            })
-        }}>
+        store.dispatch({
+            type: 'SHOW_MODAL',
+            payload: events
+        })
+    }}>
         <div class="flex flex-column-l h-100 items-center items-end-l">
             ${renderEventsDay(events)}
             ${renderFooterDay(currentDay, today)}
