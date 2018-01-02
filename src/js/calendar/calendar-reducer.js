@@ -28,10 +28,10 @@ module.exports = function calendarReducer(state = {}, action) {
         return copyAndExtend(state, {
             currentFilter: action.payload,
             monthlyCalendars: state.originals.map(monthlyCalendar =>
-                    copyAndExtend(monthlyCalendar, {
-                        events: getEventsByName(monthlyCalendar, action.payload)
-                    })
-                )
+                copyAndExtend(monthlyCalendar, {
+                    events: getEventsByName(monthlyCalendar, action.payload)
+                })
+            )
         })
     case 'LOOKING_FOR_DATA':
         return copyAndExtend(state, { error: false, searching: true })
