@@ -5,6 +5,8 @@ const tap = require('gulp-tap')
 const html = require('yo-yo')
 
 const compileTemplate = function(article, fileName) {
+    const realFileName = fileName.substring(fileName.indexOf('-') + 1)
+
     return html`<section class="mt5">
         <article>
             <h2 class="black-alternative f4 f3-ns mb3 mt0 normal">${article.title}</h2>
@@ -14,7 +16,7 @@ const compileTemplate = function(article, fileName) {
                 <strong>${article.publishedDay}</strong>.
             </p>
             <p class="lh-copy mv3">${article.introduction}</p>
-            <a href="/articulos/${fileName}" class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu">
+            <a href="/articulos/${realFileName}" class="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu">
                 Leer
             </a>
         </article>
