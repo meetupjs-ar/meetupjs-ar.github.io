@@ -28,7 +28,18 @@ function byExpiration(notification) {
     const notificationExpirationDay = moment(notification.expiration)
     const today = moment(new Date())
 
-    return today.isBefore(notificationExpirationDay)
+    if (today.isBefore(notificationExpirationDay)) {
+        return true
+    } else {
+        try {
+            localStorage.removeItem(notification.key)
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error)
+        }
+
+        return false
+    }
 }
 
 function byStatusInStorage(notification) {
