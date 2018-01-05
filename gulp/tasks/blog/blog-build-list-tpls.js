@@ -9,7 +9,7 @@ const compileTemplate = function(article, fileName) {
 
     return html`<section class="mt5">
         <article>
-            <h2 class="black-alternative f4 f3-ns mb3 mt0 normal">${article.title}</h2>
+            <h2 class="black-alternative f4 f3-ns mb3 mt0">${article.title}</h2>
             <p class="f6 ma0 silver">
                 Por
                 <strong>${article.authors.join(', ')}</strong>. Publicado el

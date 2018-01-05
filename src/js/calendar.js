@@ -115,7 +115,7 @@ function render() {
 function renderCalendars(calendars) {
     return html`<div class="fade-in ${calendars.length ? 'db' : 'dn'}">
         <div class="flex items-end justify-center pb4">
-            <h1 class="black-alternative f3 f2-ns lh-solid mv0 normal pv0 tc">Calendario de eventos</h1>
+            <h1 class="black-alternative f3 f2-ns lh-solid mv0 pv0 tc">Calendario de eventos</h1>
             <a href="/articulos/que-es-el-calendario-de-eventos.html" title="¿Qué es el calendario de eventos?" class="black-30 no-underline">
                 <span class="f-30-px icon-help ml4 silver tr w-30-px"></span>
             </a>
@@ -134,7 +134,7 @@ function renderCalendars(calendars) {
         })
 
         return html`<div class="pb5">
-            <h2 class="f4 f3-ns mb4 mt0 normal silver tc ttc">
+            <h2 class="f4 f3-ns mb4 mt0 silver tc ttc">
                 ${calendar.when.month + ' ' + calendar.when.year}
             </h2>
             ${renderWeekdays()}
