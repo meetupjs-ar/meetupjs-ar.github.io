@@ -5,6 +5,7 @@
     right: 0;
     transform: translateX(150px);
     width: 150px;
+    z-index: 5;
 }
 
 .easter-egg-message {
@@ -19,6 +20,7 @@
     right: 125px;
     transform: translateX(15px);
     transition-delay: 0.25s;
+    z-index: 5;
 }
 
 .easter-egg-message::before {
