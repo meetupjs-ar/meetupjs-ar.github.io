@@ -5,6 +5,14 @@
 @import './ionicons.css';
 @import './markdown-body.css';
 
+::-moz-selection {
+    background-color: #ffe45e;
+}
+
+::selection {
+    background-color: #ffe45e;
+}
+
 body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
