@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     greetings([
         {
             activateAfter: 5000,
-            expiration: new Date(2018, 1, 7, 23, 59, 59),
+            expiration: new Date(2018, 0, 7, 23, 59, 59),
             hideAfter: 8000,
             key: '2018-happy-new-year',
             message: '¡Feliz año nuevo!'
