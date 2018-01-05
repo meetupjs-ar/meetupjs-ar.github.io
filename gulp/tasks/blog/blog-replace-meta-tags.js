@@ -3,6 +3,15 @@ const path = require('path')
 const pkg = require('../../../package.json')
 const replaceExt = require('replace-ext')
 const tap = require('gulp-tap')
+const html = require('yo-yo')
+
+const compileArticleFooter = function(article) {
+    return html`<p class="f6 mb3 mt0 silver">
+        Por
+        <strong>${article.authors.join(', ')}</strong>. Publicado el
+        <strong>${article.publishedDay}</strong>.
+    </p>`
+}
 
 module.exports = function(config) {
     return function() {
@@ -24,6 +33,7 @@ module.exports = function(config) {
                             .replace(/@title/g, article.title)
                             .replace(/@introduction/g, article.introduction)
                             .replace(/@version/g, pkg.version)
+                            .replace(/@article-footer/g, compileArticleFooter(article))
                     )
                 })
             )
