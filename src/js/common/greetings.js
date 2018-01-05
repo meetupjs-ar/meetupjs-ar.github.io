@@ -7,14 +7,18 @@ function activateNotification(notification) {
     setTimeout(() => {
         localStorage.setItem(notification.key, JSON.stringify(notification))
 
-        if (!isna.classList.contains('activate')) {
-            isna.classList.add('activate')
+        if (!isna.classList.contains('easter-egg-ready')) {
+            isna.classList.add('easter-egg-ready')
+        }
+
+        if (!isna.classList.contains('easter-egg-active')) {
+            isna.classList.add('easter-egg-active')
             isnaMessage.innerText = notification.message
-            isnaMessage.classList.add('activate')
+            isnaMessage.classList.add('easter-egg-active')
 
             setTimeout(() => {
-                isna.classList.remove('activate')
-                isnaMessage.classList.remove('activate')
+                isna.classList.remove('easter-egg-active')
+                isnaMessage.classList.remove('easter-egg-active')
             }, notification.hideAfter)
         }
     }, notification.activateAfter)

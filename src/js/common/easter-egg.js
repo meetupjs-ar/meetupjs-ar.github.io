@@ -4,12 +4,16 @@ let isna
 const audio = new Audio(`${process.env.ASSETS_BASE_URL}/assets/sounds/isnardi.mp3`)
 
 function activateEasterEgg() {
-    if (!isna.classList.contains('activate')) {
-        isna.classList.add('activate')
+    if (!isna.classList.contains('easter-egg-ready')) {
+        isna.classList.add('easter-egg-ready')
+    }
+
+    if (!isna.classList.contains('easter-egg-active')) {
+        isna.classList.add('easter-egg-active')
         audio.play()
 
         setTimeout(() => {
-            isna.classList.remove('activate')
+            isna.classList.remove('easter-egg-active')
         }, 2900)
     }
 }

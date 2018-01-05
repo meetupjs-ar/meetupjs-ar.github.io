@@ -4,13 +4,7 @@
     position: fixed;
     right: 0;
     transform: translateX(150px);
-    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
     width: 150px;
-}
-
-.easter-egg.activate {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .easter-egg-message {
@@ -24,7 +18,6 @@
     position: fixed;
     right: 125px;
     transform: translateX(15px);
-    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
     transition-delay: 0.25s;
 }
 
@@ -41,7 +34,11 @@
     width: 10px;
 }
 
-.easter-egg-message.activate {
+.easter-egg-ready {
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+
+.easter-egg-active {
     opacity: 1;
     transform: translateX(0);
 }
