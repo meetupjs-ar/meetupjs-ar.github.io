@@ -1,7 +1,6 @@
 .markdown-body {
     color: #2e282a;
     line-height: 1.5;
-    overflow-x: scroll;
 }
 
 .markdown-body > :first-child {
