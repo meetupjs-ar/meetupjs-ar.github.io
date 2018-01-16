@@ -1,4 +1,5 @@
 const aload = require('aload')
+const animateOnHover = require('./common/animate-on-hover')
 const easterEgg = require('./common/easter-egg')
 const greetings = require('./common/greetings')
 const menu = require('./common/menu')
@@ -8,6 +9,7 @@ const serviceWorker = require('./common/service-worker')
 
 window.addEventListener('load', () => {
     aload()
+    animateOnHover('[data-tilt]')
     easterEgg()
     greetings([
         {

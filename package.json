@@ -1,6 +1,6 @@
 {
     "name": "meetupjs-ar.github.io",
-    "version": "2.31.0",
+    "version": "2.32.0",
     "scripts": {
         "build": "gulp build",
         "build-prod": "gulp build --production",
@@ -59,6 +59,7 @@
         "replace-ext": "^1.0.0",
         "sw-precache": "^5.2.0",
         "tachyons": "^4.9.1",
+        "vanilla-tilt": "^1.4.1",
         "vinyl-buffer": "^1.0.1",
         "vinyl-source-stream": "^2.0.0",
         "yo-yo": "^1.4.1",
