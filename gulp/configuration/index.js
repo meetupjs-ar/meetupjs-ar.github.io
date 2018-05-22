@@ -17,7 +17,7 @@ module.exports = {
         tempHTMLArticlesDir: '.tmp/articles',
         tempHTMLDir: '.tmp/html',
         tempJSON: '.tmp/repo/**/*.json',
-        tempMd: '.tmp/repo/**/*.md'
+        tempMd: '.tmp/repo/**/!(README).md'
     },
     browserify: {
         isDebug: !util.env.production === false
