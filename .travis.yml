@@ -7,11 +7,9 @@ notifications:
   email: false
 script:
   - npm run build-prod
-before_deploy:
-  - bash ./deploy/git-config.sh
 deploy:
   provider: script
-  script: npm run deploy
+  script: bash ./deploy/git-config.sh && npm run deploy
   skip_cleanup: true
   on:
     branch: dev
