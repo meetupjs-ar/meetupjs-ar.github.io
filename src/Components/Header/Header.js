@@ -23,7 +23,7 @@ class Header extends Component {
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-1">
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
-            <NavLink to="/">
+            <NavLink to="/" onClick={this.toogleMenu}>
               <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
             </NavLink>
             <div className="flex items-center">
