@@ -8,7 +8,7 @@ notifications:
 script:
   - npm run build-prod
 deploy:
-  local-dir: dist
+  local-dir: build
   target-branch: master
   provider: pages
   skip-cleanup: true
