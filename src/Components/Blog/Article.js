@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { NavLink } from 'react-router-dom';
+import Body from '../Body/Body';
 import Markdown from '../Markdown/Markdown';
+import ArticleFooter from './ArticleFooter';
 
 class Article extends PureComponent {
   static props = {
@@ -28,21 +29,10 @@ class Article extends PureComponent {
     if (!Article) return null;
 
     return (
-      <div className="center mw7 ph3 pv5">
+      <Body>
         <Markdown Content={Article} />
-        <div className="mt4 pt3 tc">
-          <p className="f6 mb3 mt0 silver">
-            Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
-            <strong>{metadata.publishedDay}</strong>.
-          </p>
-          <NavLink
-            to="/blog.html"
-            className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
-          >
-            Ir al blog
-          </NavLink>
-        </div>
-      </div>
+        <ArticleFooter authors={metadata.authors} publishedDay={metadata.publishedDay} />
+      </Body>
     );
   }
 }

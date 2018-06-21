@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
+import Body from '../Body/Body';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
@@ -19,7 +20,7 @@ class BlogList extends PureComponent {
 
   render() {
     return (
-      <div className="center mw7 ph3 pv5">
+      <Body>
         <h1 className="mv0 tc">Blog</h1>
         {this.state.articlesMetadata.map((metadata) => (
           <section className="mt5" key={metadata.title}>
@@ -39,7 +40,7 @@ class BlogList extends PureComponent {
             </article>
           </section>
         ))}
-      </div>
+      </Body>
     );
   }
 }

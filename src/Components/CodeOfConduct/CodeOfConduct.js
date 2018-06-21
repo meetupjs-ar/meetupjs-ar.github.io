@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
+import Body from '../Body/Body';
 import Markdown from '../Markdown/Markdown';
 import CodeOfConductMarkdown from './CodeOfConduct.mdx';
 
 class CodeOfConduct extends PureComponent {
   render() {
     return (
-      <div className="center mw7 ph3 pv5">
+      <Body>
         <Markdown Content={CodeOfConductMarkdown} />
-      </div>
+      </Body>
     );
   }
 }
