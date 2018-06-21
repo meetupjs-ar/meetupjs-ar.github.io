@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
-import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/01-que-es-el-calendario-de-eventos.mdx';
-import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/02-como-hacemos-un-meetup.mdx';
-import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/03-consejos-para-dar-una-lightning-talk.mdx';
-import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/04-consejos-para-dar-una-charla.mdx';
-import { metadata as ResenaMeetupMayoMetadata } from './Articles/05-resena-meetup-mayo-2018.mdx';
+import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
+import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
+import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
+import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-es-el-calendario-de-eventos.mdx';
+import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
 
 class BlogList extends PureComponent {
   state = {
