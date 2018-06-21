@@ -16,10 +16,8 @@ npm install
 # ambiente de desarrollo
 npm start
 
-# publicar a github pages (master)
+# antes de publicar a github pages (master)
 npm run bump-minor
-npm run build-prod
-npm run deploy
 ```
 
 ## Licencia
