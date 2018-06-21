@@ -1,7 +1,39 @@
+/* @import 'highlight.js/styles/vs.css'; */
 @import '../node_modules/tachyons/css/tachyons.css';
+@import './css/animations.css';
+@import './css/easter-egg.css';
+@import './css/ionicons.css';
+
+::-moz-selection {
+  background-color: #ffe45e;
+}
+
+::selection {
+  background-color: #ffe45e;
+}
 
 body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.bg-gray-alternative {
+  background-color: #fbfbfb;
+}
+
+.black-alternative {
+  color: #2e282a;
+}
+
+.f30 {
+  font-size: 30px;
+}
+
+.w30 {
+  width: 30px;
+}
+
+.w50 {
+  width: 50px;
 }

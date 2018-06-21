@@ -1,6 +1,9 @@
 {
   "editor.autoIndent": true,
   "editor.formatOnSave": true,
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
   "prettier.eslintIntegration": true,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
