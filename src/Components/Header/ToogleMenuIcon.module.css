@@ -1,7 +1,3 @@
 :local(.userSelectNone) {
   user-select: none;
 }
-
-:local(.w50) {
-  width: 50px;
-}

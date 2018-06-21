@@ -30,12 +30,10 @@
 
 .markdown-body div h1 {
   color: var(--color-main);
-  font-size: 1.5rem;
   text-align: center;
 }
 
 .markdown-body div h2 {
-  font-size: 1.25rem;
   margin: 2rem 0;
 }
 
@@ -49,14 +47,4 @@
 .markdown-body div img {
   display: block;
   width: 100%;
-}
-
-@media screen and (min-width: 60em) {
-  .markdown-body div h1 {
-    font-size: 2.25rem;
-  }
-
-  .markdown-body div h2 {
-    font-size: 1.5rem;
-  }
 }

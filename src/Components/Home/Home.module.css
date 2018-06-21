@@ -1,3 +1,7 @@
 :local(.mw175) {
   max-width: 175px;
 }
+
+:local(.stretch) {
+  height: calc(100vh - 68px);
+}

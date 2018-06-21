@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Header.module.css';
 import isotipo from './isotipo.svg';
@@ -24,7 +25,9 @@ class Header extends Component {
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
             <NavLink to="/" onClick={this.toogleMenu}>
-              <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
+              <LazyLoad height="100%" once={true}>
+                <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
+              </LazyLoad>
             </NavLink>
             <div className="flex items-center">
               {!menuOpen && <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu()} />}
@@ -62,7 +65,7 @@ class Header extends Component {
                   toogleMenu={this.toogleMenu}
                 />
               </ul>
-              <p className="db f6 flex items-center justify-end mb0 mt4 tr">
+              <p className="db f6 flex items-center justify-end mv0 tr">
                 <span className="black-30">Version {process.env.REACT_APP_VERSION}</span>
               </p>
             </div>

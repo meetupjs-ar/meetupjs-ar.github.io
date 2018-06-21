@@ -10,7 +10,11 @@ class Layout extends PureComponent {
   render() {
     return (
       <BrowserRouter>
-        <div className={`${styles.bgGrayAlternative} ${styles.paddingTop68} sans-serif`}>
+        <div
+          className={`${styles.bgGrayAlternative} ${
+            styles.paddingTop68
+          } black-alternative sans-serif`}
+        >
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
