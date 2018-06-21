@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from './Layout/Layout';
+import Layout from './Components/Layout/Layout';
 // import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
