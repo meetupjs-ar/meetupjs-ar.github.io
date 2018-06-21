@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import * as styles from './Header.module.css';
 import isotipo from './isotipo.svg';
 import MenuItem from './MenuItem';
@@ -22,9 +23,9 @@ class Header extends Component {
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-1">
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
-            <a href="/">
+            <NavLink to="/">
               <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
-            </a>
+            </NavLink>
             <div className="flex items-center">
               {!menuOpen && <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu()} />}
               {menuOpen && (
@@ -39,26 +40,26 @@ class Header extends Component {
                   text="Página Principal"
                   icon="icon-home"
                   url="/"
-                  toogleMenu={() => this.toogleMenu()}
+                  toogleMenu={this.toogleMenu}
                 />
                 <MenuItem
                   text="Blog"
                   icon="icon-paper"
                   url="/blog.html"
-                  toogleMenu={() => this.toogleMenu()}
+                  toogleMenu={this.toogleMenu}
                 />
                 <MenuItem
                   text="Calendario de Eventos"
                   icon="icon-calendar"
                   url="/calendario.html"
-                  toogleMenu={() => this.toogleMenu()}
+                  toogleMenu={this.toogleMenu}
                 />
                 <MenuItem
                   text="Código de Conducta"
                   icon="icon-people"
                   url="/coc.html"
                   fixIcon
-                  toogleMenu={() => this.toogleMenu()}
+                  toogleMenu={this.toogleMenu}
                 />
               </ul>
               <p className="db f6 flex items-center justify-end mb0 mt4 tr">

@@ -30,6 +30,10 @@ body {
   font-size: 30px;
 }
 
+.user-select-none {
+  user-select: none;
+}
+
 .w30 {
   width: 30px;
 }

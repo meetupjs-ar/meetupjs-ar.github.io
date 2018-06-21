@@ -12,7 +12,7 @@ class ToggleMenuIcon extends PureComponent {
 
     return (
       <span
-        className={`${icon} f30 border-box grow nr3 ph3 pointer pv2 w50`}
+        className={`${icon} f30 border-box grow nr3 ph3 pointer pv2 user-select-none w50`}
         onClick={(event) => toogleMenu(event)}
       />
     );
