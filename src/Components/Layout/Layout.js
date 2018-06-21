@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import BlogList from '../Blog/List';
 import CodeOfConduct from '../CodeOfConduct/CodeOfConduct';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -18,6 +19,7 @@ class Layout extends PureComponent {
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/blog.html" component={BlogList} />
             <Route exact path="/coc.html" component={CodeOfConduct} />
             <Route component={NotFound} />
           </Switch>
