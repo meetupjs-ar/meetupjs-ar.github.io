@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import * as styles from './ToogleMenuIcon.module.css';
 
 class ToggleMenuIcon extends PureComponent {
   static propTypes = {
@@ -12,7 +13,9 @@ class ToggleMenuIcon extends PureComponent {
 
     return (
       <span
-        className={`${icon} f30 border-box grow nr3 ph3 pointer pv2 user-select-none w50`}
+        className={`${icon} ${styles.userSelectNone} ${
+          styles.w50
+        } f30 border-box grow nr3 ph3 pointer pv2`}
         onClick={(event) => toogleMenu(event)}
       />
     );

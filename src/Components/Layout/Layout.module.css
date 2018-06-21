@@ -1,3 +1,7 @@
+:local(.bgGrayAlternative) {
+  background-color: #fbfbfb;
+}
+
 :local(.paddingTop68) {
   padding-top: 68px;
 }

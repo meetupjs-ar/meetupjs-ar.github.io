@@ -5,11 +5,16 @@
 @import './css/markdown-body.css';
 
 ::-moz-selection {
-  background-color: #ffe45e;
+  background-color: var(--color-secondary);
 }
 
 ::selection {
-  background-color: #ffe45e;
+  background-color: var(--color-secondary);
+}
+
+:root {
+  --color-main: #2e282a;
+  --color-secondary: #ffe45e;
 }
 
 body {
@@ -18,26 +23,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.bg-gray-alternative {
-  background-color: #fbfbfb;
+.bg-yellow-alternative {
+  background-color: var(--color-secondary);
 }
 
 .black-alternative {
-  color: #2e282a;
+  color: var(--color-main);
 }
 
 .f30 {
   font-size: 30px;
-}
-
-.user-select-none {
-  user-select: none;
-}
-
-.w30 {
-  width: 30px;
-}
-
-.w50 {
-  width: 50px;
 }

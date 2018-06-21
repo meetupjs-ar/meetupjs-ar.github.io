@@ -2,7 +2,8 @@
   "editor.autoIndent": true,
   "editor.formatOnSave": true,
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
+    "*.svg": "html"
   },
   "prettier.eslintIntegration": true,
   "prettier.printWidth": 100,

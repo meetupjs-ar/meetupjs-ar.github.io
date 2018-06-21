@@ -1,5 +1,5 @@
 .markdown-body div {
-  color: #2e282a;
+  color: var(--color-main);
   line-height: 1.5;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .markdown-body div h1 {
-  color: #2e282a;
+  color: var(--color-main);
   font-size: 1.5rem;
   text-align: center;
 }
