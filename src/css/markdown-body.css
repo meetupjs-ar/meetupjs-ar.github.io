@@ -1,0 +1,62 @@
+.markdown-body div {
+  color: #2e282a;
+  line-height: 1.5;
+}
+
+.markdown-body div > :first-child {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 2rem;
+}
+
+.markdown-body div > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body div a {
+  color: #357edd;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.markdown-body div h1,
+.markdown-body div h2,
+.markdown-body div h3,
+.markdown-body div h4,
+.markdown-body div h5,
+.markdown-body div h6 {
+  color: #999;
+}
+
+.markdown-body div h1 {
+  color: #2e282a;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.markdown-body div h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0;
+}
+
+.markdown-body div h3,
+.markdown-body div h4,
+.markdown-body div h5,
+.markdown-body div h6 {
+  margin: 1rem 0;
+}
+
+.markdown-body div img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 60em) {
+  .markdown-body div h1 {
+    font-size: 2.25rem;
+  }
+
+  .markdown-body div h2 {
+    font-size: 1.5rem;
+  }
+}

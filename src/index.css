@@ -1,8 +1,8 @@
-/* @import 'highlight.js/styles/vs.css'; */
 @import '../node_modules/tachyons/css/tachyons.css';
 @import './css/animations.css';
 @import './css/easter-egg.css';
 @import './css/ionicons.css';
+@import './css/markdown-body.css';
 
 ::-moz-selection {
   background-color: #ffe45e;
