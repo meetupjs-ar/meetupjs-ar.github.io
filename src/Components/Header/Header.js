@@ -11,9 +11,9 @@ class Header extends Component {
     menuOpen: false
   };
 
-  toogleMenu = () => {
+  toogleMenu = (show) => {
     this.setState({
-      menuOpen: !this.state.menuOpen
+      menuOpen: show
     });
   };
 
@@ -24,15 +24,17 @@ class Header extends Component {
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-1">
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
-            <NavLink to="/" onClick={this.toogleMenu}>
+            <NavLink to="/" onClick={() => this.toogleMenu(false)}>
               <LazyLoad height="100%" once={true}>
                 <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
               </LazyLoad>
             </NavLink>
             <div className="flex items-center">
-              {!menuOpen && <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu()} />}
+              {!menuOpen && (
+                <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu(true)} />
+              )}
               {menuOpen && (
-                <ToogleMenuIcon icon="icon-close" toogleMenu={() => this.toogleMenu()} />
+                <ToogleMenuIcon icon="icon-close" toogleMenu={() => this.toogleMenu(false)} />
               )}
             </div>
           </div>
@@ -43,26 +45,26 @@ class Header extends Component {
                   text="Página Principal"
                   icon="icon-home"
                   url="/"
-                  toogleMenu={this.toogleMenu}
+                  toogleMenu={() => this.toogleMenu(false)}
                 />
                 <MenuItem
                   text="Blog"
                   icon="icon-paper"
                   url="/blog.html"
-                  toogleMenu={this.toogleMenu}
+                  toogleMenu={() => this.toogleMenu(false)}
                 />
                 <MenuItem
                   text="Calendario de Eventos"
                   icon="icon-calendar"
                   url="/calendario.html"
-                  toogleMenu={this.toogleMenu}
+                  toogleMenu={() => this.toogleMenu(false)}
                 />
                 <MenuItem
                   text="Código de Conducta"
                   icon="icon-people"
                   url="/coc.html"
                   fixIcon
-                  toogleMenu={this.toogleMenu}
+                  toogleMenu={() => this.toogleMenu(false)}
                 />
               </ul>
               <p className="db f6 flex items-center justify-end mv0 tr">
