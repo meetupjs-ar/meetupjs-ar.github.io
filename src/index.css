@@ -2,7 +2,6 @@
 @import './css/animations.css';
 @import './css/easter-egg.css';
 @import './css/ionicons.css';
-@import './css/markdown-body.css';
 
 ::-moz-selection {
   background-color: var(--color-secondary);

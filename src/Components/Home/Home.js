@@ -30,7 +30,7 @@ class Home extends PureComponent {
               </Tilt>
             </h1>
           </div>
-          <p className="f4 lh-copy mb0 mt4 mt5-l tc">
+          <p className="f4 mb0 mt4 mt5-l tc">
             ¡Sumate a la comunidad de desarrolladores <span className="b">JavaScript</span> de
             Buenos Aires!
           </p>

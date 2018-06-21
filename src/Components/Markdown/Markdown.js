@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import * as styles from './markdown.module.css';
 
 class Markdown extends PureComponent {
   static props = {
@@ -10,7 +11,7 @@ class Markdown extends PureComponent {
     const { Content } = this.props;
 
     return (
-      <div className="markdown-body">
+      <div className={styles.markdownBody}>
         <Content />
       </div>
     );

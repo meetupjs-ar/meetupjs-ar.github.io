@@ -14,7 +14,7 @@ class Layout extends PureComponent {
         <div
           className={`${styles.bgGrayAlternative} ${
             styles.paddingTop68
-          } black-alternative sans-serif`}
+          } black-alternative lh-copy sans-serif`}
         >
           <Header />
           <Switch>

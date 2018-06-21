@@ -1,0 +1,38 @@
+:local(.markdownBody div) {
+  color: var(--color-main);
+}
+
+:local(.markdownBody div > :first-child) {
+  margin-bottom: 4rem;
+  margin-top: 0;
+}
+
+:local(.markdownBody div > :last-child) {
+  margin-bottom: 0;
+}
+
+:local(.markdownBody div a) {
+  color: #357edd;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+:local(.markdownBody div h1) {
+  color: var(--color-main);
+  text-align: center;
+}
+
+:local(.markdownBody div h2) {
+  color: #999;
+  margin: 2rem 0;
+}
+
+:local(.markdownBody div img) {
+  display: block;
+  width: 100%;
+}
+
+:local(.markdownBody div h3, .markdownBody div h4, .markdownBody div h5, .markdownBody div h6) {
+  color: #777;
+  margin: 1rem 0;
+}

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { NavLink } from 'react-router-dom';
 import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/01-que-es-el-calendario-de-eventos.mdx';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/02-como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/03-consejos-para-dar-una-lightning-talk.mdx';
@@ -28,13 +29,13 @@ class BlogList extends PureComponent {
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
                 <strong>{metadata.publishedDay}</strong>.
               </p>
-              <p className="lh-copy mv3">{metadata.introduction}</p>
-              <a
-                href={`articulos/${metadata.url}`}
+              <p className="mv3">{metadata.introduction}</p>
+              <NavLink
+                to={`articulos/${metadata.url}`}
                 className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
               >
                 Leer
-              </a>
+              </NavLink>
             </article>
           </section>
         ))}
