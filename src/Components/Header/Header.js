@@ -39,7 +39,7 @@ class Header extends Component {
             </div>
           </div>
           {isMenuOpen && (
-            <div className="mv4">
+            <div className="fade-in mv4">
               <Menu toogleMenu={() => this.toogleMenu(false)} />
               <p className="db f6 flex items-center justify-end mv0 tr">
                 <span className="black-30">Version {process.env.REACT_APP_VERSION}</span>
