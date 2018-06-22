@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Body from '../Body/Body';
 import React, { PureComponent } from 'react';
 
 class Spinner extends PureComponent {
@@ -14,9 +15,11 @@ class Spinner extends PureComponent {
     const { message } = this.props;
 
     return (
-      <div className="pv4 pv5-ns tc">
-        <h2 className="mv0 normal">{message}</h2>
-      </div>
+      <Body>
+        <div className="tc">
+          <h2 className="mv0 normal">{message}</h2>
+        </div>
+      </Body>
     );
   }
 }
