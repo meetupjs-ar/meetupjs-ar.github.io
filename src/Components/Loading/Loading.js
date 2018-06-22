@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import Body from '../Body/Body';
 import React, { PureComponent } from 'react';
+import Body from '../Body/Body';
 
-class Spinner extends PureComponent {
+class Loading extends PureComponent {
   static propTypes = {
     message: PropTypes.string
   };
@@ -24,4 +24,4 @@ class Spinner extends PureComponent {
   }
 }
 
-export default Spinner;
+export default Loading;

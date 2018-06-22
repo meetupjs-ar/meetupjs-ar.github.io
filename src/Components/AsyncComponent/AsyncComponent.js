@@ -1,9 +1,9 @@
 import Loadable from 'react-loadable';
-import Spinner from '../Spinner/Spinner';
+import Loading from '../Loading/Loading';
 
 const AsyncComponent = (props) =>
   Loadable({
-    loading: Spinner,
+    loading: Loading,
     ...props
   });
 
