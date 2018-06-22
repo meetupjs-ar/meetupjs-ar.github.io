@@ -1,6 +1,4 @@
 @import '../node_modules/tachyons/css/tachyons.css';
-@import './css/animations.css';
-@import './css/easter-egg.css';
 @import './css/ionicons.css';
 
 ::-moz-selection {

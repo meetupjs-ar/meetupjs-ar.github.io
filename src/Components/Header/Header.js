@@ -3,22 +3,22 @@ import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Header.module.css';
 import isotipo from './isotipo.svg';
-import MenuItem from './MenuItem';
+import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
 
 class Header extends Component {
   state = {
-    menuOpen: false
+    isMenuOpen: false
   };
 
-  toogleMenu = (show) => {
+  toogleMenu = (openMenu) => {
     this.setState({
-      menuOpen: show
+      isMenuOpen: openMenu
     });
   };
 
   render() {
-    const { menuOpen } = this.state;
+    const { isMenuOpen } = this.state;
 
     return (
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-1">
@@ -30,43 +30,17 @@ class Header extends Component {
               </LazyLoad>
             </NavLink>
             <div className="flex items-center">
-              {!menuOpen && (
+              {!isMenuOpen && (
                 <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu(true)} />
               )}
-              {menuOpen && (
+              {isMenuOpen && (
                 <ToogleMenuIcon icon="icon-close" toogleMenu={() => this.toogleMenu(false)} />
               )}
             </div>
           </div>
-          {this.state.menuOpen && (
-            <div id="menu" className="mv4">
-              <ul className="list mv4 pl0">
-                <MenuItem
-                  text="Página Principal"
-                  icon="icon-home"
-                  url="/"
-                  toogleMenu={() => this.toogleMenu(false)}
-                />
-                <MenuItem
-                  text="Blog"
-                  icon="icon-paper"
-                  url="/blog.html"
-                  toogleMenu={() => this.toogleMenu(false)}
-                />
-                <MenuItem
-                  text="Calendario de Eventos"
-                  icon="icon-calendar"
-                  url="/calendario.html"
-                  toogleMenu={() => this.toogleMenu(false)}
-                />
-                <MenuItem
-                  text="Código de Conducta"
-                  icon="icon-people"
-                  url="/coc.html"
-                  fixIcon
-                  toogleMenu={() => this.toogleMenu(false)}
-                />
-              </ul>
+          {isMenuOpen && (
+            <div className="mv4">
+              <Menu toogleMenu={() => this.toogleMenu(false)} />
               <p className="db f6 flex items-center justify-end mv0 tr">
                 <span className="black-30">Version {process.env.REACT_APP_VERSION}</span>
               </p>
