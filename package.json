@@ -2,6 +2,7 @@
   "name": "meetupjs-ar.github.io",
   "version": "2.41.0",
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "generate-manifest": "REACT_APP_VERSION=${npm_package_version} env-cmd .env node scripts/generate-manifest",
     "build-prod": "NODE_ENV=production REACT_APP_VERSION=${npm_package_version} react-app-rewired build",
     "dev": "npm run generate-manifest && REACT_APP_VERSION=${npm_package_version} react-app-rewired start",
@@ -32,6 +33,7 @@
     "react-scripts": "1.1.4",
     "react-tilt": "^0.1.4",
     "smoothscroll-polyfill": "^0.4.3",
+    "source-map-explorer": "^1.5.0",
     "stylelint": "^9.3.0",
     "stylelint-config-css-modules": "^1.2.0",
     "stylelint-config-standard": "^18.2.0",
