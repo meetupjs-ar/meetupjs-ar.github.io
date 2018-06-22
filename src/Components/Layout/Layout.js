@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AsyncComponent from '../AsyncComponent/AsyncComponent';
 import Header from '../Header/Header';
 import * as styles from './Layout.module.css';
+import Isna from '../Isna/Isna';
 
 class Layout extends PureComponent {
   render() {
@@ -70,6 +71,7 @@ class Layout extends PureComponent {
               })}
             />
           </Switch>
+          <Isna />
         </div>
       </BrowserRouter>
     );
