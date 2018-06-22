@@ -1,8 +1,9 @@
 export const metadata = {
-  title: 'Como hacemos un meetup',
+  absoluteUrl: `${process.env.REACT_APP_URL}articulos/como-hacemos-un-meetup.html`,
   authors: ['Camila Cepeda'],
-  publishedDay: '19/12/2017',
-  introduction:
+  description:
     'En este artículo te vamos a contar como organizamos los meetups, que pasos tenemos en cuenta, como nos contactamos con los oradores, empresas y sponsors.',
-  url: 'como-hacemos-un-meetup.html'
+  publishedDay: '19/12/2017',
+  relativeUrl: 'articulos/como-hacemos-un-meetup.html',
+  title: 'Como hacemos un meetup'
 };

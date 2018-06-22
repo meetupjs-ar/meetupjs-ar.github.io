@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import Tilt from 'react-tilt';
 import Body from '../Body/Body';
+import Metatags from '../Metatags/Metatags';
 import facebook from './facebook.svg';
 import github from './github.svg';
 import * as styles from './Home.module.css';
+import HomePageMetatags from './HomeMetatags';
 import logo from './logo.svg';
 import meetup from './meetup.svg';
 import slack from './slack.svg';
@@ -15,6 +17,7 @@ class Home extends PureComponent {
   render() {
     return (
       <Body>
+        <Metatags metatags={HomePageMetatags} />
         <div className="flex justify-center">
           <h1 className={`${styles.mw175} mv0 w-100`}>
             <Tilt

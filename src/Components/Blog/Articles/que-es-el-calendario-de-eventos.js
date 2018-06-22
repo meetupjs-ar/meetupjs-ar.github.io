@@ -1,8 +1,9 @@
 export const metadata = {
-  title: '¿Qué es el calendario de eventos?',
+  absoluteUrl: `${process.env.REACT_APP_URL}articulos/que-es-el-calendario-de-eventos.html`,
   authors: ['Cristhian Duran'],
-  publishedDay: '15/12/2017',
-  introduction:
+  description:
     'Te contamos qué es y como funciona el calendario de eventos que hicimos para nuestro sitio.',
-  url: 'que-es-el-calendario-de-eventos.html'
+  publishedDay: '15/12/2017',
+  relativeUrl: 'articulos/que-es-el-calendario-de-eventos.html',
+  title: '¿Qué es el calendario de eventos?'
 };

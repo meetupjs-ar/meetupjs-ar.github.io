@@ -1,8 +1,9 @@
 export const metadata = {
-  title: 'Consejos para dar una charla',
+  absoluteUrl: `${process.env.REACT_APP_URL}articulos/consejos-para-dar-una-charla.html`,
   authors: ['Karen Serfaty', 'Cristhian Duran'],
-  publishedDay: '03/05/2018',
-  introduction:
+  description:
     'Les compartimos una lista de puntos que recomendamos tener en cuenta a la hora de preparar una charla.',
-  url: 'consejos-para-dar-una-charla.html'
+  publishedDay: '03/05/2018',
+  relativeUrl: 'articulos/consejos-para-dar-una-charla.html',
+  title: 'Consejos para dar una charla'
 };

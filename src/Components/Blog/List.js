@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 import Body from '../Body/Body';
+import Metatags from '../Metatags/Metatags';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
 import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-es-el-calendario-de-eventos.mdx';
 import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
+import BlogPageMetatags from './ListMetatags';
 
 class BlogList extends PureComponent {
   state = {
@@ -21,6 +23,7 @@ class BlogList extends PureComponent {
   render() {
     return (
       <Body>
+        <Metatags metatags={BlogPageMetatags} />
         <h1 className="mv0 tc">Blog</h1>
         {this.state.articlesMetadata.map((metadata) => (
           <section className="mt5" key={metadata.title}>
@@ -30,9 +33,9 @@ class BlogList extends PureComponent {
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
                 <strong>{metadata.publishedDay}</strong>.
               </p>
-              <p className="mv3">{metadata.introduction}</p>
+              <p className="mv3">{metadata.description}</p>
               <NavLink
-                to={`articulos/${metadata.url}`}
+                to={metadata.relativeUrl}
                 className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
               >
                 Leer

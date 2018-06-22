@@ -2,12 +2,15 @@ import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
 import Body from '../Body/Body';
+import Metatags from '../Metatags/Metatags';
+import NotFoundPageMetatags from './NotFoundMetatags';
 import travolta from './travolta.gif';
 
 class NotFound extends PureComponent {
   render() {
     return (
       <Body>
+        <Metatags metatags={NotFoundPageMetatags} />
         <div className="tc">
           <h1 className="mv0">404 - Page Not Found</h1>
           <LazyLoad height="100%" once={true}>

@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import Body from '../Body/Body';
 import Markdown from '../Markdown/Markdown';
 import ArticleFooter from './ArticleFooter';
+import Metatags from '../Metatags/Metatags';
 
 class Article extends PureComponent {
   static props = {
@@ -30,6 +31,7 @@ class Article extends PureComponent {
 
     return (
       <Body>
+        <Metatags metatags={metadata} />
         <Markdown Content={Article} />
         <ArticleFooter authors={metadata.authors} publishedDay={metadata.publishedDay} />
       </Body>
