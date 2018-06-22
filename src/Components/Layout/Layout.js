@@ -14,6 +14,23 @@ class Layout extends PureComponent {
           } black-alternative lh-copy sans-serif`}
         >
           <Header />
+          {/*
+            HOT FIX: It solves the issue when navigating routes and the scroll is not on the top
+            of the page. More info -> https://github.com/ReactTraining/react-router/issues/2019#issuecomment-292711226
+          */}
+          <Route
+            component={() => {
+              // https://stackoverflow.com/a/8918062
+              // NOTE: I installed the polyfill `smoothscroll-polyfill`
+              window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: 0
+              });
+
+              return null;
+            }}
+          />
           <Switch>
             <Route
               exact
