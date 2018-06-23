@@ -33,11 +33,11 @@ class Home extends PureComponent {
             </Tilt>
           </h1>
         </div>
-        <p className="f4 mb0 mt4 mt5-l tc">
+        <p className="f4 mb0 mt4 tc">
           ¡Sumate a la comunidad de desarrolladores <span className="b">JavaScript</span> de Buenos
           Aires!
         </p>
-        <div className="flex justify-center mv4 mv5-ns">
+        <div className="flex justify-center mv4">
           <a
             href="https://www.facebook.com/groups/1572363023007913/"
             target="_blank"

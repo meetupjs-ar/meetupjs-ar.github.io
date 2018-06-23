@@ -101,7 +101,7 @@ class Status extends PureComponent {
     return (
       <Body>
         <Metatags metatags={StatusPageMetatags} />
-        <div className="mb5">
+        <div className="mb4">
           <h1 className="mv0 tc">Estado de los servicios</h1>
         </div>
         <ServiceStatus
@@ -131,15 +131,15 @@ class Status extends PureComponent {
         />
         {this.isOk() && (
           <LazyLoad height="100%" once={true}>
-            <img src={Success} alt="Éxito" className="db center fade-in h5 mt4 pt3" />
+            <img src={Success} alt="Éxito" className="db center fade-in h5 mt4" />
           </LazyLoad>
         )}
         {this.isError() && (
           <LazyLoad height="100%" once={true}>
-            <img src={Facepalm} alt="Error" className="db center fade-in h5 mt4 pt3" />
+            <img src={Facepalm} alt="Error" className="db center fade-in h5 mt4" />
           </LazyLoad>
         )}
-        <div className="mt4 pt3 tc">
+        <div className="mt4 tc">
           <button
             className={`${
               this.isChecking() ? 'o-50' : ''

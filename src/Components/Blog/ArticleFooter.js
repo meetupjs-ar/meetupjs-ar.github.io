@@ -12,7 +12,7 @@ class ArticleFooter extends PureComponent {
     const { authors, publishedDay } = this.props;
 
     return (
-      <div className="mt4 pt3 tc">
+      <div className="mt4 tc">
         <p className="f6 mb3 mt0 silver">
           Por <strong>{authors.join(', ')}</strong>. Publicado el <strong>{publishedDay}</strong>.
         </p>

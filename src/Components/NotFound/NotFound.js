@@ -18,7 +18,7 @@ class NotFound extends PureComponent {
           </LazyLoad>
           <NavLink
             to="/"
-            className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link mb3 mb0-m mb0-l mr3-m mr3-l ph3 pv2 ttu"
+            className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
           >
             <span>Volver a la página principal</span>
           </NavLink>

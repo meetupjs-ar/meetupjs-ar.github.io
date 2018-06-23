@@ -26,8 +26,8 @@ class BlogList extends PureComponent {
         <Metatags metatags={BlogPageMetatags} />
         <h1 className="mv0 tc">Blog</h1>
         {this.state.articlesMetadata.map((metadata) => (
-          <section className="mt5" key={metadata.title}>
-            <article>
+          <div className="mt4" key={metadata.title}>
+            <div className="b--black-10 ba bg-white br2 bw1 pa3">
               <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
               <p className="f6 ma0 silver">
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
@@ -40,8 +40,8 @@ class BlogList extends PureComponent {
               >
                 Leer
               </NavLink>
-            </article>
-          </section>
+            </div>
+          </div>
         ))}
       </Body>
     );
