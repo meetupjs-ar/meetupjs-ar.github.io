@@ -3,15 +3,15 @@ import LazyLoad from 'react-lazyload';
 import Tilt from 'react-tilt';
 import Body from '../Body/Body';
 import Metatags from '../Metatags/Metatags';
-import facebook from './facebook.svg';
-import github from './github.svg';
 import * as styles from './Home.module.css';
 import HomePageMetatags from './HomeMetatags';
-import logo from './logo.svg';
-import meetup from './meetup.svg';
-import slack from './slack.svg';
-import twitter from './twitter.svg';
-import youtube from './youtube.svg';
+import facebook from './images/facebook.svg';
+import github from './images/github.svg';
+import logo from './images/logo.svg';
+import meetup from './images/meetup.svg';
+import slack from './images/slack.svg';
+import twitter from './images/twitter.svg';
+import youtube from './images/youtube.svg';
 
 class Home extends PureComponent {
   render() {

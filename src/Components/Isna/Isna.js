@@ -2,8 +2,8 @@ import Mousetrap from 'mousetrap';
 import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import * as styles from './Isna.module.css';
-import IsnaSound from './Isna.mp3';
-import IsnaPicture from './isna.png';
+import IsnaSound from './sounds/isna.mp3';
+import IsnaPicture from './images/isna.png';
 import Notifications from './Notifications';
 
 class Isna extends PureComponent {

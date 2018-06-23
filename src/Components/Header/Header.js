@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Header.module.css';
-import isotipo from './isotipo.svg';
+import isotipo from './images/isotipo.svg';
 import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
 

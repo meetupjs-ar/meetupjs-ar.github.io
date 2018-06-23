@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Body from '../Body/Body';
 import Metatags from '../Metatags/Metatags';
 import NotFoundPageMetatags from './NotFoundMetatags';
-import travolta from './travolta.gif';
+import travolta from './images/travolta.gif';
 
 class NotFound extends PureComponent {
   render() {
@@ -12,9 +12,9 @@ class NotFound extends PureComponent {
       <Body>
         <Metatags metatags={NotFoundPageMetatags} />
         <div className="tc">
-          <h1 className="mv0">Ups!, lo que viniste a buscar no está acá.</h1>
+          <h1 className="mv0">¡Ups!, lo que viniste a buscar no está acá.</h1>
           <LazyLoad height="100%" once={true}>
-            <img src={travolta} alt="travolta" className="db center h5 mv4" />
+            <img src={travolta} alt="John Travolta" className="db center h5 mv4" />
           </LazyLoad>
           <NavLink
             to="/"

@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import Body from '../Body/Body';
 import Metatags from '../Metatags/Metatags';
-import Facepalm from './facepalm.gif';
+import Facepalm from './images/facepalm.gif';
 import ServiceStatus from './ServiceStatus';
 import StatusPageMetatags from './StatusMetatags';
-import Success from './success.gif';
+import Success from './images/success.gif';
 
 class Status extends PureComponent {
   constructor(props) {
