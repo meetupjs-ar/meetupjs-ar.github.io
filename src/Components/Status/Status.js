@@ -26,38 +26,49 @@ class Status extends PureComponent {
     this.setState(this.defaultState);
 
     this.getServiceStatus('https://spreadsheet-api.now.sh/').then((status) => {
-      this.setState({
-        spreadsheetApi: status
-      });
+      this._isMounted &&
+        this.setState({
+          spreadsheetApi: status
+        });
     });
 
     this.getServiceStatus('https://eventbrite-api.now.sh/').then((status) => {
-      this.setState({
-        eventbriteApi: status
-      });
+      this._isMounted &&
+        this.setState({
+          eventbriteApi: status
+        });
     });
 
     this.getServiceStatus('https://meetup-api.now.sh/').then((status) => {
-      this.setState({
-        meetupApi: status
-      });
+      this._isMounted &&
+        this.setState({
+          meetupApi: status
+        });
     });
 
     this.getServiceStatus('https://calendar-api.now.sh/').then((status) => {
-      this.setState({
-        calendarApi: status
-      });
+      this._isMounted &&
+        this.setState({
+          calendarApi: status
+        });
     });
 
     this.getServiceStatus('https://meetupjs-slack-bot.now.sh/').then((status) => {
-      this.setState({
-        calendarBot: status
-      });
+      this._isMounted &&
+        this.setState({
+          calendarBot: status
+        });
     });
   };
 
   componentDidMount() {
+    // TODO: remove this hack by using some library or implementing some pattern
+    this._isMounted = true;
     this.checkStatus();
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   getServiceStatus = (url) => {
