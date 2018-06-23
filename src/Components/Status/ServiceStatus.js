@@ -36,7 +36,7 @@ class ServiceStatus extends PureComponent {
           <p className="mb1 mt0">
             <strong>{name}</strong>
           </p>
-          <p className={`${styles.serviceDescription} mv0`}>{description}</p>
+          <p className="mv0 silver">{description}</p>
         </div>
       </div>
     );

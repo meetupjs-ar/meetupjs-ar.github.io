@@ -1,4 +1,4 @@
-const isBefore = require('date-fns/is_before');
+import isBefore from 'date-fns/is_before';
 
 const allNotifications = [
   {

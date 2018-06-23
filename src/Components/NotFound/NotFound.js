@@ -12,7 +12,7 @@ class NotFound extends PureComponent {
       <Body>
         <Metatags metatags={NotFoundPageMetatags} />
         <div className="tc">
-          <h1 className="mv0">404 - Page Not Found</h1>
+          <h1 className="mv0">Ups!, lo que viniste a buscar no está acá.</h1>
           <LazyLoad height="100%" once={true}>
             <img src={travolta} alt="travolta" className="db center h5 mv4" />
           </LazyLoad>

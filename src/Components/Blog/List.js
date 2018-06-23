@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 import Body from '../Body/Body';
+import dateFormatter from '../Helpers/DateFormatter';
 import Metatags from '../Metatags/Metatags';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
@@ -9,15 +10,17 @@ import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-e
 import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
 import BlogPageMetatags from './ListMetatags';
 
+const publishedArticles = [
+  ResenaMeetupMayoMetadata,
+  ConsejosParaDarUnaCharlaMetadata,
+  ConsejosParaDarUnaLightningMetadata,
+  ComoHacemosUnMeetupMetadata,
+  QueEsElCalendarioDeEventosMetadata
+].sort((a, b) => b.publishedDay - a.publishedDay);
+
 class BlogList extends PureComponent {
   state = {
-    articlesMetadata: [
-      ResenaMeetupMayoMetadata,
-      ConsejosParaDarUnaCharlaMetadata,
-      ConsejosParaDarUnaLightningMetadata,
-      ComoHacemosUnMeetupMetadata,
-      QueEsElCalendarioDeEventosMetadata
-    ]
+    articlesMetadata: [...publishedArticles]
   };
 
   render() {
@@ -28,10 +31,10 @@ class BlogList extends PureComponent {
         {this.state.articlesMetadata.map((metadata) => (
           <div className="mt4" key={metadata.title}>
             <div className="b--black-10 ba bg-white br2 bw1 pa3">
-              <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
+              <h2 className="f4 f3-ns mb1 mt0">{metadata.title}</h2>
               <p className="f6 ma0 silver">
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
-                <strong>{metadata.publishedDay}</strong>.
+                <strong>{dateFormatter(metadata.publishedDay)}</strong>.
               </p>
               <p className="mv3">{metadata.description}</p>
               <NavLink

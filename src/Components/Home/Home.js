@@ -37,7 +37,7 @@ class Home extends PureComponent {
           ¡Sumate a la comunidad de desarrolladores <span className="b">JavaScript</span> de Buenos
           Aires!
         </p>
-        <div className="flex justify-center mv4">
+        <div className="flex justify-center mv4 pb2">
           <a
             href="https://www.facebook.com/groups/1572363023007913/"
             target="_blank"
