@@ -76,10 +76,10 @@ class Status extends PureComponent {
   isError = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
     return (
-      calendarApi === 2 ||
-      calendarBot === 2 ||
-      eventbriteApi === 2 ||
-      meetupApi === 2 ||
+      calendarApi === 2 &&
+      calendarBot === 2 &&
+      eventbriteApi === 2 &&
+      meetupApi === 2 &&
       spreadsheetApi === 2
     );
   };
@@ -87,10 +87,10 @@ class Status extends PureComponent {
   isOk = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
     return (
-      calendarApi === 1 ||
-      calendarBot === 1 ||
-      eventbriteApi === 1 ||
-      meetupApi === 1 ||
+      calendarApi === 1 &&
+      calendarBot === 1 &&
+      eventbriteApi === 1 &&
+      meetupApi === 1 &&
       spreadsheetApi === 1
     );
   };
