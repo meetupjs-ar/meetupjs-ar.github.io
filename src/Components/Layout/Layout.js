@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AsyncComponent from '../AsyncComponent/AsyncComponent';
 import Header from '../Header/Header';
-import * as styles from './Layout.module.css';
 import Isna from '../Isna/Isna';
+import * as styles from './Layout.module.css';
 
 class Layout extends PureComponent {
   render() {

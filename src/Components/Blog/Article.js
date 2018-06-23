@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import Body from '../Body/Body';
 import Markdown from '../Markdown/Markdown';
-import ArticleFooter from './ArticleFooter';
 import Metatags from '../Metatags/Metatags';
+import ArticleFooter from './ArticleFooter';
 
 class Article extends PureComponent {
   static props = {
