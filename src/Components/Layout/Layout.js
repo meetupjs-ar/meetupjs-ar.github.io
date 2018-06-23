@@ -66,6 +66,13 @@ class Layout extends PureComponent {
               })}
             />
             <Route
+              exact
+              path="/servicios.html"
+              component={AsyncComponent({
+                loader: () => import('../Status/Status')
+              })}
+            />
+            <Route
               component={AsyncComponent({
                 loader: () => import('../NotFound/NotFound')
               })}

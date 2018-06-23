@@ -25,7 +25,7 @@ class MenuItem extends PureComponent {
           onClick={toogleMenu}
         >
           <span>{text}</span>
-          <span className={`${fixIcon ? 'nr1 pl1' : ''} ${icon} ${styles.w30} f30 ml3 silver tr`} />
+          <span className={`${fixIcon ? 'nr1 pl1' : ''} ${icon} f30 ml3 silver tc w30`} />
         </NavLink>
       </li>
     );

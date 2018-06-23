@@ -12,6 +12,7 @@
 :root {
   --color-main: #2e282a;
   --color-secondary: #ffe45e;
+  --color-tertiary: #999;
 }
 
 body {
@@ -45,4 +46,8 @@ body {
 .fade-in {
   animation-duration: 1s;
   animation-name: fadeIn;
+}
+
+.w30 {
+  width: 30px;
 }

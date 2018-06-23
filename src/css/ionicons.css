@@ -22,34 +22,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-close::before {
-  content: '\f2d7';
+.icon-ion-ios-link::before {
+  content: '\f22a';
 }
 
-.icon-calendar::before {
-  content: '\f3f3';
+.icon-ion-ios-home::before {
+  content: '\f448';
 }
 
-.icon-help::before {
-  content: '\f445';
+.icon-ion-md-paper::before {
+  content: '\f33f';
 }
 
-.icon-home::before {
-  content: '\f447';
+.icon-ion-md-medkit::before {
+  content: '\f328';
 }
 
-.icon-paper::before {
-  content: '\f471';
+.icon-ion-ios-people::before {
+  content: '\f47c';
 }
 
-.icon-people::before {
-  content: '\f47b';
+.icon-ion-ios-help-circle-outline::before {
+  content: '\f197';
 }
 
-.icon-link::before {
-  content: '\f1fe';
+.icon-ion-md-calendar::before {
+  content: '\f2ab';
 }
 
-.icon-nav::before {
-  content: '\f20e';
+.icon-ion-md-close::before {
+  content: '\f2c0';
+}
+
+.icon-ion-md-menu::before {
+  content: '\f32a';
 }

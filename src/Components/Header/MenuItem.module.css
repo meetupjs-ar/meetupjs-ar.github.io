@@ -1,7 +1,3 @@
-:local(.w30) {
-  width: 30px;
-}
-
 :local(.currentPage::after) {
   color: #98d083;
   content: '•';

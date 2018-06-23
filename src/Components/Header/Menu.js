@@ -12,20 +12,32 @@ class Menu extends PureComponent {
 
     return (
       <ul className="list mv4 pl0">
-        <MenuItem text="Página Principal" icon="icon-home" url="/" toogleMenu={toogleMenu} />
-        <MenuItem text="Blog" icon="icon-paper" url="/blog.html" toogleMenu={toogleMenu} />
+        <MenuItem
+          text="Página Principal"
+          icon="icon-ion-ios-home"
+          url="/"
+          toogleMenu={toogleMenu}
+          fixIcon
+        />
+        <MenuItem text="Blog" icon="icon-ion-md-paper" url="/blog.html" toogleMenu={toogleMenu} />
         <MenuItem
           text="Calendario de Eventos"
-          icon="icon-calendar"
+          icon="icon-ion-md-calendar"
           url="/calendario.html"
           toogleMenu={toogleMenu}
         />
         <MenuItem
           text="Código de Conducta"
-          icon="icon-people"
+          icon="icon-ion-ios-people"
           url="/coc.html"
-          fixIcon
           toogleMenu={toogleMenu}
+        />
+        <MenuItem
+          text="Estado de los servicios"
+          icon="icon-ion-md-medkit"
+          url="/servicios.html"
+          toogleMenu={toogleMenu}
+          fixIcon
         />
       </ul>
     );

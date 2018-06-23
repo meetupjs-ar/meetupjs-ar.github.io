@@ -31,10 +31,13 @@ class Header extends Component {
             </NavLink>
             <div className="flex items-center">
               {!isMenuOpen && (
-                <ToogleMenuIcon icon="icon-nav" toogleMenu={() => this.toogleMenu(true)} />
+                <ToogleMenuIcon icon="icon-ion-md-menu" toogleMenu={() => this.toogleMenu(true)} />
               )}
               {isMenuOpen && (
-                <ToogleMenuIcon icon="icon-close" toogleMenu={() => this.toogleMenu(false)} />
+                <ToogleMenuIcon
+                  icon="icon-ion-md-close"
+                  toogleMenu={() => this.toogleMenu(false)}
+                />
               )}
             </div>
           </div>

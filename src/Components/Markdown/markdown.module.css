@@ -23,7 +23,7 @@
 }
 
 :local(.markdownBody div h2) {
-  color: #999;
+  color: var(--color-tertiary);
   margin: 2rem 0;
 }
 
