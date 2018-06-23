@@ -41,8 +41,7 @@
     "stylelint": "^9.3.0",
     "stylelint-config-css-modules": "^1.2.0",
     "stylelint-config-standard": "^18.2.0",
-    "tachyons": "^4.10.0",
-    "why-did-you-update": "^0.1.1"
+    "tachyons": "^4.10.0"
   },
   "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
   "dependencies": {},
