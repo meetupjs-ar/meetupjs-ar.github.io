@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
+import ReactGA from 'react-ga';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import AsyncComponent from '../Helpers/AsyncComponent';
 import Header from '../Header/Header';
+import AsyncComponent from '../Helpers/AsyncComponent';
 import Isna from '../Isna/Isna';
 import * as styles from './Layout.module.css';
 
@@ -15,19 +16,21 @@ class Layout extends PureComponent {
           } black-alternative lh-copy sans-serif`}
         >
           <Header />
-          {/*
-            HOT FIX: It solves the issue when navigating routes and the scroll is not on the top
-            of the page. More info -> https://github.com/ReactTraining/react-router/issues/2019#issuecomment-292711226
-          */}
           <Route
             component={() => {
-              // https://stackoverflow.com/a/8918062
-              // NOTE: I installed the polyfill `smoothscroll-polyfill`
+              /*
+                Return the scroll to the top of the page when navigating
+                https://github.com/ReactTraining/react-router/issues/2019#issuecomment-292711226
+              */
               window.scroll({
-                behavior: 'smooth',
+                behavior: 'smooth', // I installed `smoothscroll-polyfill`
                 left: 0,
                 top: 0
               });
+
+              if (process.env.NODE_ENV === 'production') {
+                ReactGA.pageview(window.location.href);
+              }
 
               return null;
             }}
