@@ -52,6 +52,13 @@ class Layout extends PureComponent {
             />
             <Route
               exact
+              path="/calendario.html"
+              component={AsyncComponent({
+                loader: () => import('../Calendar/Calendar')
+              })}
+            />
+            <Route
+              exact
               path="/articulos/:name.html"
               component={AsyncComponent({
                 loader: () => import('../Blog/Article'),

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
-import Body from '../Body/Body';
+import Container from '../Container/Container';
 import Metatags from '../Metatags/Metatags';
 import Facepalm from './images/facepalm.gif';
 import ServiceStatus from './ServiceStatus';
@@ -110,7 +110,7 @@ class Status extends PureComponent {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
 
     return (
-      <Body>
+      <Container>
         <Metatags metatags={StatusPageMetatags} />
         <div className="mb4">
           <h1 className="mv0 tc">Estado de los servicios</h1>
@@ -162,7 +162,7 @@ class Status extends PureComponent {
             {this.isChecking() ? 'Verificando' : 'Verificar nuevamente'}
           </button>
         </div>
-      </Body>
+      </Container>
     );
   }
 }

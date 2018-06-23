@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import Body from '../Body/Body';
+import Container from '../Container/Container';
 import Markdown from '../Markdown/Markdown';
 import Metatags from '../Metatags/Metatags';
 import ArticleFooter from './ArticleFooter';
@@ -30,11 +30,11 @@ class Article extends PureComponent {
     if (!Article) return null;
 
     return (
-      <Body>
+      <Container>
         <Metatags metatags={metadata} />
         <Markdown Content={Article} />
         <ArticleFooter authors={metadata.authors} publishedDay={metadata.publishedDay} />
-      </Body>
+      </Container>
     );
   }
 }

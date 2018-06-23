@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
-import Body from '../Body/Body';
+import Container from '../Container/Container';
 import dateFormatter from '../Helpers/DateFormatter';
 import Metatags from '../Metatags/Metatags';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
@@ -25,7 +25,7 @@ class BlogList extends PureComponent {
 
   render() {
     return (
-      <Body>
+      <Container>
         <Metatags metatags={BlogPageMetatags} />
         <h1 className="mv0 tc">Blog</h1>
         {this.state.articlesMetadata.map((metadata) => (
@@ -46,7 +46,7 @@ class BlogList extends PureComponent {
             </div>
           </div>
         ))}
-      </Body>
+      </Container>
     );
   }
 }

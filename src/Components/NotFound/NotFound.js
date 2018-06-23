@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
-import Body from '../Body/Body';
+import Container from '../Container/Container';
 import Metatags from '../Metatags/Metatags';
 import NotFoundPageMetatags from './NotFoundMetatags';
 import travolta from './images/travolta.gif';
@@ -9,7 +9,7 @@ import travolta from './images/travolta.gif';
 class NotFound extends PureComponent {
   render() {
     return (
-      <Body>
+      <Container>
         <Metatags metatags={NotFoundPageMetatags} />
         <div className="tc">
           <h1 className="mv0">¡Ups!, lo que viniste a buscar no está acá.</h1>
@@ -23,7 +23,7 @@ class NotFound extends PureComponent {
             <span>Volver a la página principal</span>
           </NavLink>
         </div>
-      </Body>
+      </Container>
     );
   }
 }

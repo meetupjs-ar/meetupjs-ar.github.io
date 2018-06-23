@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import Body from '../Body/Body';
+import Container from '../Container/Container';
 
 class Loading extends PureComponent {
   static propTypes = {
@@ -15,11 +15,11 @@ class Loading extends PureComponent {
     const { message } = this.props;
 
     return (
-      <Body>
+      <Container>
         <div className="tc">
           <h2 className="mv0 normal">{message}</h2>
         </div>
-      </Body>
+      </Container>
     );
   }
 }
