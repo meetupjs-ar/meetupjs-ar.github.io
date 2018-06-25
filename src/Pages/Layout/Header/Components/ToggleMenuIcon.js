@@ -5,11 +5,14 @@ import * as styles from '../css/ToogleMenuIcon.module.css';
 class ToggleMenuIcon extends PureComponent {
   static propTypes = {
     icon: PropTypes.string.isRequired,
-    toogleMenu: PropTypes.func.isRequired
+    toogleMenu: PropTypes.func.isRequired,
+    visible: PropTypes.bool.isRequired
   };
 
   render() {
-    const { icon, toogleMenu } = this.props;
+    const { icon, toogleMenu, visible } = this.props;
+
+    if (!visible) return null;
 
     return (
       <span

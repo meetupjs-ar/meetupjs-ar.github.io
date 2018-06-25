@@ -61,7 +61,7 @@ class Isna extends PureComponent {
         <LazyLoad height="100%" once={true}>
           <img src={IsnaPicture} alt="Nicolas Isnardi" className="v-btm w-100" />
         </LazyLoad>
-        {message && <p className={styles.easterEggMessage}>{message}</p>}
+        <p className={`${styles.easterEggMessage} ${message ? '' : 'dn'}`}>{message}</p>
       </div>
     );
   }

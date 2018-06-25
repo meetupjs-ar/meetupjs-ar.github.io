@@ -18,9 +18,9 @@ class HomePage extends PureComponent {
   render() {
     return (
       <div>
+        <Metatags metatags={HomePageMetatags} />
         <div className="bg-white">
           <Container>
-            <Metatags metatags={HomePageMetatags} />
             <div className="flex justify-center">
               <h1 className={`${styles.mw175} mv0 w-100`}>
                 <Tilt
