@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Container from '../Utils/Container';
 import Loading from '../Utils/Loading';
 import MessageWithAction from '../Utils/MessageWithAction';
+import Month from './Components/Month';
 import Fail from './images/fail.gif';
 
 class CalendarPage extends Component {
@@ -15,8 +16,8 @@ class CalendarPage extends Component {
 
   defaultState = {
     error: false,
-    events: [],
-    loading: true
+    loading: true,
+    monthlyCalendars: []
   };
 
   static props = {
@@ -38,12 +39,12 @@ class CalendarPage extends Component {
 
     fetch('https://calendar-api.now.sh/')
       .then((response) => response.json())
-      .then((events) => {
+      .then((monthlyCalendars) => {
         this._isMounted &&
           this.setState({
             error: false,
-            events: events,
-            loading: false
+            loading: false,
+            monthlyCalendars: monthlyCalendars
           });
       })
       .catch(() => {
@@ -60,7 +61,9 @@ class CalendarPage extends Component {
   };
 
   render() {
-    const { error, loading } = this.state;
+    const { showOnlyCurrentMonth } = this.props;
+    const { error, loading, monthlyCalendars } = this.state;
+    const monthlyCalendarsToShow = showOnlyCurrentMonth ? [monthlyCalendars[0]] : monthlyCalendars;
 
     if (loading) {
       return <Loading message="Buscando eventos..." />;
@@ -91,6 +94,9 @@ class CalendarPage extends Component {
               <span className="db f30 icon-ion-ios-help-circle-outline ml4 silver" />
             </NavLink>
           </div>
+          {monthlyCalendarsToShow.map((monthlyCalendar) => (
+            <Month key={monthlyCalendar.when.month} monthlyCalendar={monthlyCalendar} />
+          ))}
         </div>
       </Container>
     );
