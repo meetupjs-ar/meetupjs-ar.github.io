@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import Container from '../Utils/Components/Container';
-import Markdown from '../Utils/Components/Markdown/Markdown';
-import Metatags from '../Utils/Components/Metatags';
+import Container from '../Utils/Container';
+import Markdown from '../Utils/Markdown/Markdown';
+import Metatags from '../Utils/Metatags';
 import CodeOfConduct from './CodeOfConduct.mdx';
 import CodeOfConductPageMetatags from './CodeOfConductPageMetatags';
 

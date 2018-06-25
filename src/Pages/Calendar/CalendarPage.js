@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from '../Utils/Components/Container';
+import Container from '../Utils/Container';
 
 class CalendarPage extends Component {
   state = {
@@ -15,21 +15,30 @@ class CalendarPage extends Component {
   };
 
   componentDidMount() {
+    // TODO: remove this hack
+    this._isMounted = true;
+
     fetch('https://calendar-api.now.sh/')
       .then((response) => response.json())
       .then((events) => {
-        this.setState({
-          error: false,
-          events: events,
-          loading: false
-        });
+        this._isMounted &&
+          this.setState({
+            error: false,
+            events: events,
+            loading: false
+          });
       })
       .catch(() => {
-        this.setState({
-          error: true,
-          loading: false
-        });
+        this._isMounted &&
+          this.setState({
+            error: true,
+            loading: false
+          });
       });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

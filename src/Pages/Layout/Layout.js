@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import ReactGA from 'react-ga';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import AsyncComponent from '../Utils/Components/AsyncComponent';
+import AsyncComponent from '../Utils/AsyncComponent';
 import Header from './Header/Header';
 import Isna from './Isna/Isna';
 import * as styles from './Layout.module.css';

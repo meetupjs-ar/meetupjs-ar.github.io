@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import Container from '../Utils/Components/Container';
-import Markdown from '../Utils/Components/Markdown/Markdown';
-import Metatags from '../Utils/Components/Metatags';
+import Container from '../Utils/Container';
+import Markdown from '../Utils/Markdown/Markdown';
+import Metatags from '../Utils/Metatags';
 import ArticleFooter from './Components/ArticleFooter';
 
 class BlogArticlePage extends PureComponent {
@@ -16,12 +16,20 @@ class BlogArticlePage extends PureComponent {
   };
 
   componentDidMount() {
+    // TODO: remove this hack
+    this._isMounted = true;
+
     import(`./Articles/${this.props.name}.mdx`).then((articleModule) => {
-      this.setState({
-        Article: articleModule.default,
-        metadata: articleModule.metadata
-      });
+      this._isMounted &&
+        this.setState({
+          Article: articleModule.default,
+          metadata: articleModule.metadata
+        });
     });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

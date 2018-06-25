@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
-import dateFormatter from '../../Utils/DateFormatter';
+import FormatDate from '../../Utils/FormatDate';
 
 class ArticleFooter extends PureComponent {
   static props = {
@@ -15,8 +15,7 @@ class ArticleFooter extends PureComponent {
     return (
       <div className="mt4 tc">
         <p className="f6 mb3 mt0 silver">
-          Por <strong>{authors.join(', ')}</strong>. Publicado el{' '}
-          <strong>{dateFormatter(publishedDay)}</strong>.
+          Por <strong>{authors.join(', ')}</strong>. Publicado el <FormatDate date={publishedDay} />.
         </p>
         <NavLink
           to="/blog.html"

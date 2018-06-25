@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from '../Utils/Components/Container';
-import dateFormatter from '../Utils/DateFormatter';
-import Metatags from '../Utils/Components/Metatags';
+import Container from '../Utils/Container';
+import FormatDate from '../Utils/FormatDate';
+import Metatags from '../Utils/Metatags';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
@@ -34,7 +34,7 @@ class BlogListPage extends PureComponent {
               <h2 className="f4 f3-ns mb1 mt0">{metadata.title}</h2>
               <p className="f6 ma0 silver">
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
-                <strong>{dateFormatter(metadata.publishedDay)}</strong>.
+                <FormatDate date={metadata.publishedDay} />.
               </p>
               <p className="mv3">{metadata.description}</p>
               <NavLink

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
-import Container from '../Utils/Components/Container';
-import Metatags from '../Utils/Components/Metatags';
+import Container from '../Utils/Container';
+import Metatags from '../Utils/Metatags';
 import travolta from './images/travolta.gif';
 import NotFoundPageMetatags from './NotFoundPageMetatags';
 

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import LazyLoad from 'react-lazyload';
-import Container from '../Utils/Components/Container';
-import Metatags from '../Utils/Components/Metatags';
+import Container from '../Utils/Container';
+import Metatags from '../Utils/Metatags';
 import Facepalm from './images/facepalm.gif';
 import ServiceStatus from './components/ServiceStatus';
 import StatusPageMetatags from './StatusPageMetatags';
@@ -62,7 +62,7 @@ class StatusPage extends PureComponent {
   };
 
   componentDidMount() {
-    // TODO: remove this hack by using some library or implementing some pattern
+    // TODO: remove this hack
     this._isMounted = true;
     this.checkStatus();
   }
