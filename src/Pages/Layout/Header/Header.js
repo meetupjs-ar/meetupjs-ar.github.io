@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazyload';
 import { NavLink } from 'react-router-dom';
 import Menu from './Components/Menu';
 import ToogleMenuIcon from './Components/ToggleMenuIcon';
 import * as styles from './css/Header.module.css';
 import isotipo from './images/isotipo.svg';
+import AsyncImage from '../../Utils/AsyncImage';
 
 class Header extends Component {
   state = {
@@ -25,9 +25,7 @@ class Header extends Component {
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
             <NavLink to="/" onClick={() => this.toogleMenu(false)}>
-              <LazyLoad height="100%" once={true}>
-                <img src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
-              </LazyLoad>
+              <AsyncImage src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
             </NavLink>
             <div className="flex items-center">
               <ToogleMenuIcon

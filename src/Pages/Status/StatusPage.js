@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import LazyLoad from 'react-lazyload';
+import AsyncImage from '../Utils/AsyncImage';
 import Container from '../Utils/Container';
 import Metatags from '../Utils/Metatags';
 import Facepalm from './images/facepalm.gif';
@@ -141,14 +141,10 @@ class StatusPage extends PureComponent {
           description="Bot de Slack que publica todos los días los próximos eventos."
         />
         {this.isOk() && (
-          <LazyLoad height="100%" once={true}>
-            <img src={Success} alt="Éxito" className="db center fade-in h5 mt4" />
-          </LazyLoad>
+          <AsyncImage src={Success} alt="Éxito" className="db center fade-in h5 mt4" />
         )}
         {this.isError() && (
-          <LazyLoad height="100%" once={true}>
-            <img src={Facepalm} alt="Error" className="db center fade-in h5 mt4" />
-          </LazyLoad>
+          <AsyncImage src={Facepalm} alt="Error" className="db center fade-in h5 mt4" />
         )}
         <div className="mt4 tc">
           <button

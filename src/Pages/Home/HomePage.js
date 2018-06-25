@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import LazyLoad from 'react-lazyload';
 import Tilt from 'react-tilt';
 import CalendarPage from '../Calendar/CalendarPage';
+import AsyncImage from '../Utils/AsyncImage';
 import Container from '../Utils/Container';
 import Metatags from '../Utils/Metatags';
 import * as styles from './css/HomePage.module.css';
@@ -30,9 +30,7 @@ class HomePage extends PureComponent {
                     scale: '1.05'
                   }}
                 >
-                  <LazyLoad height="100%" once={true}>
-                    <img src={logo} alt="Logo" className="db v-btm" />
-                  </LazyLoad>
+                  <AsyncImage src={logo} alt="Logo" className="db v-btm" />
                 </Tilt>
               </h1>
             </div>
@@ -47,9 +45,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow mr2 mr3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={facebook} alt="facebook" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={facebook} alt="facebook" className="v-btm" />
               </a>
               <a
                 href="https://twitter.com/meetupjs_ar"
@@ -57,9 +53,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow mh2 mh3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={twitter} alt="twitter" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={twitter} alt="twitter" className="v-btm" />
               </a>
               <a
                 href="https://github.com/meetupjs-ar"
@@ -67,9 +61,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow mh2 mh3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={github} alt="github" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={github} alt="github" className="v-btm" />
               </a>
               <a
                 href="https://slack.meetupjs.com.ar/"
@@ -77,9 +69,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow mh2 mh3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={slack} alt="slack" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={slack} alt="slack" className="v-btm" />
               </a>
               <a
                 href="https://www.meetup.com/es-ES/meetup-js/"
@@ -87,9 +77,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow mh2 mh3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={meetup} alt="meetup" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={meetup} alt="meetup" className="v-btm" />
               </a>
               <a
                 href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
@@ -97,9 +85,7 @@ class HomePage extends PureComponent {
                 rel="noopener noreferrer"
                 className="grow ml2 ml3-l w2 w3-ns"
               >
-                <LazyLoad height="100%" once={true}>
-                  <img src={youtube} alt="youtube" className="v-btm" />
-                </LazyLoad>
+                <AsyncImage src={youtube} alt="youtube" className="v-btm" />
               </a>
             </div>
             <div className="flex flex-column flex-row-m flex-row-l items-center justify-center">

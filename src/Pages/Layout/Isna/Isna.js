@@ -1,10 +1,10 @@
 import Mousetrap from 'mousetrap';
 import React, { PureComponent } from 'react';
-import LazyLoad from 'react-lazyload';
 import * as styles from './css/Isna.module.css';
 import Notifications from './data/Notifications';
 import IsnaPicture from './images/isna.png';
 import IsnaSound from './sounds/isna.mp3';
+import AsyncImage from '../../Utils/AsyncImage';
 
 class Isna extends PureComponent {
   state = {
@@ -58,9 +58,7 @@ class Isna extends PureComponent {
 
     return (
       <div className={`${styles.easterEgg} ${active ? styles.easterEggActive : ''}`}>
-        <LazyLoad height="100%" once={true}>
-          <img src={IsnaPicture} alt="Nicolas Isnardi" className="v-btm w-100" />
-        </LazyLoad>
+        <AsyncImage src={IsnaPicture} alt="Nicolas Isnardi" className="v-btm w-100" />
         <p className={`${styles.easterEggMessage} ${message ? '' : 'dn'}`}>{message}</p>
       </div>
     );
