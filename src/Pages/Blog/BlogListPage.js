@@ -7,15 +7,17 @@ import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
 import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-es-el-calendario-de-eventos.mdx';
+import { metadata as ResenaMeetupJunioMetadata } from './Articles/resena-meetup-junio-2018.mdx';
 import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
 import BlogPageMetatags from './BlogListPageMetatags';
 
 const publishedArticles = [
-  ResenaMeetupMayoMetadata,
+  ComoHacemosUnMeetupMetadata,
   ConsejosParaDarUnaCharlaMetadata,
   ConsejosParaDarUnaLightningMetadata,
-  ComoHacemosUnMeetupMetadata,
-  QueEsElCalendarioDeEventosMetadata
+  QueEsElCalendarioDeEventosMetadata,
+  ResenaMeetupMayoMetadata,
+  ResenaMeetupJunioMetadata
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 
 class BlogListPage extends PureComponent {
