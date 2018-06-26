@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
+import AsyncImage from '../Utils/AsyncImage';
 import Container from '../Utils/Container';
 import FormatDate from '../Utils/FormatDate';
 import Metatags from '../Utils/Metatags';
@@ -11,6 +12,7 @@ import { metadata as ResenaMeetupJunioMetadata } from './Articles/resena-meetup-
 import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
 import BlogPageMetatags from './BlogListPageMetatags';
 
+const pathToImages = require.context('./Articles');
 const publishedArticles = [
   ComoHacemosUnMeetupMetadata,
   ConsejosParaDarUnaCharlaMetadata,
@@ -33,8 +35,15 @@ class BlogListPage extends PureComponent {
         {this.state.articlesMetadata.map((metadata) => (
           <div className="mt4" key={metadata.title}>
             <div className="b--black-10 ba bg-white br2 bw1 pa3">
-              <h2 className="f4 f3-ns mb1 mt0">{metadata.title}</h2>
-              <p className="f6 ma0 silver">
+              <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
+              {metadata.coverUrl && (
+                <AsyncImage
+                  src={pathToImages(metadata.coverUrl)}
+                  alt={metadata.coverAlt}
+                  className="br2 v-btm"
+                />
+              )}
+              <p className="f6 mb0 mt3 silver">
                 Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
                 <FormatDate date={metadata.publishedDay} />.
               </p>
