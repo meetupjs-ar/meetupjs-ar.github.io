@@ -82,7 +82,7 @@ class CalendarPage extends Component {
     }
 
     return (
-      <Container>
+      <Container large="true">
         <div className="fade-in">
           <div className="flex items-center justify-center">
             <h1 className="mv0">Calendario de eventos</h1>
