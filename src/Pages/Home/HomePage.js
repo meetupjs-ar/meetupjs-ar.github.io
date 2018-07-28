@@ -109,7 +109,7 @@ class HomePage extends PureComponent {
           </Container>
         </div>
         <div className="b--black-10 bt bw1">
-          <CalendarPage showOnlyCurrentMonth />
+          <CalendarPage showOnlyCurrentMonth={true} useMetatags={false} />
         </div>
       </div>
     );

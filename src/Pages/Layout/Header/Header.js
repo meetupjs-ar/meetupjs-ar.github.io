@@ -1,12 +1,18 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import AsyncImage from '../../Utils/AsyncImage';
 import Menu from './Components/Menu';
 import ToogleMenuIcon from './Components/ToggleMenuIcon';
 import * as styles from './css/Header.module.css';
 import isotipo from './images/isotipo.svg';
-import AsyncImage from '../../Utils/AsyncImage';
 
 class Header extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired
+  };
+
   state = {
     isMenuOpen: false
   };
@@ -18,6 +24,8 @@ class Header extends Component {
   };
 
   render() {
+    const { location } = this.props;
+    const { pathname } = location;
     const { isMenuOpen } = this.state;
 
     return (
@@ -28,6 +36,16 @@ class Header extends Component {
               <AsyncImage src={isotipo} alt="isotipo" className={`${styles.h50} grow v-btm`} />
             </NavLink>
             <div className="flex items-center">
+              {pathname === '/calendario.html' && (
+                <a
+                  href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mr3-ns ph3 pv2 ttu"
+                >
+                  Agregar un evento
+                </a>
+              )}
               <ToogleMenuIcon
                 visible={!isMenuOpen}
                 icon="icon-ion-md-menu"
@@ -52,4 +70,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

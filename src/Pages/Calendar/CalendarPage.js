@@ -1,13 +1,15 @@
+import format from 'date-fns/format';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from '../Utils/Container';
 import Loading from '../Utils/Loading';
 import MessageWithAction from '../Utils/MessageWithAction';
+import Metatags from '../Utils/Metatags';
+import Modal from '../Utils/Modal';
+import CalendarPageMetatags from './CalendarPageMetatags';
 import Month from './Components/Month';
 import Fail from './images/fail.gif';
-import Modal from '../Utils/Modal';
-import format from 'date-fns/format';
 
 class CalendarPage extends Component {
   constructor(props) {
@@ -25,7 +27,13 @@ class CalendarPage extends Component {
   };
 
   static props = {
-    showOnlyCurrentMonth: PropTypes.bool
+    showOnlyCurrentMonth: PropTypes.bool.isRequired,
+    useMetatags: PropTypes.bool.isRequired
+  };
+
+  static defaultProps = {
+    showOnlyCurrentMonth: false,
+    useMetatags: true
   };
 
   componentDidMount() {
@@ -65,9 +73,7 @@ class CalendarPage extends Component {
   };
 
   hideModal = () => {
-    this.setState({
-      showModal: false
-    });
+    this.setState({ showModal: false }, this.toggleOverflow);
   };
 
   resetState = () => {
@@ -75,14 +81,21 @@ class CalendarPage extends Component {
   };
 
   showModal = (eventsOfTheDay) => {
-    this.setState({
-      eventsOfTheDay,
-      showModal: true
-    });
+    this.setState(
+      {
+        eventsOfTheDay,
+        showModal: true
+      },
+      this.toggleOverflow
+    );
+  };
+
+  toggleOverflow = () => {
+    document.querySelector('body').classList.toggle('overflow-hidden');
   };
 
   render() {
-    const { showOnlyCurrentMonth } = this.props;
+    const { showOnlyCurrentMonth, useMetatags } = this.props;
     const { error, eventsOfTheDay, loading, monthlyCalendars, showModal } = this.state;
     const monthlyCalendarsToShow = showOnlyCurrentMonth ? [monthlyCalendars[0]] : monthlyCalendars;
 
@@ -104,6 +117,7 @@ class CalendarPage extends Component {
 
     return (
       <React.Fragment>
+        {useMetatags && <Metatags metatags={CalendarPageMetatags} />}
         <Container large="true">
           <div className="fade-in">
             <div className="flex items-center justify-center">
