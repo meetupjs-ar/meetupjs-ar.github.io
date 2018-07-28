@@ -28,6 +28,10 @@ body {
   color: var(--color-main);
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .f30 {
   font-size: 30px;
 }
@@ -45,6 +49,27 @@ body {
 .fade-in {
   animation-duration: 1s;
   animation-name: fadeIn;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -15%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-down {
+  animation-duration: 0.5s;
+  animation-name: fadeInDown;
+}
+
+.max-vh-75 {
+  max-height: 75vh;
 }
 
 .w30 {

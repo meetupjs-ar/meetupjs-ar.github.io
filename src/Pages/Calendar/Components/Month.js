@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Days from './Days';
 import EmptyDays from './EmptyDays';
+import Events from './Events';
 import Weekdays from './Weekdays';
 
 class Month extends Component {
   static props = {
     monthlyCalendar: PropTypes.shape({
+      events: PropTypes.arrayOf(Events.props.events).isRequired,
       when: PropTypes.shape({
         month: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired
       })
-    })
+    }),
+    showModal: PropTypes.func.isRequired
   };
 
   getMonthNumber = (monthName) => {
@@ -48,7 +51,7 @@ class Month extends Component {
   };
 
   render() {
-    const { monthlyCalendar } = this.props;
+    const { monthlyCalendar, showModal } = this.props;
     const currentMonthNumber = this.getMonthNumber(monthlyCalendar.when.month);
     const today = new Date();
     const currentMonth = new Date(today.getFullYear(), currentMonthNumber, 1);
@@ -64,7 +67,12 @@ class Month extends Component {
         <Weekdays />
         <div className="b--black-10 br bt bw1 flex flex-wrap">
           {currentMonthIsoDay !== 7 && <EmptyDays days={currentMonthIsoDay} />}
-          <Days days={currentMonthDays} />
+          <Days
+            days={currentMonthDays}
+            month={currentMonth}
+            events={monthlyCalendar.events}
+            showModal={showModal}
+          />
           {emptyDaysAtEnd !== 7 && <EmptyDays days={emptyDaysAtEnd} />}
         </div>
       </div>

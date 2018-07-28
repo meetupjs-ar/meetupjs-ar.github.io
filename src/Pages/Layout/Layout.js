@@ -13,7 +13,7 @@ class Layout extends PureComponent {
         <div
           className={`${styles.bgGrayAlternative} ${styles.paddingTop68} ${
             styles.stretch
-          } black-alternative lh-copy sans-serif`}
+          } black-alternative sans-serif`}
         >
           <Header />
           <Route

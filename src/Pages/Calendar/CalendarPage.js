@@ -6,6 +6,8 @@ import Loading from '../Utils/Loading';
 import MessageWithAction from '../Utils/MessageWithAction';
 import Month from './Components/Month';
 import Fail from './images/fail.gif';
+import Modal from '../Utils/Modal';
+import format from 'date-fns/format';
 
 class CalendarPage extends Component {
   constructor(props) {
@@ -16,8 +18,10 @@ class CalendarPage extends Component {
 
   defaultState = {
     error: false,
+    eventsOfTheDay: [],
     loading: true,
-    monthlyCalendars: []
+    monthlyCalendars: [],
+    showModal: false
   };
 
   static props = {
@@ -56,13 +60,30 @@ class CalendarPage extends Component {
       });
   };
 
+  getFormattedEventHour = (date) => {
+    return format(new Date(date).setUTCMinutes(180), 'HH:mm');
+  };
+
+  hideModal = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
   resetState = () => {
     this.setState(this.defaultState);
   };
 
+  showModal = (eventsOfTheDay) => {
+    this.setState({
+      eventsOfTheDay,
+      showModal: true
+    });
+  };
+
   render() {
     const { showOnlyCurrentMonth } = this.props;
-    const { error, loading, monthlyCalendars } = this.state;
+    const { error, eventsOfTheDay, loading, monthlyCalendars, showModal } = this.state;
     const monthlyCalendarsToShow = showOnlyCurrentMonth ? [monthlyCalendars[0]] : monthlyCalendars;
 
     if (loading) {
@@ -82,23 +103,67 @@ class CalendarPage extends Component {
     }
 
     return (
-      <Container large="true">
-        <div className="fade-in">
-          <div className="flex items-center justify-center">
-            <h1 className="mv0">Calendario de eventos</h1>
-            <NavLink
-              to="/articulos/que-es-el-calendario-de-eventos.html"
-              title="¿Qué es el calendario de eventos?"
-              className="no-underline pt1"
-            >
-              <span className="db f30 icon-ion-ios-help-circle-outline ml4 silver" />
-            </NavLink>
+      <React.Fragment>
+        <Container large="true">
+          <div className="fade-in">
+            <div className="flex items-center justify-center">
+              <h1 className="mv0">Calendario de eventos</h1>
+              <NavLink
+                to="/articulos/que-es-el-calendario-de-eventos.html"
+                title="¿Qué es el calendario de eventos?"
+                className="no-underline pt1"
+              >
+                <span className="db f30 icon-ion-ios-help-circle-outline ml4 silver" />
+              </NavLink>
+            </div>
+            {monthlyCalendarsToShow.map((monthlyCalendar) => (
+              <Month
+                key={monthlyCalendar.when.month}
+                monthlyCalendar={monthlyCalendar}
+                showModal={this.showModal}
+              />
+            ))}
           </div>
-          {monthlyCalendarsToShow.map((monthlyCalendar) => (
-            <Month key={monthlyCalendar.when.month} monthlyCalendar={monthlyCalendar} />
-          ))}
-        </div>
-      </Container>
+        </Container>
+        <Modal show={showModal} hideModal={this.hideModal}>
+          <div className="bg-white br2 ma3">
+            <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
+              <span className="b black-alternative dib f4 ttc">sábado 28</span>
+              <span
+                className="f30 grow icon-ion-md-close pointer silver"
+                onClick={this.hideModal}
+              />
+            </div>
+            <div className="max-vh-75 overflow-y-auto">
+              {eventsOfTheDay.map((event, index) => (
+                <div key={index} className="flex mh3 mv3 pv3">
+                  <div className="w-30 w-20-ns">
+                    <p className="f4 f3-ns mv0 silver">{this.getFormattedEventHour(event.date)}</p>
+                  </div>
+                  <div className="w-70 w-80-ns">
+                    <h3 style={{ color: event.color }} className="f4 f3-ns mv0">
+                      {event.eventName}
+                    </h3>
+                    {event.place ? <p className="black-30 mb0 mt2">{event.place}</p> : null}
+                    <div className="flex">
+                      <a
+                        href={event.eventLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ backgroundColor: event.color }}
+                        className="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
+                      >
+                        <span className="black-30 f4 icon-ion-ios-link mr2" />
+                        <span className="text-shadow-1">Link</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Modal>
+      </React.Fragment>
     );
   }
 }
