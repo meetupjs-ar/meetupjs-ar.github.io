@@ -5,7 +5,6 @@ import * as styles from '../css/MenuItem.module.css';
 
 class MenuItem extends PureComponent {
   static props = {
-    fixIcon: PropTypes.bool,
     icon: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     toogleMenu: PropTypes.func.isRequired,
@@ -13,7 +12,7 @@ class MenuItem extends PureComponent {
   };
 
   render() {
-    const { fixIcon, icon, text, toogleMenu, url } = this.props;
+    const { icon, text, toogleMenu, url } = this.props;
 
     return (
       <li className="pv2">
@@ -25,7 +24,9 @@ class MenuItem extends PureComponent {
           onClick={toogleMenu}
         >
           <span>{text}</span>
-          <span className={`${fixIcon ? 'nr1 pl1' : ''} ${icon} black-30 f30 ml3 tc w30`} />
+          <span className="ml3 pt1 tc w30">
+            <box-icon name={icon} color="#999" />
+          </span>
         </NavLink>
       </li>
     );

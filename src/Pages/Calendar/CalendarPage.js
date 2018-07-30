@@ -125,9 +125,9 @@ class CalendarPage extends Component {
               <NavLink
                 to="/articulos/que-es-el-calendario-de-eventos.html"
                 title="¿Qué es el calendario de eventos?"
-                className="no-underline pt1"
+                className="ml4 no-underline pointer"
               >
-                <span className="db f30 icon-ion-ios-help-circle-outline ml4 silver" />
+                <box-icon name="question-mark" border="circle" size="2.5rem" />
               </NavLink>
             </div>
             {monthlyCalendarsToShow.map((monthlyCalendar) => (
@@ -137,25 +137,35 @@ class CalendarPage extends Component {
                 showModal={this.showModal}
               />
             ))}
+            {showOnlyCurrentMonth && (
+              <div className="mt4 tc">
+                <NavLink
+                  to="/calendario.html"
+                  title="Ver calendario completo"
+                  className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f7 f6-ns grow link ph3 pv2 ttu"
+                >
+                  Ver calendario completo
+                </NavLink>
+              </div>
+            )}
           </div>
         </Container>
         <Modal show={showModal} hideModal={this.hideModal}>
           <div className="bg-white br2 ma3">
             <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
               <span className="b black-alternative dib f4 ttc">sábado 28</span>
-              <span
-                className="f30 grow icon-ion-md-close pointer silver"
-                onClick={this.hideModal}
-              />
+              <span className="grow pt1" onClick={this.hideModal}>
+                <box-icon name="x" />
+              </span>
             </div>
-            <div className="max-vh-75 overflow-y-auto">
+            <div className="m-vh-75 overflow-y-auto">
               {eventsOfTheDay.map((event, index) => (
                 <div key={index} className="flex mh3 mv3 pv3">
                   <div className="w-30 w-20-ns">
-                    <p className="f4 f3-ns mv0 silver">{this.getFormattedEventHour(event.date)}</p>
+                    <p className="f5 f4-ns mv0 silver">{this.getFormattedEventHour(event.date)}</p>
                   </div>
                   <div className="w-70 w-80-ns">
-                    <h3 style={{ color: event.color }} className="f4 f3-ns mv0">
+                    <h3 style={{ color: event.color }} className="f5 f4-ns mv0">
                       {event.eventName}
                     </h3>
                     {event.place ? <p className="black-30 mb0 mt2">{event.place}</p> : null}
@@ -167,7 +177,9 @@ class CalendarPage extends Component {
                         style={{ backgroundColor: event.color }}
                         className="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
                       >
-                        <span className="black-30 f4 icon-ion-ios-link mr2" />
+                        <span className="black-30 f4 mr2 pt1">
+                          <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
+                        </span>
                         <span className="text-shadow-1">Link</span>
                       </a>
                     </div>

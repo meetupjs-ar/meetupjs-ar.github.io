@@ -60,7 +60,7 @@ class Month extends Component {
     const emptyDaysAtEnd = 7 - ((currentMonthIsoDay + currentMonthDays) % 7);
 
     return (
-      <div className="mv4">
+      <div className="mt4">
         <h2 className="f4 f3-ns mb4 mt0 silver tc ttc">
           {monthlyCalendar.when.month} {monthlyCalendar.when.year}
         </h2>

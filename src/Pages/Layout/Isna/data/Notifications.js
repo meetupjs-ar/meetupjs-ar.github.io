@@ -1,14 +1,6 @@
 import isBefore from 'date-fns/is_before';
 
-const allNotifications = [
-  {
-    activateAfter: 5000,
-    expiration: new Date(2018, 5, 20, 23, 59, 59),
-    hideAfter: 8000,
-    key: 'hello-world',
-    message: '¡Hola mundo!'
-  }
-];
+const allNotifications = [];
 
 const notifications = isLocalStorageAvailable()
   ? allNotifications.filter(byExpiration).filter(byStatusInStorage)

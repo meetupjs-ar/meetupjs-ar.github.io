@@ -141,10 +141,10 @@ class StatusPage extends PureComponent {
           description="Bot de Slack que publica todos los días los próximos eventos."
         />
         {this.isOk() && (
-          <AsyncImage src={Success} alt="Éxito" className="db center fade-in h5 mt4" />
+          <AsyncImage src={Success} alt="Éxito" className="db center fade-in m-h5 mt4" />
         )}
         {this.isError() && (
-          <AsyncImage src={Facepalm} alt="Error" className="db center fade-in h5 mt4" />
+          <AsyncImage src={Facepalm} alt="Error" className="db center fade-in m-h5 mt4" />
         )}
         <div className="mt4 tc">
           <button

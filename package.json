@@ -20,6 +20,7 @@
   "devDependencies": {
     "@mdx-js/loader": "^0.15.0-1",
     "@mdx-js/mdx": "^0.15.0-1",
+    "boxicons": "^1.7.1",
     "date-fns": "^1.29.0",
     "env-cmd": "^8.0.2",
     "eslint-plugin-prettier": "^2.6.2",

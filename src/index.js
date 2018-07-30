@@ -1,3 +1,4 @@
+import 'boxicons';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import smoothscroll from 'smoothscroll-polyfill';

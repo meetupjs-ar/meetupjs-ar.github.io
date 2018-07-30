@@ -41,26 +41,26 @@ class Header extends Component {
                   href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mr3-ns ph3 pv2 ttu"
+                  className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f7 f6-ns grow link ph3 pv2 ttu"
                 >
                   Agregar un evento
                 </a>
               )}
               <ToogleMenuIcon
                 visible={!isMenuOpen}
-                icon="icon-ion-md-menu"
+                icon="menu"
                 toogleMenu={() => this.toogleMenu(true)}
               />
               <ToogleMenuIcon
                 visible={isMenuOpen}
-                icon="icon-ion-md-close"
+                icon="x"
                 toogleMenu={() => this.toogleMenu(false)}
               />
             </div>
           </div>
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>
             <Menu toogleMenu={() => this.toogleMenu(false)} />
-            <p className="f6 flex items-center justify-end mv0 tr">
+            <p className="f6 flex items-center justify-end mv0 pr1 tr">
               <span className="black-30">Version {process.env.REACT_APP_VERSION}</span>
             </p>
           </div>
