@@ -39,11 +39,13 @@ class CalendarPage extends Component {
   componentDidMount() {
     // TODO: remove this hack
     this._isMounted = true;
+    this.toggleOverflow(false);
     this.fetchEvents();
   }
 
   componentWillUnmount() {
     this._isMounted = false;
+    this.toggleOverflow(false);
   }
 
   fetchEvents = () => {
@@ -73,7 +75,7 @@ class CalendarPage extends Component {
   };
 
   hideModal = () => {
-    this.setState({ showModal: false }, this.toggleOverflow);
+    this.setState({ showModal: false }, () => this.toggleOverflow(false));
   };
 
   resetState = () => {
@@ -86,12 +88,12 @@ class CalendarPage extends Component {
         eventsOfTheDay,
         showModal: true
       },
-      this.toggleOverflow
+      () => this.toggleOverflow(true)
     );
   };
 
-  toggleOverflow = () => {
-    document.querySelector('body').classList.toggle('overflow-hidden');
+  toggleOverflow = (active) => {
+    document.querySelector('body').classList[active ? 'add' : 'remove']('overflow-hidden');
   };
 
   render() {
