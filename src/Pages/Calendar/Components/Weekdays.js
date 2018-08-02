@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
+const weekdays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
 class Weekdays extends Component {
-  state = {
-    weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
-  };
-
   render() {
-    const { weekdays } = this.state;
-
     return (
       <div className="b--black-10 bl bt bw1 dn flex-l">
         {weekdays.map((weekday) => (

@@ -7,6 +7,12 @@ import ServiceStatus from './components/ServiceStatus';
 import StatusPageMetatags from './StatusPageMetatags';
 import Success from './images/success.gif';
 
+const STATUS_RESPONSE_TYPE = {
+  UNKNOWN: 0,
+  SUCCESS: 1,
+  ERROR: 2
+};
+
 class StatusPage extends PureComponent {
   constructor(props) {
     super(props);
@@ -15,11 +21,11 @@ class StatusPage extends PureComponent {
   }
 
   defaultState = {
-    calendarApi: 0,
-    calendarBot: 0,
-    eventbriteApi: 0,
-    meetupApi: 0,
-    spreadsheetApi: 0
+    calendarApi: STATUS_RESPONSE_TYPE.UNKNOWN,
+    calendarBot: STATUS_RESPONSE_TYPE.UNKNOWN,
+    eventbriteApi: STATUS_RESPONSE_TYPE.UNKNOWN,
+    meetupApi: STATUS_RESPONSE_TYPE.UNKNOWN,
+    spreadsheetApi: STATUS_RESPONSE_TYPE.UNKNOWN
   };
 
   checkStatus = () => {
@@ -62,7 +68,7 @@ class StatusPage extends PureComponent {
   };
 
   componentDidMount() {
-    // TODO: remove this hack
+    // TODO: eliminar este hack
     this._isMounted = true;
     this.checkStatus();
   }
@@ -74,8 +80,8 @@ class StatusPage extends PureComponent {
   getServiceStatus = (url) => {
     return new Promise((resolve) => {
       fetch(url)
-        .then(() => resolve(1))
-        .catch(() => resolve(2));
+        .then(() => resolve(STATUS_RESPONSE_TYPE.SUCCESS))
+        .catch(() => resolve(STATUS_RESPONSE_TYPE.ERROR));
     });
   };
 
@@ -87,22 +93,22 @@ class StatusPage extends PureComponent {
   isError = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
     return (
-      calendarApi === 2 &&
-      calendarBot === 2 &&
-      eventbriteApi === 2 &&
-      meetupApi === 2 &&
-      spreadsheetApi === 2
+      calendarApi === STATUS_RESPONSE_TYPE.ERROR &&
+      calendarBot === STATUS_RESPONSE_TYPE.ERROR &&
+      eventbriteApi === STATUS_RESPONSE_TYPE.ERROR &&
+      meetupApi === STATUS_RESPONSE_TYPE.ERROR &&
+      spreadsheetApi === STATUS_RESPONSE_TYPE.ERROR
     );
   };
 
   isOk = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
     return (
-      calendarApi === 1 &&
-      calendarBot === 1 &&
-      eventbriteApi === 1 &&
-      meetupApi === 1 &&
-      spreadsheetApi === 1
+      calendarApi === STATUS_RESPONSE_TYPE.SUCCESS &&
+      calendarBot === STATUS_RESPONSE_TYPE.SUCCESS &&
+      eventbriteApi === STATUS_RESPONSE_TYPE.SUCCESS &&
+      meetupApi === STATUS_RESPONSE_TYPE.SUCCESS &&
+      spreadsheetApi === STATUS_RESPONSE_TYPE.SUCCESS
     );
   };
 

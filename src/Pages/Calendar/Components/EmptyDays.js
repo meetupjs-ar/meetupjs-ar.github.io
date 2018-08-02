@@ -8,13 +8,18 @@ class EmptyDays extends Component {
 
   render() {
     const { days } = this.props;
+    const emptyDays = [];
 
-    return Array.apply(null, { length: days }).map((_, index) => (
-      <div
-        key={index}
-        className="b--black-10 bb bg-near-white bl bw1 dn db-l width-one-seventh-l"
-      />
-    ));
+    for (let index = 0; index < days; index++) {
+      emptyDays.push(
+        <div
+          key={index}
+          className="b--black-10 bb bg-near-white bl bw1 dn db-l width-one-seventh-l"
+        />
+      );
+    }
+
+    return emptyDays;
   }
 }
 

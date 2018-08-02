@@ -16,7 +16,9 @@ class BlogArticlePage extends PureComponent {
   };
 
   componentDidMount() {
-    // TODO: remove this hack
+    // TODO: eliminar este hack. Encontré el siguiente artículo que menciona el problema
+    // y posibles soluciones que estaría bueno considerar
+    // reactjs.org/blog/2015/12/16/ismounted-antipattern.html
     this._isMounted = true;
 
     import(`./Articles/${this.props.name}.mdx`).then((articleModule) => {

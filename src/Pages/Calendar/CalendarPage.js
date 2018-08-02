@@ -93,6 +93,8 @@ class CalendarPage extends Component {
   };
 
   toggleOverflow = (active) => {
+    // TODO: puedo lograr esto de una manera mejor? Modificar un elemento del DOM
+    // que no solo está fuera de mi componente sino que fuera del root de la app
     document.querySelector('body').classList[active ? 'add' : 'remove']('overflow-hidden');
   };
 
@@ -152,45 +154,49 @@ class CalendarPage extends Component {
             )}
           </div>
         </Container>
-        <Modal show={showModal} hideModal={this.hideModal}>
-          <div className="bg-white br2 ma3">
-            <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
-              <span className="b black-alternative dib f4 ttc">sábado 28</span>
-              <span className="grow pt1" onClick={this.hideModal}>
-                <box-icon name="x" />
-              </span>
-            </div>
-            <div className="m-vh-75 overflow-y-auto">
-              {eventsOfTheDay.map((event, index) => (
-                <div key={index} className="flex mh3 mv3 pv3">
-                  <div className="w-30 w-20-ns">
-                    <p className="f5 f4-ns mv0 silver">{this.getFormattedEventHour(event.date)}</p>
-                  </div>
-                  <div className="w-70 w-80-ns">
-                    <h3 style={{ color: event.color }} className="f5 f4-ns mv0">
-                      {event.eventName}
-                    </h3>
-                    {event.place ? <p className="black-30 mb0 mt2">{event.place}</p> : null}
-                    <div className="flex">
-                      <a
-                        href={event.eventLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ backgroundColor: event.color }}
-                        className="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
-                      >
-                        <span className="black-30 f4 mr2 pt1">
-                          <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
-                        </span>
-                        <span className="text-shadow-1">Link</span>
-                      </a>
+        {showModal && (
+          <Modal hideModal={this.hideModal}>
+            <div className="bg-white br2 ma3">
+              <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
+                <span className="b black-alternative dib f4 ttc">sábado 28</span>
+                <span className="grow pt1" onClick={this.hideModal}>
+                  <box-icon name="x" />
+                </span>
+              </div>
+              <div className="m-vh-75 overflow-y-auto">
+                {eventsOfTheDay.map((event, index) => (
+                  <div key={index} className="flex mh3 mv3 pv3">
+                    <div className="w-30 w-20-ns">
+                      <p className="f5 f4-ns mv0 silver">
+                        {this.getFormattedEventHour(event.date)}
+                      </p>
+                    </div>
+                    <div className="w-70 w-80-ns">
+                      <h3 style={{ color: event.color }} className="f5 f4-ns mv0">
+                        {event.eventName}
+                      </h3>
+                      {event.place && <p className="black-30 mb0 mt2">{event.place}</p>}
+                      <div className="flex">
+                        <a
+                          href={event.eventLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ backgroundColor: event.color }}
+                          className="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
+                        >
+                          <span className="black-30 f4 mr2 pt1">
+                            <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
+                          </span>
+                          <span className="text-shadow-1">Link</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </Modal>
+          </Modal>
+        )}
       </React.Fragment>
     );
   }

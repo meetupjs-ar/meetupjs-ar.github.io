@@ -9,10 +9,9 @@ class Events extends Component {
 
   render() {
     const { events } = this.props;
-    const thereAreMoreEventsLabel =
-      events.length > 2 ? (
-        <span className="black-30 dn f6 mt2 truncate db-l">y {events.length - 2} más</span>
-      ) : null;
+    const thereAreMoreEventsLabel = events.length > 2 && (
+      <span className="black-30 dn f6 mt2 truncate db-l">y {events.length - 2} más</span>
+    );
 
     return (
       <React.Fragment>
