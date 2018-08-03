@@ -7,9 +7,7 @@ class Modal extends Component {
     hideModal: PropTypes.func.isRequired
   };
 
-  closeModalOnEscapeKey = () => {
-    this.props.hideModal();
-  };
+  closeModalOnEscapeKey = (event) => event.which === 27 && this.props.hideModal();
 
   componentDidMount = () => {
     window.addEventListener('keydown', this.closeModalOnEscapeKey);

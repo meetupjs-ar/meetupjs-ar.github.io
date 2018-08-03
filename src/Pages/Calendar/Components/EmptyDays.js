@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import * as css from '../css/EmptyDays.module.css';
 
 class EmptyDays extends Component {
   static props = {
@@ -14,7 +15,9 @@ class EmptyDays extends Component {
       emptyDays.push(
         <div
           key={index}
-          className="b--black-10 bb bg-near-white bl bw1 dn db-l width-one-seventh-l"
+          className={`${
+            css.emptyDay
+          } b--black-10 bb bg-near-white bl bw1 dn db-l width-one-seventh-l`}
         />
       );
     }
