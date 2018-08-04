@@ -160,7 +160,7 @@ class CalendarPage extends Component {
               <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
                 <span className="b black-alternative dib f4 ttc">sábado 28</span>
                 <span className="grow pt1" onClick={this.hideModal}>
-                  <box-icon name="x" />
+                  <box-icon name="x" color="rgba(0, 0, 0, 0.3)" />
                 </span>
               </div>
               <div className="m-vh-75 overflow-y-auto">
@@ -172,22 +172,19 @@ class CalendarPage extends Component {
                       </p>
                     </div>
                     <div className="flex-auto">
-                      <h3 style={{ color: event.color }} className="f5 f4-ns mv0">
-                        {event.eventName}
-                      </h3>
+                      <h3 className="black-alternative f5 f4-ns mv0">{event.eventName}</h3>
                       {event.place && <p className="black-30 mb0 mt2">{event.place}</p>}
                       <div className="flex">
                         <a
                           href={event.eventLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ backgroundColor: event.color }}
-                          className="b b--black-30 ba br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
+                          className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
                         >
-                          <span className="black-30 f4 mr2 pt1">
+                          <span className="f4 mr2 pt1">
                             <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
                           </span>
-                          <span className="text-shadow-1">Link</span>
+                          <span className="black-alternative text-shadow-1">Link</span>
                         </a>
                       </div>
                     </div>

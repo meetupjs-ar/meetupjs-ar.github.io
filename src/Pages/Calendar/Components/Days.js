@@ -71,13 +71,13 @@ class Days extends Component {
       return (
         <div
           key={index}
-          className={`${bgColor} ${eventsOfTheDay.length ? 'pointer' : ''} ${
+          className={`${bgColor ? bgColor : ''} ${eventsOfTheDay.length ? 'pointer' : ''} ${
             isVisibleInMobile ? '' : 'dn db-l'
           } b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 width-one-seventh-l`}
           onClick={() => eventsOfTheDay.length && showModal(eventsOfTheDay)}
         >
           <div className="flex flex-column-l h-100 items-center items-end-l">
-            <div className="flex-auto-l order-1 order-0-l pl3 pl0-l w-80 w-100-l">
+            <div className="flex-auto order-1 order-0-l pl3 pl0-l w-80 w-100-l">
               {eventsOfTheDay.length ? <Events events={eventsOfTheDay} /> : null}
             </div>
             <DayFooter

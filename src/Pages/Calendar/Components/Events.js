@@ -16,7 +16,9 @@ class Events extends Component {
     return (
       <React.Fragment>
         <ul className="list ma0 pl0">
-          {events.map((event, index) => <Event key={index} event={event} index={index} />)}
+          {events.map((event, index) => (
+            <Event key={index} event={event} index={index} />
+          ))}
         </ul>
         {thereAreMoreEventsLabel}
       </React.Fragment>

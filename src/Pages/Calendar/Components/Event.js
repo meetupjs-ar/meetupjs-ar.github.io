@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 class DayFooter extends Component {
   static props = {
     event: PropTypes.shape({
-      color: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       eventLink: PropTypes.string.isRequired,
       eventName: PropTypes.string.isRequired,
@@ -15,14 +14,13 @@ class DayFooter extends Component {
 
   render() {
     const { event, index } = this.props;
-    const { color, eventName } = event;
+    const { eventName } = event;
 
     return (
       <li
-        style={{ backgroundColor: color }}
         className={`${
           index > 1 ? 'dn-l' : ''
-        } b--black-30 ba br1 bw1 f6 lh-solid mv2 pa1 text-shadow-1 truncate white`}
+        } b--black-10 ba bg-washed-yellow black-alternative br1 bw1 f6 lh-solid mv2 pa1 text-shadow-1 truncate`}
       >
         {eventName}
       </li>
