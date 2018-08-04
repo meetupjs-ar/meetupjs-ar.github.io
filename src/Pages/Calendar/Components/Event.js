@@ -20,7 +20,7 @@ class DayFooter extends Component {
       <li
         className={`${
           index > 1 ? 'dn-l' : ''
-        } b--black-10 ba bg-washed-yellow black-alternative br1 bw1 f6 lh-solid mv2 pa1 text-shadow-1 truncate`}
+        } b--black-10 ba bg-washed-yellow black-alternative br1 f6 lh-solid mv2 pa1 text-shadow-1 truncate`}
       >
         {eventName}
       </li>
