@@ -166,12 +166,12 @@ class CalendarPage extends Component {
               <div className="m-vh-75 overflow-y-auto">
                 {eventsOfTheDay.map((event, index) => (
                   <div key={index} className="flex mh3 mv3 pv3">
-                    <div className="w-30 w-20-ns">
+                    <div className="pr3 pr4-ns">
                       <p className="f5 f4-ns mv0 silver">
                         {this.getFormattedEventHour(event.date)}
                       </p>
                     </div>
-                    <div className="w-70 w-80-ns">
+                    <div className="flex-auto">
                       <h3 style={{ color: event.color }} className="f5 f4-ns mv0">
                         {event.eventName}
                       </h3>
