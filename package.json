@@ -31,6 +31,17 @@
       }
     },
     "static": {
+      "headers": [
+        {
+          "source": "static/**/*.*",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=86400"
+            }
+          ]
+        }
+      ],
       "trailingSlash": true
     },
     "type": "npm"

@@ -17,7 +17,7 @@ class Loading extends PureComponent {
     return (
       <Container>
         <div className="tc">
-          <h2 className="mv0 normal silver">{message}</h2>
+          <h2 className="mv0 normal">{message}</h2>
         </div>
       </Container>
     );

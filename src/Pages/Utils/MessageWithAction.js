@@ -26,7 +26,7 @@ class MessageWithAction extends PureComponent {
     return (
       <Container>
         <div className="tc">
-          <h2 className="mb4 mt0 normal silver">{message}</h2>
+          <h2 className="black-alternative mb4 mt0 normal">{message}</h2>
           <AsyncImage src={image} alt={imageAlt} className="db center m-h5 mb4" />
           <button
             className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pointer pv2 ttu"
