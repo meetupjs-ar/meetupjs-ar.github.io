@@ -21,7 +21,7 @@ const ArticleFooter = ({ authors, publishedDay }) => {
 
 ArticleFooter.propTypes = {
   authors: PropTypes.arrayOf(PropTypes.string).isRequired,
-  publishedDay: PropTypes.string.isRequired
+  publishedDay: PropTypes.objectOf(Date).isRequired
 };
 
 export default ArticleFooter;
