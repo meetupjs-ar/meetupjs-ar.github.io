@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-class FormatDate extends PureComponent {
-  static props = {
+class FormatDate extends Component {
+  static propTypes = {
     date: PropTypes.instanceOf(Date).isRequired
   };
 

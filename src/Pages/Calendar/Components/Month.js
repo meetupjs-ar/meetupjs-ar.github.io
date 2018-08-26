@@ -8,7 +8,7 @@ import Events from './Events';
 import Weekdays from './Weekdays';
 
 class Month extends Component {
-  static props = {
+  static propTypes = {
     monthlyCalendar: PropTypes.shape({
       events: PropTypes.arrayOf(Events.props.events).isRequired,
       when: PropTypes.shape({

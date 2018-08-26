@@ -1,27 +1,17 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Container from './Container';
 
-class Loading extends PureComponent {
-  static propTypes = {
-    message: PropTypes.string
-  };
+const Loading = ({ message = 'Cargando...' }) => (
+  <Container>
+    <div className="tc">
+      <h2 className="mv0 normal">{message}</h2>
+    </div>
+  </Container>
+);
 
-  static defaultProps = {
-    message: 'Cargando...'
-  };
-
-  render() {
-    const { message } = this.props;
-
-    return (
-      <Container>
-        <div className="tc">
-          <h2 className="mv0 normal">{message}</h2>
-        </div>
-      </Container>
-    );
-  }
-}
+Loading.propTypes = {
+  message: PropTypes.string
+};
 
 export default Loading;

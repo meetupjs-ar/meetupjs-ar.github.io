@@ -6,7 +6,7 @@ import DayFooter from './DayFooter';
 import Events from './Events';
 
 class Days extends Component {
-  static props = {
+  static propTypes = {
     days: PropTypes.number.isRequired,
     events: Events.props.events,
     month: PropTypes.instanceOf(Date).isRequired,

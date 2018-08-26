@@ -1,21 +1,15 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import * as styles from './Markdown.module.css';
 
-class Markdown extends PureComponent {
-  static props = {
-    Content: PropTypes.element.isRequired
-  };
+const Markdown = ({ Content }) => (
+  <div className={styles.markdownBody}>
+    <Content />
+  </div>
+);
 
-  render() {
-    const { Content } = this.props;
-
-    return (
-      <div className={styles.markdownBody}>
-        <Content />
-      </div>
-    );
-  }
-}
+Markdown.propTypes = {
+  Content: PropTypes.func.isRequired
+};
 
 export default Markdown;

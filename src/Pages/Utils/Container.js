@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-class Container extends PureComponent {
-  static props = {
-    large: PropTypes.bool
+class Container extends Component {
+  static propTypes = {
+    large: PropTypes.string
+  };
+
+  static defaultProps = {
+    large: ''
   };
 
   render() {
     const { large } = this.props;
 
-    return <div className={`${large ? 'mw9' : 'mw7'} center ph3 pv5`} {...this.props} />;
+    return (
+      <div className={`${large === 'large' ? 'mw9' : 'mw7'} center ph3 pv5`} {...this.props} />
+    );
   }
 }
 

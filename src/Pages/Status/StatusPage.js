@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import AsyncImage from '../Utils/AsyncImage';
 import Container from '../Utils/Container';
 import Metatags from '../Utils/Metatags';
@@ -13,7 +13,7 @@ const STATUS_RESPONSE_TYPE = {
   ERROR: 2
 };
 
-class StatusPage extends PureComponent {
+class StatusPage extends Component {
   constructor(props) {
     super(props);
 

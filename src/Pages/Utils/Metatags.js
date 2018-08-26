@@ -1,31 +1,29 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-class Metatags extends PureComponent {
-  static props = {
-    metatags: PropTypes.shape({
-      absoluteUrl: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    }).isRequired
-  };
+const Metatags = ({ metatags }) => {
+  const { absoluteUrl, description, title } = metatags;
 
-  render() {
-    const { metatags } = this.props;
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:url" content={absoluteUrl} />
+    </Helmet>
+  );
+};
 
-    return (
-      <Helmet>
-        <title>{metatags.title}</title>
-        <meta name="description" content={metatags.description} />
-        <meta name="twitter:description" content={metatags.description} />
-        <meta name="twitter:title" content={metatags.title} />
-        <meta property="og:description" content={metatags.description} />
-        <meta property="og:title" content={metatags.title} />
-        <meta property="og:url" content={metatags.absoluteUrl} />
-      </Helmet>
-    );
-  }
-}
+Metatags.propTypes = {
+  metatags: PropTypes.shape({
+    absoluteUrl: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default Metatags;

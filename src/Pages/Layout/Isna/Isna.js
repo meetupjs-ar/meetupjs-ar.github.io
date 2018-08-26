@@ -1,12 +1,12 @@
 import Mousetrap from 'mousetrap';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import * as styles from './css/Isna.module.css';
 import Notifications from './data/Notifications';
 import IsnaPicture from './images/isna.png';
 import IsnaSound from './sounds/isna.mp3';
 import AsyncImage from '../../Utils/AsyncImage';
 
-class Isna extends PureComponent {
+class Isna extends Component {
   state = {
     audio: new Audio(IsnaSound),
     active: false,

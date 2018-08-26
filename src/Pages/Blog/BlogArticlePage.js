@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Container from '../Utils/Container';
 import Markdown from '../Utils/Markdown/Markdown';
 import Metatags from '../Utils/Metatags';
 import ArticleFooter from './Components/ArticleFooter';
 
-class BlogArticlePage extends PureComponent {
-  static props = {
+class BlogArticlePage extends Component {
+  static propTypes = {
     name: PropTypes.string.isRequired
   };
 

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class Modal extends Component {
-  static props = {
+  static propTypes = {
     children: PropTypes.node.isRequired,
     hideModal: PropTypes.func.isRequired
   };

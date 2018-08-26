@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import AsyncImage from '../Utils/AsyncImage';
 import Container from '../Utils/Container';
@@ -24,7 +24,7 @@ const publishedArticles = [
   ResenaMeetupJulioMetadata
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 
-class BlogListPage extends PureComponent {
+class BlogListPage extends Component {
   state = {
     articlesMetadata: [...publishedArticles]
   };

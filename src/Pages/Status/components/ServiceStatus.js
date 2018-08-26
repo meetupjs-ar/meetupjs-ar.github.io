@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import * as styles from '../css/ServiceStatus.module.css';
 
-class ServiceStatus extends PureComponent {
-  static props = {
+class ServiceStatus extends Component {
+  static propTypes = {
     description: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.number.isRequired

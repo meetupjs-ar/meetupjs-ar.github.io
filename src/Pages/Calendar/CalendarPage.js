@@ -26,14 +26,9 @@ class CalendarPage extends Component {
     showModal: false
   };
 
-  static props = {
+  static propTypes = {
     showOnlyCurrentMonth: PropTypes.bool.isRequired,
     useMetatags: PropTypes.bool.isRequired
-  };
-
-  static defaultProps = {
-    showOnlyCurrentMonth: false,
-    useMetatags: true
   };
 
   componentDidMount() {
@@ -122,7 +117,7 @@ class CalendarPage extends Component {
     return (
       <React.Fragment>
         {useMetatags && <Metatags metatags={CalendarPageMetatags} />}
-        <Container large="true">
+        <Container large="large">
           <div className="fade-in">
             <div className="flex items-center justify-center">
               <h1 className="mv0">Calendario de eventos</h1>

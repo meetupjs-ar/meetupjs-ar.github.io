@@ -1,27 +1,16 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazyload';
 
-class FormatDate extends PureComponent {
-  static props = {
-    alt: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired
-  };
+const AsyncImage = ({ alt, src, ...moreAttrs }) => (
+  <LazyLoad height="100%" once={true}>
+    <img src={src} alt={alt} {...moreAttrs} />
+  </LazyLoad>
+);
 
-  static defaultProps = {
-    alt: '',
-    src: ''
-  };
+AsyncImage.propTypes = {
+  alt: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
+};
 
-  render() {
-    const { alt, src } = this.props;
-
-    return (
-      <LazyLoad height="100%" once={true}>
-        <img src={src} alt={alt} {...this.props} />
-      </LazyLoad>
-    );
-  }
-}
-
-export default FormatDate;
+export default AsyncImage;
