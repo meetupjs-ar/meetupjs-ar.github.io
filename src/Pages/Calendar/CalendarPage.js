@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from '../Utils/Container';
+import FormatDate from '../Utils/FormatDate';
 import Loading from '../Utils/Loading';
 import MessageWithAction from '../Utils/MessageWithAction';
 import Metatags from '../Utils/Metatags';
@@ -19,6 +20,7 @@ class CalendarPage extends Component {
   }
 
   defaultState = {
+    currentDay: new Date(),
     error: false,
     eventsOfTheDay: [],
     loading: true,
@@ -27,8 +29,13 @@ class CalendarPage extends Component {
   };
 
   static propTypes = {
-    showOnlyCurrentMonth: PropTypes.bool.isRequired,
-    useMetatags: PropTypes.bool.isRequired
+    showOnlyCurrentMonth: PropTypes.bool,
+    useMetatags: PropTypes.bool
+  };
+
+  static defaultProps = {
+    showOnlyCurrentMonth: false,
+    useMetatags: true
   };
 
   componentDidMount() {
@@ -77,9 +84,10 @@ class CalendarPage extends Component {
     this.setState(this.defaultState);
   };
 
-  showModal = (eventsOfTheDay) => {
+  showModal = (eventsOfTheDay, currentDay) => {
     this.setState(
       {
+        currentDay,
         eventsOfTheDay,
         showModal: true
       },
@@ -95,7 +103,7 @@ class CalendarPage extends Component {
 
   render() {
     const { showOnlyCurrentMonth, useMetatags } = this.props;
-    const { error, eventsOfTheDay, loading, monthlyCalendars, showModal } = this.state;
+    const { currentDay, error, eventsOfTheDay, loading, monthlyCalendars, showModal } = this.state;
     const monthlyCalendarsToShow = showOnlyCurrentMonth ? [monthlyCalendars[0]] : monthlyCalendars;
 
     if (loading) {
@@ -153,7 +161,9 @@ class CalendarPage extends Component {
           <Modal hideModal={this.hideModal}>
             <div className="bg-white br2 ma3">
               <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
-                <span className="b black-alternative dib f4 ttc">sábado 28</span>
+                <span className="black-alternative dib f4">
+                  <FormatDate date={currentDay} />
+                </span>
                 <span className="grow pt1" onClick={this.hideModal}>
                   <box-icon name="x" color="rgba(0, 0, 0, 0.3)" />
                 </span>

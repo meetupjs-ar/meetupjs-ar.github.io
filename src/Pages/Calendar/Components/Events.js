@@ -20,7 +20,7 @@ const Events = ({ events }) => {
 };
 
 Events.propTypes = {
-  events: PropTypes.arrayOf(Event.props.event).isRequired
+  events: PropTypes.arrayOf(Event.propTypes.event).isRequired
 };
 
 export default Events;

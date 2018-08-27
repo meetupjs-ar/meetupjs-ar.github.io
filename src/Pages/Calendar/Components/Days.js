@@ -8,7 +8,7 @@ import Events from './Events';
 class Days extends Component {
   static propTypes = {
     days: PropTypes.number.isRequired,
-    events: Events.props.events,
+    events: Events.propTypes.events,
     month: PropTypes.instanceOf(Date).isRequired,
     showModal: PropTypes.func.isRequired
   };
@@ -74,7 +74,7 @@ class Days extends Component {
           className={`${bgColor ? bgColor : ''} ${eventsOfTheDay.length ? 'pointer' : ''} ${
             isVisibleInMobile ? '' : 'dn db-l'
           } b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 width-one-seventh-l`}
-          onClick={() => eventsOfTheDay.length && showModal(eventsOfTheDay)}
+          onClick={() => eventsOfTheDay.length && showModal(eventsOfTheDay, currentDay)}
         >
           <div className="flex flex-column-l h-100 items-center items-end-l">
             <div className="flex-auto order-1 order-0-l pl3 pl0-l w-80 w-100-l">

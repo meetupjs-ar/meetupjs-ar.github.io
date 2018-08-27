@@ -10,10 +10,10 @@ import Weekdays from './Weekdays';
 class Month extends Component {
   static propTypes = {
     monthlyCalendar: PropTypes.shape({
-      events: PropTypes.arrayOf(Events.props.events).isRequired,
+      events: Events.propTypes.events,
       when: PropTypes.shape({
         month: PropTypes.string.isRequired,
-        year: PropTypes.number.isRequired
+        year: PropTypes.string.isRequired
       })
     }),
     showModal: PropTypes.func.isRequired
