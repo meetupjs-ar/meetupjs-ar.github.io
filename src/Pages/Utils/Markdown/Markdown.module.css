@@ -21,9 +21,10 @@
 :local(.markdownBody div blockquote) {
   background-color: #fffceb;
   border-left: 0.25rem solid var(--color-secondary);
+  font-style: italic;
   margin-left: 0;
   margin-right: 0;
-  padding: 0.25rem 1rem;
+  padding: 0.125rem 1rem;
 }
 
 :local(.markdownBody div h1) {
@@ -38,6 +39,7 @@
 
 :local(.markdownBody div img) {
   display: block;
+  margin: 2rem 0;
   width: 100%;
 }
 

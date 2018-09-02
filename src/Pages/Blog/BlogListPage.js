@@ -38,7 +38,7 @@ class BlogListPage extends Component {
           <div className="mt4" key={metadata.title}>
             <NavLink
               to={metadata.relativeUrl}
-              className="black-alternative br2 db grow no-underline overflow-hidden"
+              className="black-alternative bg-animate br2 db bg-white hover-bg-washed-yellow no-underline overflow-hidden"
             >
               {metadata.coverUrl && (
                 <AsyncImage
@@ -47,9 +47,7 @@ class BlogListPage extends Component {
                   className="v-btm"
                 />
               )}
-              <div
-                className={`${metadata.coverUrl ? 'bb bl br' : 'ba'} b--black-10 bg-white bw1 pa3`}
-              >
+              <div className={`${metadata.coverUrl ? 'bb bl br' : 'ba'} b--black-10 bw1 pa3`}>
                 <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
                 <p className="f6 mb0 mt3 silver">
                   Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
