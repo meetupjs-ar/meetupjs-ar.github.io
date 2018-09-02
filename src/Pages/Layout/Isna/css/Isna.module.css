@@ -3,7 +3,7 @@
   opacity: 0;
   position: fixed;
   right: 0;
-  transition: all 0.35s ease-out;
+  transition: var(--transition);
   transform: translateX(150px);
   width: 150px;
   z-index: 5;

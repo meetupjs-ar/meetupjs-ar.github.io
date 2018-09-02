@@ -11,6 +11,8 @@
 :root {
   --color-main: #2e282a;
   --color-secondary: #ffe45e;
+  --color-tertiary: #fffceb;
+  --transition: all 0.35s ease-out;
 }
 
 body {
