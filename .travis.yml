@@ -6,10 +6,10 @@ cache:
 notifications:
   email: false
 script:
-  - npm i gulp
+  - npm i gulp --no-save
   - npm run build-prod
 deploy:
-  local-dir: dist
+  local-dir: build
   target-branch: master
   provider: pages
   skip-cleanup: true
