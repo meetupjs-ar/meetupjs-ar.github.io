@@ -52,7 +52,29 @@
   width: 100%;
 }
 
+:local(.markdownBody div strong) {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(250, 247, 133, 0.3),
+    rgba(250, 247, 133, 0.7) 95%,
+    rgba(250, 247, 133, 0.1)
+  );
+}
+
 :local(.markdownBody div h3, .markdownBody div h4, .markdownBody div h5, .markdownBody div h6) {
   color: #777;
   margin: 1rem 0;
+}
+
+:local(.markdownBody div > p:first-of-type::first-letter) {
+  background-color: var(--color-main);
+  color: var(--color-secondary);
+  font-size: 4rem;
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+  margin: -0.5rem 1rem 0.5rem 0;
+  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+  vertical-align: bottom;
 }

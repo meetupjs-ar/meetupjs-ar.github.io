@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
   "rules": {
     "declaration-block-trailing-semicolon": null,
+    "declaration-colon-newline-after": null,
     "indentation": 2,
     "no-missing-end-of-source-newline": null
   }
