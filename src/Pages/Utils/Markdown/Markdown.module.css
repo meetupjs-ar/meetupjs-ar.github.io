@@ -39,6 +39,7 @@
 
 :local(.markdownBody div h1) {
   color: var(--color-main);
+  font-size: 2rem;
   text-align: center;
 }
 
