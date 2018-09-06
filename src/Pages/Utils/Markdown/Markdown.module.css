@@ -40,6 +40,7 @@
 :local(.markdownBody div h1) {
   color: var(--color-main);
   font-size: 2rem;
+  line-height: 1.25;
   text-align: center;
 }
 
