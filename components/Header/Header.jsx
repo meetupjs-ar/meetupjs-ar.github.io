@@ -38,7 +38,12 @@ class Header extends Component {
           <div className="flex items-center justify-between">
             <Link href="/">
               <a>
-                <img src="/static/Header/isotipo.svg" alt="Logo" className="db h50 v-btm" />
+                <img
+                  src="/static/Header/isotipo.svg"
+                  alt="Logo"
+                  className="db h50 v-btm"
+                  onClick={this.toogleMenu}
+                />
               </a>
             </Link>
             <div className="flex items-center">
