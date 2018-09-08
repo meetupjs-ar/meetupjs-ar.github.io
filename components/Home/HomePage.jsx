@@ -1,6 +1,7 @@
 import React from 'react';
 import Tilt from 'react-tilt';
 import css from 'styled-jsx/css';
+import CalendarPage from '../Calendar/CalendarPage';
 import Container from '../Utils/Container';
 
 const logoStyles = css`
@@ -15,7 +16,7 @@ const HomePage = () => (
     <div className="bg-white">
       <Container>
         <div className="flex justify-center">
-          <h1 className={'mw175 mv0 w-100'}>
+          <h1 className="mv0 mw175 w-100">
             <Tilt
               options={{
                 axis: 'x',
@@ -100,6 +101,9 @@ const HomePage = () => (
           </a>
         </div>
       </Container>
+    </div>
+    <div className="b--black-10 bt bw1">
+      <CalendarPage showOnlyCurrentMonth={true} />
     </div>
   </React.Fragment>
 );
