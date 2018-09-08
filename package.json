@@ -33,7 +33,7 @@
         "gulp-concat": "^2.6.1",
         "gulp-eslint": "^5.0.0",
         "gulp-git": "^2.7.0",
-        "gulp-htmlmin": "^4.0.0",
+        "gulp-htmlmin": "^5.0.0",
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "^4.1.0",
         "gulp-inject-svg": "^0.1.18",
