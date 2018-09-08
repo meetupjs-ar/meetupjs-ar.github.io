@@ -47,7 +47,7 @@ class Header extends Component {
               </a>
             </Link>
             <div className="flex items-center">
-              {pathname === '/calendario.html' && (
+              {pathname === '/calendario' && (
                 <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1">
                   <a
                     rel="noopener noreferrer"
