@@ -4,7 +4,7 @@ import React from 'react';
 
 const metatags = {
   description:
-    'En este artículo te vamos a contar como organizamos los meetups, que pasos tenemos en cuenta, como nos contactamos con los oradores, empresas y sponsors.',
+    'En este artículo te vamos a contar como organizamos los meetups, que pasos tenemos en cuenta, como nos contactamos con los oradores, empresas y sponsors. Por Camila Cepeda.',
   title: `Como hacemos un meetup - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/como-hacemos-un-meetup`
 };

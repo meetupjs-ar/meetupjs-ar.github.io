@@ -4,7 +4,7 @@ import React from 'react';
 
 const metatags = {
   description:
-    'En un día de mucha lluvia no hubía mejor plan que venir a escuchar las charlas y encontrarse con amigos.',
+    'En un día de mucha lluvia no hubía mejor plan que venir a escuchar las charlas y encontrarse con amigos. Por Carlos Manotas.',
   title: `Reseña del Meetup.js de Julio 2018 - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/resena-meetup-julio-2018`
 };

@@ -4,7 +4,7 @@ import React from 'react';
 
 const metatags = {
   description:
-    'Te contamos qué es y como funciona el calendario de eventos que hicimos para nuestro sitio.',
+    'Te contamos qué es y como funciona el calendario de eventos que hicimos para nuestro sitio. Por Cristhian Duran.',
   title: `¿Qué es el calendario de eventos? - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/que-es-el-calendario-de-eventos`
 };

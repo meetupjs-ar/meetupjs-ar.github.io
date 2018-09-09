@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 const metatags = {
   description:
-    'Hace unos días Meetup.js retomó su actividad en las oficinas de Stensul. En este post te cuento que me llevé del evento.',
+    'Hace unos días Meetup.js retomó su actividad en las oficinas de Stensul. En este post te cuento que me llevé del evento. Por Julio Olivera.',
   title: `Reseña del Meetup.js de Mayo 2018 - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/resena-meetup-mayo-2018`
 };

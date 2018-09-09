@@ -4,7 +4,7 @@ import React from 'react';
 
 const metatags = {
   description:
-    '¡Extra, extra! Llegó el resúmen del evento de Agosto en Avature donde hablamos de JSX y WebAssembly.',
+    '¡Extra, extra! Llegó el resúmen del evento de Agosto en Avature donde hablamos de JSX y WebAssembly. Por Matias Blayer.',
   title: `Reseña del Meetup.js de Agosto 2018 - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/resena-meetup-agosto-2018`
 };

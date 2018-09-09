@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 const metatags = {
   description:
-    'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas.',
+    'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas. Por Mateo Silguero.',
   title: `Reseña del Meetup.js de Junio 2018 - ${process.env.REACT_APP_TITLE}`,
   url: `${process.env.REACT_APP_URL}articulos/resena-meetup-junio-2018`
 };
