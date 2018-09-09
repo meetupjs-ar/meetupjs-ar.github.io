@@ -21,9 +21,15 @@ class Header extends Component {
     isMenuOpen: false
   };
 
-  toogleMenu = () => {
+  closeMenu = () => {
     this.setState({
-      isMenuOpen: !this.state.isMenuOpen
+      isMenuOpen: false
+    });
+  };
+
+  openMenu = () => {
+    this.setState({
+      isMenuOpen: true
     });
   };
 
@@ -42,7 +48,7 @@ class Header extends Component {
                   src="/static/Header/isotipo.svg"
                   alt="Logo"
                   className="db h50 v-btm"
-                  onClick={this.toogleMenu}
+                  onClick={this.closeMenu}
                 />
               </a>
             </Link>
@@ -58,12 +64,12 @@ class Header extends Component {
                   </a>
                 </Link>
               )}
-              <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.toogleMenu} />
-              <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.toogleMenu} />
+              <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.openMenu} />
+              <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.closeMenu} />
             </div>
           </div>
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>
-            <Menu toogleMenu={this.toogleMenu} />
+            <Menu toogleMenu={this.closeMenu} />
             <p className="f6 flex items-center justify-end mv0 pr1 tr">
               <span className="black-30">Version {process.env.REACT_APP_VERSION}</span>
             </p>
