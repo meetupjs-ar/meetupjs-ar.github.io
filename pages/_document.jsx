@@ -8,6 +8,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="shortcut icon" href={`${process.env.REACT_APP_URL}static/favicon.ico`} />
+          <link rel="apple-touch-icon" href={`${process.env.REACT_APP_URL}static/icon-180.jpg`} />
           <style jsx global>
             {tachyons}
           </style>
