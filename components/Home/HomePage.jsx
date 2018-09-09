@@ -2,7 +2,7 @@ import React from 'react';
 import Tilt from 'react-tilt';
 import css from 'styled-jsx/css';
 import CalendarPage from '../Calendar/CalendarPage';
-import Container from '../Utils/Container';
+import Container from 'utils/Container';
 
 const logoStyles = css`
   .mw175 {

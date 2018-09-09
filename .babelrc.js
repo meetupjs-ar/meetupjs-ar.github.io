@@ -8,7 +8,16 @@ module.exports = {
         extensions: ['.css']
       }
     ],
-    ['transform-define', env]
+    ['transform-define', env],
+    [
+      'module-resolver',
+      {
+        alias: {
+          components: './components',
+          utils: './components/Utils'
+        }
+      }
+    ]
   ],
   presets: ['next/babel']
 };

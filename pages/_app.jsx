@@ -1,6 +1,6 @@
 import App, { Container } from 'next/app';
 import React from 'react';
-import Header from '../components/Header/Header';
+import Header from 'components/Header/Header';
 
 export default class MyApp extends App {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../Utils/Container';
-import Markdown from '../Utils/Markdown';
+import Container from 'utils/Container';
+import Markdown from 'utils/Markdown';
 import CodeOfConduct from './CodeOfConduct.mdx';
 
 const CodeOfConductPage = () => (

@@ -1,4 +1,4 @@
 import React from 'react';
-import StatusPage from '../components/Status/StatusPage';
+import StatusPage from 'components/Status/StatusPage';
 
 export default () => <StatusPage />;

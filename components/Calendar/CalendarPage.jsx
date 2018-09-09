@@ -2,11 +2,11 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Container from '../Utils/Container';
-import FormatDate from '../Utils/FormatDate';
-import Loading from '../Utils/Loading';
-import MessageWithAction from '../Utils/MessageWithAction';
-import Modal from '../Utils/Modal';
+import Container from 'utils/Container';
+import FormatDate from 'utils/FormatDate';
+import Loading from 'utils/Loading';
+import MessageWithAction from 'utils/MessageWithAction';
+import Modal from 'utils/Modal';
 import Month from './Month';
 
 class CalendarPage extends Component {

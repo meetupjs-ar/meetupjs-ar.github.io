@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { Component } from 'react';
-import Container from '../Utils/Container';
-import FormatDate from '../Utils/FormatDate';
+import Container from 'utils/Container';
+import FormatDate from 'utils/FormatDate';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';

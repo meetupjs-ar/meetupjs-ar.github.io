@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Container from '../Utils/Container';
+import Container from 'utils/Container';
 import ServiceStatus from './ServiceStatus';
 
 const STATUS_RESPONSE_TYPE = {

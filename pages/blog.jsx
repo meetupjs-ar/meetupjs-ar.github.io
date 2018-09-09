@@ -1,4 +1,4 @@
 import React from 'react';
-import BlogPage from '../components/Blog/BlogPage';
+import BlogPage from 'components/Blog/BlogPage';
 
 export default () => <BlogPage />;

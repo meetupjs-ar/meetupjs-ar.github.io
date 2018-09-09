@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Container from '../Utils/Container';
+import Container from 'utils/Container';
 
 const NotFoundPage = () => (
   <Container>

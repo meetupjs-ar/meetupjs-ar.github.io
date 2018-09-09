@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Container from '../Utils/Container';
-import Markdown from '../Utils/Markdown';
+import Container from 'utils/Container';
+import Markdown from 'utils/Markdown';
 import ArticleFooter from './PostPageFooter';
 
 class BlogArticlePage extends Component {
