@@ -9,9 +9,9 @@ const DayFooter = ({ event, index }) => {
 
   return (
     <li
-      className={`${highlight} ${
-        index > 1 ? 'dn-l' : ''
-      } b--black-10 ba black-alternative br1 bw1 f6 lh-solid mv2 pa1 text-shadow-1 truncate`}
+      className={`${highlight} ${index > 1 ? 'dn-l' : ''} ${
+        index > 0 ? 'mt2' : ''
+      } b--black-10 ba black-alternative br1 bw1 f6 lh-solid pa1 text-shadow-1 truncate`}
     >
       {eventName}
     </li>

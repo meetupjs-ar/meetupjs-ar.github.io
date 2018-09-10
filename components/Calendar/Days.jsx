@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import DayFooter from './DayFooter';
 import Events from './Events';
+import Event from './Event';
 
 class Days extends Component {
   static propTypes = {
     days: PropTypes.number.isRequired,
-    events: Events.propTypes.events,
+    events: PropTypes.arrayOf(Event.propTypes.event).isRequired,
     month: PropTypes.instanceOf(Date).isRequired,
     showModal: PropTypes.func.isRequired
   };
 
-  getBgColor(currentDay, today) {
+  getBgColor = (currentDay, today) => {
     if (isSameDay(currentDay, today)) {
       return 'bg-washed-green';
     }
@@ -21,9 +22,11 @@ class Days extends Component {
     if (isBefore(currentDay, today)) {
       return 'bg-near-white';
     }
-  }
 
-  getDayName(dayNumberOfTheWeek) {
+    return '';
+  };
+
+  getDayName = dayNumberOfTheWeek => {
     switch (dayNumberOfTheWeek) {
       case 0:
         return 'domingo';
@@ -40,26 +43,23 @@ class Days extends Component {
       case 6:
         return 'sábado';
       default:
-        break;
+        return '';
     }
-  }
+  };
 
-  getEventsOfTheDay(eventsInMonth, day) {
-    return eventsInMonth.filter((event) => isSameDay(event.date, day));
-  }
+  getEventsOfTheDay = (eventsInMonth, day) =>
+    eventsInMonth.filter(event => isSameDay(event.date, day));
 
-  getStrike(currentDay, today) {
-    return isBefore(currentDay, today) && !isSameDay(currentDay, today);
-  }
+  getStrike = (currentDay, today) => isBefore(currentDay, today) && !isSameDay(currentDay, today);
 
-  isVisibleInMobile(currentDay, today) {
-    return isBefore(today, currentDay) || isSameDay(today, currentDay);
-  }
+  isVisibleInMobile = (currentDay, today) =>
+    isBefore(today, currentDay) || isSameDay(today, currentDay);
 
   render() {
     const { days, events, month, showModal } = this.props;
+    const elements = [];
 
-    return Array.apply(null, { length: days }).map((_, index) => {
+    for (let index = 0; index < days; index += 1) {
       const currentDayNumber = index + 1;
       const currentDay = new Date(month.getFullYear(), month.getMonth(), currentDayNumber);
       const today = new Date();
@@ -68,13 +68,14 @@ class Days extends Component {
       const isVisibleInMobile = this.isVisibleInMobile(currentDay, today);
       const eventsOfTheDay = this.getEventsOfTheDay(events, currentDay);
 
-      return (
+      elements.push(
         <div
-          key={index}
-          className={`${bgColor ? bgColor : ''} ${eventsOfTheDay.length ? 'pointer' : ''} ${
+          key={currentDay.getTime()}
+          className={`${bgColor || ''} ${eventsOfTheDay.length ? 'pointer' : ''} ${
             isVisibleInMobile ? '' : 'dn db-l'
           } b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 width-one-seventh-l`}
           onClick={() => eventsOfTheDay.length && showModal(eventsOfTheDay, currentDay)}
+          role="presentation"
         >
           <div className="flex flex-column-l h-100 items-center items-end-l">
             <div className="flex-auto order-1 order-0-l pl3 pl0-l w-80 w-100-l">
@@ -89,7 +90,9 @@ class Days extends Component {
           </div>
         </div>
       );
-    });
+    }
+
+    return elements;
   }
 }
 

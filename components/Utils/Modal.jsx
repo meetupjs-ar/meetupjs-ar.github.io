@@ -7,7 +7,11 @@ class Modal extends Component {
     hideModal: PropTypes.func.isRequired
   };
 
-  closeModalOnEscapeKey = (event) => event.which === 27 && this.props.hideModal();
+  closeModalOnEscapeKey = event => {
+    const { hideModal } = this.props;
+
+    return event.which === 27 && hideModal();
+  };
 
   componentDidMount = () => {
     window.addEventListener('keydown', this.closeModalOnEscapeKey);
@@ -17,7 +21,7 @@ class Modal extends Component {
     window.removeEventListener('keydown', this.closeModalOnEscapeKey);
   };
 
-  handleClose = (event) => {
+  handleClose = event => {
     const { hideModal } = this.props;
 
     return event.target === event.currentTarget && hideModal();
@@ -30,6 +34,7 @@ class Modal extends Component {
       <div
         className="bg-black-70 fade-in fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2"
         onClick={this.handleClose}
+        role="presentation"
       >
         <div className="center cursor-default fade-in-down mw7 w-100">{children}</div>
       </div>

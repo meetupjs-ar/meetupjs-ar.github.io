@@ -4,14 +4,18 @@ import Event from './Event';
 
 const Events = ({ events }) => {
   const thereAreMoreEventsLabel = events.length > 2 && (
-    <span className="black-30 dn f6 mt2 truncate db-l">y {events.length - 2} más</span>
+    <span className="black-30 dn f6 mt2 truncate db-l">
+      <span>y </span>
+      <span>{events.length - 2}</span>
+      <span> más</span>
+    </span>
   );
 
   return (
     <React.Fragment>
       <ul className="list ma0 pl0">
         {events.map((event, index) => (
-          <Event key={index} event={event} index={index} />
+          <Event key={event.shortid} event={event} index={index} />
         ))}
       </ul>
       {thereAreMoreEventsLabel}

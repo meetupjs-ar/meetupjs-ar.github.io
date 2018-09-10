@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
 
 const emptyDaysStyles = css`
@@ -17,7 +18,7 @@ const emptyDaysStyles = css`
 const EmptyDays = ({ days }) => {
   const emptyDays = [];
 
-  for (let index = 0; index < days; index++) {
+  for (let index = 0; index < days; index += 1) {
     emptyDays.push(
       <div
         key={index}

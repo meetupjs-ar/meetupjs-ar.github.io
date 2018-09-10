@@ -2,6 +2,7 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import shortid from 'shortid';
 import Container from 'utils/Container';
 import FormatDate from 'utils/FormatDate';
 import Loading from 'utils/Loading';
@@ -10,11 +11,13 @@ import Modal from 'utils/Modal';
 import Month from './Month';
 
 class CalendarPage extends Component {
-  constructor(props) {
-    super(props);
+  static defaultProps = {
+    showOnlyCurrentMonth: false
+  };
 
-    this.state = this.defaultState;
-  }
+  static propTypes = {
+    showOnlyCurrentMonth: PropTypes.bool
+  };
 
   defaultState = {
     currentDay: new Date(),
@@ -25,24 +28,21 @@ class CalendarPage extends Component {
     showModal: false
   };
 
-  static propTypes = {
-    showOnlyCurrentMonth: PropTypes.bool
-  };
+  constructor(props) {
+    super(props);
 
-  static defaultProps = {
-    showOnlyCurrentMonth: false,
-    useMetatags: true
-  };
+    this.state = this.defaultState;
+  }
 
   componentDidMount() {
     // TODO: remove this hack
-    this._isMounted = true;
+    this.isComponentMounted = true;
     this.toggleOverflow(false);
     this.fetchEvents();
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this.isComponentMounted = false;
     this.toggleOverflow(false);
   }
 
@@ -50,27 +50,35 @@ class CalendarPage extends Component {
     this.resetState();
 
     fetch('https://calendar-api.now.sh/')
-      .then((response) => response.json())
-      .then((monthlyCalendars) => {
-        this._isMounted &&
+      .then(response => response.json())
+      .then(monthlyCalendars => {
+        if (this.isComponentMounted) {
           this.setState({
             error: false,
             loading: false,
-            monthlyCalendars: monthlyCalendars
+            monthlyCalendars: monthlyCalendars.map(monthlyCalendar =>
+              Object.assign({}, monthlyCalendar, {
+                events: monthlyCalendar.events.map(event =>
+                  Object.assign({}, event, {
+                    shortid: shortid.generate()
+                  })
+                )
+              })
+            )
           });
+        }
       })
       .catch(() => {
-        this._isMounted &&
+        if (this.isComponentMounted) {
           this.setState({
             error: true,
             loading: false
           });
+        }
       });
   };
 
-  getFormattedEventHour = (date) => {
-    return format(new Date(date).setUTCMinutes(180), 'HH:mm');
-  };
+  getFormattedEventHour = date => format(new Date(date).setUTCMinutes(180), 'HH:mm');
 
   hideModal = () => {
     this.setState({ showModal: false }, () => this.toggleOverflow(false));
@@ -91,7 +99,7 @@ class CalendarPage extends Component {
     );
   };
 
-  toggleOverflow = (active) => {
+  toggleOverflow = active => {
     // TODO: puedo lograr esto de una manera mejor? Modificar un elemento del DOM
     // que no solo está fuera de mi componente sino que fuera del root de la app
     document.querySelector('body').classList[active ? 'add' : 'remove']('overflow-hidden');
@@ -111,7 +119,7 @@ class CalendarPage extends Component {
         <MessageWithAction
           action={this.fetchEvents}
           actionMessage="Intentar nuevamente"
-          image={'/static/Calendar/fail.gif'}
+          image="/static/Calendar/fail.gif"
           imageAlt="Error"
           message="Ocurrió un error al traer los eventos."
         />
@@ -125,12 +133,16 @@ class CalendarPage extends Component {
             <div className="flex items-center justify-center">
               <h1 className="mv0">Calendario de eventos</h1>
               <Link href="/articulos/que-es-el-calendario-de-eventos">
-                <a title="¿Qué es el calendario de eventos?" className="ml4 no-underline pointer">
+                <a
+                  href="#!"
+                  title="¿Qué es el calendario de eventos?"
+                  className="grow ml4 no-underline pointer"
+                >
                   <box-icon name="question-mark" border="circle" size="2.5rem" />
                 </a>
               </Link>
             </div>
-            {monthlyCalendarsToShow.map((monthlyCalendar) => (
+            {monthlyCalendarsToShow.map(monthlyCalendar => (
               <Month
                 key={monthlyCalendar.when.month}
                 monthlyCalendar={monthlyCalendar}
@@ -141,6 +153,7 @@ class CalendarPage extends Component {
               <div className="mt4 tc">
                 <Link href="/calendario">
                   <a
+                    href="#!"
                     title="Ver calendario completo"
                     className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f7 f6-ns grow link ph3 pv2 ttu"
                   >
@@ -158,13 +171,17 @@ class CalendarPage extends Component {
                 <span className="black-alternative dib f4">
                   <FormatDate date={currentDay} />
                 </span>
-                <span className="grow pt1" onClick={this.hideModal}>
+                <button
+                  className="b--transparent bg-transparent flex items-center nr2 grow pa0"
+                  onClick={this.hideModal}
+                  type="button"
+                >
                   <box-icon name="x" color="rgba(0, 0, 0, 0.3)" />
-                </span>
+                </button>
               </div>
               <div className="m-vh-75 overflow-y-auto">
-                {eventsOfTheDay.map((event, index) => (
-                  <div key={index} className="flex mh3 mv3 pv3">
+                {eventsOfTheDay.map(event => (
+                  <div key={event.eventName} className="flex mh3 mv3 pv3">
                     <div className="pr3 pr4-ns">
                       <p className="f5 f4-ns mv0 silver">
                         {this.getFormattedEventHour(event.date)}

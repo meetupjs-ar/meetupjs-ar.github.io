@@ -1,6 +1,7 @@
 import PostPage from 'components/Blog/PostPage';
 import Head from 'next/head';
 import React from 'react';
+
 const metatags = {
   description:
     'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas. Por Mateo Silguero.',
@@ -11,7 +12,7 @@ const metatags = {
 export default () => (
   <React.Fragment>
     <Head>
-      <title>️{metatags.title}</title>
+      <title>{metatags.title}</title>
       <meta name="description" content={metatags.description} />
       <meta property="og:url" content={metatags.url} />
       <meta property="og:type" content="website" />

@@ -12,7 +12,9 @@ class BlogArticlePage extends Component {
   constructor(props) {
     super(props);
 
-    const articleModule = require(`./Articles/${this.props.name}.mdx`);
+    const { name } = this.props;
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    const articleModule = require(`./Articles/${name}.mdx`);
 
     this.state = {
       Article: articleModule.default,

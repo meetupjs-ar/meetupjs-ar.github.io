@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
 
 const markdownStyles = css`

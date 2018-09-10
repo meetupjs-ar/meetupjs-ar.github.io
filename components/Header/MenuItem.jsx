@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
 
 const menuItemStyles = css`
@@ -19,6 +20,7 @@ const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
     <style jsx>{menuItemStyles}</style>
     <Link href={url}>
       <a
+        href="#!"
         className={`${
           router.pathname === url ? 'currentPage' : ''
         } black-alternative flex items-center justify-end no-underline relative`}
@@ -35,7 +37,9 @@ const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
 
 MenuItem.propTypes = {
   icon: PropTypes.string.isRequired,
-  router: PropTypes.object.isRequired,
+  router: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired,
   text: PropTypes.string.isRequired,
   toogleMenu: PropTypes.func.isRequired,
   url: PropTypes.string.isRequired

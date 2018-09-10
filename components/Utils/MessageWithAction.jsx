@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Container from './Container';
 
-const MessageWithAction = ({ action, actionMessage, image = '', imageAlt = '', message }) => (
+const MessageWithAction = ({ action, actionMessage, image, imageAlt, message }) => (
   <Container>
     <div className="tc">
       <h2 className="black-alternative mb4 mt0 normal">{message}</h2>
@@ -10,6 +10,7 @@ const MessageWithAction = ({ action, actionMessage, image = '', imageAlt = '', m
       <button
         className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pointer pv2 ttu"
         onClick={action}
+        type="button"
       >
         {actionMessage}
       </button>
@@ -23,6 +24,11 @@ MessageWithAction.propTypes = {
   image: PropTypes.string,
   imageAlt: PropTypes.string,
   message: PropTypes.string.isRequired
+};
+
+MessageWithAction.defaultProps = {
+  image: '',
+  imageAlt: ''
 };
 
 export default MessageWithAction;

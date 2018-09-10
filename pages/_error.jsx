@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NotFoundPage from 'components/NotFound/NotFoundPage';
 
-export default class Error extends Component {
-  render() {
-    return <NotFoundPage />;
-  }
-}
+const Error = () => <NotFoundPage />;
+
+export default Error;

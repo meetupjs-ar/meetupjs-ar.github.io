@@ -10,7 +10,7 @@ const metatags = {
 export default () => (
   <React.Fragment>
     <Head>
-      <title>️{process.env.REACT_APP_TITLE}</title>
+      <title>{process.env.REACT_APP_TITLE}</title>
       <meta name="description" content={metatags.description} />
       <meta property="og:url" content={process.env.REACT_APP_URL} />
       <meta property="og:type" content="website" />

@@ -6,8 +6,7 @@ cache:
 notifications:
   email: false
 script:
-  - npm i gulp --no-save
-  - npm run build-prod
+  - npm run build
 deploy:
   local-dir: build
   target-branch: master

@@ -9,12 +9,6 @@ const STATUS_RESPONSE_TYPE = {
 };
 
 class StatusPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = this.defaultState;
-  }
-
   defaultState = {
     calendarApi: STATUS_RESPONSE_TYPE.UNKNOWN,
     calendarBot: STATUS_RESPONSE_TYPE.UNKNOWN,
@@ -23,62 +17,72 @@ class StatusPage extends Component {
     spreadsheetApi: STATUS_RESPONSE_TYPE.UNKNOWN
   };
 
-  checkStatus = () => {
-    this.setState(this.defaultState);
+  constructor(props) {
+    super(props);
 
-    this.getServiceStatus('https://spreadsheet-api.now.sh/').then((status) => {
-      this._isMounted &&
-        this.setState({
-          spreadsheetApi: status
-        });
-    });
-
-    this.getServiceStatus('https://eventbrite-api.now.sh/').then((status) => {
-      this._isMounted &&
-        this.setState({
-          eventbriteApi: status
-        });
-    });
-
-    this.getServiceStatus('https://meetup-api.now.sh/').then((status) => {
-      this._isMounted &&
-        this.setState({
-          meetupApi: status
-        });
-    });
-
-    this.getServiceStatus('https://calendar-api.now.sh/').then((status) => {
-      this._isMounted &&
-        this.setState({
-          calendarApi: status
-        });
-    });
-
-    this.getServiceStatus('https://meetupjs-slack-bot.now.sh/').then((status) => {
-      this._isMounted &&
-        this.setState({
-          calendarBot: status
-        });
-    });
-  };
+    this.state = this.defaultState;
+  }
 
   componentDidMount() {
     // TODO: eliminar este hack
-    this._isMounted = true;
+    this.isComponentMounted = true;
     this.checkStatus();
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    this.isComponentMounted = false;
   }
 
-  getServiceStatus = (url) => {
-    return new Promise((resolve) => {
+  checkStatus = () => {
+    this.setState(this.defaultState);
+
+    this.getServiceStatus('https://spreadsheet-api.now.sh/').then(status => {
+      if (this.isComponentMounted) {
+        this.setState({
+          spreadsheetApi: status
+        });
+      }
+    });
+
+    this.getServiceStatus('https://eventbrite-api.now.sh/').then(status => {
+      if (this.isComponentMounted) {
+        this.setState({
+          eventbriteApi: status
+        });
+      }
+    });
+
+    this.getServiceStatus('https://meetup-api.now.sh/').then(status => {
+      if (this.isComponentMounted) {
+        this.setState({
+          meetupApi: status
+        });
+      }
+    });
+
+    this.getServiceStatus('https://calendar-api.now.sh/').then(status => {
+      if (this.isComponentMounted) {
+        this.setState({
+          calendarApi: status
+        });
+      }
+    });
+
+    this.getServiceStatus('https://meetupjs-slack-bot.now.sh/').then(status => {
+      if (this.isComponentMounted) {
+        this.setState({
+          calendarBot: status
+        });
+      }
+    });
+  };
+
+  getServiceStatus = url =>
+    new Promise(resolve => {
       fetch(url)
         .then(() => resolve(STATUS_RESPONSE_TYPE.SUCCESS))
         .catch(() => resolve(STATUS_RESPONSE_TYPE.ERROR));
     });
-  };
 
   isChecking = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
@@ -159,9 +163,8 @@ class StatusPage extends Component {
             className={`${
               this.isChecking() ? 'o-50' : ''
             } b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pointer pv2 ttu`}
-            onClick={() => {
-              !this.isChecking() && this.checkStatus();
-            }}
+            onClick={this.isChecking() ? null : this.checkStatus}
+            type="button"
           >
             {this.isChecking() ? 'Verificando' : 'Verificar nuevamente'}
           </button>

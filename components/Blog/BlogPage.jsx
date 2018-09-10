@@ -28,21 +28,29 @@ class BlogPage extends Component {
   };
 
   render() {
+    const { articlesMetadata } = this.state;
+
     return (
       <Container>
         <h1 className="mv0 tc">Blog</h1>
-        {this.state.articlesMetadata.map((metadata) => (
+        {articlesMetadata.map(metadata => (
           <div className="mt4" key={metadata.title}>
             <Link href={metadata.relativeUrl}>
-              <a className="black-alternative bg-animate br2 db bg-white hover-bg-washed-yellow no-underline overflow-hidden">
+              <a
+                href="#!"
+                className="black-alternative bg-animate br2 db bg-white hover-bg-washed-yellow no-underline overflow-hidden"
+              >
                 {metadata.coverUrl && (
                   <img src={metadata.coverUrl} alt={metadata.coverAlt} className="v-btm" />
                 )}
                 <div className={`${metadata.coverUrl ? 'bb bl br' : 'ba'} b--black-10 bw1 pa3`}>
                   <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
                   <p className="f6 mb0 mt3 silver">
-                    Por <strong>{metadata.authors.join(', ')}</strong>. Publicado el{' '}
-                    <FormatDate date={metadata.publishedDay} />.
+                    <span>Por </span>
+                    <strong>{metadata.authors.join(', ')}</strong>
+                    <span>. Publicado el </span>
+                    <FormatDate date={metadata.publishedDay} />
+                    <span>.</span>
                   </p>
                   <p className="mv3">{metadata.description}</p>
                 </div>

@@ -11,7 +11,7 @@ const metatags = {
 export default () => (
   <React.Fragment>
     <Head>
-      <title>️{metatags.title}</title>
+      <title>{metatags.title}</title>
       <meta name="description" content={metatags.description} />
       <meta property="og:url" content={metatags.url} />
       <meta property="og:type" content="website" />

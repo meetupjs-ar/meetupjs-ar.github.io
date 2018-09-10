@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
 
 const serviceStatusStyles = css`
@@ -15,7 +16,7 @@ class ServiceStatus extends Component {
     status: PropTypes.number.isRequired
   };
 
-  getStatusColor = (status) => {
+  getStatusColor = status => {
     switch (status) {
       case 0:
         return 'bg-yellow';

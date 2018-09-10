@@ -19,7 +19,17 @@ class Month extends Component {
     showModal: PropTypes.func.isRequired
   };
 
-  getMonthNumber = (monthName) => {
+  static defaultProps = {
+    monthlyCalendar: {
+      events: [],
+      when: {
+        month: '',
+        year: ''
+      }
+    }
+  };
+
+  getMonthNumber = monthName => {
     switch (monthName) {
       case 'enero':
         return 0;
@@ -46,7 +56,7 @@ class Month extends Component {
       case 'diciembre':
         return 11;
       default:
-        break;
+        return 12;
     }
   };
 
@@ -62,7 +72,11 @@ class Month extends Component {
     return (
       <div className="mt4">
         <h2 className="f4 f3-ns mb4 mt0 silver tc ttc">
-          {monthlyCalendar.when.month} {monthlyCalendar.when.year}
+          <span>
+            {monthlyCalendar.when.month}
+            {' '}
+          </span>
+          <span>{monthlyCalendar.when.year}</span>
         </h2>
         <Weekdays />
         <div className="b--black-10 br bt bw1 flex flex-wrap">

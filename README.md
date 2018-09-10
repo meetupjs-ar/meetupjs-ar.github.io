@@ -12,9 +12,6 @@
 # checkout al branch `dev`
 git checkout -b dev
 
-# Duplicar `.env.template`, renombrar a`.env` y completar los valores necesarios.
-cp .env.template .env
-
 # instalar dependencias
 npm install
 

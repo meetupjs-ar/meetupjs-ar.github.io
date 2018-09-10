@@ -1,23 +1,23 @@
 const env = require('./env-config.js');
 
+const inlineImportConfig = [
+  'inline-import',
+  {
+    extensions: ['.css']
+  }
+];
+const moduleResolverConfig = [
+  'module-resolver',
+  {
+    alias: {
+      components: './components',
+      utils: './components/Utils'
+    }
+  }
+];
+const transformDefineConfig = ['transform-define', env];
+
 module.exports = {
-  plugins: [
-    [
-      'inline-import',
-      {
-        extensions: ['.css']
-      }
-    ],
-    ['transform-define', env],
-    [
-      'module-resolver',
-      {
-        alias: {
-          components: './components',
-          utils: './components/Utils'
-        }
-      }
-    ]
-  ],
+  plugins: [inlineImportConfig, moduleResolverConfig, transformDefineConfig],
   presets: ['next/babel']
 };

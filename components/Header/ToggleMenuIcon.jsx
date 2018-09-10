@@ -5,9 +5,13 @@ const ToggleMenuIcon = ({ icon, toogleMenu, visible }) => {
   if (!visible) return null;
 
   return (
-    <span className="f30 grow nr3 ph3 pointer tc user-select-none w30" onClick={toogleMenu}>
+    <button
+      className="b--transparent bg-transparent f30 grow pa0 pointer tc user-select-none w30"
+      onClick={toogleMenu}
+      type="button"
+    >
       <box-icon name={icon} />
-    </span>
+    </button>
   );
 };
 

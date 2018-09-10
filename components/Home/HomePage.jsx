@@ -1,8 +1,9 @@
 import React from 'react';
 import Tilt from 'react-tilt';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import css from 'styled-jsx/css';
-import CalendarPage from '../Calendar/CalendarPage';
 import Container from 'utils/Container';
+import CalendarPage from '../Calendar/CalendarPage';
 
 const logoStyles = css`
   .mw175 {
@@ -29,8 +30,9 @@ const HomePage = () => (
           </h1>
         </div>
         <p className="f4 mb0 mt4 tc">
-          ¡Sumate a la comunidad de desarrolladores <span className="b">JavaScript</span> de Buenos
-          Aires!
+          <span>¡Sumate a la comunidad de desarrolladores</span>
+          <span className="b"> JavaScript </span>
+          <span>de Buenos Aires!</span>
         </p>
         <div className="flex justify-center mv4 pb2">
           <a
@@ -103,7 +105,7 @@ const HomePage = () => (
       </Container>
     </div>
     <div className="b--black-10 bt bw1">
-      <CalendarPage showOnlyCurrentMonth={true} />
+      <CalendarPage showOnlyCurrentMonth />
     </div>
   </React.Fragment>
 );

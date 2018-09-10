@@ -6,8 +6,8 @@ class FormatDate extends Component {
     date: PropTypes.instanceOf(Date).isRequired
   };
 
-  format = (date) => {
-    return [
+  format = date =>
+    [
       this.getDayName(date.getDay()),
       ' ',
       date.getDate(),
@@ -16,9 +16,8 @@ class FormatDate extends Component {
       ' de ',
       date.getFullYear()
     ].join(' ');
-  };
 
-  getDayName = (day) => {
+  getDayName = day => {
     switch (day) {
       case 0:
         return 'Domingo';
@@ -35,11 +34,11 @@ class FormatDate extends Component {
       case 6:
         return 'Sábado';
       default:
-        break;
+        return '';
     }
   };
 
-  getMonthName = (month) => {
+  getMonthName = month => {
     switch (month) {
       case 0:
         return 'Enero';
@@ -66,7 +65,7 @@ class FormatDate extends Component {
       case 11:
         return 'Diciembre';
       default:
-        break;
+        return '';
     }
   };
 

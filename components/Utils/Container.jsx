@@ -1,22 +1,16 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 
-class Container extends Component {
-  static propTypes = {
-    large: PropTypes.string
-  };
+const Container = ({ large, ...rest }) => (
+  <div className={`${large === 'large' ? 'mw9' : 'mw7'} center ph3 pv5`} {...rest} />
+);
 
-  static defaultProps = {
-    large: ''
-  };
+Container.propTypes = {
+  large: PropTypes.string
+};
 
-  render() {
-    const { large } = this.props;
-
-    return (
-      <div className={`${large === 'large' ? 'mw9' : 'mw7'} center ph3 pv5`} {...this.props} />
-    );
-  }
-}
+Container.defaultProps = {
+  large: ''
+};
 
 export default Container;
