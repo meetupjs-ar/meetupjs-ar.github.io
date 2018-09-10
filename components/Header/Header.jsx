@@ -45,14 +45,14 @@ class Header extends Component {
         <style jsx>{isotipoStyles}</style>
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
-            <Link href="/">
+            <Link href="/" passHref>
               <a href="#!" onClick={this.closeMenu}>
                 <img src="/static/Header/isotipo.svg" alt="Logo" className="db h50 v-btm" />
               </a>
             </Link>
             <div className="flex items-center">
               {router.pathname === '/calendario' && (
-                <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1">
+                <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1" passHref>
                   <a
                     href="#!"
                     rel="noopener noreferrer"

@@ -132,7 +132,7 @@ class CalendarPage extends Component {
           <div className="fade-in">
             <div className="flex items-center justify-center">
               <h1 className="mv0">Calendario de eventos</h1>
-              <Link href="/articulos/que-es-el-calendario-de-eventos">
+              <Link href="/articulos/que-es-el-calendario-de-eventos" passHref>
                 <a
                   href="#!"
                   title="¿Qué es el calendario de eventos?"
@@ -151,7 +151,7 @@ class CalendarPage extends Component {
             ))}
             {showOnlyCurrentMonth && (
               <div className="mt4 tc">
-                <Link href="/calendario">
+                <Link href="/calendario" passHref>
                   <a
                     href="#!"
                     title="Ver calendario completo"

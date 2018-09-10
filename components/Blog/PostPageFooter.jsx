@@ -12,7 +12,7 @@ const ArticleFooter = ({ authors, publishedDay }) => (
       <FormatDate date={publishedDay} />
       <span>.</span>
     </p>
-    <Link href="/blog">
+    <Link href="/blog" passHref>
       <a
         href="#!"
         className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"

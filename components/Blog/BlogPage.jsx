@@ -35,7 +35,7 @@ class BlogPage extends Component {
         <h1 className="mv0 tc">Blog</h1>
         {articlesMetadata.map(metadata => (
           <div className="mt4" key={metadata.title}>
-            <Link href={metadata.relativeUrl}>
+            <Link href={metadata.relativeUrl} passHref>
               <a
                 href="#!"
                 className="black-alternative bg-animate br2 db bg-white hover-bg-washed-yellow no-underline overflow-hidden"
