@@ -167,7 +167,7 @@ class CalendarPage extends Component {
         {showModal && (
           <Modal hideModal={this.hideModal}>
             <div className="bg-white br2 ma3">
-              <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between ph3 pv2">
+              <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
                 <span className="black-alternative dib f4">
                   <FormatDate date={currentDay} />
                 </span>
