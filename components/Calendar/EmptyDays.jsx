@@ -29,9 +29,7 @@ const EmptyDays = ({ days }) => {
 
   return (
     <React.Fragment>
-      <style jsx global>
-        {emptyDaysStyles}
-      </style>
+      <style jsx>{emptyDaysStyles}</style>
       {emptyDays}
     </React.Fragment>
   );
