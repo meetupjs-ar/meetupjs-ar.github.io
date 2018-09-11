@@ -44,6 +44,7 @@
     "next": "^6.1.2",
     "next-compose-plugins": "^2.1.1",
     "next-optimized-images": "^1.4.1",
+    "next-page-transitions": "^1.0.0-alpha.4",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-tilt": "^0.1.4",
