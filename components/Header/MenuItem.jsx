@@ -18,7 +18,7 @@ const menuItemStyles = css`
 const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
   <li className="pv2">
     <style jsx>{menuItemStyles}</style>
-    <Link href={url} passHref>
+    <Link href={url} passHref prefetch>
       <a
         href="#!"
         className={`${

@@ -11,6 +11,10 @@ const isotipoStyles = css`
   .h50 {
     height: 50px;
   }
+
+  .w50 {
+    width: 50px;
+  }
 `;
 
 class Header extends Component {
@@ -47,7 +51,7 @@ class Header extends Component {
           <div className="flex items-center justify-between">
             <Link href="/" passHref>
               <a href="#!" onClick={this.closeMenu}>
-                <img src="/static/Header/isotipo.svg" alt="Logo" className="db h50 v-btm" />
+                <img src={require('./isotipo.svg')} alt="Logo" className="db h50 v-btm w50" />
               </a>
             </Link>
             <div className="flex items-center">

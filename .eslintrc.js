@@ -5,6 +5,7 @@ module.exports = {
   extends: ['airbnb', 'prettier'],
   parser: 'babel-eslint',
   rules: {
+    'global-require': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-shadow': 'off',

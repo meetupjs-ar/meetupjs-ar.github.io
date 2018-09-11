@@ -9,6 +9,9 @@
 # production
 /build
 
+# next.js cache directory
+.next
+
 # misc
 .DS_Store
 

@@ -1,8 +1,12 @@
 const withMDX = require('@zeit/next-mdx')();
-const withImages = require('next-images');
+const withOptimizedImages = require('next-optimized-images');
+const withPlugins = require('next-compose-plugins');
 
 const nextConfig = {
   distDir: 'build'
 };
 
-module.exports = withImages(withMDX(nextConfig));
+module.exports = withPlugins(
+  [withMDX, [withOptimizedImages, { optimizeImagesInDev: true }]],
+  nextConfig
+);
