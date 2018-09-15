@@ -47,6 +47,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-tilt": "^0.1.4",
+    "remark-external-links": "^3.0.0",
     "shortid": "^2.2.13",
     "tachyons": "^4.11.1"
   },

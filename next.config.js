@@ -1,4 +1,5 @@
-const withMDX = require('@zeit/next-mdx')();
+const externalLinks = require('remark-external-links');
+const withMDX = require('@zeit/next-mdx');
 const withOptimizedImages = require('next-optimized-images');
 const withPlugins = require('next-compose-plugins');
 const { version, homepage } = require('./package.json');
@@ -14,6 +15,13 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [withMDX, [withOptimizedImages, { optimizeImagesInDev: true }]],
+  [
+    withMDX({
+      options: {
+        mdPlugins: [externalLinks]
+      }
+    }),
+    [withOptimizedImages, { optimizeImagesInDev: true }]
+  ],
   nextConfig
 );
