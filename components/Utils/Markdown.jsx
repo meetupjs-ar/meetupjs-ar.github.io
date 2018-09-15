@@ -8,6 +8,10 @@ const markdownStyles = css`
     line-height: 1.5;
   }
 
+  .markdownBody.bigFont :global(> div p) {
+    font-size: 1.25rem;
+  }
+
   .markdownBody :global(> div > *:first-child) {
     margin-bottom: 2rem;
     margin-top: 0;
@@ -75,17 +79,22 @@ const markdownStyles = css`
   }
 `;
 
-const Markdown = ({ Content }) => (
+const Markdown = ({ Content, bigFont }) => (
   <React.Fragment>
     <style jsx>{markdownStyles}</style>
-    <div className="markdownBody">
+    <div className={`${bigFont ? 'bigFont' : ''} markdownBody`}>
       <Content />
     </div>
   </React.Fragment>
 );
 
 Markdown.propTypes = {
+  bigFont: PropTypes.bool,
   Content: PropTypes.func.isRequired
+};
+
+Markdown.defaultProps = {
+  bigFont: false
 };
 
 export default Markdown;

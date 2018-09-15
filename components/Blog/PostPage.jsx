@@ -23,7 +23,7 @@ class BlogArticlePage extends Component {
   render() {
     return (
       <Container>
-        <Markdown Content={this.article} />
+        <Markdown Content={this.article} bigFont />
         <ArticleFooter authors={this.metadata.authors} publishedDay={this.metadata.publishedDay} />
       </Container>
     );
