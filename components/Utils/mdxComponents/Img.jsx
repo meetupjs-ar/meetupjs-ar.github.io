@@ -9,8 +9,7 @@ const fullWidthStyles = css`
 
   @media (min-width: 1024px) {
     .fullWidth {
-      margin-left: -5rem;
-      margin-right: -5rem;
+      margin: 4rem -5rem;
     }
   }
 `;
