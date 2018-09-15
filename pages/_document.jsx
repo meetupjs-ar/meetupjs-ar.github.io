@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
               }
 
               :root {
-                --color-main: #2e282a;
+                --color-primary: #2e282a;
                 --color-secondary: #ffe45e;
                 --color-tertiary: #fffceb;
                 --transition: all 0.35s ease-out;
@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
               }
 
               .black-alternative {
-                color: var(--color-main);
+                color: var(--color-primary);
               }
 
               .cursor-default {

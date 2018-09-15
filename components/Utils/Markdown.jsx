@@ -19,7 +19,7 @@ const markdownStyles = css`
 
   .markdownBody :global(> div a) {
     box-shadow: inset 0 -2px 0 0 var(--color-secondary);
-    color: var(--color-main);
+    color: var(--color-primary);
     display: inline-block;
     font-weight: bold;
     padding-left: 0.125rem;
@@ -42,7 +42,7 @@ const markdownStyles = css`
   }
 
   .markdownBody :global(> div h1) {
-    color: var(--color-main);
+    color: var(--color-primary);
     font-size: 2rem;
     line-height: 1.25;
     text-align: center;
