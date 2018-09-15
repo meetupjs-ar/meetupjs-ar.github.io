@@ -4,6 +4,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
+    "export": "npm run build && next export -o public",
     "precommit": "lint-staged",
     "start": "next start"
   },
