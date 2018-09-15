@@ -8,10 +8,6 @@ const markdownStyles = css`
     line-height: 1.5;
   }
 
-  .markdownBody.bigFont :global(> div p) {
-    font-size: 1.25rem;
-  }
-
   .markdownBody :global(> div > *:first-child) {
     margin-bottom: 2rem;
     margin-top: 0;
@@ -76,6 +72,12 @@ const markdownStyles = css`
       rgba(250, 247, 133, 0.7) 95%,
       rgba(250, 247, 133, 0.1)
     );
+  }
+
+  @media (min-width: 1024px) {
+    .markdownBody.bigFont :global(> div p) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
