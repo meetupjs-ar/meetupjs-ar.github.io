@@ -74,7 +74,7 @@ const markdownStyles = css`
     );
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 60em) {
     .markdownBody.bigFont :global(> div p) {
       font-size: 1.25rem;
     }

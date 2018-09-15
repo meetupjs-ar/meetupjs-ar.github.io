@@ -32,7 +32,7 @@ class Modal extends Component {
 
     return (
       <div
-        className="bg-black-70 fade-in fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-2"
+        className="bg-black-70 fade-in fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-4"
         onClick={this.handleClose}
         role="presentation"
       >

@@ -47,7 +47,7 @@ class Header extends Component {
     const { router } = this.props;
 
     return (
-      <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-1">
+      <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-3">
         <style jsx>{isotipoStyles}</style>
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">

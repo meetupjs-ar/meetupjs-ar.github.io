@@ -7,7 +7,7 @@ const fullWidthStyles = css`
     box-shadow: 8px 8px var(--color-secondary);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 60em) {
     .fullWidth {
       margin: 4rem -5rem;
     }
