@@ -7,6 +7,7 @@ const { version, homepage } = require('./package.json');
 const nextConfig = {
   distDir: 'build',
   publicRuntimeConfig: {
+    GA: 'UA-93848949-1',
     ISNA_MESSAGES: [
       {
         activateAfter: 10000,
