@@ -6,7 +6,7 @@ cache:
 notifications:
   email: false
 script:
-  - npm run build
+  - npm run deploy
 deploy:
   local-dir: public
   target-branch: master
