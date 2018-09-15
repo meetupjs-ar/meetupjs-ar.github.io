@@ -11,10 +11,17 @@ const Events = ({ events }) => {
     </span>
   );
 
+  const sortedEvents = events.sort((eventA, eventB) => {
+    if (eventA.eventName.includes('Meetup.js')) return -1;
+    if (eventB.eventName.includes('Meetup.js')) return 1;
+
+    return 0;
+  });
+
   return (
     <React.Fragment>
       <ul className="list ma0 pl0">
-        {events.map((event, index) => (
+        {sortedEvents.map((event, index) => (
           <Event key={event.shortid} event={event} index={index} />
         ))}
       </ul>

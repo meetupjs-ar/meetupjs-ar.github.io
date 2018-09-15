@@ -180,32 +180,34 @@ class CalendarPage extends Component {
                 </button>
               </div>
               <div className="m-vh-75 overflow-y-auto">
-                {eventsOfTheDay.map(event => (
-                  <div key={event.eventName} className="flex mh3 mv3 pv3">
-                    <div className="pr3 pr4-ns">
-                      <p className="f5 f4-ns mv0 silver">
-                        {this.getFormattedEventHour(event.date)}
-                      </p>
-                    </div>
-                    <div className="flex-auto">
-                      <h3 className="black-alternative f5 f4-ns mv0">{event.eventName}</h3>
-                      {event.place && <p className="black-30 mb0 mt2">{event.place}</p>}
-                      <div className="flex">
-                        <a
-                          href={event.eventLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
-                        >
-                          <span className="f4 mr2 pt1">
-                            <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
-                          </span>
-                          <span className="black-alternative text-shadow-1">Link</span>
-                        </a>
+                {eventsOfTheDay
+                  .sort((eventA, eventB) => new Date(eventA.date) - new Date(eventB.date))
+                  .map(event => (
+                    <div key={event.eventName} className="flex mh3 mv3 pv3">
+                      <div className="pr3 pr4-ns">
+                        <p className="f5 f4-ns mv0 silver">
+                          {this.getFormattedEventHour(event.date)}
+                        </p>
+                      </div>
+                      <div className="flex-auto">
+                        <h3 className="black-alternative f5 f4-ns mv0">{event.eventName}</h3>
+                        {event.place && <p className="black-30 mb0 mt2">{event.place}</p>}
+                        <div className="flex">
+                          <a
+                            href={event.eventLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
+                          >
+                            <span className="f4 mr2 pt1">
+                              <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
+                            </span>
+                            <span className="black-alternative text-shadow-1">Link</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </Modal>

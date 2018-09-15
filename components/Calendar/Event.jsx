@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const DayFooter = ({ event, index }) => {
+const Event = ({ event, index }) => {
   const { eventName } = event;
   const highlight = eventName.includes('Meetup.js')
     ? 'b bg-yellow-alternative'
@@ -18,11 +18,11 @@ const DayFooter = ({ event, index }) => {
   );
 };
 
-DayFooter.propTypes = {
+Event.propTypes = {
   event: PropTypes.shape({
     eventName: PropTypes.string.isRequired
   }).isRequired,
   index: PropTypes.number.isRequired
 };
 
-export default DayFooter;
+export default Event;
