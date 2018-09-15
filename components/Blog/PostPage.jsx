@@ -16,19 +16,15 @@ class BlogArticlePage extends Component {
     // eslint-disable-next-line global-require, import/no-dynamic-require
     const articleModule = require(`./Articles/${name}.mdx`);
 
-    this.state = {
-      Article: articleModule.default,
-      metadata: articleModule.metadata
-    };
+    this.article = articleModule.default;
+    this.metadata = articleModule.metadata;
   }
 
   render() {
-    const { Article, metadata } = this.state;
-
     return (
       <Container>
-        <Markdown Content={Article} />
-        <ArticleFooter authors={metadata.authors} publishedDay={metadata.publishedDay} />
+        <Markdown Content={this.article} />
+        <ArticleFooter authors={this.metadata.authors} publishedDay={this.metadata.publishedDay} />
       </Container>
     );
   }
