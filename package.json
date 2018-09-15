@@ -29,7 +29,6 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "lint-staged": "^7.2.2",
-    "mousetrap": "^1.6.2",
     "prettier": "^1.14.2",
     "react-dom": "^16.5.0",
     "stylelint": "^9.5.0",
@@ -40,6 +39,7 @@
   "dependencies": {
     "@zeit/next-mdx": "^1.1.0",
     "date-fns": "^1.29.0",
+    "mousetrap": "^1.6.2",
     "next": "^6.1.2",
     "next-compose-plugins": "^2.1.1",
     "next-optimized-images": "^1.4.1",
