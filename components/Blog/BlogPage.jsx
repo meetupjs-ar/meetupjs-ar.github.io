@@ -23,17 +23,17 @@ const publishedArticles = [
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 
 class BlogPage extends Component {
-  state = {
-    articlesMetadata: [...publishedArticles]
-  };
+  constructor(props) {
+    super(props);
+
+    this.articlesMetadata = [...publishedArticles];
+  }
 
   render() {
-    const { articlesMetadata } = this.state;
-
     return (
       <Container>
         <h1 className="mv0 tc">Blog</h1>
-        {articlesMetadata.map(metadata => (
+        {this.articlesMetadata.map(metadata => (
           <div className="mt4" key={metadata.title}>
             <Link href={metadata.relativeUrl} passHref>
               <a
