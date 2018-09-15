@@ -25,7 +25,7 @@ const HomePage = () => (
                 scale: '1.05'
               }}
             >
-              <img src={require('./logo.svg')} alt="Logo" className="db v-btm" />
+              <img src={require('./logo.svg')} alt="Logo" className="db v-btm w-100" />
             </Tilt>
           </h1>
         </div>
@@ -41,7 +41,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow mr2 mr3-l w2 w3-ns"
           >
-            <img src={require('./facebook.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./facebook.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
           <a
             href="https://twitter.com/meetupjs_ar"
@@ -49,7 +49,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow mh2 mh3-l w2 w3-ns"
           >
-            <img src={require('./twitter.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./twitter.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
           <a
             href="https://github.com/meetupjs-ar"
@@ -57,7 +57,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow mh2 mh3-l w2 w3-ns"
           >
-            <img src={require('./github.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./github.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
           <a
             href="https://slack.meetupjs.com.ar/"
@@ -65,7 +65,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow mh2 mh3-l w2 w3-ns"
           >
-            <img src={require('./slack.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./slack.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
           <a
             href="https://www.meetup.com/es-ES/meetup-js/"
@@ -73,7 +73,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow mh2 mh3-l w2 w3-ns"
           >
-            <img src={require('./meetup.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./meetup.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
           <a
             href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
@@ -81,7 +81,7 @@ const HomePage = () => (
             rel="noopener noreferrer"
             className="grow ml2 ml3-l w2 w3-ns"
           >
-            <img src={require('./youtube.svg')} alt="Logo" className="db v-btm" />
+            <img src={require('./youtube.svg')} alt="Logo" className="db v-btm w-100" />
           </a>
         </div>
         <div className="flex flex-column flex-row-m flex-row-l items-center justify-center">
