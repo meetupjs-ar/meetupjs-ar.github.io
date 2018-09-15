@@ -1,3 +1,4 @@
+import getConfig from 'next/config';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
@@ -16,6 +17,7 @@ const isotipoStyles = css`
     width: 50px;
   }
 `;
+const { publicRuntimeConfig } = getConfig();
 
 class Header extends Component {
   static propTypes = {
@@ -76,7 +78,7 @@ class Header extends Component {
             <p className="f6 flex items-center justify-end mv0 pr1 tr">
               <span className="black-30">
                 Version
-                {process.env.REACT_APP_VERSION}
+                {publicRuntimeConfig.REACT_APP_VERSION}
               </span>
             </p>
           </div>

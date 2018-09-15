@@ -1,6 +1,9 @@
+import getConfig from 'next/config';
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import tachyons from 'tachyons/css/tachyons.min.css';
+
+const { publicRuntimeConfig } = getConfig();
 
 export default class MyDocument extends Document {
   render() {
@@ -8,7 +11,10 @@ export default class MyDocument extends Document {
       <html lang="es">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="shortcut icon" href={`${process.env.REACT_APP_URL}static/favicon.ico`} />
+          <link
+            rel="shortcut icon"
+            href={`${publicRuntimeConfig.REACT_APP_URL}static/favicon.ico`}
+          />
           <style jsx global>
             {tachyons}
           </style>

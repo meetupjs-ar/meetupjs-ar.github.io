@@ -1,5 +1,3 @@
-const env = require('./env-config.js');
-
 const inlineImportConfig = [
   'inline-import',
   {
@@ -15,9 +13,8 @@ const moduleResolverConfig = [
     }
   }
 ];
-const transformDefineConfig = ['transform-define', env];
 
 module.exports = {
-  plugins: [inlineImportConfig, moduleResolverConfig, transformDefineConfig],
+  plugins: [inlineImportConfig, moduleResolverConfig],
   presets: ['next/babel']
 };

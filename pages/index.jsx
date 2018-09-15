@@ -1,6 +1,9 @@
 import HomePage from 'components/Home/HomePage';
+import getConfig from 'next/config';
 import Head from 'next/head';
 import React from 'react';
+
+const { publicRuntimeConfig } = getConfig();
 
 const metatags = {
   description:
@@ -10,19 +13,19 @@ const metatags = {
 export default () => (
   <React.Fragment>
     <Head>
-      <title>{process.env.REACT_APP_TITLE}</title>
+      <title>{publicRuntimeConfig.REACT_APP_TITLE}</title>
       <meta name="description" content={metatags.description} />
-      <meta property="og:url" content={process.env.REACT_APP_URL} />
+      <meta property="og:url" content={publicRuntimeConfig.REACT_APP_URL} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={process.env.REACT_APP_TITLE} />
+      <meta property="og:title" content={publicRuntimeConfig.REACT_APP_TITLE} />
       <meta property="og:description" content={metatags.description} />
-      <meta property="og:image" content={process.env.REACT_APP_SOCIAL_IMAGE} />
+      <meta property="og:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@meetupjs_ar" />
       <meta name="twitter:creator" content="@meetupjs_ar" />
-      <meta name="twitter:title" content={process.env.REACT_APP_TITLE} />
+      <meta name="twitter:title" content={publicRuntimeConfig.REACT_APP_TITLE} />
       <meta name="twitter:description" content={metatags.description} />
-      <meta name="twitter:image" content={process.env.REACT_APP_SOCIAL_IMAGE} />
+      <meta name="twitter:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
     </Head>
     <HomePage />
   </React.Fragment>
