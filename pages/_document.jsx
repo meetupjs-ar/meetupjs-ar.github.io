@@ -4,6 +4,8 @@ import React from 'react';
 import tachyons from 'tachyons/css/tachyons.min.css';
 
 const { publicRuntimeConfig } = getConfig();
+const consoleFormat = 'background-color: #ffe45e; font-weight: bold; padding: 2px 5px;';
+const consoleVersion = `%cVersión ${publicRuntimeConfig.REACT_APP_VERSION}`;
 
 export default class MyDocument extends Document {
   render() {
@@ -323,6 +325,13 @@ export default class MyDocument extends Document {
             <Main />
             <NextScript />
           </div>
+          <script>
+            console.log(`
+            {consoleVersion}
+            `, `
+            {consoleFormat}
+            `);
+          </script>
         </body>
       </html>
     );
