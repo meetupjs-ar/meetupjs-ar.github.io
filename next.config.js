@@ -2,6 +2,7 @@ const externalLinks = require('remark-external-links');
 const withMDX = require('@zeit/next-mdx');
 const withOptimizedImages = require('next-optimized-images');
 const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const { version, homepage } = require('./package.json');
 
 const nextConfig = {
@@ -31,7 +32,19 @@ module.exports = withPlugins(
         mdPlugins: [externalLinks]
       }
     }),
-    [withOptimizedImages, { optimizeImagesInDev: true }]
+    [withOptimizedImages, { optimizeImagesInDev: true }],
+    [
+      withBundleAnalyzer,
+      {
+        analyzeBrowser: true,
+        bundleAnalyzerConfig: {
+          browser: {
+            analyzerMode: 'static',
+            reportFilename: 'bundle-analyzer/client.html'
+          }
+        }
+      }
+    ]
   ],
   nextConfig
 );
