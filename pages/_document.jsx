@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
               }
 
               .black-alternative-light {
-                color: var(color-quaternary);
+                color: var(--color-quaternary);
               }
 
               .current-page::after {
@@ -200,7 +200,7 @@ export default class MyDocument extends Document {
               }
 
               .markdown-body > div h2 {
-                color: #999;
+                color: var(--color-quaternary);
                 margin: 2rem 0;
               }
 
