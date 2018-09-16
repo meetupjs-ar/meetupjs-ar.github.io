@@ -38,7 +38,7 @@ class ServiceStatus extends Component {
             <p className="mb1 mt0">
               <strong>{name}</strong>
             </p>
-            <p className="mv0 silver">{description}</p>
+            <p className="black-50 mv0">{description}</p>
           </div>
         </div>
       </React.Fragment>

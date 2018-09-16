@@ -185,7 +185,7 @@ class CalendarPage extends Component {
                   .map(event => (
                     <div key={event.eventName} className="flex mh3 mv3 pv3">
                       <div className="pr3 pr4-ns">
-                        <p className="f5 f4-ns mv0 silver">
+                        <p className="black-50 f5 f4-ns mv0">
                           {this.getFormattedEventHour(event.date)}
                         </p>
                       </div>

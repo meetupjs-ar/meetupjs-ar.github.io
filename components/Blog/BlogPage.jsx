@@ -45,7 +45,7 @@ class BlogPage extends Component {
                 )}
                 <div className={`${metadata.coverUrl ? 'bb bl br' : 'ba'} b--black-10 bw1 pa3`}>
                   <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
-                  <p className="f6 mb0 mt3 silver">
+                  <p className="black-50 f6 mb0 mt3">
                     <span>Por </span>
                     <strong>{metadata.authors.join(', ')}</strong>
                     <span>. Publicado el </span>

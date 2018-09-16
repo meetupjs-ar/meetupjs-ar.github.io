@@ -71,7 +71,7 @@ class Month extends Component {
 
     return (
       <div className="mt4">
-        <h2 className="f4 f3-ns mb4 mt0 silver tc ttc">
+        <h2 className="black-50 f4 f3-ns mb4 mt0 tc ttc">
           <span>
             {monthlyCalendar.when.month}
             {' '}
