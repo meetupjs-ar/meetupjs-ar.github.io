@@ -16,10 +16,7 @@ git checkout -b dev
 npm install
 
 # ambiente de desarrollo
-npm start
-
-# antes de publicar a github pages (master)
-npm run bump-minor
+npm run dev
 ```
 
 ## Licencia

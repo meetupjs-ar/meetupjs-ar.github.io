@@ -1,14 +1,14 @@
 {
-    "editor.autoIndent": true,
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true,
-    "prettier.printWidth": 100,
-    "prettier.singleQuote": true,
-    "prettier.stylelintIntegration": true,
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": false,
-    "search.exclude": {
-        ".tmp": true,
-        "dist": true
-    }
+  "editor.autoIndent": true,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.mdx": "markdown",
+    "*.svg": "html"
+  },
+  "prettier.eslintIntegration": true,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false
 }

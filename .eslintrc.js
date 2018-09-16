@@ -1,18 +1,14 @@
 module.exports = {
-    env: {
-        browser: true,
-        es6: true,
-        node: true
-    },
-    extends: 'eslint:recommended',
-    parser: 'babel-eslint',
-    parserOptions: {
-        sourceType: 'module'
-    },
-    rules: {
-        indent: ['error', 4],
-        'linebreak-style': ['error', 'unix'],
-        quotes: ['error', 'single'],
-        semi: ['error', 'never']
-    }
-}
+  env: {
+    browser: true
+  },
+  extends: ['airbnb', 'prettier'],
+  parser: 'babel-eslint',
+  rules: {
+    'global-require': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'no-shadow': 'off',
+    'react/forbid-foreign-prop-types': 'off'
+  }
+};
