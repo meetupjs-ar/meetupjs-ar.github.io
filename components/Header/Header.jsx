@@ -76,10 +76,8 @@ class Header extends Component {
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>
             <Menu toogleMenu={this.closeMenu} />
             <p className="f6 flex items-center justify-end mv0 pr1 tr">
-              <span className="black-30">
-                Version
-                {publicRuntimeConfig.REACT_APP_VERSION}
-              </span>
+              <span className="black-30 mr1">Version</span>
+              <span className="black-30">{publicRuntimeConfig.REACT_APP_VERSION}</span>
             </p>
           </div>
         </div>
