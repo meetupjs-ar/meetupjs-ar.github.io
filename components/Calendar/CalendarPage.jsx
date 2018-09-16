@@ -191,7 +191,7 @@ class CalendarPage extends Component {
                       </div>
                       <div className="flex-auto">
                         <h3 className="black-alternative f5 f4-ns mv0">{event.eventName}</h3>
-                        {event.place && <p className="black-30 mb0 mt2">{event.place}</p>}
+                        {event.place && <p className="black-50 mb0 mt2">{event.place}</p>}
                         <div className="flex">
                           <a
                             href={event.eventLink}

@@ -57,15 +57,25 @@ class Header extends Component {
                   </a>
                 </Link>
               )}
-              <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.openMenu} />
-              <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.closeMenu} />
+              <ToogleMenuIcon
+                visible={!isMenuOpen}
+                icon="menu"
+                toogleMenu={this.openMenu}
+                value="Abrir menú"
+              />
+              <ToogleMenuIcon
+                visible={isMenuOpen}
+                icon="x"
+                toogleMenu={this.closeMenu}
+                value="Cerrar menú"
+              />
             </div>
           </div>
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>
             <Menu toogleMenu={this.closeMenu} />
             <p className="f6 flex items-center justify-end mv0 pr1 tr">
-              <span className="black-30 mr1">Version</span>
-              <span className="black-30">{publicRuntimeConfig.REACT_APP_VERSION}</span>
+              <span className="black-50 mr1">Version</span>
+              <span className="black-50">{publicRuntimeConfig.REACT_APP_VERSION}</span>
             </p>
           </div>
         </div>
