@@ -92,7 +92,7 @@ class Isna extends Component {
       <React.Fragment>
         <div className={`easter-egg ${active ? 'easter-egg-active' : ''}`}>
           <img src="/static/Isna/isna.png" alt="Nicolas Isnardi" className="v-btm w-100" />
-          <p className={`easter-egg-aessage ${message ? '' : 'dn'}`}>{message}</p>
+          <p className={`easter-egg-message ${message ? '' : 'dn'}`}>{message}</p>
         </div>
       </React.Fragment>
     );
