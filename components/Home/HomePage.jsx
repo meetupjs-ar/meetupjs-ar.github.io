@@ -52,7 +52,7 @@ const HomePage = () => (
     <div className="bg-white relative">
       <NoSSR>
         <div className="absolute bottom-0 left-0 overflow-hidden right-0 top-0">
-          <div className="bottom-particles">{renderBubbles()}</div>
+          <div className="bottom-particles dn db-l">{renderBubbles()}</div>
         </div>
       </NoSSR>
       <Container>
