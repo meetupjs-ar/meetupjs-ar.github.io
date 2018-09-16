@@ -57,18 +57,8 @@ class Header extends Component {
                   </a>
                 </Link>
               )}
-              <ToogleMenuIcon
-                visible={!isMenuOpen}
-                icon="menu"
-                toogleMenu={this.openMenu}
-                value="Abrir menú"
-              />
-              <ToogleMenuIcon
-                visible={isMenuOpen}
-                icon="x"
-                toogleMenu={this.closeMenu}
-                value="Cerrar menú"
-              />
+              <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.openMenu} />
+              <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.closeMenu} />
             </div>
           </div>
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>

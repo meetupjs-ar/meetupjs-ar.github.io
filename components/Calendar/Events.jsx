@@ -4,7 +4,7 @@ import Event from './Event';
 
 const Events = ({ events }) => {
   const thereAreMoreEventsLabel = events.length > 2 && (
-    <span className="black-50 dn f6 mt2 truncate db-l">
+    <span className="dn f6 mt2 silver truncate db-l">
       <span>y </span>
       <span>{events.length - 2}</span>
       <span> más</span>
