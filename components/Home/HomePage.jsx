@@ -2,54 +2,8 @@ import rn from 'random-number';
 import React from 'react';
 import NoSSR from 'react-no-ssr';
 import Tilt from 'react-tilt';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import css from 'styled-jsx/css';
 import Container from 'utils/Container';
 import CalendarPage from '../Calendar/CalendarPage';
-
-const bubblesStyles = css`
-  @media (min-width: 60em) {
-    .bottomParticles {
-      height: 100%;
-      position: relative;
-      width: 100%;
-    }
-
-    @keyframes blow {
-      0% {
-        opacity: 0;
-        transform: translate(0, 0);
-      }
-
-      10% {
-        opacity: 0.5;
-      }
-
-      100% {
-        opacity: 0;
-        transform: translate(0, -700px) scale(0.5);
-      }
-    }
-
-    .bubble {
-      animation-iteration-count: infinite;
-      animation-name: blow;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      bottom: -15vh;
-      height: 15vh;
-      opacity: 0;
-      position: absolute;
-      width: 10%;
-    }
-  }
-`;
-const logoStyles = css`
-  .mw175 {
-    max-width: 175px;
-  }
-`;
 
 const renderBubbles = () => {
   const bubbles = [
@@ -88,7 +42,6 @@ const renderBubbles = () => {
 
   return bubbles.map((logo, index) => (
     <React.Fragment key={logo}>
-      <style jsx>{bubblesStyles}</style>
       <div className="bubble" style={getStyles(logo, index)} />
     </React.Fragment>
   ));
@@ -96,11 +49,10 @@ const renderBubbles = () => {
 
 const HomePage = () => (
   <React.Fragment>
-    <style jsx>{logoStyles}</style>
     <div className="bg-white relative">
       <NoSSR>
         <div className="absolute bottom-0 left-0 overflow-hidden right-0 top-0">
-          <div className="bottomParticles">{renderBubbles()}</div>
+          <div className="bottom-particles">{renderBubbles()}</div>
         </div>
       </NoSSR>
       <Container>

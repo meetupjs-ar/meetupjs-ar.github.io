@@ -172,7 +172,7 @@ class CalendarPage extends Component {
                   <FormatDate date={currentDay} />
                 </span>
                 <button
-                  className="b--transparent bg-transparent flex items-center nr2 grow pa0"
+                  className="b--transparent bg-transparent flex items-center nr2 grow pa0 pointer"
                   onClick={this.hideModal}
                   type="button"
                 >

@@ -22,7 +22,6 @@
     "babel-eslint": "^9.0.0",
     "babel-plugin-inline-import": "^3.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "boxicons": "^1.7.1",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.0.1",
@@ -40,6 +39,7 @@
   "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
   "dependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1",
+    "@zeit/next-css": "^0.2.0",
     "@zeit/next-mdx": "^1.1.0",
     "date-fns": "^1.29.0",
     "mousetrap": "^1.6.2",

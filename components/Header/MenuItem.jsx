@@ -2,27 +2,14 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import css from 'styled-jsx/css';
-
-const menuItemStyles = css`
-  .currentPage::after {
-    color: #98d083;
-    content: '•';
-    font-weight: bold;
-    right: -0.5rem;
-    position: absolute;
-  }
-`;
 
 const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
   <li className="pv2">
-    <style jsx>{menuItemStyles}</style>
     <Link href={url} passHref prefetch>
       <a
         href="#!"
         className={`${
-          router.pathname === url ? 'currentPage' : ''
+          router.pathname === url ? 'current-page' : ''
         } black-alternative flex items-center justify-end no-underline relative`}
         onClick={toogleMenu}
       >

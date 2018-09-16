@@ -3,20 +3,9 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import css from 'styled-jsx/css';
 import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
 
-const isotipoStyles = css`
-  .h50 {
-    height: 50px;
-  }
-
-  .w50 {
-    width: 50px;
-  }
-`;
 const { publicRuntimeConfig } = getConfig();
 
 class Header extends Component {
@@ -48,7 +37,6 @@ class Header extends Component {
 
     return (
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-3">
-        <style jsx>{isotipoStyles}</style>
         <div className="center mw9 ph3">
           <div className="flex items-center justify-between">
             <Link href="/" passHref>

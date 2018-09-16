@@ -1,13 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import css from 'styled-jsx/css';
-
-const serviceStatusStyles = css`
-  .serviceStatus + .serviceStatus {
-    margin-top: 1rem;
-  }
-`;
 
 class ServiceStatus extends Component {
   static propTypes = {
@@ -34,8 +26,7 @@ class ServiceStatus extends Component {
 
     return (
       <React.Fragment>
-        <style jsx>{serviceStatusStyles}</style>
-        <div className="b--black-10 ba bg-white br2 bw1 flex pa3 serviceStatus">
+        <div className="b--black-10 ba bg-white br2 bw1 flex pa3 service-status">
           <div className="pr3 pt1">
             <div
               className={`${this.getStatusColor(
