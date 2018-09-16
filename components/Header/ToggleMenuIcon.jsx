@@ -11,6 +11,7 @@ const ToggleMenuIcon = ({ icon, toogleMenu, visible }) => {
       type="button"
     >
       <box-icon name={icon} />
+      <span className="visually-hidden">Menu</span>
     </button>
   );
 };

@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const DayFooter = ({ dayNumber, dayName, isToday, strike }) => (
-  <div className="silver tr-l w-20 w-100-l">
-    <span className={`${isToday ? 'green' : ''} ${strike ? 'strike' : ''} f3`}>
+  <div className="black-alternative tr-l w-20 w-100-l">
+    <span className={`${isToday ? 'dark-green' : ''} ${strike ? 'strike' : ''} f3`}>
       {dayNumber > 9 ? dayNumber : `0${dayNumber}`}
     </span>
-    <span className={`${isToday ? 'green' : ''} db dn-l f7 ttc`}>{dayName}</span>
+    <span className={`${isToday ? 'dark-green' : ''} db dn-l f7 ttc`}>{dayName}</span>
   </div>
 );
 

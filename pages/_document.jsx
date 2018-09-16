@@ -263,6 +263,16 @@ export default class MyDocument extends Document {
                 user-select: none;
               }
 
+              .visually-hidden {
+                border: 0 !important;
+                clip: rect(1px, 1px, 1px, 1px);
+                height: 1px !important;
+                overflow: hidden;
+                padding: 0 !important;
+                position: absolute !important;
+                width: 1px !important;
+              }
+
               .w30 {
                 width: 30px;
               }
