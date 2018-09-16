@@ -8,7 +8,7 @@ const { publicRuntimeConfig } = getConfig();
 const metatags = {
   description: `Estado de los servicios de ${publicRuntimeConfig.REACT_APP_URL}`,
   title: `Estado de los servicios - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}servicios`
+  url: `${publicRuntimeConfig.REACT_APP_URL}servicios.html`
 };
 
 export default () => (

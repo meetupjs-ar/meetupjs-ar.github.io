@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 const metatags = {
   description: 'Enterate de los próximos eventos de tecnología en Buenos Aires.',
   title: `Calendario de Eventos - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}calendario`
+  url: `${publicRuntimeConfig.REACT_APP_URL}calendario.html`
 };
 
 export default () => (
