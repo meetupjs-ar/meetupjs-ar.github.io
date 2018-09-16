@@ -5,7 +5,7 @@ import FormatDate from 'utils/FormatDate';
 
 const ArticleFooter = ({ authors, publishedDay }) => (
   <div className="mt4 tc">
-    <p className="black-50 f6 mb3 mt0">
+    <p className="black-alternative-light f6 mb3 mt0">
       <span>Por </span>
       <strong>{authors.join(', ')}</strong>
       <span>. Publicado el </span>

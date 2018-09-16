@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
                 --color-primary: #2e282a;
                 --color-secondary: #ffe45e;
                 --color-tertiary: #fffceb;
+                --color-quaternary: #6a5359;
                 --transition: all 0.35s ease-out;
               }
 
@@ -50,6 +51,10 @@ export default class MyDocument extends Document {
 
               .black-alternative {
                 color: var(--color-primary);
+              }
+
+              .black-alternative-light {
+                color: var(color-quaternary);
               }
 
               .current-page::after {
