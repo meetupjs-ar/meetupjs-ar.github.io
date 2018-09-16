@@ -155,7 +155,7 @@ class CalendarPage extends Component {
                   <a
                     href="#!"
                     title="Ver calendario completo"
-                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f7 f6-ns grow link ph3 pv2 ttu"
+                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f7 f6-ns grow no-underline ph3 pv2 ttu"
                   >
                     Ver calendario completo
                   </a>
@@ -197,7 +197,7 @@ class CalendarPage extends Component {
                             href={event.eventLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center link mt3 ph3 pv1 ttu white"
+                            className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center mt3 no-underline ph3 pv1 ttu white"
                           >
                             <span className="f4 mr2 pt1">
                               <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />

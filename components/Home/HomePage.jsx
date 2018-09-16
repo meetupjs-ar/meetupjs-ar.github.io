@@ -130,7 +130,7 @@ const HomePage = () => (
               href="https://github.com/meetupjs-ar/charlas/issues/new"
               target="_blank"
               rel="noopener noreferrer"
-              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link mb3 mb0-m mb0-l mr3-m mr3-l ph3 pv2 ttu"
+              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow mb3 mb0-m mb0-l mr3-m mr3-l no-underline ph3 pv2 ttu"
             >
               <span>Quiero dar una charla</span>
             </a>
@@ -138,7 +138,7 @@ const HomePage = () => (
               href="mailto:meetupjs@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow link ph3 pv2 ttu"
+              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow no-underline ph3 pv2 ttu"
             >
               <span>Quiero contactarlos</span>
             </a>

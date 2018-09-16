@@ -162,7 +162,7 @@ class StatusPage extends Component {
           <button
             className={`${
               this.isChecking() ? 'o-50' : ''
-            } b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pointer pv2 ttu`}
+            } b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pointer pv2 ttu`}
             onClick={this.isChecking() ? null : this.checkStatus}
             type="button"
           >

@@ -15,7 +15,7 @@ const ArticleFooter = ({ authors, publishedDay }) => (
     <Link href="/blog.html" passHref>
       <a
         href="#!"
-        className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
+        className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pv2 ttu"
       >
         Ir al blog
       </a>

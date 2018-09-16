@@ -10,7 +10,7 @@ const NotFoundPage = () => (
       <Link href="/" passHref>
         <a
           href="#!"
-          className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow link ph3 pv2 ttu"
+          className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pv2 ttu"
         >
           <span>Volver a la página principal</span>
         </a>

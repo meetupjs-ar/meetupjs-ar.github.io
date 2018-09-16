@@ -45,13 +45,13 @@ class Header extends Component {
               </a>
             </Link>
             <div className="flex items-center">
-              {router.pathname === '/calendario' && (
+              {router.pathname === '/calendario.html' && (
                 <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1" passHref>
                   <a
                     href="#!"
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f7 f6-ns grow link mr3 ph3 pv2 ttu"
+                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f7 f6-ns grow no-underline mr3 ph3 pv2 ttu"
                   >
                     Agregar un evento
                   </a>

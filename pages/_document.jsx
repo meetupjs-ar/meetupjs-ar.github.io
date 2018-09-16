@@ -42,6 +42,14 @@ export default class MyDocument extends Document {
                 -webkit-font-smoothing: antialiased;
               }
 
+              a:active,
+              a:focus,
+              button:active,
+              button:focus {
+                outline: 2px dotted rgba(0, 0, 0, 0.5);
+                outline-offset: 5px;
+              }
+
               .bg-yellow-alternative {
                 background-color: var(--color-secondary);
               }
