@@ -14,11 +14,11 @@ const metatags = {
 export default () => (
   <React.Fragment>
     <Head>
-      <link rel="preload" href="https://spreadsheet-api.now.sh" as="fetch" />
-      <link rel="preload" href="https://eventbrite-api.now.sh" as="fetch" />
-      <link rel="preload" href="https://meetup-api.now.sh" as="fetch" />
-      <link rel="preload" href="https://calendar-api.now.sh" as="fetch" />
-      <link rel="preload" href="https://meetupjs-slack-bot.now.sh" as="fetch" />
+      <link rel="preconnect" href="https://spreadsheet-api.now.sh" />
+      <link rel="preconnect" href="https://eventbrite-api.now.sh" />
+      <link rel="preconnect" href="https://meetup-api.now.sh" />
+      <link rel="preconnect" href="https://calendar-api.now.sh" />
+      <link rel="preconnect" href="https://meetupjs-slack-bot.now.sh" />
       <title>{metatags.title}</title>
       <meta name="description" content={metatags.description} />
       <meta property="og:url" content={metatags.url} />

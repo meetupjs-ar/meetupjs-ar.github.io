@@ -12,8 +12,8 @@ export default class MyDocument extends Document {
     return (
       <html lang="es">
         <Head>
-          <link rel="preload" href="https://www.google-analytics.com" as="script" />
-          <link rel="preload" href="https://unpkg.com" as="script" />
+          <link rel="preconnect" href="https://www.google-analytics.com" />
+          <link rel="preconnect" href="https://unpkg.com" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script async src="https://unpkg.com/boxicons@1.7.1/dist/boxicons.js" />
           <link
