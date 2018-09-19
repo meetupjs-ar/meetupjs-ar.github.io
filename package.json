@@ -39,7 +39,7 @@
   "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
   "dependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1",
-    "@zeit/next-css": "^0.2.0",
+    "@zeit/next-css": "^1.0.0",
     "@zeit/next-mdx": "^1.1.0",
     "date-fns": "^1.29.0",
     "mousetrap": "^1.6.2",
