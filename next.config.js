@@ -41,7 +41,7 @@ module.exports = withPlugins(
           message: '¡Migramos el sitio a React usando next.js!'
         }
       ],
-      REACT_APP_SOCIAL_IMAGE: 'http://meetupjs.com.ar/static/social.jpg',
+      REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/static/social.jpg',
       REACT_APP_TITLE: 'Meetup.js Argentina',
       REACT_APP_URL: homepage,
       REACT_APP_VERSION: version
