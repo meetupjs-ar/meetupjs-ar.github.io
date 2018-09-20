@@ -127,7 +127,7 @@ class CalendarPage extends Component {
     }
 
     return (
-      <React.Fragment>
+      <>
         <Container large="large">
           <div className="fade-in">
             <div className="flex items-center justify-center">
@@ -212,7 +212,7 @@ class CalendarPage extends Component {
             </div>
           </Modal>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

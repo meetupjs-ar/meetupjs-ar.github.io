@@ -13,7 +13,7 @@ const metatags = {
 };
 
 export default () => (
-  <React.Fragment>
+  <>
     <Head>
       <title>{metatags.title}</title>
       <meta name="description" content={metatags.description} />
@@ -30,5 +30,5 @@ export default () => (
       <meta name="twitter:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
     </Head>
     <CodeOfConductPage />
-  </React.Fragment>
+  </>
 );

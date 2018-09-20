@@ -12,7 +12,7 @@ const metatags = {
 };
 
 export default () => (
-  <React.Fragment>
+  <>
     <Head>
       <link rel="preconnect" href="https://spreadsheet-api.now.sh" />
       <link rel="preconnect" href="https://eventbrite-api.now.sh" />
@@ -34,5 +34,5 @@ export default () => (
       <meta name="twitter:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
     </Head>
     <StatusPage />
-  </React.Fragment>
+  </>
 );

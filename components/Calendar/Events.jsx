@@ -19,14 +19,14 @@ const Events = ({ events }) => {
   });
 
   return (
-    <React.Fragment>
+    <>
       <ul className="list ma0 pl0">
         {sortedEvents.map((event, index) => (
           <Event key={event.shortid} event={event} index={index} />
         ))}
       </ul>
       {thereAreMoreEventsLabel}
-    </React.Fragment>
+    </>
   );
 };
 

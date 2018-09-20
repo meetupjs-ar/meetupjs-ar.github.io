@@ -25,7 +25,7 @@ class ServiceStatus extends Component {
     const { description, name, status } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <div className="b--black-10 ba bg-white br2 bw1 flex pa3 service-status">
           <div className="pr3 pt1">
             <div
@@ -41,7 +41,7 @@ class ServiceStatus extends Component {
             <p className="black-alternative-light mv0">{description}</p>
           </div>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

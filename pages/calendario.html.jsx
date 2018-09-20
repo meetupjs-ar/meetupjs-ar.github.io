@@ -11,7 +11,7 @@ const metatags = {
 };
 
 export default () => (
-  <React.Fragment>
+  <>
     <Head>
       <link rel="preconnect" href="https://calendar-api.now.sh" />
       <title>{metatags.title}</title>
@@ -29,5 +29,5 @@ export default () => (
       <meta name="twitter:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
     </Head>
     <CalendarPage />
-  </React.Fragment>
+  </>
 );

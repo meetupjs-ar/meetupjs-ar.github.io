@@ -48,7 +48,7 @@ const renderBubbles = () => {
 };
 
 const HomePage = () => (
-  <React.Fragment>
+  <>
     <div className="bg-white relative">
       <NoSSR>
         <div className="absolute bottom-0 left-0 overflow-hidden right-0 top-0">
@@ -149,7 +149,7 @@ const HomePage = () => (
     <div className="b--black-10 bt bw1">
       <CalendarPage showOnlyCurrentMonth />
     </div>
-  </React.Fragment>
+  </>
 );
 
 export default HomePage;

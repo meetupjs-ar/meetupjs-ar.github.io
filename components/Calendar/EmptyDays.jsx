@@ -10,7 +10,7 @@ const EmptyDays = ({ days }) => {
     );
   }
 
-  return <React.Fragment>{emptyDays}</React.Fragment>;
+  return <>{emptyDays}</>;
 };
 
 EmptyDays.propTypes = {
