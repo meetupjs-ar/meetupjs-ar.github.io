@@ -26,16 +26,16 @@ export default class MyDocument extends Document {
                 background-color: var(--color-secondary);
               }
 
-              ::selection {
-                background-color: var(--color-secondary);
-              }
-
               :root {
                 --color-primary: #2e282a;
                 --color-secondary: #ffe45e;
                 --color-tertiary: #fffceb;
                 --color-quaternary: #6a5359;
                 --transition: all 0.35s ease-out;
+              }
+
+              ::selection {
+                background-color: var(--color-secondary);
               }
 
               body {
