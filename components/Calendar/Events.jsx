@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import eventMustBeHighlighted from 'utils/eventMustBeHighlighted';
 import Event from './Event';
 
 const Events = ({ events }) => {
@@ -12,8 +13,8 @@ const Events = ({ events }) => {
   );
 
   const sortedEvents = events.sort((eventA, eventB) => {
-    if (eventA.eventName.includes('Meetup.js')) return -1;
-    if (eventB.eventName.includes('Meetup.js')) return 1;
+    if (eventMustBeHighlighted(eventA.eventName)) return -1;
+    if (eventMustBeHighlighted(eventB.eventName)) return 1;
 
     return 0;
   });

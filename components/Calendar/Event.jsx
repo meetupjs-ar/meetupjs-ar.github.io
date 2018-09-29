@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import eventMustBeHighlighted from 'utils/eventMustBeHighlighted';
 
 const Event = ({ event, index }) => {
   const { eventName } = event;
-  const highlight = eventName.includes('Meetup.js')
+  const highlight = eventMustBeHighlighted(eventName)
     ? 'b bg-yellow-alternative'
     : 'bg-washed-yellow';
 
