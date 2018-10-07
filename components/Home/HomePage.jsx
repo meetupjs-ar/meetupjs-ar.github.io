@@ -14,6 +14,7 @@ const renderBubbles = () => {
     'gulp.png',
     'isna.png',
     'jest.png',
+    'jorge.png',
     'jquery.png',
     'lodash.png',
     'mongodb.png',
