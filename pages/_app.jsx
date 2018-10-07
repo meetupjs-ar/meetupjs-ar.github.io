@@ -1,3 +1,4 @@
+import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import Isna from 'components/Isna/Isna';
 import withGA from 'next-ga';
@@ -15,10 +16,15 @@ class MyApp extends App {
 
     return (
       <Container>
-        <Header />
-        <PageTransition classNames="page-transition" timeout={400}>
-          <Component {...pageProps} />
-        </PageTransition>
+        <div className="custom-min-vh-100 flex flex-column">
+          <Header />
+          <div className="flex-auto">
+            <PageTransition classNames="page-transition" timeout={400}>
+              <Component {...pageProps} />
+            </PageTransition>
+          </div>
+          <Footer />
+        </div>
         <Isna />
       </Container>
     );

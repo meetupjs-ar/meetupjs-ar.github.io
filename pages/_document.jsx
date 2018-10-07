@@ -69,6 +69,10 @@ export default class MyDocument extends Document {
                 cursor: default;
               }
 
+              .custom-min-vh-100 {
+                min-height: calc(100vh - 68px);
+              }
+
               .easter-egg {
                 bottom: 0;
                 opacity: 0;
