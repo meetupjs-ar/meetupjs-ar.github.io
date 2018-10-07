@@ -1,7 +1,5 @@
 import getConfig from 'next/config';
 import Link from 'next/link';
-import { withRouter } from 'next/router';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
@@ -9,12 +7,6 @@ import ToogleMenuIcon from './ToggleMenuIcon';
 const { publicRuntimeConfig } = getConfig();
 
 class Header extends Component {
-  static propTypes = {
-    router: PropTypes.shape({
-      pathname: PropTypes.string.isRequired
-    }).isRequired
-  };
-
   state = {
     isMenuOpen: false
   };
@@ -33,7 +25,6 @@ class Header extends Component {
 
   render() {
     const { isMenuOpen } = this.state;
-    const { router } = this.props;
 
     return (
       <header className="b--black-10 bb bg-washed-yellow bw1 fixed left-0 pv2 right-0 top-0 z-3">
@@ -45,18 +36,6 @@ class Header extends Component {
               </a>
             </Link>
             <div className="flex items-center">
-              {router.pathname === '/calendario.html' && (
-                <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1" passHref>
-                  <a
-                    href="#!"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f7 f6-ns grow no-underline mr3 ph3 pv2 ttu"
-                  >
-                    Agregar un evento
-                  </a>
-                </Link>
-              )}
               <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.openMenu} />
               <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.closeMenu} />
             </div>
@@ -74,4 +53,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default Header;
