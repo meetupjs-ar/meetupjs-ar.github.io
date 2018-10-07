@@ -330,7 +330,7 @@ export default class MyDocument extends Document {
                   margin: 4rem -5rem;
                 }
 
-                .markdown-body.big-font > div p {
+                .markdown-body.big-font > div {
                   font-size: 1.25rem;
                 }
 

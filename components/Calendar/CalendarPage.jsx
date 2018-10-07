@@ -137,6 +137,7 @@ class CalendarPage extends Component {
                   href="#!"
                   title="Agregar un evento al calendario"
                   className="grow ml3 no-underline pointer"
+                  target="_blank"
                 >
                   <box-icon name="plus" border="circle" size="2.5rem" />
                 </a>
