@@ -73,6 +73,13 @@ export default class MyDocument extends Document {
                 min-height: calc(100vh - 68px);
               }
 
+              .dark-mode {
+                --color-primary: #2e282a;
+                --color-secondary: #ffe45e;
+                --color-tertiary: #fffceb;
+                --color-quaternary: #6a5359;
+              }
+
               .easter-egg {
                 bottom: 0;
                 opacity: 0;
