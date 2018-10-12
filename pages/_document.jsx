@@ -27,6 +27,8 @@ export default class MyDocument extends Document {
               }
 
               :root {
+                --color-background: #fff;
+
                 --color-primary: #2e282a;
                 --color-secondary: #ffe45e;
                 --color-tertiary: #fffceb;
@@ -39,6 +41,7 @@ export default class MyDocument extends Document {
               }
 
               body {
+                background-color: var(--color-background);
                 margin: 0;
                 -moz-osx-font-smoothing: grayscale;
                 padding-top: 68px;
@@ -74,6 +77,8 @@ export default class MyDocument extends Document {
               }
 
               .dark-mode {
+                --color-background: #fff;
+
                 --color-primary: #2e282a;
                 --color-secondary: #ffe45e;
                 --color-tertiary: #fffceb;

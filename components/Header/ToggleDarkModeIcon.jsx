@@ -13,7 +13,7 @@ const ToggleDarkModeIcon = ({ icon, toogleDarkMode, visible }) => {
       type="button"
       title={title}
     >
-      <box-icon name={icon} type="solid" />
+      <box-icon name={icon} />
       <span className="visually-hidden">
         <span>{title}</span>
       </span>
