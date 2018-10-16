@@ -132,16 +132,15 @@ class CalendarPage extends Component {
           <div className="fade-in">
             <div className="flex items-center justify-center">
               <h1 className="mv0">Calendario de eventos</h1>
-              <Link href="https://goo.gl/forms/vzPGDccvtYcOsdEi1" passHref>
-                <a
-                  href="#!"
-                  title="Agregar un evento al calendario"
-                  className="grow ml3 no-underline pointer"
-                  target="_blank"
-                >
-                  <box-icon name="plus" border="circle" size="2.5rem" />
-                </a>
-              </Link>
+              <a
+                href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
+                title="Agregar un evento al calendario"
+                className="grow ml3 no-underline pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <box-icon name="plus" border="circle" size="2.5rem" />
+              </a>
               <Link href="/articulos/que-es-el-calendario-de-eventos.html" passHref>
                 <a
                   href="#!"
