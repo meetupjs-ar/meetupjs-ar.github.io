@@ -8,7 +8,7 @@ const Box = ({ image, text }) => (
       flexDirection: 'column',
       justifyContent: 'center',
       margin: '1rem',
-      width: '22vw'
+      width: '20vw'
     }}
   >
     <div
@@ -17,7 +17,7 @@ const Box = ({ image, text }) => (
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        height: '25vh'
+        height: '20vw'
       }}
     />
     <p>{text}</p>

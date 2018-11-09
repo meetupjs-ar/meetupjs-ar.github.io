@@ -8,7 +8,7 @@ const Profile = ({ name, twitter }) => (
       flexDirection: 'column',
       justifyContent: 'center',
       margin: '1rem',
-      width: '22vw'
+      width: '20vw'
     }}
   >
     <div
@@ -18,7 +18,7 @@ const Profile = ({ name, twitter }) => (
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
         filter: 'grayscale(100)',
-        height: '30vh'
+        height: '20vw'
       }}
     />
     <p>{name}</p>
