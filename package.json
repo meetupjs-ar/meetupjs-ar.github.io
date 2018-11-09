@@ -6,8 +6,8 @@
     "deploy": "npm run build && npm run export && npm run mdx-build && touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
     "dev": "next",
     "export": "next export -o public",
-    "mdx-build": "mkdir -p ./public/presentation/images && cp -R ./presentation/images/. ./public/presentation/images && mdx-deck build presentation/presentation.mdx --out-dir public/presentation",
-    "mdx-start": "mdx-deck presentation/presentation.mdx",
+    "mdx-build": "mkdir -p ./public/presentacion/images && cp -R ./presentacion/images/. ./public/presentacion/images && mdx-deck build presentacion/presentacion.mdx --out-dir public/presentacion",
+    "mdx-start": "mdx-deck presentacion/presentacion.mdx",
     "precommit": "lint-staged",
     "start": "next start"
   },
