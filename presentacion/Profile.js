@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import P from './Paragraph';
 
 const Profile = ({ name, twitter }) => (
   <div
@@ -7,21 +8,21 @@ const Profile = ({ name, twitter }) => (
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      margin: '1rem',
-      width: '20vw'
+      padding: '1rem',
+      width: '25vw'
     }}
   >
-    <div
+    <img
+      src={`http://avatars.io/twitter/${twitter}`}
+      alt={name}
       style={{
-        backgroundImage: `url(http://avatars.io/twitter/${twitter})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
         filter: 'grayscale(100)',
-        height: '20vw'
+        margin: '0 auto',
+        maxWidth: '18vw',
+        width: '100%'
       }}
     />
-    <p>{name}</p>
+    <P>{name}</P>
   </div>
 );
 

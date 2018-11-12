@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import P from './Paragraph';
 
 const Box = ({ image, text }) => (
   <div
@@ -7,20 +8,20 @@ const Box = ({ image, text }) => (
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      margin: '1rem',
-      width: '20vw'
+      padding: '1rem',
+      width: '25vw'
     }}
   >
-    <div
+    <img
+      src={`./images/${image}.svg`}
+      alt={text}
       style={{
-        backgroundImage: `url(./images/${image}.svg)`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-        height: '20vw'
+        margin: '0 auto',
+        maxWidth: '18vw',
+        width: '100%'
       }}
     />
-    <p>{text}</p>
+    <P>{text}</P>
   </div>
 );
 

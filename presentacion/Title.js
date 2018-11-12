@@ -6,7 +6,8 @@ const Title = ({ imageName, text }) => (
     style={{
       alignItems: 'center',
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      margin: '2vh 0'
     }}
   >
     <span>{text}</span>
@@ -16,9 +17,9 @@ const Title = ({ imageName, text }) => (
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         display: 'inline-block',
-        height: '7rem',
+        height: '6rem',
         marginLeft: '2rem',
-        width: '7rem'
+        width: '6rem'
       }}
     />
   </h1>
