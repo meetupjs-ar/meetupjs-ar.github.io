@@ -161,9 +161,7 @@ const injectStyle = style => {
 };
 
 class Confetti extends Component {
-  constructor(props) {
-    super(props);
-
+  componentDidMount() {
     injectStyle(`
         @keyframes confetti {
             0% { transform: rotateZ(15deg) rotateY(0deg) translate(0, 0); }
