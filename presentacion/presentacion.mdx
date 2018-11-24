@@ -1,5 +1,6 @@
 import Box from './Box';
 import Layout from './Layout';
+import Logo from './Logo';
 import MeetupsCount from './MeetupsCount';
 import P from './Paragraph';
 import Page from './Page';
@@ -9,13 +10,7 @@ import Title from './Title';
 export default Layout;
 
 <Page>
-  <img
-    src="./images/logo.svg"
-    alt="Meetup.js Buenos Aires"
-    style={{
-      height: '60vh'
-    }}
-  />
+  <Logo />
 </Page>
 
 ---
@@ -23,7 +18,7 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <Title text="Organizadores" imageName="nerd_face" />
+  <Title text="Organizadores" />
   <div
     style={{
       display: 'flex'
@@ -41,16 +36,16 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <Title text="Donde encontrarnos" imageName="detective" />
+  <Title text="Donde encontrarnos" />
   <div
     style={{
       display: 'flex'
     }}
   >
-    <Box image="world" text="meetupjs.com.ar" />
     <Box image="twitter" text="@meetupjs_ar" />
+    <Box image="youtube" text="Meetup.js Argentina" />
     <Box image="facebook" text="Meetup.js Buenos Aires" />
-    <Box image="camera" text="Meetup.js Argentina" />
+    <Box image="website" text="meetupjs.com.ar" />
   </div>
 </Page>
 
@@ -59,7 +54,7 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <Title text="En el evento de hoy" imageName="sign_of_the_horns" />
+  <Title text="En el evento de hoy" />
   <P>Charlas, lightning talks, networking y algo más</P>
 </Page>
 
@@ -68,7 +63,7 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <Title text="Charlas" imageName="comments" />
+  <Title text="Charlas" />
   <P>github.com/meetupjs-ar/charlas</P>
 </Page>
 
@@ -77,7 +72,7 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <Title text="Agradecimientos" imageName="persons_hugging" />
+  <Title text="Agradecimientos" />
 </Page>
 
 ---
@@ -93,11 +88,5 @@ export default Layout;
 export default Layout;
 
 <Page>
-  <img
-    src="./images/logo.svg"
-    alt="Meetup.js Buenos Aires"
-    style={{
-      height: '60vh'
-    }}
-  />
+  <Logo />
 </Page>

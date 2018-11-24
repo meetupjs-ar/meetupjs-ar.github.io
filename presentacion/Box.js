@@ -17,7 +17,7 @@ const Box = ({ image, text }) => (
       alt={text}
       style={{
         margin: '0 auto',
-        maxWidth: '18vw',
+        maxWidth: '10vw',
         width: '100%'
       }}
     />

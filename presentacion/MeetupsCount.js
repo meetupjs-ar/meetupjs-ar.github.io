@@ -4,6 +4,7 @@ const MeetupsCount = () => (
   <p
     style={{
       fontSize: '50vh',
+      fontWeight: 'bold',
       margin: 0,
       textShadow: '2px 2px 0 #eee, 8px 8px 0 #bbb'
     }}
