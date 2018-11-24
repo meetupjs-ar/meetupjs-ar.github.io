@@ -1,5 +1,6 @@
 import Box from './Box';
 import Layout from './Layout';
+import MeetupsCount from './MeetupsCount';
 import P from './Paragraph';
 import Page from './Page';
 import Profile from './Profile';
@@ -58,6 +59,15 @@ export default Layout;
 export default Layout;
 
 <Page>
+  <Title text="En el evento de hoy" imageName="sign_of_the_horns" />
+  <P>Charlas, lightning talks, networking y algo más</P>
+</Page>
+
+---
+
+export default Layout;
+
+<Page>
   <Title text="Charlas" imageName="comments" />
   <P>github.com/meetupjs-ar/charlas</P>
 </Page>
@@ -74,17 +84,8 @@ export default Layout;
 
 export default Layout;
 
-<Page>
-  <Title text="En el evento de hoy" imageName="sign_of_the_horns" />
-  <P>Charlas, lightning talks, networking y algo más</P>
-</Page>
-
----
-
-export default Layout;
-
-<Page>
-  <Title text="Open your mind" imageName="brain" />
+<Page confetti>
+  <MeetupsCount />
 </Page>
 
 ---

@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 
 class Modal extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
-      .isRequired,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     hideModal: PropTypes.func.isRequired
   };
 

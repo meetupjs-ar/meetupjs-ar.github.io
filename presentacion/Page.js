@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Confetti from 'Confetti';
 
-const Page = ({ children }) => (
+const Page = ({ children, confetti }) => (
   <div
     style={{
       alignItems: 'center',
@@ -10,16 +11,22 @@ const Page = ({ children }) => (
       flexDirection: 'column',
       fontSize: '30px',
       height: '100vh',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      position: 'relative'
     }}
   >
+    {confetti && <Confetti />}
     {children}
   </div>
 );
 
 Page.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
-    .isRequired
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
+  confetti: PropTypes.bool
+};
+
+Page.defaultProps = {
+  confetti: false
 };
 
 export default Page;
