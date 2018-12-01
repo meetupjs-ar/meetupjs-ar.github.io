@@ -31,15 +31,21 @@ const renderBubbles = () => {
     'webpack.png',
     'yarn.png'
   ];
+  const getRandomWidth = () => rn({ integer: true, min: 40, max: 100 });
   const getRandomAnimationDelay = () => rn({ integer: true, min: 1, max: 8 });
   const getRandomAnimationDuration = () => rn({ integer: true, min: 10, max: 25 });
   const getRandomLeft = () => rn({ integer: true, min: -5, max: 105 });
-  const getStyles = logo => ({
-    animationDelay: `${getRandomAnimationDelay()}s`,
-    animationDuration: `${getRandomAnimationDuration()}s`,
-    backgroundImage: `url(/static/Home/${logo})`,
-    left: `${getRandomLeft()}%`
-  });
+  const getStyles = logo => {
+    const widthAndHeight = getRandomWidth();
+    return {
+      animationDelay: `${getRandomAnimationDelay()}s`,
+      animationDuration: `${getRandomAnimationDuration()}s`,
+      backgroundImage: `url(/static/Home/${logo})`,
+      left: `${getRandomLeft()}%`,
+      width: `${widthAndHeight}px`,
+      height: `${widthAndHeight}px`
+    };
+  };
 
   return bubbles.map((logo, index) => (
     <React.Fragment key={logo}>

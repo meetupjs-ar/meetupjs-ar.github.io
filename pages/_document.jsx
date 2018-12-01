@@ -303,31 +303,63 @@ export default class MyDocument extends Document {
 
                 @keyframes blow {
                   0% {
+                    transform: translate3d(5px, 0, 0);
                     opacity: 0;
-                    transform: translate(0, 0);
                   }
-
-                  10% {
-                    opacity: 0.5;
+                  13% {
+                    transform: translate3d(2px, -50px, 0);
+                    opacity: 1;
                   }
-
+                  20% {
+                    transform: translate3d(5px, -80px, 0) scale(1.2);
+                  }
+                  30% {
+                    transform: translate3d(0px, -160px, 0);
+                  }
+                  40% {
+                    transform: translate3d(8px, -180px, 0);
+                  }
+                  50% {
+                    transform: translate3d(3px, -300px, 0);
+                  }
+                  60% {
+                    transform: translate3d(8px, -340px, 0);
+                  }
+                  70% {
+                    opacity: 0.4;
+                  }
+                  80%,
                   100% {
+                    transform: translate3d(0, -100vh, 0);
                     opacity: 0;
-                    transform: translate(0, -700px) scale(0.5);
                   }
                 }
 
                 .bubble {
+                  position: relative;
                   animation-iteration-count: infinite;
                   animation-name: blow;
+                  animation-fill-mode: forwards;
+                  background-color: rgba(240, 240, 240, 0.2);
                   background-position: center;
                   background-repeat: no-repeat;
                   background-size: contain;
-                  bottom: -15vh;
-                  height: 15vh;
+                  bottom: -2vh;
                   opacity: 0;
                   position: absolute;
-                  width: 10%;
+                  border: 1px solid rgba(240, 240, 240, 0.5);
+                  border-radius: 50%;
+                }
+
+                .bubble::before {
+                  position: absolute;
+                  content: '';
+                  width: 50%;
+                  height: 25%;
+                  background: rgba(255, 255, 255, 0.2);
+                  border-radius: 50%;
+                  top: 0;
+                  right: 0;
                 }
 
                 .image-shadow-container {
