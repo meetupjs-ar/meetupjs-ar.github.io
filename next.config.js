@@ -35,10 +35,10 @@ module.exports = withPlugins(
       ISNA_MESSAGES: [
         {
           activateAfter: 10000,
-          expiration: new Date(2018, 8, 22, 23, 59, 59),
+          expiration: new Date(2018, 11, 10, 23, 59, 59),
           hideAfter: 10000,
-          key: 'react-next.js',
-          message: '¡Migramos el sitio a React usando next.js!'
+          key: '50-events',
+          message: '¿Sabías que cumplimos 50 eventos?'
         }
       ],
       REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/static/social.jpg',

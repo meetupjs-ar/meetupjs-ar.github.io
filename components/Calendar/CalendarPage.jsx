@@ -135,7 +135,7 @@ class CalendarPage extends Component {
               <a
                 href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
                 title="Agregar un evento al calendario"
-                className="grow ml3 no-underline pointer"
+                className="bg-yellow-alternative br-100 grow ml3 no-underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -145,7 +145,7 @@ class CalendarPage extends Component {
                 <a
                   href="#!"
                   title="¿Qué es el calendario de eventos?"
-                  className="grow ml3 no-underline pointer"
+                  className="grow ml3 no-underline"
                 >
                   <box-icon name="question-mark" border="circle" size="2.5rem" />
                 </a>
