@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { Component } from 'react';
 import Container from 'utils/Container';
+import formatAuthors from 'utils/formatAuthors';
 import FormatDate from 'utils/FormatDate';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
@@ -51,7 +52,7 @@ class BlogPage extends Component {
                   <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
                   <p className="black-alternative-light f6 mb0 mt3">
                     <span>Por </span>
-                    <strong>{metadata.authors.join(', ')}</strong>
+                    <strong>{formatAuthors(metadata.authors)}</strong>
                     <span>. Publicado el </span>
                     <FormatDate date={metadata.publishedDay} />
                     <span>.</span>

@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Container from 'utils/Container';
+import formatAuthors from 'utils/formatAuthors';
 import Markdown from 'utils/Markdown';
-import ArticleFooter from './PostPageFooter';
+import PostPageFooter from './PostPageFooter';
 
 class BlogArticlePage extends Component {
   static propTypes = {
@@ -24,7 +25,10 @@ class BlogArticlePage extends Component {
     return (
       <Container>
         <Markdown Content={this.article} bigFont />
-        <ArticleFooter authors={this.metadata.authors} publishedDay={this.metadata.publishedDay} />
+        <PostPageFooter
+          authors={formatAuthors(this.metadata.authors)}
+          publishedDay={this.metadata.publishedDay}
+        />
       </Container>
     );
   }

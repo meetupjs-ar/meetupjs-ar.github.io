@@ -57,6 +57,11 @@ export default class MyDocument extends Document {
                 color: var(--color-quaternary);
               }
 
+              .center-iframe-child > iframe {
+                display: block;
+                margin: 0 auto;
+              }
+
               .current-page::after {
                 color: #98d083;
                 content: '•';
@@ -218,7 +223,6 @@ export default class MyDocument extends Document {
 
               .markdown-body > div img {
                 display: block;
-                margin: 2rem 0;
                 width: 100%;
               }
 

@@ -2,7 +2,6 @@ import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import Isna from 'components/Isna/Isna';
 import withGA from 'next-ga';
-import { PageTransition } from 'next-page-transitions';
 import App, { Container } from 'next/app';
 import getConfig from 'next/config';
 import Router from 'next/router';
@@ -19,9 +18,7 @@ class MyApp extends App {
         <div className="custom-min-vh-100 flex flex-column">
           <Header />
           <div className="flex-auto">
-            <PageTransition classNames="page-transition" timeout={400}>
-              <Component {...pageProps} />
-            </PageTransition>
+            <Component {...pageProps} />
           </div>
           <Footer />
         </div>

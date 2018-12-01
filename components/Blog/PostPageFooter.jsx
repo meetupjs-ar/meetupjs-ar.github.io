@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import FormatDate from 'utils/FormatDate';
 
-const ArticleFooter = ({ authors, publishedDay }) => (
+const PostPageFooter = ({ authors, publishedDay }) => (
   <div className="mt4 tc">
     <p className="black-alternative-light f6 mb3 mt0">
       <span>Por </span>
-      <strong>{authors.join(', ')}</strong>
+      <strong>{authors}</strong>
       <span>. Publicado el </span>
       <FormatDate date={publishedDay} />
       <span>.</span>
@@ -23,9 +23,9 @@ const ArticleFooter = ({ authors, publishedDay }) => (
   </div>
 );
 
-ArticleFooter.propTypes = {
-  authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+PostPageFooter.propTypes = {
+  authors: PropTypes.string.isRequired,
   publishedDay: PropTypes.objectOf(Date).isRequired
 };
 
-export default ArticleFooter;
+export default PostPageFooter;

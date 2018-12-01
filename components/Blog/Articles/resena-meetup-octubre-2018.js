@@ -1,5 +1,5 @@
 export const metadata = {
-  authors: ['Melisa Hildt, Carolina Amarillo'],
+  authors: ['Melisa Hildt', 'Carolina Amarillo'],
   coverUrl: '/static/Blog/resena-meetup-octubre-2018/cover.jpg',
   coverAlt: 'Foto de les asistentes del Meetup',
   description:
