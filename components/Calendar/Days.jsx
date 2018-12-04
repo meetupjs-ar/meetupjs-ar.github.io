@@ -6,6 +6,16 @@ import DayFooter from './DayFooter';
 import Events from './Events';
 import Event from './Event';
 
+const getDayName = {
+  0: 'domingo',
+  1: 'lunes',
+  2: 'martes',
+  3: 'miércoles',
+  4: 'jueves',
+  5: 'viernes',
+  6: 'sábado'
+};
+
 class Days extends Component {
   static propTypes = {
     days: PropTypes.number.isRequired,
@@ -24,27 +34,6 @@ class Days extends Component {
     }
 
     return '';
-  };
-
-  getDayName = dayNumberOfTheWeek => {
-    switch (dayNumberOfTheWeek) {
-      case 0:
-        return 'domingo';
-      case 1:
-        return 'lunes';
-      case 2:
-        return 'martes';
-      case 3:
-        return 'miércoles';
-      case 4:
-        return 'jueves';
-      case 5:
-        return 'viernes';
-      case 6:
-        return 'sábado';
-      default:
-        return '';
-    }
   };
 
   getEventsOfTheDay = (eventsInMonth, day) =>
@@ -83,7 +72,7 @@ class Days extends Component {
             </div>
             <DayFooter
               dayNumber={currentDay.getDate()}
-              dayName={this.getDayName(currentDay.getDay())}
+              dayName={getDayName[currentDay.getDay()]}
               isToday={isSameDay(currentDay, today)}
               strike={this.getStrike(currentDay, today)}
             />

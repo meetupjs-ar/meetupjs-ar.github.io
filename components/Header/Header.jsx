@@ -8,17 +8,9 @@ class Header extends Component {
     isMenuOpen: false
   };
 
-  closeMenu = () => {
-    this.setState({
-      isMenuOpen: false
-    });
-  };
+  closeMenu = () => this.setState({ isMenuOpen: false });
 
-  openMenu = () => {
-    this.setState({
-      isMenuOpen: true
-    });
-  };
+  toogleMenu = () => this.setState(({ isMenuOpen }) => ({ isMenuOpen: !isMenuOpen }));
 
   render() {
     const { isMenuOpen } = this.state;
@@ -33,12 +25,15 @@ class Header extends Component {
               </a>
             </Link>
             <div className="flex items-center">
-              <ToogleMenuIcon visible={!isMenuOpen} icon="menu" toogleMenu={this.openMenu} />
-              <ToogleMenuIcon visible={isMenuOpen} icon="x" toogleMenu={this.closeMenu} />
+              <ToogleMenuIcon
+                visible
+                icon={!isMenuOpen ? 'menu' : 'x'}
+                toogleMenu={this.toogleMenu}
+              />
             </div>
           </div>
           <div className={`${isMenuOpen ? 'db' : 'dn'} fade-in mv4`}>
-            <Menu toogleMenu={this.closeMenu} />
+            <Menu toogleMenu={this.toogleMenu} />
           </div>
         </div>
       </header>

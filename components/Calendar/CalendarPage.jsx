@@ -46,36 +46,29 @@ class CalendarPage extends Component {
     this.toggleOverflow(false);
   }
 
-  fetchEvents = () => {
+  fetchEvents = async () => {
     this.resetState();
-
-    fetch('https://calendar-api.now.sh/')
-      .then(response => response.json())
-      .then(monthlyCalendars => {
-        if (this.isComponentMounted) {
-          this.setState({
-            error: false,
-            loading: false,
-            monthlyCalendars: monthlyCalendars.map(monthlyCalendar =>
-              Object.assign({}, monthlyCalendar, {
-                events: monthlyCalendar.events.map(event =>
-                  Object.assign({}, event, {
-                    shortid: shortid.generate()
-                  })
-                )
-              })
-            )
-          });
-        }
-      })
-      .catch(() => {
-        if (this.isComponentMounted) {
-          this.setState({
-            error: true,
-            loading: false
-          });
-        }
-      });
+    try {
+      const response = await fetch('https://calendar-api.now.sh/');
+      const monthlyCalendars = await response.json();
+      if (this.isComponentMounted) {
+        this.setState({
+          error: false,
+          loading: false,
+          monthlyCalendars: monthlyCalendars.map(monthlyCalendar => ({
+            ...monthlyCalendar,
+            events: monthlyCalendar.events.map(event => ({ ...event, shortid: shortid.generate() }))
+          }))
+        });
+      }
+    } catch (error) {
+      if (this.isComponentMounted) {
+        this.setState({
+          error: true,
+          loading: false
+        });
+      }
+    }
   };
 
   getFormattedEventHour = date => format(new Date(date).setUTCMinutes(180), 'HH:mm');
