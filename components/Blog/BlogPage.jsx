@@ -12,7 +12,7 @@ import { metadata as ResenaMeetupJulioMetadata } from './Articles/resena-meetup-
 import { metadata as ResenaMeetupJunioMetadata } from './Articles/resena-meetup-junio-2018.mdx';
 import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
 import { metadata as ResenaMeetupSeptiembreMetadata } from './Articles/resena-meetup-septiembre-2018.mdx';
-// import { metadata as ResenaMeetupOctubreMetadata } from './Articles/resena-meetup-octubre-2018.mdx';
+import { metadata as ResenaMeetupOctubreMetadata } from './Articles/resena-meetup-octubre-2018.mdx';
 
 const publishedArticles = [
   ComoHacemosUnMeetupMetadata,
@@ -23,8 +23,8 @@ const publishedArticles = [
   ResenaMeetupJunioMetadata,
   ResenaMeetupJulioMetadata,
   ResenaMeetupAgostoMetadata,
-  ResenaMeetupSeptiembreMetadata
-  // ResenaMeetupOctubreMetadata
+  ResenaMeetupSeptiembreMetadata,
+  ResenaMeetupOctubreMetadata
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 
 class BlogPage extends Component {
