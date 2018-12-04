@@ -5,8 +5,8 @@ import Tilt from 'react-tilt';
 import Container from 'utils/Container';
 import CalendarPage from '../Calendar/CalendarPage';
 
-const renderBubbles = () => {
-  const bubbles = [
+const renderLogos = () => {
+  const logos = [
     'angular.png',
     'babel.png',
     'browserify.png',
@@ -41,9 +41,9 @@ const renderBubbles = () => {
     left: `${getRandomLeft()}%`
   });
 
-  return bubbles.map((logo, index) => (
+  return logos.map((logo, index) => (
     <React.Fragment key={logo}>
-      <div className="bubble" style={getStyles(logo, index)} />
+      <div className="animated-logo" style={getStyles(logo, index)} />
     </React.Fragment>
   ));
 };
@@ -53,7 +53,7 @@ const HomePage = () => (
     <div className="bg-white relative">
       <NoSSR>
         <div className="absolute bottom-0 left-0 overflow-hidden right-0 top-0">
-          <div className="bottom-particles dn db-l">{renderBubbles()}</div>
+          <div className="bottom-particles dn db-l">{renderLogos()}</div>
         </div>
       </NoSSR>
       <Container>

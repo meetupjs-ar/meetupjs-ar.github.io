@@ -295,13 +295,7 @@ export default class MyDocument extends Document {
               }
 
               @media screen and (min-width: 60em) {
-                .bottom-particles {
-                  height: 100%;
-                  position: relative;
-                  width: 100%;
-                }
-
-                @keyframes blow {
+                @keyframes animateLogo {
                   0% {
                     opacity: 0;
                     transform: translate(0, 0);
@@ -317,9 +311,9 @@ export default class MyDocument extends Document {
                   }
                 }
 
-                .bubble {
+                .animated-logo {
                   animation-iteration-count: infinite;
-                  animation-name: blow;
+                  animation-name: animateLogo;
                   background-position: center;
                   background-repeat: no-repeat;
                   background-size: contain;
@@ -328,6 +322,12 @@ export default class MyDocument extends Document {
                   opacity: 0;
                   position: absolute;
                   width: 10%;
+                }
+
+                .bottom-particles {
+                  height: 100%;
+                  position: relative;
+                  width: 100%;
                 }
 
                 .image-shadow-container {
