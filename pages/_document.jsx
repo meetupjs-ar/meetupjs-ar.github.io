@@ -57,11 +57,6 @@ export default class MyDocument extends Document {
                 color: var(--color-quaternary);
               }
 
-              .center-iframe-child > iframe {
-                display: block;
-                margin: 0 auto;
-              }
-
               .current-page::after {
                 color: #98d083;
                 content: '•';
@@ -274,6 +269,21 @@ export default class MyDocument extends Document {
 
               .user-select-none {
                 user-select: none;
+              }
+
+              .video-wrapper {
+                display: block;
+                height: 0;
+                padding-bottom: 56.25%; /* 16:9 */
+                position: relative;
+              }
+
+              .video-wrapper iframe {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
               }
 
               .visually-hidden {
