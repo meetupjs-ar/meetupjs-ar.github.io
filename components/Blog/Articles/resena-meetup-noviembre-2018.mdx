@@ -1,0 +1,63 @@
+export { metadata } from './resena-meetup-noviembre-2018';
+
+import YouTube from 'react-youtube';
+
+# Reseña del Meetup.js de noviembre 2018
+
+**Meetup.js**... ¿qué se puede decir de esta comunidad?. Conozco poco de otras comunidades pero sin lugar a dudas es una de las cuales te hace sentir como en casa, siempre hay algo nuevo para aprender o experiencia para escuchar y eso es algo que te va enriqueciendo en cada meetup.
+
+Soy [Leonardo Galante](https://twitter.com/lndgalante) y les doy la bienvenida a la reseña del Meetup.js de Noviembre de 2018.
+
+Lamentablemente, la Meetup.js del martes 27 de noviembre fue la última del año 2018 😢 pero no es para lamentarse, todavía quedan grandes eventos en el resto del año como el [DevDayAr](https://devday-ar.com), así que espero verlos ahí.
+
+Como siempre a través de donaciones de todos los asistentes la comunidad sigue ayudando a la organización **La Vereda de Enfrente**. En esta oportunidad colaboramos con alimentos para la canasta navideña.
+
+Llegué temprano, alrededor de las 18:40 hs., y ya estaba casi todo organizado de la mano de [Cristhian Duran](https://twitter.com/durancristhian) y [Camila Cepeda](https://twitter.com/camilunghi). También los speakers ya estaban practicando y preparando todo como, por ejemplo [Sergio Fruto](https://twitter.com/sergiofruto) que iba a ser el afortunado de arrancar con la primer charla.
+
+## From HTML + CSS to React + Styled Components
+
+Sergio Fruto es UI Engineer en Auth0 y nos contó porqué eligieron _migrar de HTML y Stylus a Next.js usando Contentful como CMS y CSS-in-JS con la conocida librería Styled Components_, como también nos dio algunos tips & tricks de este último.
+
+Una de las causas principales para la migración era debido a que tenían un bundle aproximado de 8mb. Antes de haber elegido estas nuevas tecnologías tuvieron varias reuniones con el equipo y decidieron elegir [styled-components](https://www.styled-components.com/) debido a alguna de las siguientes razones:
+
+- Prefixing automático
+- Poder utilizar props para modificar el estilo de los componentes
+- Podían seguir utilizando mixins e incluso con más posibilidades debido que ahora podían combinarlo con JavaScript
+
+Para terminar de convencernos sobre el stack elegido nos mostró un poco de como esta armado el código de sus componentes y cómo esta organizado el proyecto de la nueva página de Auth0.
+
+Pueden ver la charla de Sergio a continuación.
+
+<YouTube videoId="" containerClassName="video-wrapper" />
+
+### Lightning talks
+
+Después tuvimos 3 lightning talks al hilo, donde en la primera empecé hablando sobre como se puede mejorar la experiencia de un producto existente y como encarar side projects. Les dejo el link a [los slides](http://bit.ly/lightning-sp) que use.
+
+La segunda la tuvimos a cargo de [Mariano](https://twitter.com/etmaroo). Nos habló sobre tipografías, como entender el vocabulario básico de las mismas, las diferencias y la historia de las serif y sans-serif. Por último, como podemos lograr buenas combinaciones.
+
+La última lightning talk fue de la mano de [Gerardo Bort](https://twitter.com/gerardobort) donde nos habló sobre su side project llamado [Phaas](https://phaas.xyz). Básicamente, podés generar un modelo 3D a partir de la grabación de un video. Gerardo nos contó que si bien ya existen soluciones todavía no hay ninguna que sea web. Al final lo que nos genera es un GLTF que lo podemos pensar como _el JPG del 3D_.
+
+## Whose error is it anyway
+
+La última charla fue de la mano de [Hernán Rajchert](https://twitter.com/sherman3ero) con su charla "Whose error is it anyway", donde nos divirtió con muchos memes y además nos habló sobre las bondades de [TypesScript](https://www.typescriptlang.org/) que con razón nos evitaría muchos dolores de cabeza en producción al poder encontrar los errores en tiempo de compilación y esta frase nos inspiró a entenderlo:
+
+> Es malo que un avión no despegue, pero es mucho peor que explote en mitad del viaje. Así que si algo va a fallar, más vale que sea lo antes posible.
+
+TS fue popularizado por [Angular](https://twitter.com/jorgeucano) en un principio, pero hoy día cuenta con soporte oficial en React, y próximamente en Vue. Nos mostró un dato interesante de la última encuesta popular llamada [State of JS](https://2018.stateofjs.com/) donde en la sección [JavaScript Flavors](https://2018.stateofjs.com/javascript-flavors/overview/) compiten ECMAScript6, TypeScript, Flow, Reason, Elm y ClojureScript, y pudimos visualizar que TypeScript está pisándole los talones a ES6, con lo cual seguramente seguiremos viendo un incremento en adopción y no dudaríamos en predecir que TS dominará la encuesta en años venideros.
+
+Nos mostró también algunas librerías creadas junto a [Gonzalo Gluzman](https://twitter.com/dggluz), como por ejemplo [Parmenides](https://github.com/dggluz/parmenides), que nos permite armar contratos para chequear que se cumplan nuestras restricciones de tipos en tiempo de ejecución.
+
+Para terminar nos contó de un issue existente en TS que hace que los errores en los .catch de las promesas sean del tipo any y por eso creó la librería [Task](https://github.com/ts-task/task) que nos permite, con una sintáxis muy parecida a las Promises, tener un control mucho más seguro al poder tipar los errores.
+
+Si no te quedo muy claro, te recomiendo la introducción a Task.
+
+<YouTube videoId="T7O1T1wmw00" containerClassName="video-wrapper" />
+
+Y también la charla completa de Hernan a continuación.
+
+<YouTube videoId="" containerClassName="video-wrapper" />
+
+Para ir terminando agradecemos a [Medallia](https://www.medallia.com/) por haber brindado el lugar y la cuota alimentaria.
+
+Saludos!
