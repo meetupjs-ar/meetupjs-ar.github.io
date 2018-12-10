@@ -35,10 +35,10 @@ module.exports = withPlugins(
       ISNA_MESSAGES: [
         {
           activateAfter: 10000,
-          expiration: new Date(2018, 11, 10, 23, 59, 59),
+          expiration: new Date(2018, 11, 15, 23, 59, 59),
           hideAfter: 10000,
-          key: '50-events',
-          message: '¿Sabías que cumplimos 50 eventos?'
+          key: 'meetupjs-birthday',
+          message: '¿Sabías que el 7 de noviembre cumplimos 5 años?'
         }
       ],
       REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/static/social.jpg',
