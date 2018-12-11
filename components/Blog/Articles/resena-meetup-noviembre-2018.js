@@ -1,8 +1,7 @@
 export const metadata = {
   authors: ['Leonardo Galante'],
-  // TODO: complete cover and coverAlt
   coverUrl: '/static/Blog/resena-meetup-noviembre-2018/cover.jpg',
-  coverAlt: '',
+  coverAlt: 'Sherman dando la bienvenida a su charla.',
   description:
     'Cumplimos 50 eventos y lo festejamos encontrándonos en Medallia donde tuvimos 5 charlas y el networking de siempre.',
   publishedDay: new Date(2018, 11, 11),
