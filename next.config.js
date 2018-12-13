@@ -13,7 +13,7 @@ module.exports = withPlugins(
         mdPlugins: [externalLinks]
       }
     }),
-    [withOptimizedImages, { optimizeImagesInDev: true }],
+    [withOptimizedImages],
     [withCSS],
     [
       withBundleAnalyzer,

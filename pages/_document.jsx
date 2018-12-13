@@ -221,6 +221,18 @@ export default class MyDocument extends Document {
                 width: 100%;
               }
 
+              .markdown-body > div p:first-of-type:first-line {
+                font-weight: bold;
+              }
+
+              .markdown-body > div p:first-of-type:first-letter {
+                float: left;
+                font-size: 5rem;
+                line-height: 1;
+                margin-bottom: -0.5rem;
+                padding-right: 0.5rem;
+              }
+
               .markdown-body > div strong {
                 border-radius: 1em 0 1em 0;
                 background-image: linear-gradient(
