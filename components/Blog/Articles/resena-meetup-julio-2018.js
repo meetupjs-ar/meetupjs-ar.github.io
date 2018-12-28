@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Carlos Manotas'],
-  coverUrl: '/static/Blog/resena-meetup-julio-2018/jorge.jpg',
+  coverUrl: '/static/Blog/resena-meetup-julio-2018/meetupjs_jul18_2.jpg',
   coverAlt: 'Jorge Cano desmitificando Angular',
   description:
     'En un día de mucha lluvia no hubía mejor plan que venir a escuchar las charlas y encontrarse con amigos.',
