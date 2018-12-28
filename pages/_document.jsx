@@ -221,11 +221,11 @@ export default class MyDocument extends Document {
                 width: 100%;
               }
 
-              .markdown-body > div p:first-of-type:first-line {
+              .markdown-body > div > p:first-of-type:first-line {
                 font-weight: bold;
               }
 
-              .markdown-body > div p:first-of-type:first-letter {
+              .markdown-body > div > p:first-of-type:first-letter {
                 float: left;
                 font-size: 5rem;
                 line-height: 1;
