@@ -34,7 +34,7 @@ class PiolaSlider extends Component {
 
     return (
       images.length && (
-        <div className="mv4">
+        <div className="mv4 relative z-0">
           <ImageGallery items={images} lazyLoad showIndex showPlayButton={false} />
         </div>
       )
