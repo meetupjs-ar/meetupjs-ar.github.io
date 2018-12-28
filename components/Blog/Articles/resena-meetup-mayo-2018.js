@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Julio Olivera'],
-  coverUrl: '/static/Blog/resena-meetup-mayo-2018/cover.jpg',
+  coverUrl: '/static/Blog/resena-meetup-mayo-2018/meetupjs_may18_1.jpg',
   coverAlt: 'Slide inicial del primer meetup del año',
   description:
     'Hace unos días Meetup.js retomó su actividad en las oficinas de Stensul. En este post te cuento que me llevé del evento.',
