@@ -49,6 +49,7 @@
   },
   "description": ":earth_americas: Sitio oficial de Meetup.js Argentina",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.11",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.0",
     "@zeit/next-mdx": "^1.2.0",
@@ -61,7 +62,6 @@
     "prop-types": "^15.6.2",
     "random-number": "0.0.9",
     "react": "^16.6.3",
-    "react-image-gallery": "^0.8.12",
     "react-no-ssr": "^1.1.0",
     "react-tilt": "^0.1.4",
     "remark-external-links": "^3.1.0",

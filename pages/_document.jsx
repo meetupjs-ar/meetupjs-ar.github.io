@@ -1,7 +1,7 @@
 import getConfig from 'next/config';
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
-import slider from 'react-image-gallery/styles/css/image-gallery.css';
+import slider from '@brainhubeu/react-carousel/lib/style.css';
 import tachyons from 'tachyons/css/tachyons.min.css';
 
 const { publicRuntimeConfig } = getConfig();
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <link rel="preconnect" href="https://unpkg.com" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <script async src="https://unpkg.com/boxicons@1.7.1/dist/boxicons.js" />
+          <script async src="https://unpkg.com/boxicons@1.8.1/dist/boxicons.js" />
           <link
             rel="shortcut icon"
             href={`${publicRuntimeConfig.REACT_APP_URL}static/favicon.ico`}
@@ -164,16 +164,16 @@ export default class MyDocument extends Document {
                 line-height: 1.5;
               }
 
-              .markdown-body > div:not(.gallery) > *:first-child {
+              .markdown-body > div > *:first-child {
                 margin-bottom: 2rem;
                 margin-top: 0;
               }
 
-              .markdown-body > div:not(.gallery) > *:last-child {
+              .markdown-body > div > *:last-child {
                 margin-bottom: 0;
               }
 
-              .markdown-body > div:not(.gallery) a {
+              .markdown-body > div a {
                 box-shadow: inset 0 -2px 0 0 var(--color-secondary);
                 color: var(--color-primary);
                 display: inline-block;
@@ -184,11 +184,11 @@ export default class MyDocument extends Document {
                 text-decoration: none;
               }
 
-              .markdown-body > div:not(.gallery) a:hover {
+              .markdown-body > div a:hover {
                 background-color: var(--color-secondary);
               }
 
-              .markdown-body > div:not(.gallery) blockquote {
+              .markdown-body > div blockquote {
                 background-color: var(--color-tertiary);
                 border-left: 0.25rem solid var(--color-secondary);
                 font-style: italic;
@@ -197,36 +197,36 @@ export default class MyDocument extends Document {
                 padding: 0.125rem 1rem;
               }
 
-              .markdown-body > div:not(.gallery) h1 {
+              .markdown-body > div h1 {
                 color: var(--color-primary);
                 font-size: 2rem;
                 line-height: 1.25;
                 text-align: center;
               }
 
-              .markdown-body > div:not(.gallery) h2 {
+              .markdown-body > div h2 {
                 color: var(--color-quaternary);
                 margin: 2rem 0;
               }
 
-              .markdown-body > div:not(.gallery) h3,
-              .markdown-body > div:not(.gallery) h4,
-              .markdown-body > div:not(.gallery) h5,
-              .markdown-body > div:not(.gallery) h6 {
+              .markdown-body > div h3,
+              .markdown-body > div h4,
+              .markdown-body > div h5,
+              .markdown-body > div h6 {
                 color: #777;
                 margin: 1rem 0;
               }
 
-              .markdown-body > div:not(.gallery) img {
+              .markdown-body > div img {
                 display: block;
                 width: 100%;
               }
 
-              .markdown-body > div:not(.gallery) > p:first-of-type:first-line {
+              .markdown-body > div > p:first-of-type:first-line {
                 font-weight: bold;
               }
 
-              .markdown-body > div:not(.gallery) > p:first-of-type:first-letter {
+              .markdown-body > div > p:first-of-type:first-letter {
                 float: left;
                 font-size: 5rem;
                 line-height: 1;
@@ -234,7 +234,7 @@ export default class MyDocument extends Document {
                 padding-right: 0.5rem;
               }
 
-              .markdown-body > div:not(.gallery) strong {
+              .markdown-body > div strong {
                 border-radius: 1em 0 1em 0;
                 background-image: linear-gradient(
                   -100deg,
@@ -246,6 +246,10 @@ export default class MyDocument extends Document {
 
               .mw175 {
                 max-width: 175px;
+              }
+
+              .mh-100 {
+                max-height: 100%;
               }
 
               .m-h5 {
@@ -297,6 +301,10 @@ export default class MyDocument extends Document {
                 position: absolute;
                 top: 0;
                 width: 100%;
+              }
+
+              .visibility-hidden {
+                visibility: hidden;
               }
 
               .visually-hidden {
