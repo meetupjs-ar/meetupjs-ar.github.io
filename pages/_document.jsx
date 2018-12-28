@@ -164,16 +164,16 @@ export default class MyDocument extends Document {
                 line-height: 1.5;
               }
 
-              .markdown-body > div > *:first-child {
+              .markdown-body > div:not(.gallery) > *:first-child {
                 margin-bottom: 2rem;
                 margin-top: 0;
               }
 
-              .markdown-body > div > *:last-child {
+              .markdown-body > div:not(.gallery) > *:last-child {
                 margin-bottom: 0;
               }
 
-              .markdown-body > div a {
+              .markdown-body > div:not(.gallery) a {
                 box-shadow: inset 0 -2px 0 0 var(--color-secondary);
                 color: var(--color-primary);
                 display: inline-block;
@@ -184,11 +184,11 @@ export default class MyDocument extends Document {
                 text-decoration: none;
               }
 
-              .markdown-body > div a:hover {
+              .markdown-body > div:not(.gallery) a:hover {
                 background-color: var(--color-secondary);
               }
 
-              .markdown-body > div blockquote {
+              .markdown-body > div:not(.gallery) blockquote {
                 background-color: var(--color-tertiary);
                 border-left: 0.25rem solid var(--color-secondary);
                 font-style: italic;
@@ -197,36 +197,36 @@ export default class MyDocument extends Document {
                 padding: 0.125rem 1rem;
               }
 
-              .markdown-body > div h1 {
+              .markdown-body > div:not(.gallery) h1 {
                 color: var(--color-primary);
                 font-size: 2rem;
                 line-height: 1.25;
                 text-align: center;
               }
 
-              .markdown-body > div h2 {
+              .markdown-body > div:not(.gallery) h2 {
                 color: var(--color-quaternary);
                 margin: 2rem 0;
               }
 
-              .markdown-body > div h3,
-              .markdown-body > div h4,
-              .markdown-body > div h5,
-              .markdown-body > div h6 {
+              .markdown-body > div:not(.gallery) h3,
+              .markdown-body > div:not(.gallery) h4,
+              .markdown-body > div:not(.gallery) h5,
+              .markdown-body > div:not(.gallery) h6 {
                 color: #777;
                 margin: 1rem 0;
               }
 
-              .markdown-body > div img {
+              .markdown-body > div:not(.gallery) img {
                 display: block;
                 width: 100%;
               }
 
-              .markdown-body > div > p:first-of-type:first-line {
+              .markdown-body > div:not(.gallery) > p:first-of-type:first-line {
                 font-weight: bold;
               }
 
-              .markdown-body > div > p:first-of-type:first-letter {
+              .markdown-body > div:not(.gallery) > p:first-of-type:first-letter {
                 float: left;
                 font-size: 5rem;
                 line-height: 1;
@@ -234,7 +234,7 @@ export default class MyDocument extends Document {
                 padding-right: 0.5rem;
               }
 
-              .markdown-body > div strong {
+              .markdown-body > div:not(.gallery) strong {
                 border-radius: 1em 0 1em 0;
                 background-image: linear-gradient(
                   -100deg,
