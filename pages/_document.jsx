@@ -1,6 +1,7 @@
 import getConfig from 'next/config';
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
+import slider from 'react-image-gallery/styles/css/image-gallery.css';
 import tachyons from 'tachyons/css/tachyons.min.css';
 
 const { publicRuntimeConfig } = getConfig();
@@ -22,7 +23,7 @@ export default class MyDocument extends Document {
           />
           <style jsx global>
             {`
-              ${tachyons} ::-moz-selection {
+              ${tachyons} ${slider} ::-moz-selection {
                 background-color: var(--color-secondary);
               }
 
