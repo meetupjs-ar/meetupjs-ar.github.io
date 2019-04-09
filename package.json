@@ -1,6 +1,6 @@
 {
   "name": "meetupjs-ar.github.io",
-  "version": "3.17.2",
+  "version": "3.18.0",
   "scripts": {
     "build": "next build",
     "deploy": "npm run build && npm run export && npm run mdx-build && touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
