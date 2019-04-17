@@ -9,7 +9,7 @@ const Profile = ({ name, twitter }) => (
       flexDirection: 'column',
       justifyContent: 'center',
       padding: '1rem',
-      width: '25vw'
+      width: '20vw'
     }}
   >
     <img
