@@ -6,13 +6,16 @@ const Page = ({ children, confetti }) => (
   <div
     style={{
       alignItems: 'center',
+      backgroundColor: '#fffceb',
+      borderTop: '5px solid #ffe45e',
       color: '#2e282a',
       display: 'flex',
       flexDirection: 'column',
       fontSize: '30px',
       height: '100vh',
       justifyContent: 'center',
-      position: 'relative'
+      position: 'relative',
+      width: '100vw'
     }}
   >
     {confetti && <Confetti />}
