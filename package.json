@@ -20,7 +20,7 @@
     ]
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^0.16.6",
+    "@mdx-js/mdx": "^1.0.15",
     "babel-eslint": "^10.0.1",
     "babel-plugin-inline-import": "^3.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
