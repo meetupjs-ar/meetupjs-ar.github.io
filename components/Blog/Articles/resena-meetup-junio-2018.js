@@ -5,6 +5,6 @@ export const metadata = {
   description:
     'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas.',
   publishedDay: new Date(2018, 5, 26),
-  relativeUrl: 'articulos/resena-meetup-junio-2018.html',
+  relativeUrl: '/articulos/resena-meetup-junio-2018.html',
   title: 'Reseña del Meetup.js de junio 2018'
 };
