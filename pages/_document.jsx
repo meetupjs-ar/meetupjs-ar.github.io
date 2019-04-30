@@ -200,11 +200,13 @@ export default class MyDocument extends Document {
                 font-size: 2rem;
                 line-height: 1.25;
                 text-align: center;
+                word-break: break-all;
               }
 
               .markdown-body > div h2 {
                 color: var(--color-quaternary);
                 margin: 2rem 0;
+                word-break: break-all;
               }
 
               .markdown-body > div h3,
@@ -213,6 +215,7 @@ export default class MyDocument extends Document {
               .markdown-body > div h6 {
                 color: #777;
                 margin: 1rem 0;
+                word-break: break-all;
               }
 
               .markdown-body > div img {
