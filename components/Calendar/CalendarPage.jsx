@@ -71,7 +71,9 @@ class CalendarPage extends Component {
     }
   };
 
-  getFormattedEventHour = date => format(new Date(date).setUTCMinutes(180), 'HH:mm');
+  addMinutes = (date, minutes) => new Date(date.getTime() + minutes * 60000);
+
+  getFormattedEventHour = date => format(this.addMinutes(new Date(date), 180), 'HH:mm');
 
   hideModal = () => {
     this.setState({ showModal: false }, () => this.toggleOverflow(false));
