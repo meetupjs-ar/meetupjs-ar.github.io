@@ -33,7 +33,7 @@
     "eslint-plugin-react": "^7.12.4",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-optipng": "^6.0.0",
+    "imagemin-optipng": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
     "lint-staged": "^8.1.5",
     "mdx-deck": "^2.3.2",
