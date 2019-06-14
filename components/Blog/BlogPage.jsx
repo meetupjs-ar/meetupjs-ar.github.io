@@ -15,6 +15,7 @@ import { metadata as ResenaMeetupSeptiembreMetadata } from './Articles/resena-me
 import { metadata as ResenaMeetupOctubreMetadata } from './Articles/resena-meetup-octubre-2018.mdx';
 import { metadata as ResenaMeetupNoviembreMetadata } from './Articles/resena-meetup-noviembre-2018.mdx';
 import { metadata as ResenaMeetupAbril19Metadata } from './Articles/resena-meetup-abril-2019.mdx';
+import { metadata as ResenaMeetupJunio19Metadata } from './Articles/resena-meetup-junio-2019.mdx';
 
 function splitByYear(articles) {
   return articles.reduce((prev, curr) => {
@@ -43,7 +44,8 @@ const allArticles = [
   ResenaMeetupSeptiembreMetadata,
   ResenaMeetupOctubreMetadata,
   ResenaMeetupNoviembreMetadata,
-  ResenaMeetupAbril19Metadata
+  ResenaMeetupAbril19Metadata,
+  ResenaMeetupJunio19Metadata,
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 const articlesByYear = splitByYear(allArticles);
 const years = Object.keys(articlesByYear)
