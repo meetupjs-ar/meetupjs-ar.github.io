@@ -65,7 +65,7 @@
     "react": "^16.8.6",
     "react-no-ssr": "^1.1.0",
     "react-tilt": "^0.1.4",
-    "remark-external-links": "^4.0.0",
+    "remark-external-links": "^5.0.0",
     "shortid": "^2.2.14",
     "tachyons": "^4.11.1"
   },
