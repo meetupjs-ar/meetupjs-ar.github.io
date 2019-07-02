@@ -3,11 +3,9 @@
   "version": "3.20.3",
   "scripts": {
     "build": "next build",
-    "deploy": "npm run build && npm run export && npm run mdx-build && touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
+    "deploy": "npm run build && npm run export && touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
     "dev": "next",
     "export": "next export -o public",
-    "mdx-build": "mkdir -p ./public/presentacion/images && cp -R ./presentacion/images/. ./public/presentacion/images && mdx-deck build presentacion/presentacion.mdx --out-dir public/presentacion",
-    "mdx-start": "mdx-deck presentacion/presentacion.mdx",
     "precommit": "lint-staged",
     "start": "next start"
   },
@@ -36,7 +34,6 @@
     "imagemin-optipng": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
     "lint-staged": "^8.1.5",
-    "mdx-deck": "^2.3.2",
     "prettier": "^1.17.0",
     "react-dom": "^16.8.6",
     "react-tweet-embed": "^1.2.2",
