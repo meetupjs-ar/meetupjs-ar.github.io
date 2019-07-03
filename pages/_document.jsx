@@ -1,7 +1,6 @@
 import getConfig from 'next/config';
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
-import slider from '@brainhubeu/react-carousel/lib/style.css';
 import tachyons from 'tachyons/css/tachyons.min.css';
 
 const { publicRuntimeConfig } = getConfig();
@@ -21,7 +20,7 @@ export default class MyDocument extends Document {
           />
           <style jsx global>
             {`
-              ${tachyons} ${slider} ::-moz-selection {
+              ${tachyons} ::-moz-selection {
                 background-color: var(--color-secondary);
               }
 
@@ -223,6 +222,10 @@ export default class MyDocument extends Document {
                 width: 100%;
               }
 
+              .markdown-body > div form input:focus {
+                outline: 0.125rem solid var(--color-primary);
+              }
+
               .markdown-body > div > p:first-of-type:first-line {
                 font-weight: bold;
               }
@@ -363,7 +366,7 @@ export default class MyDocument extends Document {
                 }
 
                 .image-shadow-container {
-                  margin: 4rem -5rem;
+                  margin: 4rem -4rem;
                 }
 
                 .markdown-body.big-font > div {
@@ -377,11 +380,9 @@ export default class MyDocument extends Document {
             `}
           </style>
         </Head>
-        <body>
-          <div className="black-alternative lh-title sans-serif">
-            <Main />
-            <NextScript />
-          </div>
+        <body className="black-alternative lh-title sans-serif">
+          <Main />
+          <NextScript />
         </body>
       </html>
     );
