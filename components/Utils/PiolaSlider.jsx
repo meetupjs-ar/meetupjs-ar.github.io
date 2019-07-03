@@ -1,12 +1,20 @@
-import Carousel from '@brainhubeu/react-carousel';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactBnbGallery from 'react-bnb-gallery';
+import { Masonry } from "react-masonry-responsive";
 
 class PiolaSlider extends Component {
   state = {
-    images: [],
-    value: 0
+    activePhotoIndex: 0,
+    galleryOpened: false,
+    images: []
   };
+
+  phrases = {
+    noPhotosProvided: 'No hay fotelis 😭',
+    showPhotoList: 'Mostrar miniaturas ',
+    hidePhotoList: 'Ocultar miniaturas '
+  }
 
   componentDidMount() {
     this.getImages();
@@ -19,70 +27,60 @@ class PiolaSlider extends Component {
       const files = await fetch(path).then(response => response.json());
 
       this.setState({
-        images: files.map(file => ({
-          sha: file.sha,
-          src: file.download_url
+        images: files.map((file, index) => ({
+          index: file.sha,
+          number: index,
+          photo: file.download_url
         }))
       });
     } catch (error) {
       // eslint-disable-next-line
       console.error(error);
     }
-  };
+  }
 
-  isNextValueInRange = (nextValue, modifier, length) => {
-    const newCalculatedValue = nextValue + modifier;
+  getMasonryImages = () => {
+    const { images } = this.state;
 
-    return newCalculatedValue > -1 && newCalculatedValue < length;
-  };
+    return images.map((image, index) => ({
+      key: index,
+      node: (
+        <button
+          type="button"
+          onClick={() => this.toggleGallery(index)}
+          className="bn grow pa0 pointer"
+        >
+          <img src={image.photo} alt="" className="image-shadow" />
+        </button>
+      )
+    }));
+  }
 
-  onChange = modifier => {
-    const { value } = this.state;
-    const newValue = value + modifier;
-
-    this.setState({ value: newValue });
-  };
-
-  renderIcon = (name, modifier, value, length) => {
-    const isNextValueInRange = this.isNextValueInRange(value, modifier, length);
-
-    return (
-      <button
-        className={`bg-transparent bn grow outline-0 pa0 pointer ${
-          isNextValueInRange ? '' : 'visibility-hidden'
-        }`}
-        type="button"
-        onClick={() => this.onChange(modifier)}
-      >
-        <box-icon name={name} color="#2e282a" type="solid" />
-      </button>
-    );
-  };
+  toggleGallery = (photoIndex) => {
+    this.setState(prevState => ({
+      activePhotoIndex: photoIndex,
+      galleryOpened: !prevState.galleryOpened
+    }));
+  }
 
   render() {
-    const { images, value } = this.state;
+    const { activePhotoIndex, images, galleryOpened } = this.state;
 
     return (
       Boolean(images.length) && (
-        <div className="mv4">
-          <div className="bg-black">
-            <Carousel draggable={false} keepDirectionWhenDragging value={value}>
-              {images.map(image => (
-                <div className="flex items-center vh-50" key={image.sha}>
-                  <img alt="" className="mh-100" src={image.src} style={{ width: 'auto' }} />
-                </div>
-              ))}
-            </Carousel>
-          </div>
-          <div className="flex items-center justify-center mt3">
-            {this.renderIcon('left-arrow', -1, value, images.length)}
-            <p className="black-50 f6 mv0 pb1 tc w4">
-              <span className="b">{value + 1}</span>
-              <span> de </span>
-              <span className="b">{images.length}</span>
-            </p>
-            {this.renderIcon('right-arrow', 1, value, images.length)}
-          </div>
+        <div className="image-shadow-container">
+          <Masonry
+            gap={20}
+            items={this.getMasonryImages()}
+            minColumnWidth={250}
+          />
+          <ReactBnbGallery
+            activePhotoIndex={activePhotoIndex}
+            onClose={this.toggleGallery}
+            photos={images}
+            phrases={this.phrases}
+            show={galleryOpened}
+          />
         </div>
       )
     );
