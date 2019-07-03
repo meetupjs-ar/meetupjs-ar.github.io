@@ -222,6 +222,10 @@ export default class MyDocument extends Document {
                 width: 100%;
               }
 
+              .markdown-body > div form input:focus {
+                outline: 0.125rem solid var(--color-primary);
+              }
+
               .markdown-body > div > p:first-of-type:first-line {
                 font-weight: bold;
               }
