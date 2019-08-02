@@ -7,3 +7,14 @@ notifications:
   email: false
 script:
   - npm run build
+  - npm run export
+deploy:
+  local-dir: public
+  target-branch: master
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  verbose: true
+  on:
+    branch: dev

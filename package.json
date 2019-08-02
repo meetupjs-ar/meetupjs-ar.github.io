@@ -4,6 +4,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
+    "export": "next export -o public",
+    "postexport": "touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
     "precommit": "lint-staged",
     "start": "next start"
   },
