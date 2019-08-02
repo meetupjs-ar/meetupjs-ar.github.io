@@ -1,11 +1,9 @@
 {
   "name": "meetupjs-ar.github.io",
-  "version": "3.22.0",
+  "version": "3.22.1",
   "scripts": {
     "build": "next build",
-    "deploy": "npm run build && npm run export && touch public/.nojekyll && touch public/CNAME && echo \"meetupjs.com.ar\" >> public/CNAME",
     "dev": "next",
-    "export": "next export -o public",
     "precommit": "lint-staged",
     "start": "next start"
   },
@@ -72,7 +70,6 @@
     "url": "git+https://github.com/meetupjs-ar/meetupjs-ar.github.io.git"
   },
   "keywords": [
-    "meetup",
     "javascript",
     "buenos aires"
   ],
