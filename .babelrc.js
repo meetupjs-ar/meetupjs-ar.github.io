@@ -1,9 +1,3 @@
-const inlineImportConfig = [
-  'inline-import',
-  {
-    extensions: ['.css']
-  }
-];
 const moduleResolverConfig = [
   'module-resolver',
   {
@@ -15,6 +9,6 @@ const moduleResolverConfig = [
 ];
 
 module.exports = {
-  plugins: [inlineImportConfig, moduleResolverConfig],
+  plugins: [moduleResolverConfig],
   presets: ['next/babel']
 };

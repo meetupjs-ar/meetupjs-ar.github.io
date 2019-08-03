@@ -6,6 +6,7 @@ import App, { Container } from 'next/app';
 import getConfig from 'next/config';
 import Router from 'next/router';
 import React from 'react';
+import './styles.css';
 
 const { publicRuntimeConfig } = getConfig();
 const greeting = `

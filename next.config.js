@@ -33,13 +33,13 @@ module.exports = withPlugins(
     publicRuntimeConfig: {
       GA: 'UA-93848949-1',
       ISNA_MESSAGES: [
-        {
+        /* {
           activateAfter: 10000,
           expiration: new Date(2019, 4, 2, 23, 59, 59),
           hideAfter: 10000,
           key: 'first-event-2019',
           message: 'Seguinos en Twitter. Somos @Meetupjs_ar 😎'
-        }
+        } */
       ],
       REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/static/social.jpg',
       REACT_APP_TITLE: 'Meetup.js Buenos Aires',
