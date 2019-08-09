@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactBnbGallery from 'react-bnb-gallery';
-import { Masonry } from "react-masonry-responsive";
+import { Masonry } from 'react-masonry-responsive';
 
 class PiolaSlider extends Component {
   state = {
@@ -14,7 +14,7 @@ class PiolaSlider extends Component {
     noPhotosProvided: 'No hay fotelis 😭',
     showPhotoList: 'Mostrar miniaturas ',
     hidePhotoList: 'Ocultar miniaturas '
-  }
+  };
 
   componentDidMount() {
     this.getImages();
@@ -37,7 +37,7 @@ class PiolaSlider extends Component {
       // eslint-disable-next-line
       console.error(error);
     }
-  }
+  };
 
   getMasonryImages = () => {
     const { images } = this.state;
@@ -45,23 +45,19 @@ class PiolaSlider extends Component {
     return images.map((image, index) => ({
       key: index,
       node: (
-        <button
-          type="button"
-          onClick={() => this.toggleGallery(index)}
-          className="bn grow pa0 pointer"
-        >
-          <img src={image.photo} alt="" className="image-shadow" />
+        <button type="button" onClick={() => this.toggleGallery(index)}>
+          <img src={image.photo} alt="" className="grow image-shadow" />
         </button>
       )
     }));
-  }
+  };
 
-  toggleGallery = (photoIndex) => {
+  toggleGallery = photoIndex => {
     this.setState(prevState => ({
       activePhotoIndex: photoIndex,
       galleryOpened: !prevState.galleryOpened
     }));
-  }
+  };
 
   render() {
     const { activePhotoIndex, images, galleryOpened } = this.state;
@@ -69,11 +65,7 @@ class PiolaSlider extends Component {
     return (
       Boolean(images.length) && (
         <div className="image-shadow-container">
-          <Masonry
-            gap={20}
-            items={this.getMasonryImages()}
-            minColumnWidth={250}
-          />
+          <Masonry gap={20} items={this.getMasonryImages()} minColumnWidth={250} />
           <ReactBnbGallery
             activePhotoIndex={activePhotoIndex}
             onClose={this.toggleGallery}

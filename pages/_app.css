@@ -1,0 +1,95 @@
+/* purgecss start ignore */
+@tailwind base;
+
+/* purgecss end ignore */
+
+@tailwind components;
+@tailwind utilities;
+
+.debug * {
+  box-shadow: 0 0 1px red;
+}
+
+::-moz-selection {
+  background-color: theme('colors.secondary');
+}
+
+::selection {
+  background-color: theme('colors.secondary');
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  Avoid SVG to align itself and make it work as a block
+  TODO: Remove hack when remove box-icons
+*/
+box-icon[name] {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-duration: 1s;
+  animation-name: fadeIn;
+}
+
+.grow {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.grow:hover,
+.grow:focus {
+  transform: scale(1.05);
+}
+
+.grow:active {
+  transform: scale(0.9);
+}
+
+.image-shadow {
+  box-shadow: 8px 8px theme('colors.secondary');
+}
+
+.min-h-screen-header {
+  min-height: calc(100vh - theme('padding.68-px'));
+}
+
+.video-wrapper {
+  display: block;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+}
+
+.video-wrapper iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 60em) {
+  .image-shadow-container {
+    margin: 4rem -4rem;
+  }
+
+  .width-one-seventh-l {
+    width: calc(100% / 7);
+  }
+}

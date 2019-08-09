@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import './Modal.css';
 
 class Modal extends Component {
   static propTypes = {
@@ -32,11 +33,11 @@ class Modal extends Component {
 
     return (
       <div
-        className="bg-black-70 fade-in fixed flex items-center justify-center left-0 pointer top-0 vh-100 w-100 z-4"
+        className="bg-overlay cursor-pointer fade-in fixed flex h-screen items-center justify-center left-0 top-0 w-full z-40"
         onClick={this.handleClose}
         role="presentation"
       >
-        <div className="center cursor-default fade-in-down mw7 w-100">{children}</div>
+        <div className="fade-in-down max-w-3xl mx-auto w-full">{children}</div>
       </div>
     );
   }

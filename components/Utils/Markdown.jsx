@@ -1,9 +1,11 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import './Markdown.css';
 
 const Markdown = ({ Content, bigFont }) => (
   <>
-    <div className={`${bigFont ? 'big-font' : ''} markdown-body`}>
+    <div className={classnames([bigFont ? 'lg:text-xl' : '', 'markdown-body'])}>
       <Content />
     </div>
   </>

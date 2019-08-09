@@ -9,6 +9,7 @@ import Loading from 'utils/Loading';
 import MessageWithAction from 'utils/MessageWithAction';
 import Modal from 'utils/Modal';
 import Month from './Month';
+import './CalendarPage.css';
 
 class CalendarPage extends Component {
   static defaultProps = {
@@ -126,13 +127,14 @@ class CalendarPage extends Component {
         <Container large="large">
           <div className="fade-in">
             <div className="flex items-center justify-center">
-              <h1 className="mv0">Calendario de eventos</h1>
+              <h1 className="font-bold text-4xl">Calendario de eventos</h1>
               <a
                 href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
                 title="Agregar un evento al calendario"
-                className="bg-yellow-alternative br-100 grow ml3 no-underline"
+                className="bg-secondary grow ml-4 rounded-full"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Agregar un evento al calendario"
               >
                 <box-icon name="plus" border="circle" size="2.5rem" />
               </a>
@@ -140,7 +142,8 @@ class CalendarPage extends Component {
                 <a
                   href="#!"
                   title="¿Qué es el calendario de eventos?"
-                  className="grow ml3 no-underline"
+                  className="grow ml-4"
+                  aria-label="¿Qué es el calendario de eventos?"
                 >
                   <box-icon name="question-mark" border="circle" size="2.5rem" />
                 </a>
@@ -154,12 +157,12 @@ class CalendarPage extends Component {
               />
             ))}
             {showOnlyCurrentMonth && (
-              <div className="mt4 tc">
+              <div className="mt-8 text-center">
                 <Link href="/calendario.html" passHref>
                   <a
                     href="#!"
                     title="Ver calendario completo"
-                    className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f7 f6-ns grow no-underline ph3 pv2 ttu"
+                    className="bg-secondary border-black-10 border-2 font-bold grow inline-block px-5 py-2 rounded text-sm uppercase"
                   >
                     Ver calendario completo
                   </a>
@@ -170,43 +173,39 @@ class CalendarPage extends Component {
         </Container>
         {showModal && (
           <Modal hideModal={this.hideModal}>
-            <div className="bg-white br2 ma3">
-              <div className="b--black-10 bb bg-washed-yellow br--top br2 bw1 flex items-center justify-between pa3">
-                <span className="black-alternative dib f4">
+            <div className="bg-white cursor-default rounded m-4">
+              <div className="border-gray-300 border-solid border-b-2 bg-secondary-light rounded-t flex items-center justify-between p-4">
+                <span className="text-xl">
                   <FormatDate date={currentDay} />
                 </span>
-                <button
-                  className="b--transparent bg-transparent flex items-center nr2 grow pa0 pointer"
-                  onClick={this.hideModal}
-                  type="button"
-                >
-                  <box-icon name="x" color="rgba(0, 0, 0, 0.3)" />
+                <button onClick={this.hideModal} type="button">
+                  <box-icon name="x" />
                 </button>
               </div>
-              <div className="m-vh-75 overflow-y-auto">
+              <div className="max-h-75-vh overflow-y-auto">
                 {eventsOfTheDay
                   .sort((eventA, eventB) => new Date(eventA.date) - new Date(eventB.date))
                   .map(event => (
-                    <div key={event.eventName} className="flex mh3 mv3 pv3">
-                      <div className="pr3 pr4-ns">
-                        <p className="black-50 f5 f4-ns mv0">
+                    <div key={event.eventName} className="flex m-4 py-4">
+                      <div className="pr-4 lg:pr-8">
+                        <p className="text-quaternary lg:text-xl">
                           {this.getFormattedEventHour(event.date)}
                         </p>
                       </div>
                       <div className="flex-auto">
-                        <h3 className="black-alternative f5 f4-ns mv0">{event.eventName}</h3>
-                        {event.place && <p className="black-50 mb0 mt2">{event.place}</p>}
-                        <div className="flex">
+                        <h3 className="font-bold lg:text-xl">{event.eventName}</h3>
+                        {event.place && <p className="text-quaternary mt-3">{event.place}</p>}
+                        <div className="flex mt-4">
                           <a
                             href={event.eventLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="b b--black-30 ba bg-yellow-alternative br1 bw1 dib f6 flex grow items-center mt3 no-underline ph3 pv1 ttu white"
+                            className="bg-secondary border-black-10 border-2 font-bold flex grow items-center px-5 py-2 rounded text-sm uppercase"
                           >
-                            <span className="f4 mr2 pt1">
-                              <box-icon name="link-external" color="rgba(0, 0, 0, 0.3)" />
+                            <span className="text-xl mr-3">
+                              <box-icon name="link-external" />
                             </span>
-                            <span className="black-alternative text-shadow-1">Link</span>
+                            <span>Link</span>
                           </a>
                         </div>
                       </div>

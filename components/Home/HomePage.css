@@ -1,0 +1,36 @@
+@media screen and (min-width: 60em) {
+  @keyframes animateLogo {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+
+    10% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(0, -700px) scale(0.5);
+    }
+  }
+
+  .animated-logo {
+    animation-iteration-count: infinite;
+    animation-name: animateLogo;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: -15vh;
+    height: 15vh;
+    opacity: 0;
+    position: absolute;
+    width: 10%;
+  }
+
+  .bottom-particles {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+}

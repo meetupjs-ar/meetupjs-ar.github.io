@@ -3,11 +3,11 @@ import React from 'react';
 const weekdays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
 const Weekdays = () => (
-  <div className="b--black-10 bl bt bw1 dn flex-l">
+  <div className="border-gray-300 border-solid border-l-2 border-t-2 hidden lg:flex">
     {weekdays.map(weekday => (
       <div
         key={weekday}
-        className="b--black-10 bg-white black-alternative br bw1 pv3 tc ttc width-one-seventh-l"
+        className="border-gray-300 border-solid border-r-2 capitalize py-4 text-center width-one-seventh-l"
       >
         {weekday}
       </div>

@@ -1,8 +1,10 @@
+import classnames from 'classnames';
 import Link from 'next/link';
 import React, { Component } from 'react';
 import Container from 'utils/Container';
 import formatAuthors from 'utils/formatAuthors';
 import FormatDate from 'utils/FormatDate';
+import './BlogPage.css';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
@@ -45,7 +47,7 @@ const allArticles = [
   ResenaMeetupOctubreMetadata,
   ResenaMeetupNoviembreMetadata,
   ResenaMeetupAbril19Metadata,
-  ResenaMeetupJunio19Metadata,
+  ResenaMeetupJunio19Metadata
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 const articlesByYear = splitByYear(allArticles);
 const years = Object.keys(articlesByYear)
@@ -63,23 +65,26 @@ class BlogPage extends Component {
   render() {
     return (
       <Container>
-        <h1 className="mv0 tc">Blog</h1>
+        <h1 className="font-bold text-center text-4xl">Blog</h1>
         {this.years.map(year => (
           <React.Fragment key={year}>
-            <h3 className="black-50 f4 f3-ns mt4">{year}</h3>
+            <h3 className="font-bold mt-8 text-quaternary text-2xl">{year}</h3>
             {this.articlesMetadata[year].map(metadata => (
-              <div className="mt4" key={metadata.title}>
+              <div className="mt-8" key={metadata.title}>
                 <Link href={metadata.relativeUrl} passHref>
                   <a
                     href="#!"
-                    className="black-alternative bg-animate br2 db bg-white hover-bg-washed-yellow no-underline overflow-hidden"
+                    className="bg-animate block hover:bg-secondary-light overflow-hidden rounded"
                   >
-                    {metadata.coverUrl && (
-                      <img src={metadata.coverUrl} alt={metadata.coverAlt} className="v-btm" />
-                    )}
-                    <div className={`${metadata.coverUrl ? 'bb bl br' : 'ba'} b--black-10 bw1 pa3`}>
-                      <h2 className="f4 f3-ns mb3 mt0">{metadata.title}</h2>
-                      <p className="black-alternative-light f6 mb0 mt3">
+                    {metadata.coverUrl && <img src={metadata.coverUrl} alt={metadata.coverAlt} />}
+                    <div
+                      className={classnames([
+                        metadata.coverUrl ? 'border-b-2 border-l-2 border-r-2' : 'border-2',
+                        'border-gray-300 border-solid p-4'
+                      ])}
+                    >
+                      <h2 className="font-bold mb-4 text-xl lg:text-2xl">{metadata.title}</h2>
+                      <p className="mb-4 text-quaternary text-sm">
                         <span>Por </span>
                         <strong>{formatAuthors(metadata.authors)}</strong>
                         <span>. Publicado el </span>

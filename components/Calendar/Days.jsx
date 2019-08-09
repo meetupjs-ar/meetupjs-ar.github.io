@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import isBefore from 'date-fns/is_before';
 import isSameDay from 'date-fns/is_same_day';
 import PropTypes from 'prop-types';
@@ -60,14 +61,17 @@ class Days extends Component {
       elements.push(
         <div
           key={currentDay.getTime()}
-          className={`${bgColor || ''} ${eventsOfTheDay.length ? 'pointer' : ''} ${
-            isVisibleInMobile ? '' : 'dn db-l'
-          } b--black-10 bb bl bw1 h4-l ph3 pv2 pa2-l w-100 width-one-seventh-l`}
+          className={classnames([
+            bgColor,
+            eventsOfTheDay.length ? 'cursor-pointer' : '',
+            isVisibleInMobile ? '' : 'hidden lg:block',
+            'border-gray-300 border-solid border-b-2 border-l-2 lg:h-32 p-2 w-full width-one-seventh-l'
+          ])}
           onClick={() => eventsOfTheDay.length && showModal(eventsOfTheDay, currentDay)}
           role="presentation"
         >
-          <div className="flex flex-column-l h-100 items-center items-end-l">
-            <div className="flex-auto order-1 order-0-l pl3 pl0-l w-80 w-100-l">
+          <div className="flex lg:flex-col h-full items-center lg:items-end">
+            <div className="flex-auto order-1 lg:order-none pl-4 lg:pl-0 w-10/12 lg:w-full">
               {eventsOfTheDay.length ? <Events events={eventsOfTheDay} /> : null}
             </div>
             <DayFooter

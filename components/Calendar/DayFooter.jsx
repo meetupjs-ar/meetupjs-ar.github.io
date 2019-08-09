@@ -1,12 +1,26 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const DayFooter = ({ dayNumber, dayName, isToday, strike }) => (
-  <div className="black-alternative tr-l w-20 w-100-l">
-    <span className={`${isToday ? 'dark-green' : ''} ${strike ? 'strike black-50' : ''} f3`}>
+  <div className="text-primary lg:text-right w-2/12 lg:w-full">
+    <span
+      className={classnames([
+        isToday ? 'text-dark-green' : '',
+        strike ? 'line-through text-quaternary' : '',
+        'text-xl'
+      ])}
+    >
       {dayNumber > 9 ? dayNumber : `0${dayNumber}`}
     </span>
-    <span className={`${isToday ? 'dark-green' : ''} db dn-l f7 ttc`}>{dayName}</span>
+    <span
+      className={classnames([
+        isToday ? 'text-dark-green' : '',
+        'block capitalize lg:hidden text-xs'
+      ])}
+    >
+      {dayName}
+    </span>
   </div>
 );
 

@@ -1,0 +1,5 @@
+.bg-animate,
+.bg-animate:hover,
+.bg-animate:focus {
+  transition: background-color 0.15s ease-in-out;
+}

@@ -4,13 +4,17 @@ import Container from 'utils/Container';
 
 const NotFoundPage = () => (
   <Container>
-    <div className="tc">
-      <h1 className="mv0">¡Ups!, lo que viniste a buscar no está acá.</h1>
-      <img src="/static/NotFound/travolta.gif" alt="John Travolta" className="db center m-h5 mv4" />
+    <div className="text-center">
+      <h1 className="font-bold text-4xl">¡Ups!, lo que viniste a buscar no está acá.</h1>
+      <img
+        src="/static/NotFound/travolta.gif"
+        alt="John Travolta"
+        className="block mx-auto h-48 my-8"
+      />
       <Link href="/" passHref>
         <a
           href="#!"
-          className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pv2 ttu"
+          className="bg-secondary border-black-10 border-2 font-bold inline-block px-5 py-2 rounded text-sm uppercase"
         >
           <span>Volver a la página principal</span>
         </a>

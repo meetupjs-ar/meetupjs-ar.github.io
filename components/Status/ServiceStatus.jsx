@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -11,13 +12,13 @@ class ServiceStatus extends Component {
   getStatusColor = status => {
     switch (status) {
       case 0:
-        return 'bg-yellow';
+        return 'bg-secondary';
       case 1:
-        return 'bg-green';
+        return 'bg-success';
       case 2:
-        return 'bg-red';
+        return 'bg-red-600';
       default:
-        return 'bg-moon-gray';
+        return 'bg-gray-600';
     }
   };
 
@@ -26,19 +27,18 @@ class ServiceStatus extends Component {
 
     return (
       <>
-        <div className="b--black-10 ba bg-white br2 bw1 flex pa3 service-status">
-          <div className="pr3 pt1">
+        <div className="border-black-10 bg-white border-2 flex mb-4 p-4 rounded">
+          <div className="pr-4 pt-1">
             <div
-              className={`${this.getStatusColor(
-                status
-              )} b--black-10 ba bg-animate br-100 bw1 h1 w1`}
+              className={classnames([
+                this.getStatusColor(status),
+                'border-black-10 bg-animate border-2 br-100 h-4 rounded-full w-4'
+              ])}
             />
           </div>
           <div className="flex-auto">
-            <p className="mb1 mt0">
-              <strong>{name}</strong>
-            </p>
-            <p className="black-alternative-light mv0">{description}</p>
+            <p className="font-bold mb-2">{name}</p>
+            <p className="text-quaternary">{description}</p>
           </div>
         </div>
       </>

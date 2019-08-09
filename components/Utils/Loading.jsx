@@ -4,8 +4,8 @@ import Container from './Container';
 
 const Loading = ({ message }) => (
   <Container>
-    <div className="tc">
-      <h2 className="mv0 normal">{message}</h2>
+    <div className="text-center">
+      <h2 className="text-2xl">{message}</h2>
     </div>
   </Container>
 );

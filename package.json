@@ -1,6 +1,6 @@
 {
   "name": "meetupjs-ar.github.io",
-  "version": "3.22.2",
+  "version": "3.23.0",
   "scripts": {
     "build": "next build",
     "dev": "next",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@mdx-js/mdx": "^1.0.21",
     "babel-eslint": "^10.0.2",
-    "babel-plugin-inline-import": "^3.0.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.1",
@@ -46,13 +45,17 @@
   },
   "description": ":earth_americas: Sitio oficial de Meetup.js Buenos Aires",
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "@zeit/next-bundle-analyzer": "^0.1.2",
-    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-css": "^0.2.1-canary.4",
     "@zeit/next-mdx": "^1.2.0",
     "acorn": "^6.1.1",
+    "autoprefixer": "^9.6.1",
+    "classnames": "^2.2.6",
+    "cssnano": "^4.1.10",
     "date-fns": "^1.30.1",
     "mousetrap": "^1.6.3",
-    "next": "^8.1.0",
+    "next": "^9.0.3",
     "next-compose-plugins": "^2.2.0",
     "next-ga": "^2.3.4",
     "next-optimized-images": "^2.5.3",
@@ -65,7 +68,8 @@
     "react-tilt": "^0.1.4",
     "remark-external-links": "^5.0.0",
     "shortid": "^2.2.14",
-    "tachyons": "^4.11.1"
+    "tachyons": "^4.11.1",
+    "tailwindcss": "^1.0.6"
   },
   "repository": {
     "type": "git",

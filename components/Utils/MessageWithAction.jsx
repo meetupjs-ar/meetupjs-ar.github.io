@@ -4,11 +4,11 @@ import Container from './Container';
 
 const MessageWithAction = ({ action, actionMessage, image, imageAlt, message }) => (
   <Container>
-    <div className="tc">
-      <h2 className="black-alternative mb4 mt0 normal">{message}</h2>
-      <img src={image} alt={imageAlt} className="db center m-h5 mb4" />
+    <div className="text-center">
+      <h2 className="text-2xl">{message}</h2>
+      <img src={image} alt={imageAlt} className="block fade-in mx-auto h-48 my-8" />
       <button
-        className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pointer pv2 ttu"
+        className="bg-secondary border-black-10 border-2 font-bold inline-block px-5 py-2 rounded text-sm uppercase"
         onClick={action}
         type="button"
       >
