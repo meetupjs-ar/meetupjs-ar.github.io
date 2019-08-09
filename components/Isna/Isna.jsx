@@ -1,7 +1,9 @@
+import classnames from 'classnames';
 import isBefore from 'date-fns/is_before';
 import Mousetrap from 'mousetrap';
 import getConfig from 'next/config';
 import React, { Component } from 'react';
+import './Isna.css';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -90,9 +92,9 @@ class Isna extends Component {
 
     return (
       <>
-        <div className={`easter-egg ${active ? 'easter-egg-active' : ''}`}>
-          <img src="/static/Isna/isna.png" alt="Nicolas Isnardi" className="v-btm w-100" />
-          <p className={`easter-egg-message ${message ? '' : 'dn'}`}>{message}</p>
+        <div className={classnames(['easter-egg', active ? 'easter-egg-active' : ''])}>
+          <img src="/static/Isna/isna.png" alt="Nicolas Isnardi" className="w-full" />
+          <p className={classnames(['easter-egg-message', message ? '' : 'hidden'])}>{message}</p>
         </div>
       </>
     );

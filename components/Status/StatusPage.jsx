@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { Component } from 'react';
 import Container from 'utils/Container';
 import ServiceStatus from './ServiceStatus';
@@ -116,8 +117,8 @@ class StatusPage extends Component {
 
     return (
       <Container>
-        <div className="mb4">
-          <h1 className="mv0 tc">Estado de los servicios</h1>
+        <div className="mb-8">
+          <h1 className="font-bold text-4xl text-center">Estado de los servicios</h1>
         </div>
         <ServiceStatus
           name="Spreadsheet API"
@@ -148,21 +149,22 @@ class StatusPage extends Component {
           <img
             src="/static/Status/success.gif"
             alt="Éxito"
-            className="db center fade-in m-h5 mt4"
+            className="block fade-in mx-auto h-48 my-8"
           />
         )}
         {this.isError() && (
           <img
             src="/static/Status/facepalm.gif"
             alt="Error"
-            className="db center fade-in m-h5 mt4"
+            className="block fade-in mx-auto h-48 my-8"
           />
         )}
-        <div className="mt4 tc">
+        <div className="mt-8 text-center">
           <button
-            className={`${
-              this.isChecking() ? 'o-50' : ''
-            } b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pointer pv2 ttu`}
+            className={classnames([
+              this.isChecking() ? 'opacity-50' : '',
+              'bg-secondary border-black-10 border-2 font-bold grow inline-block px-5 py-2 rounded text-sm uppercase'
+            ])}
             onClick={this.isChecking() ? null : this.checkStatus}
             type="button"
           >

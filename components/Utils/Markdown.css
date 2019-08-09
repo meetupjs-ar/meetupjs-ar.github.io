@@ -1,0 +1,101 @@
+.markdown-body {
+  line-height: 1.5;
+}
+
+.markdown-body > div > *:first-child {
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.markdown-body > div > *:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body > div a {
+  box-shadow: inset 0 -2px 0 0 theme('colors.secondary');
+  color: theme('colors.primary');
+  display: inline-block;
+  font-weight: bold;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+  transition: all 0.35s ease-out;
+  text-decoration: none;
+}
+
+.markdown-body > div a:hover {
+  background-color: theme('colors.secondary');
+}
+
+.markdown-body > div blockquote {
+  background-color: theme('colors.tertiary');
+  border-left: 0.25rem solid theme('colors.secondary');
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.markdown-body > div h1 {
+  color: theme('colors.primary');
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.markdown-body > div h2 {
+  color: theme('colors.quaternary');
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.markdown-body > div h3,
+.markdown-body > div h4,
+.markdown-body > div h5,
+.markdown-body > div h6 {
+  color: #777;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.markdown-body > div img {
+  display: block;
+  width: 100%;
+}
+
+.markdown-body > div form input:focus {
+  outline: 0.125rem solid theme('colors.primary');
+}
+
+.markdown-body > div > p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.markdown-body > div > p:first-of-type::first-line {
+  font-weight: bold;
+}
+
+.markdown-body > div > p:first-of-type::first-letter {
+  float: left;
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+  padding-right: 0.5rem;
+}
+
+.markdown-body > div strong {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(250, 247, 133, 0.3),
+    rgba(250, 247, 133, 0.7) 95%,
+    rgba(250, 247, 133, 0.1)
+  );
+}
+
+.markdown-body > div > ul {
+  list-style-type: disc;
+  padding-left: 2.5rem;
+}

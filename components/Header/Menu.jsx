@@ -3,7 +3,7 @@ import React from 'react';
 import MenuItem from './MenuItem';
 
 const Menu = ({ toogleMenu }) => (
-  <ul className="list mv4 pl0">
+  <ul className="my-4">
     <MenuItem text="Página Principal" icon="home-alt" url="/" toogleMenu={toogleMenu} />
     <MenuItem text="Blog" icon="news" url="/blog.html" toogleMenu={toogleMenu} />
     <MenuItem

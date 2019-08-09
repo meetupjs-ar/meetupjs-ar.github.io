@@ -4,8 +4,8 @@ import React from 'react';
 import FormatDate from 'utils/FormatDate';
 
 const PostPageFooter = ({ authors, publishedDay }) => (
-  <div className="mt4 tc">
-    <p className="black-alternative-light f6 mb3 mt0">
+  <div className="mt-8 text-center">
+    <p className="text-quaternary text-sm mb-4">
       <span>Por </span>
       <strong>{authors}</strong>
       <span>. Publicado el </span>
@@ -15,7 +15,7 @@ const PostPageFooter = ({ authors, publishedDay }) => (
     <Link href="/blog.html" passHref>
       <a
         href="#!"
-        className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 dib f6 grow no-underline ph3 pv2 ttu"
+        className="bg-secondary border-black-10 border-2 font-bold inline-block px-5 py-2 rounded text-sm uppercase"
       >
         Ir al blog
       </a>

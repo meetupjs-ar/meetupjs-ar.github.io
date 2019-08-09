@@ -31,8 +31,8 @@ function Month({ monthlyCalendar, showModal }) {
   const emptyDaysAtEnd = 7 - ((currentMonthIsoDay + currentMonthDays) % 7);
 
   return (
-    <div className="mt4">
-      <h2 className="black-50 f4 f3-ns mb4 mt0 tc ttc">
+    <div className="mt-8">
+      <h2 className="capitalize font-bold text-2xl text-center text-quaternary mb-8">
         <span>
           {monthlyCalendar.when.month}
           {' '}
@@ -40,7 +40,7 @@ function Month({ monthlyCalendar, showModal }) {
         <span>{monthlyCalendar.when.year}</span>
       </h2>
       <Weekdays />
-      <div className="b--black-10 br bt bw1 flex flex-wrap">
+      <div className="border-gray-300 border-solid border-r-2 border-t-2 flex flex-wrap">
         {currentMonthIsoDay !== 7 && <EmptyDays days={currentMonthIsoDay} />}
         <Days
           days={currentMonthDays}

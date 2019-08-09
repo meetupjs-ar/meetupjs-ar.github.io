@@ -4,6 +4,7 @@ import NoSSR from 'react-no-ssr';
 import Tilt from 'react-tilt';
 import Container from 'utils/Container';
 import CalendarPage from '../Calendar/CalendarPage';
+import './HomePage.css';
 
 const renderLogos = () => {
   const logos = [
@@ -50,16 +51,16 @@ const renderLogos = () => {
 
 const HomePage = () => (
   <>
-    <div className="bg-white relative">
+    <div className="relative">
       <NoSSR>
         <div className="absolute bottom-0 left-0 overflow-hidden right-0 top-0">
-          <div className="bottom-particles dn db-l">{renderLogos()}</div>
+          <div className="bottom-particles hidden lg:block">{renderLogos()}</div>
         </div>
       </NoSSR>
       <Container>
-        <div className="relative z-2">
+        <div className="relative z-20">
           <div className="flex justify-center">
-            <h1 className="mv0 mw175 w-100">
+            <h1 className="w-40">
               <Tilt
                 options={{
                   axis: 'x',
@@ -67,71 +68,71 @@ const HomePage = () => (
                   scale: '1.05'
                 }}
               >
-                <img src={require('./logo.svg')} alt="Logo" className="db w-100" />
+                <img src={require('./logo.svg')} alt="Logo" className="block w-full" />
               </Tilt>
             </h1>
           </div>
-          <p className="f4 mb0 mt4 tc">
+          <p className="mb-0 mt-8 text-center text-xl">
             <span>¡Sumate a la comunidad de desarrolladores</span>
-            <span className="b"> JavaScript </span>
+            <strong> JavaScript </strong>
             <span>de Buenos Aires!</span>
           </p>
-          <div className="flex justify-center mv4 pb2">
+          <div className="flex justify-center my-8">
             <a
               href="https://www.facebook.com/groups/1572363023007913/"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow mr2 mr3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./facebook.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./facebook.svg')} alt="Logo" className="block w-full" />
             </a>
             <a
               href="https://twitter.com/meetupjs_ar"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow mh2 mh3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./twitter.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./twitter.svg')} alt="Logo" className="block w-full" />
             </a>
             <a
               href="https://github.com/meetupjs-ar"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow mh2 mh3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./github.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./github.svg')} alt="Logo" className="block w-full" />
             </a>
             <a
               href="https://slack.meetupjs.com.ar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow mh2 mh3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./slack.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./slack.svg')} alt="Logo" className="block w-full" />
             </a>
             <a
               href="https://www.meetup.com/es-ES/meetup-js/"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow mh2 mh3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./meetup.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./meetup.svg')} alt="Logo" className="block w-full" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="grow ml2 ml3-l w2 w3-ns"
+              className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./youtube.svg')} alt="Logo" className="db w-100" />
+              <img src={require('./youtube.svg')} alt="Logo" className="block w-full" />
             </a>
           </div>
-          <div className="flex flex-column flex-row-m flex-row-l items-center justify-center">
+          <div className="flex flex-col lg:flex-row items-center justify-center">
             <a
               href="https://github.com/meetupjs-ar/charlas/issues/new"
               target="_blank"
               rel="noopener noreferrer"
-              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow mb3 mb0-m mb0-l mr3-m mr3-l no-underline ph3 pv2 ttu"
+              className="bg-secondary border-black-10 border-2 font-bold grow inline-block mb-4 lg:mb-0 lg:mr-4 px-5 py-2 rounded text-sm uppercase"
             >
               <span>Quiero dar una charla</span>
             </a>
@@ -139,15 +140,15 @@ const HomePage = () => (
               href="mailto:meetupjs@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="b b--black-10 ba bg-yellow-alternative black-alternative br2 bw1 f6 grow no-underline ph3 pv2 ttu"
+              className="bg-secondary border-black-10 border-2 font-bold grow inline-block px-5 py-2 rounded text-sm uppercase"
             >
-              <span>Quiero contactarlos</span>
+              <span>Quiero contactarme</span>
             </a>
           </div>
         </div>
       </Container>
     </div>
-    <div className="b--black-10 bt bw1">
+    <div className="border-gray-300 border-solid border-t-2">
       <CalendarPage showOnlyCurrentMonth />
     </div>
   </>

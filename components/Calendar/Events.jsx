@@ -5,7 +5,7 @@ import Event from './Event';
 
 const Events = ({ events }) => {
   const thereAreMoreEventsLabel = events.length > 2 && (
-    <span className="black-alternative dn f6 mt2 truncate db-l">
+    <span className="hidden lg:block text-sm mt-2 truncate">
       <span>y </span>
       <span>{events.length - 2}</span>
       <span> más</span>
@@ -21,7 +21,7 @@ const Events = ({ events }) => {
 
   return (
     <>
-      <ul className="list ma0 pl0">
+      <ul>
         {sortedEvents.map((event, index) => (
           <Event key={event.shortid} event={event} index={index} />
         ))}

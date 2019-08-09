@@ -1,22 +1,23 @@
+import classnames from 'classnames';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import React from 'react';
+import './MenuItem.css';
 
 const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
-  <li className="pv2">
+  <li className="py-2">
     <Link href={url} passHref prefetch>
       <a
         href="#!"
-        className={`${
-          router.pathname === url ? 'current-page' : ''
-        } black-alternative flex items-center justify-end no-underline relative`}
+        className={classnames([
+          router.pathname === url ? 'current-page' : '',
+          'flex items-center justify-end relative'
+        ])}
         onClick={toogleMenu}
       >
-        <span>{text}</span>
-        <span className="ml3 pt1 tc w30">
-          <box-icon name={icon} color="#999" />
-        </span>
+        <span className="mr-4">{text}</span>
+        <box-icon name={icon} color="#999" />
       </a>
     </Link>
   </li>

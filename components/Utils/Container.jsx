@@ -1,8 +1,9 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const Container = ({ large, ...rest }) => (
-  <div className={`${large === 'large' ? 'mw9' : 'mw7'} center ph3 pv5`} {...rest} />
+  <div className={classnames([large === 'large' ? 'max-w-7xl' : 'max-w-3xl', 'mx-auto px-4 py-16'])} {...rest} />
 );
 
 Container.propTypes = {

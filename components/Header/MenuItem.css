@@ -1,0 +1,7 @@
+.current-page::after {
+  color: theme('colors.success');
+  content: '•';
+  font-weight: bold;
+  right: -0.5rem;
+  position: absolute;
+}

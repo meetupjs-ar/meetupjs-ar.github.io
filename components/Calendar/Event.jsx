@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import eventMustBeHighlighted from 'utils/eventMustBeHighlighted';
@@ -5,14 +6,17 @@ import eventMustBeHighlighted from 'utils/eventMustBeHighlighted';
 const Event = ({ event, index }) => {
   const { eventName } = event;
   const highlight = eventMustBeHighlighted(eventName)
-    ? 'b bg-yellow-alternative'
-    : 'bg-washed-yellow';
+    ? 'font-bold bg-secondary'
+    : 'bg-secondary-light';
 
   return (
     <li
-      className={`${highlight} ${index > 1 ? 'dn-l' : ''} ${
-        index > 0 ? 'mt2' : ''
-      } b--black-10 ba black-alternative br1 bw1 f6 lh-solid pa1 text-shadow-1 truncate`}
+      className={classnames([
+        highlight,
+        index > 1 ? 'lg:hidden' : '',
+        index > 0 ? 'mt-1' : '',
+        'border-black-10 border-2 rounded p-1 text-sm truncate'
+      ])}
     >
       {eventName}
     </li>

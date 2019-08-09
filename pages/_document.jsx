@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
             href={`${publicRuntimeConfig.REACT_APP_URL}static/favicon.ico`}
           />
         </Head>
-        <body className="black-alternative lh-title sans-serif">
+        <body className="leading-tight pt-68-px text-primary">
           <Main />
           <NextScript />
         </body>

@@ -6,7 +6,7 @@ import App, { Container } from 'next/app';
 import getConfig from 'next/config';
 import Router from 'next/router';
 import React from 'react';
-import './styles.css';
+import './_app.css';
 
 const { publicRuntimeConfig } = getConfig();
 const greeting = `
@@ -76,7 +76,7 @@ class MyApp extends App {
 
     return (
       <Container>
-        <div className="custom-min-vh-100 flex flex-column">
+        <div className="min-h-screen-header flex flex-col">
           <Header />
           <div className="flex-auto">
             <Component {...pageProps} />

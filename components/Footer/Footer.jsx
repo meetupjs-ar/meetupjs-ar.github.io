@@ -4,12 +4,12 @@ import React from 'react';
 const { publicRuntimeConfig } = getConfig();
 
 const Footer = () => (
-  <footer className="b--black-10 bt bg-washed-yellow bw1 pv3">
-    <div className="center mw9 ph3">
-      <div className="f6 flex justify-between">
-        <p className="mv0">Meetup.js - Buenos Aires</p>
-        <p className="flex items-center justify-end mv0">
-          <span className="mr1">Version</span>
+  <footer className="bg-secondary-light border-black-10 border-t-2 py-4">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="flex justify-between text-sm">
+        <p className="my-0">Meetup.js - Buenos Aires</p>
+        <p className="my-0">
+          <span>Version </span>
           <span>{publicRuntimeConfig.REACT_APP_VERSION}</span>
         </p>
       </div>
