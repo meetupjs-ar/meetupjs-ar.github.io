@@ -76,7 +76,7 @@ class MyApp extends App {
 
     return (
       <Container>
-        <div className="min-h-screen-header flex flex-col">
+        <div className="flex flex-col min-h-screen-header">
           <Header />
           <div className="flex-auto">
             <Component {...pageProps} />

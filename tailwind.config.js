@@ -1,15 +1,6 @@
 module.exports = {
   theme: {
     extend: {
-      colors: {
-        'dark-green': '#137752',
-        primary: '#2e282a',
-        quaternary: '#6a5359',
-        secondary: '#ffe45e',
-        'secondary-light': '#fffceb',
-        success: '#98d083',
-        tertiary: '#fffceb'
-      },
       backgroundColor: theme => ({
         'near-white': '#f4f4f4',
         overlay: 'rgba(0, 0, 0, 0.7)',
@@ -18,6 +9,15 @@ module.exports = {
       }),
       borderColor: {
         'black-10': 'rgba(0, 0, 0, 0.1)'
+      },
+      colors: {
+        'dark-green': '#137752',
+        primary: '#2e282a',
+        quaternary: '#6a5359',
+        secondary: '#ffe45e',
+        'secondary-light': '#fffceb',
+        success: '#98d083',
+        tertiary: '#fffceb'
       },
       height: {
         '50-px': '50px'
