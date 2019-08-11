@@ -1,0 +1,10 @@
+export const metadata = {
+  authors: ['Norberto Herz'],
+  coverUrl: '/static/Blog/resena-meetup-julio-2019/meetupjs_jul19_9.jpg',
+  coverAlt: 'La foto del final 😎',
+  description: 'Te contamos lo que pasó en el evento de Julio en las oficinas de Avature.',
+  /* TODO: poner bien la fecha */
+  publishedDay: new Date(2019, 8, 13),
+  relativeUrl: '/articulos/resena-meetup-julio-2019.html',
+  title: 'Reseña del Meetup.js de julio de 2019'
+};
