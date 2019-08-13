@@ -2,27 +2,26 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import blog from './Icons/blog.svg';
-import bot from './Icons/bot.svg';
 import calendar from './Icons/calendar.svg';
 import close from './Icons/close.svg';
 import facebook from './Icons/facebook.svg';
 import github from './Icons/github.svg';
+import handshake from './Icons/handshake.svg';
 import home from './Icons/home.svg';
 import isotype from './Icons/isotype.svg';
 import linkExternal from './Icons/link-external.svg';
 import logo from './Icons/logo.svg';
 import meetup from './Icons/meetup.svg';
 import menu from './Icons/menu.svg';
-import pen from './Icons/pen.svg';
 import plus from './Icons/plus.svg';
 import questionMark from './Icons/question-mark.svg';
+import services from './Icons/services.svg';
 import slack from './Icons/slack.svg';
 import twitter from './Icons/twitter.svg';
 import youtube from './Icons/youtube.svg';
 
 const ICONS = {
   blog,
-  bot,
   calendar,
   close,
   facebook,
@@ -33,9 +32,10 @@ const ICONS = {
   logo,
   meetup,
   menu,
-  pen,
+  handshake,
   plus,
   questionMark,
+  services,
   slack,
   twitter,
   youtube

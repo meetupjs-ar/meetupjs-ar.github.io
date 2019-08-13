@@ -15,7 +15,7 @@ const Menu = ({ toogleMenu }) => (
     <MenuItem text="Código de Conducta" icon="pen" url="/coc.html" toogleMenu={toogleMenu} />
     <MenuItem
       text="Estado de los servicios"
-      icon="bot"
+      icon="services"
       url="/servicios.html"
       toogleMenu={toogleMenu}
     />
