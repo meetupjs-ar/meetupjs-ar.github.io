@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Icon from '../Utils/Icon';
 import './ToggleMenuIcon.css';
 
 const ToggleMenuIcon = ({ icon, toogleMenu, visible }) => {
@@ -7,8 +8,8 @@ const ToggleMenuIcon = ({ icon, toogleMenu, visible }) => {
 
   return (
     <button className="select-none" onClick={toogleMenu} type="button">
-      <box-icon name={icon} />
-      <span className="visually-hidden">Menu</span>
+      <Icon name={icon} />
+      <span className="visually-hidden">Menú</span>
     </button>
   );
 };

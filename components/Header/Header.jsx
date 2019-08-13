@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import Link from 'next/link';
 import React, { Component } from 'react';
+import Icon from '../Utils/Icon';
 import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
 
@@ -22,12 +23,13 @@ class Header extends Component {
           <div className="flex items-center justify-between">
             <Link href="/" passHref>
               <a href="#!" onClick={this.closeMenu}>
-                <img src={require('./isotipo.svg')} alt="Logo" className="block h-50-px w-50-px" />
+                <Icon name="isotype" height="h-50-px" width="w-50-px" />
               </a>
             </Link>
             <ToogleMenuIcon
               visible
-              icon={!isMenuOpen ? 'menu' : 'x'}
+              icon={isMenuOpen ? 'close' : 'menu'}
+              alt={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               toogleMenu={this.toogleMenu}
             />
           </div>

@@ -1,0 +1,34 @@
+<!DOCTYPE svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="64"
+  width="64"
+  preserveaspectratio="none"
+  aria-labelledby="title"
+  aria-describedby="desc"
+  role="img"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>External Link</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path
+    data-name="layer2"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M30 62h32V2H2v32"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M26 56V38H8m18 0L2 62"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+</svg>

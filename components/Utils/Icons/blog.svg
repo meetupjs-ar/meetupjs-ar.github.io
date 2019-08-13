@@ -1,0 +1,44 @@
+<!DOCTYPE svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="64"
+  width="64"
+  preserveaspectratio="none"
+  aria-labelledby="title"
+  aria-describedby="desc"
+  role="img"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>News</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path
+    data-name="layer2"
+    d="M10 62h44a8 8 0 0 0 8-8V2H18v8"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+  <path
+    data-name="layer2"
+    d="M18 54a8 8 0 0 1-8 8 8 8 0 0 1-8-8V10h16z"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M54 10H26m28 32H26m28 8H26m16-32h12v16H42zm-8 0h-6m6 8h-8m8 8h-8"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+</svg>

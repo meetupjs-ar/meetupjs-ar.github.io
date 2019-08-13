@@ -1,0 +1,38 @@
+<!DOCTYPE svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="64"
+  width="64"
+  preserveaspectratio="none"
+  aria-labelledby="title"
+  aria-describedby="desc"
+  role="img"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>Calendar</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M2 8h60v54H2z"
+  ></path>
+  <path
+    data-name="layer2"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M54 54H10V16h44v38z"
+  ></path>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M32 2v18M18 2v18M46 2v18"
+  ></path>
+</svg>

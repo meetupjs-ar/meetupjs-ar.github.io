@@ -1,0 +1,44 @@
+<!DOCTYPE svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="64"
+  width="64"
+  preserveaspectratio="none"
+  aria-labelledby="title"
+  aria-describedby="desc"
+  role="img"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>Real Estate</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-linecap="round"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M2 29L32 5l30 24"
+    stroke-linejoin="round"
+  ></path>
+  <path
+    data-name="layer2"
+    fill="none"
+    stroke="#202020"
+    stroke-linecap="round"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M23 62V40h18v22"
+    stroke-linejoin="round"
+  ></path>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-linecap="round"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M10 22.6V62h44V8h-9v7.445"
+    stroke-linejoin="round"
+  ></path>
+</svg>

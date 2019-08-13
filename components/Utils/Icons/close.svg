@@ -1,0 +1,24 @@
+<!DOCTYPE svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="64"
+  width="64"
+  preserveaspectratio="none"
+  aria-labelledby="title"
+  aria-describedby="desc"
+  role="img"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>Close</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path
+    data-name="layer1"
+    fill="none"
+    stroke="#202020"
+    stroke-miterlimit="10"
+    stroke-width="2"
+    d="M41.999 20.002l-22 22m22 0L20 20"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  ></path>
+</svg>
