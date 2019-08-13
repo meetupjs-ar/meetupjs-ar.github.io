@@ -12,7 +12,7 @@ const Menu = ({ toogleMenu }) => (
       url="/calendario.html"
       toogleMenu={toogleMenu}
     />
-    <MenuItem text="Código de Conducta" icon="pen" url="/coc.html" toogleMenu={toogleMenu} />
+    <MenuItem text="Código de Conducta" icon="handshake" url="/coc.html" toogleMenu={toogleMenu} />
     <MenuItem
       text="Estado de los servicios"
       icon="services"
