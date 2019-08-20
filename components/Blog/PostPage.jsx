@@ -14,7 +14,7 @@ class BlogArticlePage extends Component {
     super(props);
 
     const { name } = this.props;
-    // eslint-disable-next-line global-require, import/no-dynamic-require
+    // eslint-disable-next-line import/no-dynamic-require
     const articleModule = require(`./Articles/${name}.mdx`);
 
     this.article = articleModule.default;

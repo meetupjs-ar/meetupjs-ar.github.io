@@ -22,14 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/*
-  Avoid SVG to align itself and make it work as a block
-  TODO: Remove hack when remove box-icons
-*/
-box-icon[name] {
-  display: block;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
