@@ -19,7 +19,6 @@ module.exports = withPlugins(
     [
       withBundleAnalyzer,
       {
-        analyzeBrowser: process.env.NODE_ENV === 'production',
         bundleAnalyzerConfig: {
           browser: {
             analyzerMode: 'static',
@@ -30,8 +29,8 @@ module.exports = withPlugins(
     ],
     [
       new PacktrackerPlugin({
-        project_token: '8eae744b-e700-43e7-8c21-97464275e82f',
-        upload: process.env.NODE_ENV === 'production',
+        project_token: '6520c5cc-d69d-4c49-9b1b-e66fbdcabc4f',
+        upload: true,
         branch: process.env.TRAVIS_BRANCH || process.env.TRAVIS_PULL_REQUEST_BRANCH
       })
     ]
