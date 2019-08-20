@@ -18,11 +18,7 @@ class StatusPage extends Component {
     spreadsheetApi: STATUS_RESPONSE_TYPE.UNKNOWN
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = this.defaultState;
-  }
+  state = this.defaultState;
 
   componentDidMount() {
     // TODO: eliminar este hack

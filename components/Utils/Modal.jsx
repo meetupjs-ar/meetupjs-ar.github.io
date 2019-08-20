@@ -3,11 +3,6 @@ import React, { Component } from 'react';
 import './Modal.css';
 
 class Modal extends Component {
-  static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
-    hideModal: PropTypes.func.isRequired
-  };
-
   closeModalOnEscapeKey = event => {
     const { hideModal } = this.props;
 
@@ -42,5 +37,10 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
+  hideModal: PropTypes.func.isRequired
+};
 
 export default Modal;

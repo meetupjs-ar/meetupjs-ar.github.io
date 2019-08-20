@@ -3,12 +3,12 @@
   version="1.1"
   width="36"
   height="36"
-  viewBox="0 0 36 36"
-  preserveAspectRatio="xMidYMid meet"
+  viewbox="0 0 36 36"
+  preserveaspectratio="xMidYMid meet"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >
-  <title>certificate-line</title>
+  <title>code of conduct</title>
   <path
     d="M32,6H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H19l.57-.7.93-1.14L20.41,28H4V8H32l0,8.56a8.41,8.41,0,0,1,2,1.81V8A2,2,0,0,0,32,6Z"
     class="clr-i-outline clr-i-outline-path-1"

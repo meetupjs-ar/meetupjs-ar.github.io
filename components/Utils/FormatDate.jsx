@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class FormatDate extends Component {
-  static propTypes = {
-    date: PropTypes.instanceOf(Date).isRequired
-  };
-
   format = date =>
     [
       this.getDayName(date.getDay()),
@@ -75,5 +71,9 @@ class FormatDate extends Component {
     return <strong>{this.format(date)}</strong>;
   }
 }
+
+FormatDate.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired
+};
 
 export default FormatDate;

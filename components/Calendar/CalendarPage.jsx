@@ -13,14 +13,6 @@ import './CalendarPage.css';
 import Month from './Month';
 
 class CalendarPage extends Component {
-  static defaultProps = {
-    showOnlyCurrentMonth: false
-  };
-
-  static propTypes = {
-    showOnlyCurrentMonth: PropTypes.bool
-  };
-
   defaultState = {
     currentDay: new Date(),
     error: false,
@@ -220,5 +212,13 @@ class CalendarPage extends Component {
     );
   }
 }
+
+CalendarPage.propTypes = {
+  showOnlyCurrentMonth: PropTypes.bool
+};
+
+CalendarPage.defaultProps = {
+  showOnlyCurrentMonth: false
+};
 
 export default CalendarPage;

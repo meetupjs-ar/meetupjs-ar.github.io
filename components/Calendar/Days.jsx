@@ -18,13 +18,6 @@ const getDayName = {
 };
 
 class Days extends Component {
-  static propTypes = {
-    days: PropTypes.number.isRequired,
-    events: PropTypes.arrayOf(Event.propTypes.event).isRequired,
-    month: PropTypes.instanceOf(Date).isRequired,
-    showModal: PropTypes.func.isRequired
-  };
-
   getBgColor = (currentDay, today) => {
     if (isSameDay(currentDay, today)) {
       return 'bg-washed-green';
@@ -88,5 +81,12 @@ class Days extends Component {
     return elements;
   }
 }
+
+Days.propTypes = {
+  days: PropTypes.number.isRequired,
+  events: PropTypes.arrayOf(Event.propTypes.event).isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  showModal: PropTypes.func.isRequired
+};
 
 export default Days;

@@ -6,10 +6,6 @@ import Markdown from 'utils/Markdown';
 import PostPageFooter from './PostPageFooter';
 
 class BlogArticlePage extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired
-  };
-
   constructor(props) {
     super(props);
 
@@ -33,5 +29,9 @@ class BlogArticlePage extends Component {
     );
   }
 }
+
+BlogArticlePage.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default BlogArticlePage;
