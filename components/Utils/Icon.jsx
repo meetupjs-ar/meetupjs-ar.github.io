@@ -4,9 +4,9 @@ import React from 'react';
 import blog from './Icons/blog.svg';
 import calendar from './Icons/calendar.svg';
 import close from './Icons/close.svg';
+import codeOfConduct from './Icons/code-of-conduct.svg';
 import facebook from './Icons/facebook.svg';
 import github from './Icons/github.svg';
-import handshake from './Icons/handshake.svg';
 import home from './Icons/home.svg';
 import isotype from './Icons/isotype.svg';
 import linkExternal from './Icons/link-external.svg';
@@ -24,6 +24,7 @@ const ICONS = {
   blog,
   calendar,
   close,
+  codeOfConduct,
   facebook,
   github,
   home,
@@ -32,7 +33,6 @@ const ICONS = {
   logo,
   meetup,
   menu,
-  handshake,
   plus,
   questionMark,
   services,
