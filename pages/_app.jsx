@@ -79,6 +79,7 @@ class MyApp extends App {
         <div className="flex flex-col min-h-screen-header">
           <Header />
           <div className="flex-auto">
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
           </div>
           <Footer />
