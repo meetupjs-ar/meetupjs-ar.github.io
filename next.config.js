@@ -31,7 +31,8 @@ module.exports = withPlugins(
     [
       new PacktrackerPlugin({
         project_token: '8eae744b-e700-43e7-8c21-97464275e82f',
-        upload: process.env.NODE_ENV === 'production'
+        upload: process.env.NODE_ENV === 'production',
+        branch: process.env.TRAVIS_BRANCH
       })
     ]
   ],
