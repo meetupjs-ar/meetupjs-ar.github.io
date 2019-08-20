@@ -4,6 +4,7 @@ const withMDX = require('@zeit/next-mdx');
 const withOptimizedImages = require('next-optimized-images');
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const PacktrackerPlugin = require('@packtracker/webpack-plugin');
 const { version, homepage } = require('./package.json');
 
 module.exports = withPlugins(
@@ -26,6 +27,12 @@ module.exports = withPlugins(
           }
         }
       }
+    ],
+    [
+      new PacktrackerPlugin({
+        project_token: '8eae744b-e700-43e7-8c21-97464275e82f',
+        upload: process.env.NODE_ENV === 'production'
+      })
     ]
   ],
   {
