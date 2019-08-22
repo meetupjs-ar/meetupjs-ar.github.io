@@ -52,8 +52,7 @@ module.exports = withPlugins(
           new PacktrackerPlugin({
             upload: process.env.CI,
             fail_build: process.env.CI,
-            branch: process.env.TRAVIS_BRANCH || process.env.TRAVIS_PULL_REQUEST_BRANCH,
-            project_token: process.env.PT_PROJECT_TOKEN
+            branch: process.env.TRAVIS_BRANCH || process.env.TRAVIS_PULL_REQUEST_BRANCH
           })
         );
       }
