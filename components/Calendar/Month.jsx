@@ -1,5 +1,5 @@
 import getDaysInMonth from 'date-fns/getDaysInMonth';
-import getISODay from 'date-fns/getIsoDay';
+import getISODay from 'date-fns/getISODay';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Days from './Days';
