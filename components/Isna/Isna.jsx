@@ -1,5 +1,6 @@
 import classnames from 'classnames';
-import isBefore from 'date-fns/is_before';
+import isBefore from 'date-fns/isBefore';
+import parseISO from 'date-fns/parseISO';
 import Mousetrap from 'mousetrap';
 import getConfig from 'next/config';
 import React, { Component } from 'react';
@@ -8,7 +9,7 @@ import './Isna.css';
 const { publicRuntimeConfig } = getConfig();
 
 function byExpiration(notification) {
-  if (isBefore(new Date(), notification.expiration)) {
+  if (isBefore(new Date(), parseISO(notification.expiration))) {
     return true;
   }
   try {

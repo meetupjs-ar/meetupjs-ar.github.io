@@ -22,11 +22,7 @@ class CalendarPage extends Component {
     showModal: false
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = this.defaultState;
-  }
+  state = this.defaultState;
 
   componentDidMount() {
     // TODO: remove this hack
