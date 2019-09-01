@@ -1,11 +1,12 @@
 import classnames from 'classnames';
-import isBefore from 'date-fns/is_before';
-import isSameDay from 'date-fns/is_same_day';
+import isBefore from 'date-fns/isBefore';
+import isSameDay from 'date-fns/isSameDay';
+import parseISO from 'date-fns/parseISO';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import DayFooter from './DayFooter';
-import Events from './Events';
 import Event from './Event';
+import Events from './Events';
 
 const getDayName = {
   0: 'domingo',
@@ -31,7 +32,7 @@ class Days extends Component {
   };
 
   getEventsOfTheDay = (eventsInMonth, day) =>
-    eventsInMonth.filter(event => isSameDay(event.date, day));
+    eventsInMonth.filter(event => isSameDay(parseISO(event.date), day));
 
   getStrike = (currentDay, today) => isBefore(currentDay, today) && !isSameDay(currentDay, today);
 
