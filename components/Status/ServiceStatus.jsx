@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class ServiceStatus extends Component {
-  static propTypes = {
-    description: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    status: PropTypes.number.isRequired
-  };
-
   getStatusColor = status => {
     switch (status) {
       case 0:
@@ -45,5 +39,11 @@ class ServiceStatus extends Component {
     );
   }
 }
+
+ServiceStatus.propTypes = {
+  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.number.isRequired
+};
 
 export default ServiceStatus;

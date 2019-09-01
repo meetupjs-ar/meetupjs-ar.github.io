@@ -8,18 +8,11 @@ import FormatDate from 'utils/FormatDate';
 import Loading from 'utils/Loading';
 import MessageWithAction from 'utils/MessageWithAction';
 import Modal from 'utils/Modal';
-import Month from './Month';
+import Icon from '../Utils/Icon';
 import './CalendarPage.css';
+import Month from './Month';
 
 class CalendarPage extends Component {
-  static defaultProps = {
-    showOnlyCurrentMonth: false
-  };
-
-  static propTypes = {
-    showOnlyCurrentMonth: PropTypes.bool
-  };
-
   defaultState = {
     currentDay: new Date(),
     error: false,
@@ -29,11 +22,7 @@ class CalendarPage extends Component {
     showModal: false
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = this.defaultState;
-  }
+  state = this.defaultState;
 
   componentDidMount() {
     // TODO: remove this hack
@@ -131,12 +120,12 @@ class CalendarPage extends Component {
               <a
                 href="https://goo.gl/forms/vzPGDccvtYcOsdEi1"
                 title="Agregar un evento al calendario"
-                className="bg-secondary grow ml-4 rounded-full"
+                className="grow ml-4"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Agregar un evento al calendario"
               >
-                <box-icon name="plus" border="circle" size="2.5rem" />
+                <Icon name="plus" />
               </a>
               <Link href="/articulos/que-es-el-calendario-de-eventos.html" passHref>
                 <a
@@ -145,7 +134,7 @@ class CalendarPage extends Component {
                   className="grow ml-4"
                   aria-label="¿Qué es el calendario de eventos?"
                 >
-                  <box-icon name="question-mark" border="circle" size="2.5rem" />
+                  <Icon name="questionMark" />
                 </a>
               </Link>
             </div>
@@ -179,7 +168,7 @@ class CalendarPage extends Component {
                   <FormatDate date={currentDay} />
                 </span>
                 <button onClick={this.hideModal} type="button">
-                  <box-icon name="x" />
+                  <Icon name="close" />
                 </button>
               </div>
               <div className="max-h-75-vh overflow-y-auto">
@@ -202,8 +191,8 @@ class CalendarPage extends Component {
                             rel="noopener noreferrer"
                             className="bg-secondary border-black-10 border-2 font-bold flex grow items-center px-5 py-2 rounded text-sm uppercase"
                           >
-                            <span className="text-xl mr-3">
-                              <box-icon name="link-external" />
+                            <span className="mr-3 text-xl">
+                              <Icon name="linkExternal" width="w-4" />
                             </span>
                             <span>Link</span>
                           </a>
@@ -219,5 +208,13 @@ class CalendarPage extends Component {
     );
   }
 }
+
+CalendarPage.propTypes = {
+  showOnlyCurrentMonth: PropTypes.bool
+};
+
+CalendarPage.defaultProps = {
+  showOnlyCurrentMonth: false
+};
 
 export default CalendarPage;

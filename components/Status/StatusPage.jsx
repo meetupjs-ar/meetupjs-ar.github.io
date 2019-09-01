@@ -18,11 +18,7 @@ class StatusPage extends Component {
     spreadsheetApi: STATUS_RESPONSE_TYPE.UNKNOWN
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = this.defaultState;
-  }
+  state = this.defaultState;
 
   componentDidMount() {
     // TODO: eliminar este hack
@@ -38,6 +34,7 @@ class StatusPage extends Component {
     this.setState(this.defaultState);
 
     this.getServiceStatus('https://spreadsheet-api.now.sh/').then(status => {
+      console.log('https://spreadsheet-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           spreadsheetApi: status
@@ -46,6 +43,7 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://eventbrite-api.now.sh/').then(status => {
+      console.log('https://eventbrite-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           eventbriteApi: status
@@ -54,6 +52,7 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://meetup-api.now.sh/').then(status => {
+      console.log('https://meetup-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           meetupApi: status
@@ -62,6 +61,7 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://calendar-api.now.sh/').then(status => {
+      console.log('https://calendar-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           calendarApi: status
@@ -70,6 +70,7 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://meetupjs-slack-bot.now.sh/').then(status => {
+      console.log('https://meetupjs-slack-bot.now.', status);
       if (this.isComponentMounted) {
         this.setState({
           calendarBot: status
@@ -81,7 +82,13 @@ class StatusPage extends Component {
   getServiceStatus = url =>
     new Promise(resolve => {
       fetch(url)
-        .then(() => resolve(STATUS_RESPONSE_TYPE.SUCCESS))
+        .then(({ status }) => {
+          if (status !== 200) {
+            return resolve(STATUS_RESPONSE_TYPE.ERROR);
+          }
+
+          return resolve(STATUS_RESPONSE_TYPE.SUCCESS);
+        })
         .catch(() => resolve(STATUS_RESPONSE_TYPE.ERROR));
     });
 
@@ -92,17 +99,19 @@ class StatusPage extends Component {
 
   isError = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
+
     return (
-      calendarApi === STATUS_RESPONSE_TYPE.ERROR &&
-      calendarBot === STATUS_RESPONSE_TYPE.ERROR &&
-      eventbriteApi === STATUS_RESPONSE_TYPE.ERROR &&
-      meetupApi === STATUS_RESPONSE_TYPE.ERROR &&
+      calendarApi === STATUS_RESPONSE_TYPE.ERROR ||
+      calendarBot === STATUS_RESPONSE_TYPE.ERROR ||
+      eventbriteApi === STATUS_RESPONSE_TYPE.ERROR ||
+      meetupApi === STATUS_RESPONSE_TYPE.ERROR ||
       spreadsheetApi === STATUS_RESPONSE_TYPE.ERROR
     );
   };
 
   isOk = () => {
     const { calendarApi, calendarBot, eventbriteApi, meetupApi, spreadsheetApi } = this.state;
+
     return (
       calendarApi === STATUS_RESPONSE_TYPE.SUCCESS &&
       calendarBot === STATUS_RESPONSE_TYPE.SUCCESS &&

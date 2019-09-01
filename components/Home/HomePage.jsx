@@ -3,6 +3,7 @@ import React from 'react';
 import NoSSR from 'react-no-ssr';
 import Tilt from 'react-tilt';
 import Container from 'utils/Container';
+import Icon from 'utils/Icon';
 import CalendarPage from '../Calendar/CalendarPage';
 import './HomePage.css';
 
@@ -68,7 +69,7 @@ const HomePage = () => (
                   scale: '1.05'
                 }}
               >
-                <img src={require('./logo.svg')} alt="Logo" className="block w-full" />
+                <Icon name="logo" width="w-full" />
               </Tilt>
             </h1>
           </div>
@@ -84,7 +85,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./facebook.svg')} alt="Logo" className="block w-full" />
+              <Icon name="facebook" width="w-full" />
             </a>
             <a
               href="https://twitter.com/meetupjs_ar"
@@ -92,7 +93,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./twitter.svg')} alt="Logo" className="block w-full" />
+              <Icon name="twitter" width="w-full" />
             </a>
             <a
               href="https://github.com/meetupjs-ar"
@@ -100,7 +101,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./github.svg')} alt="Logo" className="block w-full" />
+              <Icon name="github" width="w-full" />
             </a>
             <a
               href="https://slack.meetupjs.com.ar/"
@@ -108,7 +109,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./slack.svg')} alt="Logo" className="block w-full" />
+              <Icon name="slack" width="w-full" />
             </a>
             <a
               href="https://www.meetup.com/es-ES/meetup-js/"
@@ -116,7 +117,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./meetup.svg')} alt="Logo" className="block w-full" />
+              <Icon name="meetup" width="w-full" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
@@ -124,7 +125,7 @@ const HomePage = () => (
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <img src={require('./youtube.svg')} alt="Logo" className="block w-full" />
+              <Icon name="youtube" width="w-full" />
             </a>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-center">

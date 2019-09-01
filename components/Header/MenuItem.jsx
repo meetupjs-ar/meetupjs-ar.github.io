@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Icon from '../Utils/Icon';
 import './MenuItem.css';
 
 const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
@@ -17,7 +18,7 @@ const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
         onClick={toogleMenu}
       >
         <span className="mr-4">{text}</span>
-        <box-icon name={icon} color="#999" />
+        <Icon name={icon} />
       </a>
     </Link>
   </li>

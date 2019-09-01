@@ -6,15 +6,11 @@ import Markdown from 'utils/Markdown';
 import PostPageFooter from './PostPageFooter';
 
 class BlogArticlePage extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired
-  };
-
   constructor(props) {
     super(props);
 
     const { name } = this.props;
-    // eslint-disable-next-line global-require, import/no-dynamic-require
+    // eslint-disable-next-line import/no-dynamic-require
     const articleModule = require(`./Articles/${name}.mdx`);
 
     this.article = articleModule.default;
@@ -33,5 +29,9 @@ class BlogArticlePage extends Component {
     );
   }
 }
+
+BlogArticlePage.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default BlogArticlePage;
