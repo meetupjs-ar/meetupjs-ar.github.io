@@ -25,7 +25,7 @@ class CalendarPage extends Component {
   state = this.defaultState;
 
   componentDidMount() {
-    // TODO: remove this hack
+    // TODO: eliminar este hack
     this.isComponentMounted = true;
     this.toggleOverflow(false);
     this.fetchEvents();
