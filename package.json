@@ -39,7 +39,7 @@
     "react-youtube": "^7.9.0",
     "stylelint": "^10.1.0",
     "stylelint-config-css-modules": "^1.4.0",
-    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-standard": "^19.0.0",
     "svg-sprite-loader": "^4.1.6",
     "webp-loader": "^0.5.0"
   },
