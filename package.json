@@ -63,7 +63,7 @@
     "prop-types": "^15.7.2",
     "random-number": "0.0.9",
     "react": "^16.8.6",
-    "react-bnb-gallery": "^1.1.6",
+    "react-bnb-gallery": "^1.1.7",
     "react-masonry-responsive": "^2.1.2",
     "react-no-ssr": "^1.1.0",
     "react-tilt": "^0.1.4",
