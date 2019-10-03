@@ -34,7 +34,7 @@
     "imagemin-svgo": "^7.0.0",
     "lint-staged": "^9.0.1",
     "prettier": "^1.18.2",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.10.2",
     "react-tweet-embed": "^1.2.2",
     "react-youtube": "^7.9.0",
     "stylelint": "^10.1.0",
