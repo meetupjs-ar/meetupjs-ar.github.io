@@ -61,23 +61,6 @@ body {
   min-height: calc(100vh - theme('padding.68-px'));
 }
 
-.video-iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.video-wrapper {
-  display: block;
-  height: 0;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-  padding-bottom: 56.25%; /* 16:9 */
-  position: relative;
-}
-
 @media screen and (min-width: 60em) {
   .image-shadow-container {
     margin: 4rem -4rem;

@@ -99,3 +99,20 @@
   list-style-type: disc;
   padding-left: 2.5rem;
 }
+
+.markdown-body > div .video-iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.markdown-body > div .video-wrapper {
+  display: block;
+  height: 0;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+}
