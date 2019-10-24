@@ -7,7 +7,7 @@ let purgePlugin = () => {};
 
 if (process.env.NODE_ENV === 'production') {
   purgePlugin = purgecss({
-    content: ['./components/**/*.jsx', './pages/**/*.jsx'],
+    content: ['./components/**/*.jsx', './components/**/*.mdx', './pages/**/*.jsx'],
     defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
   });
 }
