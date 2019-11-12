@@ -34,7 +34,6 @@ class StatusPage extends Component {
     this.setState(this.defaultState);
 
     this.getServiceStatus('https://spreadsheet-api.now.sh/').then(status => {
-      console.log('https://spreadsheet-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           spreadsheetApi: status
@@ -43,7 +42,6 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://eventbrite-api.now.sh/').then(status => {
-      console.log('https://eventbrite-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           eventbriteApi: status
@@ -52,7 +50,6 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://meetup-api.now.sh/').then(status => {
-      console.log('https://meetup-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           meetupApi: status
@@ -61,7 +58,6 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://calendar-api.now.sh/').then(status => {
-      console.log('https://calendar-api.now.sh/', status);
       if (this.isComponentMounted) {
         this.setState({
           calendarApi: status
@@ -70,7 +66,6 @@ class StatusPage extends Component {
     });
 
     this.getServiceStatus('https://meetupjs-slack-bot.now.sh/').then(status => {
-      console.log('https://meetupjs-slack-bot.now.', status);
       if (this.isComponentMounted) {
         this.setState({
           calendarBot: status
