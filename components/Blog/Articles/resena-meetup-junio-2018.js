@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Mateo Silguero'],
-  coverUrl: '/static/Blog/resena-meetup-junio-2018/meetupjs_jun18_5.jpg',
+  coverUrl: 'static/Blog/resena-meetup-junio-2018/meetupjs_jun18_5.jpg',
   coverAlt: 'Nico Isnardi en su vuelta a Meetup.js',
   description:
     'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas.',
