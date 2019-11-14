@@ -84,7 +84,12 @@ class BlogPage extends Component {
                     href="#!"
                     className="bg-animate block hover:bg-secondary-light overflow-hidden rounded"
                   >
-                    {metadata.coverUrl && <img src={metadata.coverUrl} alt={metadata.coverAlt} />}
+                    {metadata.coverUrl && (
+                      <img
+                        src={`https://raw.githubusercontent.com/meetupjs-ar/meetupjs-ar.github.io/dev/${metadata.coverUrl}`}
+                        alt={metadata.coverAlt}
+                      />
+                    )}
                     <div
                       className={classnames([
                         metadata.coverUrl ? 'border-b-2 border-l-2 border-r-2' : 'border-2',
