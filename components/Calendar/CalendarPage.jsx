@@ -9,7 +9,6 @@ import Loading from 'utils/Loading';
 import MessageWithAction from 'utils/MessageWithAction';
 import Modal from 'utils/Modal';
 import Icon from '../Utils/Icon';
-import './CalendarPage.css';
 import Month from './Month';
 
 class CalendarPage extends Component {
