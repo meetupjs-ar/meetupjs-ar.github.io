@@ -62,7 +62,7 @@
     "next-optimized-images": "^2.5.3",
     "prop-types": "^15.7.2",
     "random-number": "0.0.9",
-    "react": "^16.8.6",
+    "react": "^16.12.0",
     "react-bnb-gallery": "^1.1.6",
     "react-masonry-responsive": "^2.1.2",
     "react-no-ssr": "^1.1.0",
