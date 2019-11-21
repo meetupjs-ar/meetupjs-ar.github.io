@@ -6,6 +6,7 @@ import Container from 'utils/Container';
 import Icon from 'utils/Icon';
 import CalendarPage from '../Calendar/CalendarPage';
 import './HomePage.css';
+import LastArticles from '../Blog/LastArticles';
 
 const renderLogos = () => {
   const logos = [
@@ -147,6 +148,11 @@ const HomePage = () => (
             </a>
           </div>
         </div>
+      </Container>
+    </div>
+    <div className="border-gray-300 border-solid border-t-2">
+      <Container>
+        <LastArticles />
       </Container>
     </div>
     <div className="border-gray-300 border-solid border-t-2">

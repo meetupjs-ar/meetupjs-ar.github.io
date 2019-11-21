@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Container from 'utils/Container';
 import formatAuthors from 'utils/formatAuthors';
 import Markdown from 'utils/Markdown';
+import LastArticles from './LastArticles';
 import PostPageFooter from './PostPageFooter';
 
 class BlogArticlePage extends Component {
@@ -25,6 +26,9 @@ class BlogArticlePage extends Component {
           authors={formatAuthors(this.metadata.authors)}
           publishedDay={this.metadata.publishedDay}
         />
+        <div className="mt-16">
+          <LastArticles currentArticle={this.metadata.title} />
+        </div>
       </Container>
     );
   }
