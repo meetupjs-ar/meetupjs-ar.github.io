@@ -1,27 +1,24 @@
-import classnames from 'classnames';
-import Link from 'next/link';
 import React, { Component } from 'react';
 import Container from 'utils/Container';
-import formatAuthors from 'utils/formatAuthors';
-import FormatDate from 'utils/FormatDate';
-import './BlogPage.css';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
 import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-es-el-calendario-de-eventos.mdx';
-import { metadata as ResenaMeetupAgostoMetadata } from './Articles/resena-meetup-agosto-2018.mdx';
-import { metadata as ResenaMeetupJulioMetadata } from './Articles/resena-meetup-julio-2018.mdx';
-import { metadata as ResenaMeetupJunioMetadata } from './Articles/resena-meetup-junio-2018.mdx';
-import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
-import { metadata as ResenaMeetupSeptiembreMetadata } from './Articles/resena-meetup-septiembre-2018.mdx';
-import { metadata as ResenaMeetupOctubreMetadata } from './Articles/resena-meetup-octubre-2018.mdx';
-import { metadata as ResenaMeetupNoviembreMetadata } from './Articles/resena-meetup-noviembre-2018.mdx';
 import { metadata as ResenaMeetupAbril19Metadata } from './Articles/resena-meetup-abril-2019.mdx';
-import { metadata as ResenaMeetupJunio19Metadata } from './Articles/resena-meetup-junio-2019.mdx';
-import { metadata as ResenaMeetupJulio19Metadata } from './Articles/resena-meetup-julio-2019.mdx';
+import { metadata as ResenaMeetupAgostoMetadata } from './Articles/resena-meetup-agosto-2018.mdx';
 import { metadata as ResenaMeetupAgosto19Metadata } from './Articles/resena-meetup-agosto-2019.mdx';
-import { metadata as ResenaMeetupSeptiembre19Metadata } from './Articles/resena-meetup-septiembre-2019.mdx';
+import { metadata as ResenaMeetupJulioMetadata } from './Articles/resena-meetup-julio-2018.mdx';
+import { metadata as ResenaMeetupJulio19Metadata } from './Articles/resena-meetup-julio-2019.mdx';
+import { metadata as ResenaMeetupJunioMetadata } from './Articles/resena-meetup-junio-2018.mdx';
+import { metadata as ResenaMeetupJunio19Metadata } from './Articles/resena-meetup-junio-2019.mdx';
+import { metadata as ResenaMeetupMayoMetadata } from './Articles/resena-meetup-mayo-2018.mdx';
+import { metadata as ResenaMeetupNoviembreMetadata } from './Articles/resena-meetup-noviembre-2018.mdx';
+import { metadata as ResenaMeetupOctubreMetadata } from './Articles/resena-meetup-octubre-2018.mdx';
 import { metadata as ResenaMeetupOctubre19Metadata } from './Articles/resena-meetup-octubre-2019.mdx';
+import { metadata as ResenaMeetupSeptiembreMetadata } from './Articles/resena-meetup-septiembre-2018.mdx';
+import { metadata as ResenaMeetupSeptiembre19Metadata } from './Articles/resena-meetup-septiembre-2019.mdx';
+import './BlogPage.css';
+import PostCard from './PostCard';
 
 function splitByYear(articles) {
   return articles.reduce((prev, curr) => {
@@ -38,7 +35,7 @@ function splitByYear(articles) {
   }, {});
 }
 
-const allArticles = [
+export const allArticles = [
   ComoHacemosUnMeetupMetadata,
   ConsejosParaDarUnaCharlaMetadata,
   ConsejosParaDarUnaLightningMetadata,
@@ -78,37 +75,8 @@ class BlogPage extends Component {
           <React.Fragment key={year}>
             <h3 className="font-bold mt-8 text-quaternary text-2xl">{year}</h3>
             {this.articlesMetadata[year].map(metadata => (
-              <div className="mt-8" key={metadata.title}>
-                <Link href={metadata.relativeUrl} passHref>
-                  <a
-                    href="#!"
-                    className="bg-animate block hover:bg-secondary-light overflow-hidden rounded"
-                  >
-                    {metadata.coverUrl && (
-                      <img
-                        src={`https://raw.githubusercontent.com/meetupjs-ar/meetupjs-ar.github.io/dev/${metadata.coverUrl}`}
-                        alt={metadata.coverAlt}
-                      />
-                    )}
-                    <div
-                      className={classnames([
-                        metadata.coverUrl ? 'border-b-2 border-l-2 border-r-2' : 'border-2',
-                        'border-gray-300 border-solid p-4'
-                      ])}
-                    >
-                      <h2 className="font-bold mb-4 text-xl lg:text-2xl">{metadata.title}</h2>
-                      <p className="mb-4 text-quaternary text-sm">
-                        <span>Por </span>
-                        <strong>{formatAuthors(metadata.authors)}</strong>
-                        <span>. Publicado el </span>
-                        <FormatDate date={metadata.publishedDay} />
-                        <span>.</span>
-                      </p>
-                      <p className="mv3">{metadata.description}</p>
-                    </div>
-                  </a>
-                </Link>
-              </div>
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              <PostCard key={metadata.title} {...metadata} />
             ))}
           </React.Fragment>
         ))}
