@@ -17,6 +17,9 @@ npm install
 
 # ambiente de desarrollo
 npm run dev
+
+# para ver el análisis de los chunks
+ANALYZE_BUNDLE=true npm run build
 ```
 
 ## Licencia

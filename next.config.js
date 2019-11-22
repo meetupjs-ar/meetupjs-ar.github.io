@@ -19,6 +19,7 @@ module.exports = withPlugins(
     [
       withBundleAnalyzer,
       {
+        analyzeBrowser: process.env.ANALYZE_BUNDLE,
         bundleAnalyzerConfig: {
           browser: {
             analyzerMode: 'static',
