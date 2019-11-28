@@ -41,7 +41,7 @@
     "stylelint-config-css-modules": "^1.4.0",
     "stylelint-config-standard": "^18.3.0",
     "svg-sprite-loader": "^4.1.6",
-    "webp-loader": "^0.5.0"
+    "webp-loader": "^0.6.0"
   },
   "description": ":earth_americas: Sitio oficial de Meetup.js Buenos Aires",
   "dependencies": {
