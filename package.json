@@ -45,7 +45,7 @@
   },
   "description": ":earth_americas: Sitio oficial de Meetup.js Buenos Aires",
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "@packtracker/webpack-plugin": "^2.2.0",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^0.2.1-canary.4",
