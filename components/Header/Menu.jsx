@@ -7,21 +7,9 @@ const Menu = ({ toogleMenu }) => (
     <MenuItem text="Página Principal" icon="home" url="/" toogleMenu={toogleMenu} />
     <MenuItem text="Blog" icon="blog" url="/blog.html" toogleMenu={toogleMenu} />
     <MenuItem
-      text="Calendario de Eventos"
-      icon="calendar"
-      url="/calendario.html"
-      toogleMenu={toogleMenu}
-    />
-    <MenuItem
       text="Código de Conducta"
       icon="codeOfConduct"
       url="/coc.html"
-      toogleMenu={toogleMenu}
-    />
-    <MenuItem
-      text="Estado de los servicios"
-      icon="services"
-      url="/servicios.html"
       toogleMenu={toogleMenu}
     />
   </ul>

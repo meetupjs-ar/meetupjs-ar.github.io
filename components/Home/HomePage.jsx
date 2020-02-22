@@ -4,7 +4,6 @@ import NoSSR from 'react-no-ssr';
 import Tilt from 'react-tilt';
 import Container from 'utils/Container';
 import Icon from 'utils/Icon';
-import CalendarPage from '../Calendar/CalendarPage';
 import './HomePage.css';
 import LastArticles from '../Blog/LastArticles';
 
@@ -154,9 +153,6 @@ const HomePage = () => (
       <Container>
         <LastArticles />
       </Container>
-    </div>
-    <div className="border-gray-300 border-solid border-t-2">
-      <CalendarPage showOnlyCurrentMonth />
     </div>
   </>
 );

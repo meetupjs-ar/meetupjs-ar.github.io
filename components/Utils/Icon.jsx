@@ -2,7 +2,6 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import blog from './Icons/blog.svg';
-import calendar from './Icons/calendar.svg';
 import close from './Icons/close.svg';
 import codeOfConduct from './Icons/code-of-conduct.svg';
 import facebook from './Icons/facebook.svg';
@@ -22,7 +21,6 @@ import youtube from './Icons/youtube.svg';
 
 const ICONS = {
   blog,
-  calendar,
   close,
   codeOfConduct,
   facebook,
