@@ -3,7 +3,6 @@ import Container from 'utils/Container';
 import { metadata as ComoHacemosUnMeetupMetadata } from './Articles/como-hacemos-un-meetup.mdx';
 import { metadata as ConsejosParaDarUnaCharlaMetadata } from './Articles/consejos-para-dar-una-charla.mdx';
 import { metadata as ConsejosParaDarUnaLightningMetadata } from './Articles/consejos-para-dar-una-lightning-talk.mdx';
-import { metadata as QueEsElCalendarioDeEventosMetadata } from './Articles/que-es-el-calendario-de-eventos.mdx';
 import { metadata as ResenaMeetupAbril19Metadata } from './Articles/resena-meetup-abril-2019.mdx';
 import { metadata as ResenaMeetupAgostoMetadata } from './Articles/resena-meetup-agosto-2018.mdx';
 import { metadata as ResenaMeetupAgosto19Metadata } from './Articles/resena-meetup-agosto-2019.mdx';
@@ -39,7 +38,6 @@ export const allArticles = [
   ComoHacemosUnMeetupMetadata,
   ConsejosParaDarUnaCharlaMetadata,
   ConsejosParaDarUnaLightningMetadata,
-  QueEsElCalendarioDeEventosMetadata,
   ResenaMeetupMayoMetadata,
   ResenaMeetupJunioMetadata,
   ResenaMeetupJulioMetadata,
