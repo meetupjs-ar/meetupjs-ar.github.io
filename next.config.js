@@ -51,7 +51,7 @@ module.exports = withPlugins(
           message: 'Seguinos en Twitter. Somos @Meetupjs_ar 😎'
         }
       ],
-      REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/static/social.jpg',
+      REACT_APP_SOCIAL_IMAGE: 'https://meetupjs.com.ar/social.jpg',
       REACT_APP_TITLE: 'Meetup.js Buenos Aires',
       REACT_APP_URL: homepage,
       REACT_APP_VERSION: version

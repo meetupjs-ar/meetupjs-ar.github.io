@@ -39,7 +39,7 @@ const renderLogos = () => {
   const getStyles = logo => ({
     animationDelay: `${getRandomAnimationDelay()}s`,
     animationDuration: `${getRandomAnimationDuration()}s`,
-    backgroundImage: `url(/static/Home/${logo})`,
+    backgroundImage: `url(Home/${logo})`,
     left: `${getRandomLeft()}%`
   });
 

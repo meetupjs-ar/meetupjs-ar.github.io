@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Matias Blayer'],
-  coverUrl: 'static/Blog/resena-meetup-agosto-2018/meetupjs_aug18_22.jpg',
+  coverUrl: '/public/Blog/resena-meetup-agosto-2018/meetupjs_aug18_22.jpg',
   coverAlt: '¡Julito nos voló la peluca con la charla de WebAssembly!',
   description:
     '¡Extra, extra! Llegó el resúmen del evento de Agosto en Avature donde hablamos de JSX y WebAssembly.',

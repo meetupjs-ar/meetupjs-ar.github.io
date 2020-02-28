@@ -37,7 +37,7 @@ class Isna extends Component {
   };
 
   componentDidMount() {
-    this.audio = new Audio('/static/Isna/isna.mp3');
+    this.audio = new Audio('Isna/isna.mp3');
     this.notifications = this.getNotifications();
 
     Mousetrap.bind('up up down down left right left right b a enter', this.showEasterEgg);
@@ -94,7 +94,7 @@ class Isna extends Component {
     return (
       <>
         <div className={classnames(['easter-egg', active ? 'easter-egg-active' : ''])}>
-          <img src="/static/Isna/isna.png" alt="Nicolas Isnardi" className="w-full" />
+          <img src="Isna/isna.png" alt="Nicolas Isnardi" className="w-full" />
           <p className={classnames(['easter-egg-message', message ? '' : 'hidden'])}>{message}</p>
         </div>
       </>

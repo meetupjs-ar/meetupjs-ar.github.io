@@ -8,7 +8,7 @@ import './MenuItem.css';
 
 const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
   <li className="py-2">
-    <Link href={url} passHref prefetch>
+    <Link href={url} passHref>
       <a
         href="#!"
         className={classnames([

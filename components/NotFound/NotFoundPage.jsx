@@ -7,7 +7,7 @@ const NotFoundPage = () => (
     <div className="text-center">
       <h1 className="font-bold text-4xl">¡Ups!, lo que viniste a buscar no está acá.</h1>
       <img
-        src="/static/NotFound/travolta.gif"
+        src="NotFound/travolta.gif"
         alt="John Travolta"
         className="block mx-auto h-48 my-8"
       />
