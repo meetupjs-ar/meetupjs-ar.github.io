@@ -36,7 +36,7 @@ const renderLogos = () => {
   const getRandomAnimationDelay = () => rn({ integer: true, min: 1, max: 8 });
   const getRandomAnimationDuration = () => rn({ integer: true, min: 10, max: 25 });
   const getRandomLeft = () => rn({ integer: true, min: -5, max: 105 });
-  const getStyles = logo => ({
+  const getStyles = (logo) => ({
     animationDelay: `${getRandomAnimationDelay()}s`,
     animationDuration: `${getRandomAnimationDuration()}s`,
     backgroundImage: `url(/static/Home/${logo})`,
@@ -112,12 +112,12 @@ const HomePage = () => (
               <Icon name="slack" width="w-full" />
             </a>
             <a
-              href="https://www.meetup.com/es-ES/meetup-js/"
+              href="https://www.eventbrite.com/o/meetupjs-26934121251"
               target="_blank"
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <Icon name="meetup" width="w-full" />
+              <Icon name="eventbrite" width="w-full" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
