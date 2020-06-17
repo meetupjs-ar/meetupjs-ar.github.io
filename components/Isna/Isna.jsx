@@ -31,10 +31,14 @@ function isLocalStorageAvailable() {
 }
 
 class Isna extends Component {
-  state = {
-    active: false,
-    message: ''
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      active: false,
+      message: '',
+    };
+  }
 
   componentDidMount() {
     this.audio = new Audio('Isna/isna.mp3');
@@ -56,20 +60,20 @@ class Isna extends Component {
 
     if (!active) {
       this.setState({
-        active: true
+        active: true,
       });
 
       this.audio.play();
 
       setTimeout(() => {
         this.setState({
-          active: false
+          active: false,
         });
       }, 2500);
     }
   };
 
-  showNotification = notification => {
+  showNotification = (notification) => {
     setTimeout(() => {
       if (isLocalStorageAvailable()) {
         localStorage.setItem(notification.key, JSON.stringify(notification));
@@ -77,12 +81,12 @@ class Isna extends Component {
 
       this.setState({
         active: true,
-        message: notification.message
+        message: notification.message,
       });
 
       setTimeout(() => {
         this.setState({
-          active: false
+          active: false,
         });
       }, notification.hideAfter);
     }, notification.activateAfter);

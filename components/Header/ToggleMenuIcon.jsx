@@ -17,7 +17,7 @@ const ToggleMenuIcon = ({ icon, toogleMenu, visible }) => {
 ToggleMenuIcon.propTypes = {
   icon: PropTypes.string.isRequired,
   toogleMenu: PropTypes.func.isRequired,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
 };
 
 export default ToggleMenuIcon;

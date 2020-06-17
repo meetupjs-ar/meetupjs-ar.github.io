@@ -13,7 +13,7 @@ const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
         href="#!"
         className={classnames([
           router.pathname === url ? 'current-page' : '',
-          'flex items-center justify-end relative'
+          'flex items-center justify-end relative',
         ])}
         onClick={toogleMenu}
       >
@@ -27,11 +27,11 @@ const MenuItem = ({ icon, router, text, toogleMenu, url }) => (
 MenuItem.propTypes = {
   icon: PropTypes.string.isRequired,
   router: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
   text: PropTypes.string.isRequired,
   toogleMenu: PropTypes.func.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 export default withRouter(MenuItem);

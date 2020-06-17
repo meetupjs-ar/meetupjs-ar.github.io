@@ -23,12 +23,12 @@ MessageWithAction.propTypes = {
   actionMessage: PropTypes.string.isRequired,
   image: PropTypes.string,
   imageAlt: PropTypes.string,
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };
 
 MessageWithAction.defaultProps = {
   image: '',
-  imageAlt: ''
+  imageAlt: '',
 };
 
 export default MessageWithAction;

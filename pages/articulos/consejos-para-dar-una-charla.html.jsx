@@ -8,7 +8,7 @@ const metatags = {
   description:
     'Les compartimos una lista de puntos que recomendamos tener en cuenta a la hora de preparar una charla. Por Karen Serfaty y Cristhian Duran.',
   title: `Consejos para dar una charla - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/consejos-para-dar-una-charla.html`
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/consejos-para-dar-una-charla.html`,
 };
 
 export default () => (

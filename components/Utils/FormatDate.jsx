@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class FormatDate extends Component {
-  format = date =>
+  format = (date) =>
     [
       this.getDayName(date.getDay()),
       ' ',
@@ -10,10 +10,10 @@ class FormatDate extends Component {
       ' de ',
       this.getMonthName(date.getMonth()),
       ' de ',
-      date.getFullYear()
+      date.getFullYear(),
     ].join(' ');
 
-  getDayName = day => {
+  getDayName = (day) => {
     switch (day) {
       case 0:
         return 'Domingo';
@@ -34,7 +34,7 @@ class FormatDate extends Component {
     }
   };
 
-  getMonthName = month => {
+  getMonthName = (month) => {
     switch (month) {
       case 0:
         return 'Enero';
@@ -73,7 +73,7 @@ class FormatDate extends Component {
 }
 
 FormatDate.propTypes = {
-  date: PropTypes.instanceOf(Date).isRequired
+  date: PropTypes.instanceOf(Date).isRequired,
 };
 
 export default FormatDate;

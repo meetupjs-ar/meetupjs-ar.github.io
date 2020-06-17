@@ -11,11 +11,11 @@ const Loading = ({ message }) => (
 );
 
 Loading.propTypes = {
-  message: PropTypes.string
+  message: PropTypes.string,
 };
 
 Loading.defaultProps = {
-  message: 'Cargando...'
+  message: 'Cargando...',
 };
 
 export default Loading;

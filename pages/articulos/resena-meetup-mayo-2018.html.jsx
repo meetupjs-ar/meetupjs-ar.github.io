@@ -8,7 +8,7 @@ const metatags = {
   description:
     'Hace unos días Meetup.js retomó su actividad en las oficinas de Stensul. En este post te cuento que me llevé del evento. Por Julio Olivera.',
   title: `Reseña del Meetup.js de Mayo 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-mayo-2018.html`
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-mayo-2018.html`,
 };
 
 export default () => (
