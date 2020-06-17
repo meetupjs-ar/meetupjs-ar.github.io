@@ -4,13 +4,14 @@ import React from 'react';
 import blog from './Icons/blog.svg';
 import close from './Icons/close.svg';
 import codeOfConduct from './Icons/code-of-conduct.svg';
+import emailList from './Icons/email.svg';
+import eventbrite from './Icons/eventbrite.svg';
 import facebook from './Icons/facebook.svg';
 import github from './Icons/github.svg';
 import home from './Icons/home.svg';
 import isotype from './Icons/isotype.svg';
 import linkExternal from './Icons/link-external.svg';
 import logo from './Icons/logo.svg';
-import meetup from './Icons/meetup.svg';
 import menu from './Icons/menu.svg';
 import plus from './Icons/plus.svg';
 import questionMark from './Icons/question-mark.svg';
@@ -23,13 +24,14 @@ const ICONS = {
   blog,
   close,
   codeOfConduct,
+  emailList,
+  eventbrite,
   facebook,
   github,
   home,
   isotype,
   linkExternal,
   logo,
-  meetup,
   menu,
   plus,
   questionMark,

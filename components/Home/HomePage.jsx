@@ -36,7 +36,7 @@ const renderLogos = () => {
   const getRandomAnimationDelay = () => rn({ integer: true, min: 1, max: 8 });
   const getRandomAnimationDuration = () => rn({ integer: true, min: 10, max: 25 });
   const getRandomLeft = () => rn({ integer: true, min: -5, max: 105 });
-  const getStyles = logo => ({
+  const getStyles = (logo) => ({
     animationDelay: `${getRandomAnimationDelay()}s`,
     animationDuration: `${getRandomAnimationDuration()}s`,
     backgroundImage: `url(Home/${logo})`,
@@ -88,6 +88,14 @@ const HomePage = () => (
               <Icon name="facebook" width="w-full" />
             </a>
             <a
+              href="https://meetupjs.us19.list-manage.com/subscribe?u=4dfce508f79d990ee7db6f802&id=06fe2563f6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grow mx-2 lg:mx-4 w-16"
+            >
+              <Icon name="emailList" width="w-full" />
+            </a>
+            <a
               href="https://twitter.com/meetupjs_ar"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,12 +120,12 @@ const HomePage = () => (
               <Icon name="slack" width="w-full" />
             </a>
             <a
-              href="https://www.meetup.com/es-ES/meetup-js/"
+              href="https://www.eventbrite.com/o/meetupjs-26934121251"
               target="_blank"
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
             >
-              <Icon name="meetup" width="w-full" />
+              <Icon name="eventbrite" width="w-full" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCosDO1DDQBkKkmmIJaOdyXQ"
