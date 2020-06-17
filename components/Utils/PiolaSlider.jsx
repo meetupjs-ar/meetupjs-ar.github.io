@@ -4,21 +4,17 @@ import ReactBnbGallery from 'react-bnb-gallery';
 import { Masonry } from 'react-masonry-responsive';
 
 class PiolaSlider extends Component {
+  state = {
+    activePhotoIndex: 0,
+    galleryOpened: false,
+    images: []
+  };
+
   phrases = {
     noPhotosProvided: 'No hay fotelis 😭',
     showPhotoList: 'Mostrar miniaturas ',
-    hidePhotoList: 'Ocultar miniaturas ',
+    hidePhotoList: 'Ocultar miniaturas '
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      activePhotoIndex: 0,
-      galleryOpened: false,
-      images: [],
-    };
-  }
 
   componentDidMount() {
     this.getImages();
@@ -28,14 +24,14 @@ class PiolaSlider extends Component {
     try {
       const { relativePath } = this.props;
       const path = `https://api.github.com/repos/meetupjs-ar/meetupjs-ar.github.io/contents${relativePath}`;
-      const files = await fetch(path).then((response) => response.json());
+      const files = await fetch(path).then(response => response.json());
 
       this.setState({
         images: files.map((file, index) => ({
           index: file.sha,
           number: index,
-          photo: file.download_url,
-        })),
+          photo: file.download_url
+        }))
       });
     } catch (error) {
       // eslint-disable-next-line
@@ -52,14 +48,14 @@ class PiolaSlider extends Component {
         <button type="button" onClick={() => this.toggleGallery(index)}>
           <img src={image.photo} alt="" className="grow image-shadow" />
         </button>
-      ),
+      )
     }));
   };
 
-  toggleGallery = (photoIndex) => {
-    this.setState((prevState) => ({
+  toggleGallery = photoIndex => {
+    this.setState(prevState => ({
       activePhotoIndex: photoIndex,
-      galleryOpened: !prevState.galleryOpened,
+      galleryOpened: !prevState.galleryOpened
     }));
   };
 
@@ -84,7 +80,7 @@ class PiolaSlider extends Component {
 }
 
 PiolaSlider.propTypes = {
-  relativePath: PropTypes.string.isRequired,
+  relativePath: PropTypes.string.isRequired
 };
 
 export default PiolaSlider;

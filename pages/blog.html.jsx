@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 const metatags = {
   description: 'En este blog compartimos información relevante para la comunidad.',
   title: `Blog - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}blog.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}blog.html`
 };
 
 export default () => (

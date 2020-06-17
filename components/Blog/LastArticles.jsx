@@ -5,7 +5,7 @@ import PostCard from './PostCard';
 
 const LastArticles = ({ currentArticle }) => {
   const articlesToShow = allArticles
-    .filter((article) => article.title !== currentArticle)
+    .filter(article => article.title !== currentArticle)
     .slice(0, 2);
 
   return (
@@ -14,7 +14,7 @@ const LastArticles = ({ currentArticle }) => {
         Artículos de nuestro blog que podrían interesarte
       </h3>
       <div className="md:flex -mx-2">
-        {articlesToShow.map((article) => (
+        {articlesToShow.map(article => (
           <div key={article.title} className="px-2">
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <PostCard {...article} />
@@ -26,11 +26,11 @@ const LastArticles = ({ currentArticle }) => {
 };
 
 LastArticles.propTypes = {
-  currentArticle: PropTypes.string,
+  currentArticle: PropTypes.string
 };
 
 LastArticles.defaultProps = {
-  currentArticle: '',
+  currentArticle: ''
 };
 
 export default LastArticles;

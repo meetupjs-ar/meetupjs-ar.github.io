@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Santiago Ruffino'],
-  coverUrl: '/public/Blog/resena-meetup-octubre-2019/meetupjs_oct19_1.jpg',
+  coverUrl: 'static/Blog/resena-meetup-octubre-2019/meetupjs_oct19_1.jpg',
   coverAlt: 'Que concentración en la charla de Juancito',
   description: 'Revivamos juntos lo que pasó en el meetup #56 en Solstice.',
   publishedDay: new Date(2019, 10, 14),

@@ -38,7 +38,7 @@ const ICONS = {
   services,
   slack,
   twitter,
-  youtube,
+  youtube
 };
 
 const Icon = ({ height, name, width }) => {
@@ -52,12 +52,12 @@ const Icon = ({ height, name, width }) => {
 Icon.propTypes = {
   height: PropTypes.string,
   name: PropTypes.string.isRequired,
-  width: PropTypes.string,
+  width: PropTypes.string
 };
 
 Icon.defaultProps = {
   height: 'h-auto',
-  width: 'w-6',
+  width: 'w-6'
 };
 
 export default Icon;

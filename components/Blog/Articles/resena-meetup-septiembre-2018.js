@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Andres Villanueva'],
-  coverUrl: '/public/Blog/resena-meetup-septiembre-2018/meetupjs_sep18_75.jpg',
+  coverUrl: 'static/Blog/resena-meetup-septiembre-2018/meetupjs_sep18_75.jpg',
   coverAlt: 'Foto de les asistentes del Meetup',
   description:
     '¡La Primavera no podía empezar de mejor manera que con una nueva edición de Meetup.js! OLX nos abrió sus puertas y nosotros te contamos como estuvo, en el resumen de Septiembre.',

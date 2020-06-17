@@ -31,7 +31,7 @@ const renderLogos = () => {
     'typescript.png',
     'vue.png',
     'webpack.png',
-    'yarn.png',
+    'yarn.png'
   ];
   const getRandomAnimationDelay = () => rn({ integer: true, min: 1, max: 8 });
   const getRandomAnimationDuration = () => rn({ integer: true, min: 10, max: 25 });
@@ -39,8 +39,8 @@ const renderLogos = () => {
   const getStyles = (logo) => ({
     animationDelay: `${getRandomAnimationDelay()}s`,
     animationDuration: `${getRandomAnimationDuration()}s`,
-    backgroundImage: `url(Home/${logo})`,
-    left: `${getRandomLeft()}%`,
+    backgroundImage: `url(/static/Home/${logo})`,
+    left: `${getRandomLeft()}%`
   });
 
   return logos.map((logo, index) => (
@@ -66,7 +66,7 @@ const HomePage = () => (
                 options={{
                   axis: 'x',
                   reverse: true,
-                  scale: '1.05',
+                  scale: '1.05'
                 }}
               >
                 <Icon name="logo" width="w-full" />

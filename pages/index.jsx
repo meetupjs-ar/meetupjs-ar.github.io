@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 
 const metatags = {
   description:
-    'Grupo para debatir y compartir ideas en torno a Javascript (client-side y server-side), distintos frameworks, librerías y tecnologías en general. Un meetup mensual con charlas preparadas por miembros de la propia comunidad.',
+    'Grupo para debatir y compartir ideas en torno a Javascript (client-side y server-side), distintos frameworks, librerías y tecnologías en general. Un meetup mensual con charlas preparadas por miembros de la propia comunidad.'
 };
 
 export default () => (

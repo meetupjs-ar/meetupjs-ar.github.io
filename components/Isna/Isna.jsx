@@ -31,17 +31,13 @@ function isLocalStorageAvailable() {
 }
 
 class Isna extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: false,
-      message: '',
-    };
-  }
+  state = {
+    active: false,
+    message: ''
+  };
 
   componentDidMount() {
-    this.audio = new Audio('Isna/isna.mp3');
+    this.audio = new Audio('/static/Isna/isna.mp3');
     this.notifications = this.getNotifications();
 
     Mousetrap.bind('up up down down left right left right b a enter', this.showEasterEgg);
@@ -60,20 +56,20 @@ class Isna extends Component {
 
     if (!active) {
       this.setState({
-        active: true,
+        active: true
       });
 
       this.audio.play();
 
       setTimeout(() => {
         this.setState({
-          active: false,
+          active: false
         });
       }, 2500);
     }
   };
 
-  showNotification = (notification) => {
+  showNotification = notification => {
     setTimeout(() => {
       if (isLocalStorageAvailable()) {
         localStorage.setItem(notification.key, JSON.stringify(notification));
@@ -81,12 +77,12 @@ class Isna extends Component {
 
       this.setState({
         active: true,
-        message: notification.message,
+        message: notification.message
       });
 
       setTimeout(() => {
         this.setState({
-          active: false,
+          active: false
         });
       }, notification.hideAfter);
     }, notification.activateAfter);
@@ -98,7 +94,7 @@ class Isna extends Component {
     return (
       <>
         <div className={classnames(['easter-egg', active ? 'easter-egg-active' : ''])}>
-          <img src="Isna/isna.png" alt="Nicolas Isnardi" className="w-full" />
+          <img src="/static/Isna/isna.png" alt="Nicolas Isnardi" className="w-full" />
           <p className={classnames(['easter-egg-message', message ? '' : 'hidden'])}>{message}</p>
         </div>
       </>

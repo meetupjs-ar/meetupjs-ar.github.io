@@ -1,6 +1,6 @@
 export const metadata = {
   authors: ['Juan Scolari'],
-  coverUrl: '/public/Blog/resena-meetup-junio-2019/meetupjs_jun19_21.jpg',
+  coverUrl: 'static/Blog/resena-meetup-junio-2019/meetupjs_jun19_21.jpg',
   coverAlt: 'Eva haciéndose invisible con JavaScript.',
   description: '¡Llegó la segunda Meetup.js del año! Esta vez llena de cuentos 🧙‍ y magia ✨.',
   publishedDay: new Date(2019, 5, 18),
