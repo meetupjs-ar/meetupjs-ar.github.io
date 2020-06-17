@@ -4,8 +4,9 @@ import React from 'react';
 import blog from './Icons/blog.svg';
 import close from './Icons/close.svg';
 import codeOfConduct from './Icons/code-of-conduct.svg';
-import eventbrite from './Icons/eventbrite.svg';
 import emailList from './Icons/email.svg';
+import eventbrite from './Icons/eventbrite.svg';
+import facebook from './Icons/facebook.svg';
 import github from './Icons/github.svg';
 import home from './Icons/home.svg';
 import isotype from './Icons/isotype.svg';
@@ -25,6 +26,7 @@ const ICONS = {
   codeOfConduct,
   emailList,
   eventbrite,
+  facebook,
   github,
   home,
   isotype,
