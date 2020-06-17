@@ -13,11 +13,11 @@ const Markdown = ({ Content, bigFont }) => (
 
 Markdown.propTypes = {
   bigFont: PropTypes.bool,
-  Content: PropTypes.func.isRequired
+  Content: PropTypes.func.isRequired,
 };
 
 Markdown.defaultProps = {
-  bigFont: false
+  bigFont: false,
 };
 
 export default Markdown;

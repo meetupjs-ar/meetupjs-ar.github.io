@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 const metatags = {
   description: 'Este evento nos voló la capocha con SvelteJS y Vue 3. Por David Rene Comba Lareu.',
   title: `Reseña del Meetup.js de Agosto 2019 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-agosto-2019.html`
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-agosto-2019.html`,
 };
 
 export default () => (

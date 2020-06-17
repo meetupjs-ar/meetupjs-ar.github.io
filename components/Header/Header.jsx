@@ -6,9 +6,13 @@ import Menu from './Menu';
 import ToogleMenuIcon from './ToggleMenuIcon';
 
 class Header extends Component {
-  state = {
-    isMenuOpen: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
 
   closeMenu = () => this.setState({ isMenuOpen: false });
 

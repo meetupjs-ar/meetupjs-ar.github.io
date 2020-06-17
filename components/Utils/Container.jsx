@@ -11,11 +11,11 @@ const Container = ({ large, ...rest }) => (
 );
 
 Container.propTypes = {
-  large: PropTypes.string
+  large: PropTypes.string,
 };
 
 Container.defaultProps = {
-  large: ''
+  large: '',
 };
 
 export default Container;

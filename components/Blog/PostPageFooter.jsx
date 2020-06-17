@@ -25,7 +25,7 @@ const PostPageFooter = ({ authors, publishedDay }) => (
 
 PostPageFooter.propTypes = {
   authors: PropTypes.string.isRequired,
-  publishedDay: PropTypes.objectOf(Date).isRequired
+  publishedDay: PropTypes.objectOf(Date).isRequired,
 };
 
 export default PostPageFooter;

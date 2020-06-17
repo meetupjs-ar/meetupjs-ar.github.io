@@ -8,7 +8,7 @@ const metatags = {
   description:
     'Segunda edición de Meetup.js del año, cargada de risas, reencuentros, emociones y buenas charlas. Por Mateo Silguero.',
   title: `Reseña del Meetup.js de Junio 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-junio-2018.html`
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-junio-2018.html`,
 };
 
 export default () => (

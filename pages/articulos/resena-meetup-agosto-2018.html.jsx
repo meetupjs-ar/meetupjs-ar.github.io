@@ -8,7 +8,7 @@ const metatags = {
   description:
     '¡Extra, extra! Llegó el resúmen del evento de Agosto en Avature donde hablamos de JSX y WebAssembly. Por Matias Blayer.',
   title: `Reseña del Meetup.js de Agosto 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-agosto-2018.html`
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-agosto-2018.html`,
 };
 
 export default () => (

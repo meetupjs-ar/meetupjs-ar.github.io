@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './Modal.css';
 
 class Modal extends Component {
-  closeModalOnEscapeKey = event => {
+  closeModalOnEscapeKey = (event) => {
     const { hideModal } = this.props;
 
     return event.which === 27 && hideModal();
@@ -17,7 +17,7 @@ class Modal extends Component {
     window.removeEventListener('keydown', this.closeModalOnEscapeKey);
   };
 
-  handleClose = event => {
+  handleClose = (event) => {
     const { hideModal } = this.props;
 
     return event.target === event.currentTarget && hideModal();
@@ -40,7 +40,7 @@ class Modal extends Component {
 
 Modal.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
-  hideModal: PropTypes.func.isRequired
+  hideModal: PropTypes.func.isRequired,
 };
 
 export default Modal;
