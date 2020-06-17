@@ -88,6 +88,14 @@ const HomePage = () => (
               <Icon name="facebook" width="w-full" />
             </a>
             <a
+              href="https://meetupjs.us19.list-manage.com/subscribe?u=4dfce508f79d990ee7db6f802&id=06fe2563f6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grow mx-2 lg:mx-4 w-16"
+            >
+              <Icon name="emailList" width="w-full" />
+            </a>
+            <a
               href="https://twitter.com/meetupjs_ar"
               target="_blank"
               rel="noopener noreferrer"
