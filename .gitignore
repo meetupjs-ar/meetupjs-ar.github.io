@@ -8,7 +8,7 @@
 
 # production
 /build
-/out
+/public
 
 # next.js cache directory
 .next

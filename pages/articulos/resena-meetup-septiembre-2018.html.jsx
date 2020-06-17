@@ -8,7 +8,7 @@ const metatags = {
   description:
     '¡La Primavera no podía empezar de mejor manera que con una nueva edición de Meetup.js! OLX nos abrió sus puertas y nosotros te contamos como estuvo, en el resumen de Septiembre. Por Andres Villanueva.',
   title: `Reseña del Meetup.js de Septiembre 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-septiembre-2018.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-septiembre-2018.html`
 };
 
 export default () => (

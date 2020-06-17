@@ -5,9 +5,10 @@ import React from 'react';
 
 const { publicRuntimeConfig } = getConfig();
 const metatags = {
-  description: '',
+  description:
+    '',
   title: `Reseña del Meetup.js de Abril 2019 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-abril-2019.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-abril-2019.html`
 };
 
 export default () => (

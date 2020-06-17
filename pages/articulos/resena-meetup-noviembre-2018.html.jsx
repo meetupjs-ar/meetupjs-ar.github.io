@@ -8,7 +8,7 @@ const metatags = {
   description:
     'Cumplimos 50 eventos y lo festejamos encontrándonos en Medallia donde tuvimos 5 charlas y el networking de siempre.',
   title: `Reseña del Meetup.js de Noviembre 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-noviembre-2018.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-noviembre-2018.html`
 };
 
 export default () => (

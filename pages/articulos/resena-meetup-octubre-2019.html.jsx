@@ -7,7 +7,7 @@ const { publicRuntimeConfig } = getConfig();
 const metatags = {
   description: 'Revivamos juntos lo que pasó en el meetup #56 en Solstice.',
   title: `Reseña del Meetup.js de Octubre 2019 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-octubre-2019.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-octubre-2019.html`
 };
 
 export default () => (

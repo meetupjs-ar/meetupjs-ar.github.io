@@ -9,7 +9,7 @@ const metatags = {
   description:
     'Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad.',
   title: `Código de Conducta - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}coc.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}coc.html`
 };
 
 export default () => (

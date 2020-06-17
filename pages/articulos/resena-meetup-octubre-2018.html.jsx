@@ -8,7 +8,7 @@ const metatags = {
   description:
     'Salimos de CABA por primera vez para visitar las oficinas de SoftVision y hablar sobre testing y la batalla de frameworks Frontend.',
   title: `Reseña del Meetup.js de Octubre 2018 - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-octubre-2018.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/resena-meetup-octubre-2018.html`
 };
 
 export default () => (

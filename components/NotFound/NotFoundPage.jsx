@@ -6,7 +6,11 @@ const NotFoundPage = () => (
   <Container>
     <div className="text-center">
       <h1 className="font-bold text-4xl">¡Ups!, lo que viniste a buscar no está acá.</h1>
-      <img src="NotFound/travolta.gif" alt="John Travolta" className="block mx-auto h-48 my-8" />
+      <img
+        src="/static/NotFound/travolta.gif"
+        alt="John Travolta"
+        className="block mx-auto h-48 my-8"
+      />
       <Link href="/" passHref>
         <a
           href="#!"

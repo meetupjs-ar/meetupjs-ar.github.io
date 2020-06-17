@@ -50,7 +50,7 @@ export const allArticles = [
   ResenaMeetupJulio19Metadata,
   ResenaMeetupAgosto19Metadata,
   ResenaMeetupSeptiembre19Metadata,
-  ResenaMeetupOctubre19Metadata,
+  ResenaMeetupOctubre19Metadata
 ].sort((a, b) => b.publishedDay - a.publishedDay);
 const articlesByYear = splitByYear(allArticles);
 const years = Object.keys(articlesByYear)
@@ -69,10 +69,10 @@ class BlogPage extends Component {
     return (
       <Container>
         <h1 className="font-bold text-center text-4xl">Blog</h1>
-        {this.years.map((year) => (
+        {this.years.map(year => (
           <React.Fragment key={year}>
             <h3 className="font-bold mt-8 text-quaternary text-2xl">{year}</h3>
-            {this.articlesMetadata[year].map((metadata) => (
+            {this.articlesMetadata[year].map(metadata => (
               // eslint-disable-next-line react/jsx-props-no-spreading
               <PostCard key={metadata.title} {...metadata} />
             ))}

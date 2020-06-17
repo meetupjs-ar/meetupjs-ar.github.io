@@ -2,7 +2,7 @@ import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import Isna from 'components/Isna/Isna';
 import withGA from 'next-ga';
-import App from 'next/app';
+import App, { Container } from 'next/app';
 import getConfig from 'next/config';
 import Router from 'next/router';
 import React from 'react';
@@ -75,7 +75,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <>
+      <Container>
         <div className="flex flex-col min-h-screen-header">
           <Header />
           <div className="flex-auto">
@@ -85,7 +85,7 @@ class MyApp extends App {
           <Footer />
         </div>
         <Isna />
-      </>
+      </Container>
     );
   }
 }

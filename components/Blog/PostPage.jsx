@@ -35,7 +35,7 @@ class BlogArticlePage extends Component {
 }
 
 BlogArticlePage.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default BlogArticlePage;

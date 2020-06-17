@@ -8,7 +8,7 @@ const metatags = {
   description:
     'En este artículo te vamos a contar como organizamos los meetups, que pasos tenemos en cuenta, como nos contactamos con los oradores, empresas y sponsors. Por Camila Cepeda.',
   title: `Como hacemos un meetup - ${publicRuntimeConfig.REACT_APP_TITLE}`,
-  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/como-hacemos-un-meetup.html`,
+  url: `${publicRuntimeConfig.REACT_APP_URL}articulos/como-hacemos-un-meetup.html`
 };
 
 export default () => (
