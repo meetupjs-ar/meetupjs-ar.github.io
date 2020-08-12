@@ -112,7 +112,7 @@ const HomePage = () => (
               <Icon name="github" width="w-full" />
             </a>
             <a
-              href="https://slack.meetupjs.com.ar/"
+              href="https://join.slack.com/t/meetupjs/shared_invite/zt-gk7ctvrn-sttnFX4zia_bM7C59odUGQ"
               target="_blank"
               rel="noopener noreferrer"
               className="grow mx-2 lg:mx-4 w-16"
