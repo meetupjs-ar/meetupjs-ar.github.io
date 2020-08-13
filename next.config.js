@@ -57,7 +57,7 @@ module.exports = withPlugins(
       REACT_APP_VERSION: version
     },
     webpack: config => {
-      if (process.env.CI) {
+      /* if (process.env.CI) {
         config.plugins.push(
           new PacktrackerPlugin({
             upload: process.env.CI,
@@ -65,7 +65,7 @@ module.exports = withPlugins(
             branch: process.env.TRAVIS_BRANCH || process.env.TRAVIS_PULL_REQUEST_BRANCH
           })
         );
-      }
+      } */
 
       return config;
     }
