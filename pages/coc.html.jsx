@@ -14,7 +14,7 @@ const metatags = {
 
 export default () => (
   <>
-    <Head>
+    <head>
       <title>{metatags.title}</title>
       <meta name="description" content={metatags.description} />
       <meta property="og:url" content={metatags.url} />
@@ -28,7 +28,7 @@ export default () => (
       <meta name="twitter:title" content={metatags.title} />
       <meta name="twitter:description" content={metatags.description} />
       <meta name="twitter:image" content={publicRuntimeConfig.REACT_APP_SOCIAL_IMAGE} />
-    </Head>
+    </head>
     <CodeOfConductPage />
   </>
 );
