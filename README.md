@@ -22,6 +22,6 @@ npm run dev
 ANALYZE_BUNDLE=true npm run build
 ```
 
-## Licencia
+## Licence
 
 MIT
