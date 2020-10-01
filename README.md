@@ -24,4 +24,4 @@ ANALYZE_BUNDLE=true npm run build
 
 ## Licencia
 
-MIT
+© Copyright @ MIT 
