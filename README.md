@@ -12,7 +12,7 @@
 # checkout al branch `dev`
 git checkout -b dev
 
-# instalar dependencias
+# install dependencias
 npm install
 
 # ambiente de desarrollo
