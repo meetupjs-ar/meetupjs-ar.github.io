@@ -6,7 +6,7 @@
 
 [meetupjs.com.ar](https://meetupjs.com.ar/)
 
-## Desarrollo
+## Desarrollo / Description
 
 ```bash
 # checkout al branch `dev`
